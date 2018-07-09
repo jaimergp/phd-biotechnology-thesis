@@ -3,7 +3,7 @@
 *.vscode
 _*/
 helpful/*
-*.pdf
+dissertation.pdf
 .logged
 ## Core latex/pdflatex auxiliary files:
 *.aux
@@ -20,6 +20,7 @@ helpful/*
 
 ## Intermediate documents:
 *.dvi
+*.xdv
 *-converted-to.*
 # these rules might exclude image files for figures etc.
 # *.ps
