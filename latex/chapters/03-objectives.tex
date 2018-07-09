@@ -1,0 +1,26 @@
+%!TEX root = ../dissertation.tex
+\chapter{Objectives}
+\label{chap:03}
+
+\Lettrine{Multiscale molecular modeling} employs different modeling techniques and levels of theory, per definition. However, resorting to such a vast variety of software tools means they do not usually play well together. Being conceived by teams with different background and focus, this end up resulting in three common symptoms:
+
+\begin{itemize}
+	\item Most molecular modeling tools are designed as standalone pieces not meant to be part of broader, multistage protocols.
+
+	\item They present unintentionally opinionated abstractions and problem-solving strategies that force users to recontextualize their problem for each tool.
+
+	\item The files required are almost never compatible, which results in non-trivial format conversions or manual input, especially if data exchange is needed.
+\end{itemize}
+
+Subsequently, when a researcher faces a multiscale protocol, a series of technical issues unrelated to the scientific problem arise: files are not properly converted, software dependencies are not updated, the operating system is not supported anymore$ \ldots $  Molecular modeling is difficult enough by itself; there is no need to put additional barriers in the way.
+
+The main motivation behind this thesis is to provide new software solutions to make technical and scientific barriers easier to overcome when it comes to molecular modeling and multiscale protocols. Several tools will be presented in the next chapters, each focusing on a specific part of the multiscale funnel. Two of them constitute the main projects of this thesis:
+
+\begin{itemize}
+	\item GaudiMM, described in \autoref{chap:04}, is a multi-objective optimization platform to provide reasonably sound models meant to be used as starting structures for subsequent stages down a multiscale protocol.
+
+	\item Tangram suite, described in \autoref{chap:05}, is a collection of graphical interfaces for UCSF Chimera to bridge diverse molecular modeling tools in a single, intuitive user experience. This chapter also includes command-line utilities that were started as helper tools and ended up becoming independent projects on their own.
+\end{itemize}
+
+Finally, in \autoref{chap:06}, a collection of illustrative cases will be described in detail to prove their usage and applicability. These include toy examples that showcase the potentiality of GaudiMM, and a detailed computational insight on the counter-intuitive experimental observations found in multivalent enzyme inhibition studies.
+

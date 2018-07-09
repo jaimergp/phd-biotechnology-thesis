@@ -1,0 +1,34 @@
+%!TEX root = ../dissertation.tex
+\chapter{General conclusions}
+\label{chap:07}
+
+\Lettrine{In this dissertation} several software projects have been presented, focusing on the motivations behind their inception and their potential applicability in form of illustrative cases. Additionally, the computational insights behind the collaboration with an experimental group showcase how they would be applied in real life cases. Hopefully, these are enough to prove them useful; extensive conclusions have been already commented on their respective chapters and there is no need to go into detail again. This is only a brief summary on each of them.
+
+\begin{enumerate}
+	\item GaudiMM has been presented as a versatile molecular optimization framework. Its plurigenetic, multiobjective implementation allows researchers to perform all types of docking, restrained exploration and molecular design, to name a few applications. This approach useful for both molecular modelers and experimentalists. For the former, GaudiMM is able to generate starting structures for any multiscale protocol. For the latter, it can be a valuable asset to discard non-feasible hypothesis.
+
+	\item Tangram is a collection of more than 15 tools for UCSF Chimera that will help in the generation of input files for 3\textsuperscript{rd} party software and diverse interactive structural analysis within a single graphical interface and user experience.
+
+	\item OMMProtocol provides a user-friendly, single-file interface to the powerful, GPU-accelerated OpenMM molecular dynamics libraries, which has brought a 20-fold speed increase to the previously available MD protocols.
+
+	\item Garleek will help in those QM/MM studies that require extended molecular mechanics force fields. By seamlessly interfacing Gaussian with modern MM suites, more accurate calculations can be obtained.
+
+	\item ESIgen can save hours of manual text manipulation in computational chemistry. Its ability to automatically generate technical reports suitable for attachment as supporting information or internal communication with colleagues will be hopefully appreciated by this community.
+
+	\item EasyMECP is a very specific tool designed to facilitate the calculation of minimum energy crossing points (MECP) with Gaussian. It uses the popular code by J. M. Harvey, but provides a user-friendly wrapper that alleviates the job set-up significantly.
+\end{enumerate}
+
+Unfortunately, some unfinished projects could not make it to this compilation but will constitute further steps in the future of these ongoing endeavours. At the end of the day, even if only one of these tools end up in the workflow of a future molecular modeler, the effort will have been worth it.
+
+Finally, these last following paragraphs will try to sum up some points learned that are not directly linked to the results presented, but to the process of obtaining them.
+
+Initially, the ‘novel software platform’ in the title of this dissertation only referred to GaudiMM, but during its development several weak points in the workflow of lab-mates and colleagues were identified. What started as innocent efforts to help automate some manual steps or provide easier access to new technology ended up as big projects on their own. This kind of opportunities was not anticipated, but it perfectly fitted the intentions of this thesis.
+
+During the development of new software, difficulties can arise anytime, for any reason. Dependencies, installation and distribution are inherent problems to the complex landscape of libraries, operating systems and hardware architectures. Solving them efficiently requires using developer-specific tools, usually disregarded by end-users. I began my PhD studies as a user and ended up as some sort of developer, and to my surprise, my most popular project is not GaudiMM itself, but a tool created as a helper for its development: PyChimera. The need for interconnected software is patent, and a big part of this dissertation has been devoted to bringing new free alternatives to the table. The Tangram suite is only an attempt at providing molecular modelling tools accessible for beginner users that do not want to mess up with complex installations and input files: the workflow has been designed to be intuitive and consistent.
+
+Still, most complex tasks would require some sort of scripting for an efficient solution. Programming skills are essential in all fields of science that can be enhanced by computational support. Two main properties can be identified: they can accelerate repetitive tasks, freeing time for other problems, and at the same time they enable new problem-solving strategies and can help plan studies in a different way. In other words, programming skills streamline creative thinking.
+
+GaudiMM was a simple (but inefficient) for-loop doing conditional operations. It was the abstraction that followed that unlocked new possible workflows. New questions could be asked, new ideas could be devised. \textit{Is it possible to...?} started to have new endings.
+
+Yet we are failing to convince students why coding is important. Most still prefer to go manually to \textit{make sure} results will be correct, and not a false positive product of a non-obvious bug. Is this due to the uninformative error messages, or does it go deeper in our educational system roots? Students are still taught memorization and mechanization, but that should not be the point in this era. Computers are much better at that than us, and will surpass us in other areas too. Solving problems is not copying algorithms and following instructions. It should be more about the reasons behind each of those steps. Designing algorithms, protocols, tools and frameworks: that should be the goal. Otherwise, the inability to write code will become the illiteracy of the XXI\textsuperscript{st} century.
+

@@ -3,7 +3,7 @@
 *.vscode
 _*/
 helpful/*
-*.pdf 
+*.pdf
 .logged
 ## Core latex/pdflatex auxiliary files:
 *.aux
@@ -225,3 +225,6 @@ TSWLatexianTemp*
 
 # expex forward references with \gathertags
 *-tags.tex
+
+.ipynb*
+desktop.ini

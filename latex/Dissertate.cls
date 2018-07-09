@@ -1,3 +1,5 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
 % -------------------------------------------------------------------
 %  @LaTeX-class-file{
 %     filename        = "Dissertate.cls",
@@ -11,7 +13,9 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{Dissertate}[2014/03/25 v2.0 Dissertate Class]
-\LoadClass[12pt, oneside, letterpaper]{book}
+% Comment/uncomment these two lines for digital A4 PDF or print-ready B5 PDF
+\LoadClass[12pt, oneside, a4paper]{book}
+% \LoadClass[12pt, twoside, openright, b5paper]{book}
 
 %
 % Options
@@ -24,7 +28,7 @@
 \togglefalse{DissertateSingleSpace}
 \DeclareOption{dsingle}{
     \toggletrue{DissertateSingleSpace}
-    \ClassWarning{Dissertate}{Single-spaced mode on.}
+    %\ClassWarning{Dissertate}{Single-spaced mode on.}
 }
 \DeclareOption{ddouble}{\togglefalse{DissertateSingleSpace}}
 
@@ -33,18 +37,20 @@
 % Line Spacing
 %   Define two line spacings: one for the body, and one that is more compressed.
 \iftoggle{DissertateSingleSpace}{
-    \newcommand{\dnormalspacing}{1.2}
-    \newcommand{\dcompressedspacing}{1.0}
+    \newcommand{\dnormalspacing}{1.5}
+    \newcommand{\dcompressedspacing}{1.5}
+    \newcommand{\dxcompressedspacing}{1.0}
 }{
     \newcommand{\dnormalspacing}{2.0}
-    \newcommand{\dcompressedspacing}{1.2}
+    \newcommand{\dcompressedspacing}{1.5}
+    \newcommand{\dxcompressedspacing}{1.2}
 }
 
 % Block quote with compressed spacing
 \let\oldquote\quote
 \let\endoldquote\endquote
 \renewenvironment{quote}
-    {\begin{spacing}{\dcompressedspacing}\oldquote}
+    {\begin{spacing}{\dxcompressedspacing}\oldquote}
     {\endoldquote\end{spacing}}
 
 % Itemize with compressed spacing
@@ -62,33 +68,57 @@
     {\endoldenumerate\end{spacing}}
 
 % Text layout.
-\RequirePackage[width=5.75in, letterpaper]{geometry}
+%\RequirePackage[width=5.75in, letterpaper]{geometry}
+\RequirePackage[b5paper]{geometry}
 \usepackage{ragged2e}
-\RaggedRight
+%\RaggedRight
+\raggedbottom
+% \RequirePackage[draft]{graphicx}
 \RequirePackage{graphicx}
-\usepackage{fixltx2e}
 \parindent 12pt
 \RequirePackage{lettrine}
 \RequirePackage{setspace}
 \RequirePackage{verbatim}
+\setlength{\DefaultNindent}{0pt}
+\setlength{\DefaultFindent}{1pt}
+
+% My packages
+\RequirePackage{float}
+\usepackage{hhline}
+\usepackage[normalem]{ulem}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage{cprotect}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{tabularx}
 
 % Fonts.
 \RequirePackage{color}
 \RequirePackage{xcolor}
 \usepackage{hyperref}
 \RequirePackage{url}
-\RequirePackage{amssymb}
-\RequirePackage{mathspec}
-\setmathsfont(Digits,Latin,Greek)[Numbers={Proportional}]{EB Garamond}
-\setmathrm{EB Garamond}
-\AtBeginEnvironment{tabular}{\addfontfeature{RawFeature=+tnum}}
+\usepackage{fontspec}
+\defaultfontfeatures+[\rmfamily]{RawFeature={-calt}} % disable contextual alternative ligatures (long Q, etc)
+\usepackage[lining]{ebgaramond}
+\usepackage{ebgaramond-maths}
+\usepackage{amsmath}
+% \RequirePackage{amssymb}
+% \RequirePackage{mathspec}
+% \setmathsfont(Digits,Latin,Greek)[Numbers={Proportional}]{EB Garamond}
+% \setmathrm{EB Garamond}
+\AtBeginEnvironment{tabularx}{\addfontfeature{RawFeature=+tnum}}
 \widowpenalty=300
 \clubpenalty=300
-\setromanfont[Numbers=OldStyle, Ligatures={Common, TeX}, Scale=1.0]{EB Garamond}
-\newfontfamily{\smallcaps}[RawFeature={+c2sc,+scmp}]{EB Garamond}
+% \setromanfont[Numbers=Lining, Ligatures={NoCommon, Common, TeX}, Scale=1.0]{EB Garamond}
+% \newfontfamily{\smallcaps}[RawFeature={+c2sc,+scmp}]{EB Garamond}
+% \setmainfont{EB Garamond}
 \setsansfont[Scale=MatchLowercase, BoldFont={Lato Bold}]{Lato Regular}
 \setmonofont[Scale=MatchLowercase]{Source Code Pro}
-\RequirePackage[labelfont={bf,sf,footnotesize,singlespacing},
+
+
+\RequirePackage[labelfont={bf,sf,sc,footnotesize,singlespacing},
                 textfont={sf,footnotesize,singlespacing},
                 justification={justified,RaggedRight},
                 singlelinecheck=false,
@@ -98,16 +128,17 @@
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \RequirePackage{microtype}
 
-
 % Headings and headers.
 \RequirePackage{fancyhdr}
-\RequirePackage[tiny, md, sc]{titlesec}
+\RequirePackage[small, md, sc]{titlesec}
+\setcounter{secnumdepth}{5}
 \setlength{\headheight}{15pt}
 \pagestyle{plain}
 \RequirePackage{titling}
+\RequirePackage{emptypage}
 
 % Front matter.
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 \usepackage[titles]{tocloft}
 \usepackage[titletoc]{appendix}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -122,15 +153,23 @@
 \renewcommand\bibname{References}
 \RequirePackage[super,comma,numbers]{natbib}
 \renewcommand{\bibnumfmt}[1]{[#1]}
+
+% Chapter headings
 \RequirePackage[palatino]{quotchap}
-\renewcommand*{\chapterheadstartvskip}{\vspace*{-0.5\baselineskip}}
-\renewcommand*{\chapterheadendvskip}{\vspace{1.3\baselineskip}}
+\renewcommand*{\chapterheadstartvskip}{\vspace*{-4.5\baselineskip}}
+\renewcommand*{\chapterheadendvskip}{\vspace{0.5\baselineskip}}
 
 % An environment for paragraph-style section.
 \providecommand\newthought[1]{%
    \addvspace{1.0\baselineskip plus 0.5ex minus 0.2ex}%
    \noindent\textsc{#1}%
 }
+
+\newcommand*{\Lettrine}[2][]{
+  \def\tmp##1##2 {\lettrine[#1,lines=3]{\color{SchoolColor}##1}{##2} }
+  \tmp#2
+}
+
 
 % Align reference numbers so that they do not cause an indent.
 \newlength\mybibindent
@@ -180,21 +219,21 @@
 \def\pdTwoSchool#1{\gdef\@pdTwoSchool{#1}}
 \def\pdTwoYear#1{\gdef\@pdTwoYear{#1}}
 % School name and location
-\university{University of California, Berkeley}
-\universitycity{Berkeley}
-\universitystate{California}
+\university{Universitat Autònoma de Barcelona}
+\universitycity{Barcelona}
+\universitystate{Spain}
 
 % School color found from university's graphic identity site:
 % http://brand.berkeley.edu/colors/
 
-\definecolor{SchoolColor}{HTML}{003262} %berkeley blue
-%\definecolor{chaptergrey}{HTML}{003262} % chapter numbers
+% \definecolor{chaptergrey}{HTML}{003262} % chapter numbers
+% \definecolor{SchoolColor}{HTML}{FDB515} %berkeley gold
 
 % \definecolor{SchoolColor}{rgb}{0,0.19608,0.3843} %berkeley blue
-%\definecolor{chaptergrey}{rgb}{0,0.19608,0.3843} % chapter numbers
+% \definecolor{chaptergrey}{rgb}{0,0.19608,0.3843} % chapter numbers
 
-% \definecolor{SchoolColor}{HTML}{FDB515} %berkeley gold
-\definecolor{chaptergrey}{HTML}{FDB515} % chapter numbers
+\definecolor{SchoolColor}{HTML}{A00000}
+\definecolor{chaptergrey}{HTML}{999999}
 
 \hypersetup{
     colorlinks,
@@ -208,75 +247,88 @@
 % http://www.gsas.harvard.edu/publications/form_of_the_phd_dissertation.php
 \renewcommand{\frontmatter}{
     \input{frontmatter/personalize}
+    \pagenumbering{roman}
     \maketitle
     \copyrightpage
-    \abstractpage
-    \dedicationpage
-    \tableofcontents
-    \acknowledgments
-    % \listoffigures % optional
+    \setcounter{page}{1}
+    \setstretch{\dnormalspacing}
+      \abstractpage
+      \officialacknowledgments
+      \dedicationpage
+      \acknowledgments
+    \setstretch{\dxcompressedspacing}
+    \maketoc
+    \makelof % optional
+    \makelot % optional
     \setcounter{page}{1}
     \pagenumbering{arabic}
+    \setstretch{\dnormalspacing}
 }
 
+\newcommand{\maketoc}{
+    \pagestyle{empty}
+    {
+      \renewcommand{\thispagestyle}[1]{}
+      \tableofcontents
+    }
+    \newpage
+    \thispagestyle{empty}
+    \pagestyle{fancy}
+}
+
+\newcommand{\makelof}{
+    \pagestyle{empty}
+    {
+      \renewcommand{\thispagestyle}[1]{}
+      \listoffigures
+    }
+    \newpage
+    \thispagestyle{empty}
+    \pagestyle{fancy}
+}
+
+\newcommand{\makelot}{
+    \pagestyle{empty}
+    {
+      \renewcommand{\thispagestyle}[1]{}
+      \listoftables
+    }
+    \newpage
+    \thispagestyle{empty}
+    \pagestyle{fancy}
+}
 \renewcommand{\maketitle}{
     \thispagestyle{empty}
     \vspace*{\fill}
     \vspace{10pt}
     \begin{center}
     \Huge \textcolor{SchoolColor}{\thetitle} \normalsize \\
-    \vspace{100pt}
+    \vspace{50pt}
     By\\
     \theauthor\\
-    \vspace{12pt}
-    \textsc{A Dissertation submitted in partial satisfaction of the\\
+    \vspace{60pt}
+    \textsc{A dissertation submitted in satisfaction of the\\
     requirements for the degree of \\ \@degree\\
-    in\\ \@department\\ in the\\  Graduate Division\\ of the\\
+    %in\\ \@department\\ in the\\  Graduate Division\\ of the\\
+    \vspace{80pt}
+    \vspace{50pt}
+    % Committee in charge:\\
+    % \vspace{20pt}
+    % Professor \@coadvisorOne, Co-chair\\
+    % Professor \@coadvisorTwo, Co-chair\\
+    % Professor \@committeeInternal\\
+    % Professor \@committeeExternal\\
+    \vspace{50pt}
     \@university\\
-    \vspace{50pt}
-    Committee in charge:\\
-    \vspace{20pt}
-    Professor \@coadvisorOne, Co-chair\\
-    Professor \@coadvisorTwo, Co-chair\\
-    Professor \@committeeInternal\\
-    Professor \@committeeExternal\\
-    \vspace{50pt}
-    \@degreeterm\ \@degreeyear}
+    \@degreemonth\ \@degreeyear}
     \end{center} \vspace*{\fill}
 }
-
-
-%\renewcommand{\maketitle}{
-%    \thispagestyle{empty}
-%    \vspace*{\fill}
-%    \vspace{10pt}
-%    \begin{center}
-%    \Huge \textcolor{SchoolColor}{\thetitle} \normalsize \\
-%    \vspace{100pt}
-%    By\\
-%    \theauthor\\
-%    \vspace{12pt}
-%    \textsc{A Dissertation submitted in partial satisfaction of the\\
-%    requirements for the degree of \\ \@degree\\
-%    in\\ \@department\\ in the\\  Graduate Division\\ of the\\
-%    \@university\\
-%    \vspace{50pt}
-%    Committee in charge:\\
-%    \vspace{20pt}
-%    Professor \@advisor, Chair\\
-%    Professor \@committeeInternalOne\\
-%    Professor \@committeeInternalTwo\\
-%    Professor \@committeeExternal\\
-%    \vspace{50pt}
-%    \@degreeterm\ \@degreeyear}
-%    \end{center} \vspace*{\fill}
-%}
 
 \newcommand{\copyrightpage}{
     \newpage
     \thispagestyle{empty}
     \vspace*{\fill}
-    \scshape \noindent \small \copyright \small 2015\hspace{3pt}-- \theauthor \\
+    \scshape \noindent \small \copyright \small \@degreeyear\hspace{3pt}-- \theauthor \\
     \noindent all rights reserved.
     \vspace*{\fill}
     \newpage
@@ -285,15 +337,13 @@
 
 \newcommand{\abstractpage}{
     \newpage
-    \setcounter{page}{1}
-    \pagenumbering{arabic}
-    \pagestyle{fancy}
-    \lhead{Co-advisors: \\\@coadvisorOne ~{\textit \&} \\\@coadvisorTwo}
+    \pagestyle{plain}
+    \lhead{Advisor: \\\@advisor\\}
     \rhead{\@author\\[\baselineskip]}
     \renewcommand{\headrulewidth}{0.0pt}
     \vspace*{35pt}
     \begin{center}
-    \Large \textcolor{SchoolColor}{\@title} \normalsize \\
+    \Large \@title \normalsize \\
     \vspace*{20pt}
     \scshape Abstract \\ \rm
     \end{center}
@@ -301,21 +351,66 @@
     \vspace*{\fill}
     \newpage \lhead{} \rhead{}
     \cfoot{\thepage}
+    \if@twoside
+        % insert blank page
+        \pagestyle{empty}
+        {
+        \renewcommand{\thispagestyle}[1]{}
+        \cleardoublepage
+        }
+        \newpage
+        \thispagestyle{empty}
+        \pagestyle{fancy}
+    \fi
 }
 
 \newcommand{\acknowledgments}{
-    \chapter*{Acknowledgments}
+    \newpage \thispagestyle{fancy} \vspace*{10pt}
+    {
+      \huge \hspace*{\fill}  Acknowledgments
+    }
     \noindent
     \input{frontmatter/thanks}
-    \vspace*{\fill} \newpage
+    \vspace*{\fill}
+    \if@twoside
+        \newpage \thispagestyle{empty}  \rm
+        % insert blank page
+        \pagestyle{empty}
+        {
+        \renewcommand{\thispagestyle}[1]{}
+        \cleardoublepage
+        }
+        \newpage
+        \thispagestyle{empty}
+        \pagestyle{fancy}
+    \fi
+}
+\newcommand{\officialacknowledgments}{
+    \newpage \thispagestyle{fancy} \vspace*{10pt}
+    {
+      \huge \hspace*{\fill} Official Acknowledgments
+    }
+    \noindent
+    \input{frontmatter/official-acknowledgments}
+    \vspace*{\fill}
+    \if@twoside
+        \newpage \thispagestyle{empty}  \rm
+        % insert blank page
+        \pagestyle{empty}
+        {
+        \renewcommand{\thispagestyle}[1]{}
+        \cleardoublepage
+        }
+        \newpage
+        \thispagestyle{empty}
+        \pagestyle{fancy}
+    \fi
 }
 
 \newcommand{\dedicationpage}{
-    \setcounter{page}{1}
-    \pagenumbering{roman}
     \newpage \thispagestyle{fancy} \vspace*{\fill}
     \scshape \noindent \input{frontmatter/dedication}
-    \vspace*{\fill} \newpage \rm
+    \vspace*{\fill} \newpage \thispagestyle{empty}  \rm
 }
 
 
@@ -323,12 +418,78 @@
     \input{endmatter/personalize}
     \clearpage
     \bibliography{references}
-    \addcontentsline{toc}{chapter}{References}
+    % \addcontentsline{toc}{chapter}{References}
     \bibliographystyle{apalike2}
-    \begin{appendices}
-        \include{chapters/appendixA}
-    \end{appendices}
-    \include{endmatter/colophon}
+    %\include{endmatter/colophon}
 }
 
 
+%% Customizations
+
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+%   \fancyhf[leh,roh]{\thepage}%
+}
+
+% Redefine autoref to handle section keyword replacement
+% Taken from https://tex.stackexchange.com/a/101065
+\usepackage{xifthen}
+\usepackage{letltxmacro}
+\usepackage{refcount}
+\LetLtxMacro\org@autoref\autoref % "org" stands for "original"
+\RenewDocumentCommand{\autoref}{o m}{%
+  % test 1: reference defined?
+  \@ifundefined{r@#2}{%
+    \org@autoref{#2}%
+  }{%
+    \begingroup
+      \def\ar@next{\org@autoref{#2}}%
+      % test 2: anchor available?
+      \edef\ar@anchor{\getrefbykeydefault{#2}{anchor}{}}%
+      \ifx\ar@anchor\@empty
+      \else
+        % test 3: counter part extractable from anchor name?
+        \expandafter\ar@getcounter\ar@anchor.\@nil
+        \ifx\ar@counter\ar@dot
+        \else
+          % test 4: color defined?
+          \@ifundefined{\ar@counter autorefcolor}{%
+            \def\ar@next{\IfValueTF{#1}{%
+              \ifthenelse{\isempty{#1}}{\ref{#2}}{#1~\ref{#2}}%
+            }{\ar@autoref{#2}}}%
+          }{%
+            \def\ar@next{%
+              \hypersetup{%
+                linkcolor=\csname\ar@counter autorefcolor\endcsname,%
+                linkbordercolor=\csname\ar@counter autorefcolor\endcsname
+              }%
+              \IfValueTF{#1}{%
+                \ifthenelse{\isempty{#1}}{\ref{#2}}{#1~\ref{#2}}%
+              }{\ar@autoref{#2}}%
+            }%
+          }%
+        \fi
+      \fi
+      \ar@next
+    \endgroup
+  }%
+}
+\def\ar@getcounter#1.#2\@nil{%
+  \def\ar@counter{#1}%
+}
+\newcommand*{\ar@dot}{.}
+\newcommand*{\ar@autoref}[1]{%
+  \@ifundefined{\ar@counter autorefname}{%
+    \@ifundefined{\ar@counter name}{%
+    }{%
+      \@nameuse{\ar@counter name}~%
+    }%
+  }{%
+    \@nameuse{\ar@counter autorefname}~%
+  }%
+  \ref{#1}%
+}
+\newcommand*{\setautorefcolor}[2]{%
+  \@namedef{#1autorefcolor}{#2}%
+}

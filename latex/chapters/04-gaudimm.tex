@@ -1,0 +1,508 @@
+%!TEX root = ../dissertation.tex
+\begin{savequote}[0.6\textwidth]
+	\itshape In the beginning, there was nothing. \\
+	\itshape And God said, Let there be light. \\
+	\itshape And there was light. \\
+	\itshape There was still nothing, \\
+	\itshape but you could see it a lot better.
+	\qauthor{Woody Allen}
+\end{savequote}
+
+\chapter{GaudiMM}
+\label{chap:04}
+
+% \section{Introduction $\&$  motivation}
+% \addcontentsline{toc}{section}{Introduction $\&$  motivation}
+
+\Lettrine{The vast availability of molecular modeling tools}, techniques and approaches might trick beginners into thinking that every imaginable system can be accurately modeled with sufficient expertise: the only challenge is learning how to use them correctly. In a (very optimistic) way, that first impression will end up being true someday; i.e. when hardware is powerful enough to calculate everything with quantum mechanics. Fortunately for scientific software developers, that day is still far away and accuracy-speed tradeoffs are needed.
+
+With the current computational resources, one cannot pretend to perform a global exploration of the potential energy surface; not even for small systems. As a result, whatever the theory applied, the starting point of any calculation must be somehow close to or distantly resembling to the expected final structure. If several possibilities are considered, then a number of different starting points must be assessed. In other words, global optimization is usually not affordable and performing several local optimizations with different starting variables is often preferred.
+
+The take-home message is that almost every model will need a starting structure. A first and key step in every molecular modeling exercise. As mentioned in Chapter 01, sometimes this is as easy as downloading a file from an online database or drawing molecules in an interactive display. However, that is not always the case if only partial experimental data is available. This can end up constituting a sort of $``$writer’s block$"$  or $``$blank sheet syndrome$"$ : many projects strive to even start because of the complexity to find convenient starting points in a reasonably short amount of time. Sometimes, the researcher has no other option than manually adjusting the structure in an iterative, trial-and-error scheme until the calculation succeeds.
+
+Alleviating that frustrating process is one of the main the motivations behind the development of GaudiMM, the tool central to this chapter. GaudiMM, which stands for Genetic Algorithms with Unrestricted Descriptors for Intuitive Molecular Modeling, can be described as a molecular sketcher that will help to obtain reasonable starting models for their calculations. Like a grid on a fresh canvas or sidewheels in a bike, it allows to handle multidimensional problems in an easy, guided process.
+
+Before introducing all its features and capabilities, it will be convenient to review optimization techniques and how they are applied routinely in computational chemistry and molecular modeling. That way, it will be easier to grasp the rationale behind the terminology used in some of its key concepts.
+
+\section{Theory behind the concept: Optimization problems}
+% \addcontentsline{toc}{section}{Theory behind the concept: Optimization problems}
+\subsection{Mathematical optimization and numerical methods}
+% \addcontentsline{toc}{subsection}{Mathematical optimization and numerical methods}
+Most of the procedures used to rapidly identify physically sound initial models of a molecular system stand on finding the way to ally the exploration of wide conformational spaces and the adequate guiding variables. In math speech, this is territory of optimization problems for non-smooth surfaces.
+
+Mathematically speaking, an optimization problem consists of, given a function $ f $ that connects a set $ A $ to the set of real numbers, finding an element $ x_{0} $ in A such that $ f(x_{0}) \leq f(x) $ for all $ x in A $  (minimization), or such that $ f(x_{0}) \geq f(x) $ for all $ x in A $ (maximization).
+
+\begin{align}
+	Given ~~ f:A \rightarrow R \nonumber \\
+	Sought: ~ x_{0} \in A ~ such ~ that ~ f(x_{0})  \leq f(x) ~,~x \in A ~~~ ( minimization ) \nonumber \\
+	~~~~~~~~~ or: x_{0} \in A ~ such ~ that ~ f(x_{0})  \geq f(x) ~,~x \in A ~~~ ( maximization )
+\end{align}
+
+$ f(x) $  is normally called the objective function, loss function or cost function for minimization problems, utility function or fitness function for maximization problems or, depending on the field, energy function or functional. However, all optimization problems can be expressed as minimization problems, negating  $ f(x) $  if the problem is to be maximized.
+
+The domain  $ A ~ of ~ f $ is usually named the ‘search space’ or the ‘choice set’, and each possible value of  $ A $  is called a candidate or feasible solution.  $ A $  is normally a subset of  $ R^{n} $ , as defined by equality and/or inequality constraints. The optimization definition can be extended to be subject to inequality and equality constraints, expressed as:
+
+\begin{align}
+	optimize_{x}~~~~~~~ f(x) \nonumber \\
+	subject~to~~~  g_{i}(x)  \leq 0,~~ i=1,  \ldots ,m \nonumber \\
+	~~~~~~~~~~~~~~~~~~~~~~~ h_{j}(x) =0,~~ j=1,  \ldots ,p
+\end{align}
+
+, where  \( g_{i}(x)  \)  are the inequality constraints,  \( h_{j}(x)  \)  are the equality constraints, and  \( m \)  and  \( p \)  are greater than 0. If  \( m \)  and  \( p \)  are equal to zero, the definition falls back to the unconstrained optimization problem.
+
+Depending on the form of the function being optimized and the specified constraints, several categories emerge, like convex or nonlinear optimization problems. In convex optimization, when f, g and h are either convex (minimization) or concave (maximization). This includes linear functions, defining the field of linear optimization. Nonlinear optimization deals with functions that cannot be written as linear expressions, which usually makes the problem harder.
+
+Solving this type of problems was initially studied by Fermat and Lagrange, who applied calculus-based formulae to identify optimum solutions. However, not all optimization problems can be solved analytically and, in fact, for some complex problems is usually easier (and faster) to compute numerical solutions iteratively until a convergence threshold is met. This approach was initiated by Newton and Gauss, and since then many applicable algorithms have been devised throughout the latest decades. A few will be highlighted for illustrative purposes.
+
+\subsubsection{Steepest descent and conjugate gradient}
+% \addcontentsline{toc}{subsubsection}{Steepest descent and conjugate gradient}
+To go down a smooth mountain, one simply takes steps in a direction towards the valley. There’s a lot of possible directions, but skilled mountaineers usually take the fastest: the steepest side. Climbing down that mountain can be expressed as finding the minimum of a convex three-dimensional function, so figuring out which direction we should take in every step is a matter of finding the gradient of that function at that point.
+
+A gradient is the $n$-dimensional generalization of a single-variable derivative, so instead of returning a scalar, it returns a vector. If derivatives gave us the rate of change of a function, gradients will tell the direction in which the function will experience the greatest change. In this three-dimensional problem, the gradient vector will point to the next step. By taking little steps in the direction pointed by the gradient, we will eventually get to the minimum.
+
+This is what the steepest descent algorithm does, but it can progress very slowly in almost ‘flat’ regions of the function. A similar method named conjugate gradient uses a similar approach, but the search direction is computed in a smarter way, making sure that the direction is orthogonal to the previous step gradient and the current one. It requires more operations, but the performance towards the optimum is better and usually worthy.
+
+Since these methods only compute $f(x)$ and $f’(x)$ (first derivatives), they are called first-order methods.
+
+\subsubsection{The Newton and quasi-Newton algorithms}
+% \addcontentsline{toc}{subsubsection}{The Newton and quasi-Newton algorithms}
+Newton numerical algorithms are similar to SD and CJ methods, but compute an additional differentiation step to use the information provided curvature of the function. This makes each iteration more expensive, but with certain functions fewer iterations might be needed (see fig. \ref{fig:gradientdescent}).
+
+Second derivatives can be generalized as Hessian matrices for problems of higher dimensions, but this can get very expensive to compute. As a result, several derived methods, called quasi-Newton methods, include alternative methods to compute it or supply equivalent information, like directly computing the inverse with numerical methods, updating it with successive gradient vectors$ \ldots $  Due to its performance, one of the most popular quasi-Newton algorithms is the BGFS algorithm (for Broyden, Fletcher, Goldfarb, Shanno) and its limited memory version L-BGFS.
+
+
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{./figures/04/gradientdescent.png}
+	\caption[Gradient descent vs Newton's optimization]{A comparison of gradient descent (green) and Newton's method (red) for minimizing a function (with small step sizes) starting with $ X_{0} $. Global minimum is $ X $. Newton's method uses curvature information to take a more direct route.}
+	\label{fig:gradientdescent}
+\end{figure}
+
+\subsubsection{The simplex algorithm}
+% \addcontentsline{toc}{subsubsection}{The simplex algorithm}
+Described by Dantzig during the World War II, this algorithm solves linear optimization problems by expressing functions and constraints in a n-dimensional generalized polyhedron called polytope. The algorithm shows that the optimum point of a convex polytope is one of the vertices and can be found by iteratively traversing the edges.
+
+\subsection{Heuristics: thinking abstract but practical}
+% \addcontentsline{toc}{subsection}{Heuristics: thinking abstract but practical}
+While all these numerical methods are very different in nature, they still perform the same kind of tasks: exploration, evaluation and selection. This is, they generate a candidate solution (exploration), solve the equations and assess how far they are from the exit condition (evaluation). Selection is often so trivial in scalar functions that is not even considered as a separate step. When it comes to the selecting a new candidate solution of all the possible in the search space, if $f(x)$ points to a scalar space, selecting $f(x_{0})$ vs $f(x_{1})$ is just a matter of seeing which value is smaller (minimization) or greater (maximization). However, if $f(x)$ points to a n-dimensional space, the selection is not straightforward because $f(x_{0}) < f(x_{1})$ will be only defined if all the elements in $x_{0}$ are smaller than $x_{1}$. This subject is studied in multi-objective optimization.
+
+In a simplified example, where we must find $f(x) = 0$ with $f(x) = ax + b$, ‘generating new candidate solutions’ would simply consist of assigning new values to x. While this can be done randomly until the solution is found, it’s usually more interesting to use a smarter approach. This what the gradients and hessian approaches provide: educated guesses towards finding the optima. However, they still require an equation to be available. When several variables are analyzed and the relationship between them is not differentiable or, simply, unknown, other type of algorithms must be employed, like heuristics.
+
+\subsubsection{Monte Carlo methods}
+% \addcontentsline{toc}{subsubsection}{Monte Carlo methods}
+In Monte Carlo methods are useful for studying problems that are characterized by a huge number of degrees of freedom but can be interpreted probabilistically. Since the expected value of an integral can be approximated by the empirical mean of a random sample, these methods allow to obtain numerical results by randomly sampling the search space. In the Metropolis variant, the sample is refined iteratively with random modifications that are either accepted or rejected depending on the new value of the sample or a random acceptance ratio.
+
+For example, to minimize the potential energy of a molecule, random states can be generated by introducing small perturbations to the atomic positions that follow a Boltzmann distribution. The energy of the new states is evaluated and either accepted or rejected by comparing their energies with current mean of the sample. For example, those with smaller energies are usually included and accepted in the ensemble. For those with higher energies, they can still be included with some probability that depends on the chosen acceptance ratio. Being a Markov chain, the probability distribution for the next iteration will be reparametrized with the state of the current sample and the process will continue iteratively until convergence.
+
+\subsubsection{Evolutionary algorithms}
+% \addcontentsline{toc}{subsubsection}{Evolutionary algorithms}
+Evolutionary algorithms (EA) can be explained as an extension to Monte Carlo’s: they also employ random generation of solutions as starting points, but following iterations employ biology-inspired heuristics to localize next candidate solutions. In each iteration, the ‘population’ of feasible solutions (individuals) are evaluated in the optimization environment, and each one is assessed a fitness score. Like in the Evolution theory, only the fittest will be allowed to survive (included in the sample for the next iteration).
+
+Genetic algorithms (GA) are a special type of EA that implement ‘evolutionary’ heuristics inspired on chromosomic changes. By mimicking chromosomes during the meiosis, candidate solutions can exchange some of their variables (mating or recombination), and some can experience a random change in one or more variables (mutation). By iterating over this ‘sexual’ cycle, fitter and fitter solutions will be obtained.
+
+\subsubsection{Machine learning }
+% \addcontentsline{toc}{subsubsection}{Machine learning }
+Artificial Intelligence and Machine Learning are very popular computer science fields these days. Globally, they are algorithms that can ‘learn’ from their own ‘experience’ by extracting patterns and relationships out of the supplied data. They can be studied as non-linear statistical data modelling tools.
+
+One of the hottest branches of Machine Learning are Artificial Neural Networks and, especially, Deep Learning. The implemented algorithms in these categories mimic the way neurons work in the brain. Like all mathematical functions, each ‘neuron’ produces an output that depends on the input. Many neurons are grouped together in layers and these layers are concatenated, having the output of one layer fed as the input of the next one. Layers can back-propagate, and modify the input of previous layers, like the feedback mechanism of the brain. Ultimately, this construction generates a huge set of self-adjusting equations that can optimize wide ranges of observations. For example, they are actively used in speech recognition, computer vision or artificial intelligence. The hype produced by its success in other areas made it permeate towards some areas of science where its application is controversial and less ‘fancy’ algorithms like random walks (Monte Carlo and similar) are equally performant $ \{ $ $ \} $ . Chapter 01 contains more details in this aspect.
+
+\subsection{Multi objective optimization}
+% \addcontentsline{toc}{subsection}{Multi objective optimization}
+Until now, the enumerated algorithms only consider scalar functions. This is, functions that return scalar magnitudes or ‘single values’. However, if the function returns n-dimensional data, navigating towards the optimum is not so intuitive. Since there is more than one target value, conflicting decisions might arise.
+
+Say we need to minimize a function that takes a vector in R3 and returns another vector in R3. Since we have to reach the origin by minimization; this is, all the elements in the vector must be 0. What if the first element in the vector is smaller, but the second is greater? One possibility is to construct a general function out of those functions, like the vector norm or the Euclidean distance. In more complex cases, simple weighted linear sum might work, but the weights must be carefully chosen for each case; otherwise, convergence problems might appear $ \{ $ $ \} $ .
+
+One alternative which does not involve a dimensionality reduction (R3 to R in the previous example) is the Pareto optimality criterion. It is based on Pareto-dominance: a new solution dominates an existing one if one of the variables is improved without hurting the others. By enumerating a high number of solutions and comparing them in terms of Pareto-dominance, a reduced set of Pareto-dominating solution can be found. When no more Pareto-dominating solutions can be found, that set is said to be Pareto-optimal and constitutes the Pareto front: the solutions to the problem.
+
+Optimization processes like this are more common that they appear. At the supermarket, all clients decide on the trade-off between price and quality every day. Normally, humans solve this by setting a cutoff on one of the variables. For example, a maximum budget is set. However, if all possibilities are considered, the resulting solutions would range from the cheapest possible product to the most expensive one, including all the good enough (Pareto-dominating) combinations in between. However, if a new product is added to the catalog and is cheaper than its competitors without a decrease in quality, that new product will dominate all other products with the same quality but higher price.
+
+This type of optimization is very complex to model with classical optimization methods, and is usually easier to employ the heuristic methods. A particularly performant combination is using Genetic Algorithms, which results in Multi-Objective Genetic Algorithms (MOGA). This is the type of algorithm GaudiMM uses under the hood, whose implementation will be detailed below.
+
+\section{Implementation}
+% \addcontentsline{toc}{section}{Implementation}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 1 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[hbtp]
+	\caption{GaudiMM: technical datasheet}
+	\footnotesize
+	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
+	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
+	\newcommand{\tableheading}[1]{\multicolumn{2}{c}{\textsc{#1}}}
+	\begin{tabularx}{\textwidth}{RL}
+		\toprule
+		%row no:1
+		\tableheading{GaudiMM} \\
+		\toprule
+		%row no:2
+		\textit{Description} & A modular optimization platform for molecular design \\
+		\midrule
+		%row no:3
+		\textit{Requirements} & Python, UCSF Chimera, OpenMM, IMP, DSX, ProDy... \\
+		\midrule
+		%row no:4
+		\textit{License} & Apache 2 \\
+		\midrule
+		%row no:5
+		\textit{Download} & \href{https://github.com/insilichem/gaudi}{github.com/insilichem/gaudi} \\
+		\midrule
+		%row no:6
+		\textit{Documentation} & \href{https://gaudi.readthedocs.io}{gaudi.readthedocs.io} \\
+		\midrule
+		%row no:7
+		\textit{Citation} & J. Comput. Chem. 2017, 38, pp 2118–2126. DOI: 10.1002/jcc.24847 \\
+		\bottomrule
+
+	\end{tabularx}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 1 ends here %%%%%%%%%%%%%%%%%%%%
+
+
+
+GaudiMM is a Python package that allows to build and refine of chemobiological structures through multi-objective optimization. Built on top of the NSGA-II algorithm, it features a modular, extensible architecture that conceptually emphasizes the three main stages of the optimization process: exploration, evaluation and selection. This section will describe all the details behind its rationale and implementation in a molecular modeling environment. For practical use cases, please refer to \autoref{chap:06}, where several examples are presented.
+
+\subsection{The NSGA-II algorithm}
+% \addcontentsline{toc}{subsection}{The NSGA-II algorithm}
+NSGA-II is a multi-objective genetic algorithm (MOGA) developed by K. Deb. It has been thoroughly tested and benchmarked in well-characterized multi-objective problems $ \{ $ $ \} $  and is considered a prototypical MOGA.
+
+The algorithm can be described in three main stages (exploration, evaluation and selection) that are executed iteratively until an exit condition is met (usually, convergence or maximum steps). Generating new candidate solutions or individuals is considered within the \textit{exploration} stage, and can be achieved by random attribute generation or combining previously existing individuals. In the evaluation stage, the candidates are assessed with different functions or objectives, each returning a scalar that represents a fitness score for that objective. Finally, the selection stage collects all the individuals and compares their scores to select the best individuals according to the Pareto dominance criterion.
+
+In more detail, NSGA-II starts with the generation of a random set of potential solutions (\textit{individuals}) which comprise the so-called \textit{initial population}. This first set of individuals is then evaluated with one or more \textit{cost functions} and each individual is assigned a \textit{fitness }score vector, the elements of which are the result of those cost functions. At this point, a small subset of the population is submitted to a round of random modification of parameters (mutation) or exchanging some of their attributes (recombination), and are then assessed by the same cost functions. Being random, the results of these variations can be better or worse than their preceding counterparts (parents). Finally, both the offspring and the parental generation ($ \mu $ +$ \lambda $  strategy) compete in the selection tournament, which will rule which ones will replace the initial population. After a number of iterations, the initial population will have evolved and, eventually, will end up providing reasonable solutions to the problem that represent a compromise between the analyzed variables (see fig. \ref{fig:nsga}).
+
+
+
+
+\begin{figure} % FIXME!
+	\vspace*{-1cm}
+	\includegraphics[width=0.9\textheight,angle=90]{./figures/04/nsga.png}
+	\cprotect\caption[NSGA-II algorithm]{Flowchart of the modular NSGA-II multi-objective genetic algorithm (MOGA) implemented in GaudiMM. $ N $ is the number of individuals in the initial population $P$. Values $\lambda$ and $\mu$ are related to the number of children produced at each generation and the number of individuals selected for the next generation, respectively. Together they control the offspring population size, $ P_{0} $. Constants $ mut $ and $ cx $ are the probabilities associated to mutation and crossover.}
+	\label{fig:nsga}
+\end{figure}
+
+
+\subsection{Of individuals and genes: the exploration stage}
+% \addcontentsline{toc}{subsection}{Of individuals and genes: the exploration stage}
+The initial step of all the iterations in the algorithm is the exploration, which is responsible for the generation of new candidate solutions. A candidate solution is defined by a list of attributes, each representing the state of a molecular property. Generating new solutions simply involves changing the value of one or more attributes in that list.
+
+Since GaudiMM is based on a genetic algorithm, the implementation follows the same biologicist terminology. In GaudiMM any candidate solution is encoded in a special object called \textit{Individual}. All \textit{Individual} objects in the simulation are defined by the same high-level attributes, which are called \textit{genes}. In the same fashion, the state of each gene is defined by its \textit{allele} attribute. Depending on the gene, the allele can be a list of numbers, a path to a file, a matrix$ \ldots $
+
+For example, a typical optimization problem is finding the dihedral torsion that gives the minimum energy in the ethane molecule. The Individuals featured in this example would only need exploring a single variable, the torsion angle of the C-C bond, with values ranging from 0 to 360º. In GaudiMM-speak, the gene would be the bond \textit{rotator} and the allele the different angles.
+
+The key part of genetic algorithms is the implementation of variation operators as part of the exploration stage. Instead of merely trusting randomness, existing solutions are combined in hopes of obtaining a better child solution. These two operations are called mutation and crossover or mating, mimicking what happens in the cell nucleus at the chromosomic level.
+
+
+
+
+
+\begin{figure}[H] % FIXME!
+	\includegraphics[width=\textwidth]{./figures/04/ga-crossover-mut.png}
+	\caption[Mutation and crossover]{Mutation and crossover operations introduce variability in the parental population.}
+	\label{fig:cxmut}
+\end{figure}
+
+
+
+Taking all these requirements into account, genes in GaudiMM are programmatically defined by four functions (express, unexpress, mutate and mate) and an attribute (allele). Additional methods and attributes can be defined to support these required elements, if needed. Since each gene is a clearly separate entity, the Individual object can feature more than one gene, and one gene can be present more than once with different parameters.
+
+This adds an unprecedented versatility when configuring a GaudiMM calculation: the user can decide which molecular features must be assessed for every case. For conformational searches it might be enough with the Torsion gene, but for protein-ligand docking the Search gene will be required too. Additionally, if the built-in genes do not fulfill the requirements of the simulation, new ones can be written and added to GaudiMM thanks to is modular architecture and well-defined programmatic interface.
+
+This is, genes are more than simple \textit{allele} attribute holders: they are high-level abstractions of operators that can make reversible changes in a molecule based on the value of its allele. Like in Biology, changes in the allele are only visible if the corresponding gene is being \textit{expressed}. In those terms, GaudiMM genes encompass both the allele and the expression mechanism. In the previous example, when the allele changes the torsion gene needs to update the coordinates of the atoms affected by the dihedral rotation, and only those. To make changes consistent, it might also need to \textit{unexpress} or undo those changes to the original state. These changes can happen in the topology or in the coordinates of an associated molecule.
+
+\subsubsection{Topology modifiers}
+% \addcontentsline{toc}{subsubsection}{Topology modifiers}
+Genes that fall in this category perform modifications on the atoms that conform the molecular structure and/or their connectivity. For example, they could increase the length of a ligand linker, change the metal element of a metallic cofactor or mutate some residues in a peptide sequence.
+
+\begin{itemize}
+	\item \textbf{Molecule gene}. It is the main gene, as it will be used to load molecular structures from files (PDB, mol2, xyz or anything else supported by UCSF Chimera). All other genes depend on the initial topology and coordinates provided by one or more Molecule genes. In addition to loading files, the `path` parameter support loading from a directory, whose contents determine the final behavior:
+
+\begin{itemize}
+	\item If the directory contains molecule files, the allele will be set to one of them randomly for each individual. This allows GaudiMM to deal test a library of compounds against certain criteria; i.e. virtual screening.
+
+	\item If the directory contains subdirectories which, in turn, contain molecules files, the gene will sort those subdirectories by name and then pick one molecule from each, in that order. The chosen molecules will constitute the allele and will be chained linearly as specified in the accompanying meta file, which lists the serial number of the potential donor and acceptor atoms.
+
+
+\end{itemize}
+	\item \textbf{Mutamers gene}. Given a residue position in a protein structure, it can replace its sidechain to any other natural amino acid specified in the configuration. Useful to study site mutations.
+\end{itemize}
+
+\subsubsection{Coordinates modifiers}
+% \addcontentsline{toc}{subsubsection}{Coordinates modifiers}
+Genes that fall in this category only alter the positions of the atoms involved in a molecular structure. They can modify the full structure, like a rigid translation or rotation of the molecule, or only a part, like the sidechain orientation of a protein residue.
+
+\begin{itemize}
+	\item \textbf{Torsion gene}. It helps explore small molecules flexibility by performing bond rotations in the selected Molecule objects, if they exhibit free bond rotations.
+
+	\item \textbf{Search gene}. It performs rigid transformations on Molecules (translation and rotation). A radius parameter can be set to limit the search sphere range. If the radius is zero, the molecule won’t be translated but can freely rotate around the anchor atom, which is useful for covalent bond emulation.
+
+	\item \textbf{Rotamers gene}. It allows to explore side-chain conformations in protein residues by applying Dunbrack’s $ \{ $ $ \} $  or Dynameomics rotamer libraries $ \{ $ $ \} $ .
+
+	\item \textbf{NormalModes gene}. Given a Molecule object, it calculates normal modes with elastic network methods and applies the resulting collective motions as possible variants of the initial coordinates set.
+
+	\item \textbf{Trajectory gene}. Given a molecular dynamics trajectory file, it can retrieve random frames and apply the resulting coordinates to any Molecule object.
+\end{itemize}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 2 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[H] %FIXME!
+	\caption{List of genes implemented in GaudiMM.}
+	\label{table:gaudi-genes}
+ 			\centering
+\begin{tabular}{p{0.64in}p{1.77in}p{0.7in}}
+\hline
+%row no:1
+% \multicolumn{3}{|p{0.64in}|}{{\fontsize{8pt}{9.6pt}\selectfont Table 1. }} \\
+% \hhline{---}
+%row no:2
+\multicolumn{1}{|p{0.64in}}{\Centering {\fontsize{8pt}{9.6pt}\selectfont Name}} &
+\multicolumn{1}{p{1.77in}}{\Centering {\fontsize{8pt}{9.6pt}\selectfont Description}} &
+\multicolumn{1}{p{0.7in}|}{\Centering {\fontsize{8pt}{9.6pt}\selectfont Depends on}} \\
+\hhline{---}
+%row no:3
+\multicolumn{1}{|p{0.64in}}{{\fontsize{8pt}{9.6pt}\selectfont Molecule}} &
+\multicolumn{1}{p{1.77in}}{{\fontsize{8pt}{9.6pt}\selectfont Load and build structures}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+\hhline{~~~}
+%row no:4
+\multicolumn{1}{|p{0.64in}}{{\fontsize{8pt}{9.6pt}\selectfont Rotamers}} &
+\multicolumn{1}{p{1.77in}}{{\fontsize{8pt}{9.6pt}\selectfont Explore side chain flexibility}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+\hhline{~~~}
+%row no:5
+\multicolumn{1}{|p{0.64in}}{{\fontsize{8pt}{9.6pt}\selectfont Mutamers}} &
+\multicolumn{1}{p{1.77in}}{{\fontsize{8pt}{9.6pt}\selectfont Explore mutation of residues}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+\hhline{~~~}
+%row no:6
+\multicolumn{1}{|p{0.64in}}{{\fontsize{8pt}{9.6pt}\selectfont NormalModes}} &
+\multicolumn{1}{p{1.77in}}{{\fontsize{8pt}{9.6pt}\selectfont Explore collective motions}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont ProDy}} \\
+\hhline{~~~}
+%row no:7
+\multicolumn{1}{|p{0.64in}}{{\fontsize{8pt}{9.6pt}\selectfont Search}} &
+\multicolumn{1}{p{1.77in}}{{\fontsize{8pt}{9.6pt}\selectfont Translation and rotation of Molecules}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+\hhline{~~~}
+%row no:8
+\multicolumn{1}{|p{0.64in}}{{\fontsize{8pt}{9.6pt}\selectfont Torsion}} &
+\multicolumn{1}{p{1.77in}}{{\fontsize{8pt}{9.6pt}\selectfont Dihedral rotation of bonds}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+\hhline{~~~}
+%row no:9
+\multicolumn{1}{|p{0.64in}}{{\fontsize{8pt}{9.6pt}\selectfont Trajectory}} &
+\multicolumn{1}{p{1.77in}}{{\fontsize{8pt}{9.6pt}\selectfont Load frames from MD trajectories}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont MDTraj}} \\
+\hhline{---}
+
+\end{tabular}
+ \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 2 ends here %%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection{Of environments and objectives: the evaluation stage}
+% \addcontentsline{toc}{subsection}{Of environments and objectives: the evaluation stage}
+After generating candidate solutions, these must be evaluated with the optimization criteria. In genetic algorithms, this is usually called assessing the fitness of the individuals: fitter individuals are more qualified to survive in the environment.
+
+Mimicking these concepts, the GaudiMM implementation creates an Environment object that list the optimization criteria, each represented by an Objective entity. Objectives are also independent units that can be instantiated multiple times in the same Environment, but the defined interface is simpler that in genes: a ‘weight’ attribute defines the optimization type (maximization or minimization), and a function named ‘\textit{evaluate’} that takes an Individual object and returns a numerical value as result. What the \textit{evaluate} function does behind the scenes does not actually matters as long as a number is produced: calculate a distance between two atoms, retrieve a parameter from a database, compute the potential energy with an external MM library$ \ldots $
+
+As a result, GaudiMM ships with a rather diverse set of objectives, combining 3\textsuperscript{rd} party packages and custom developments in the same distribution. Together they cover all kinds of energetic, geometric and spatial measurements, allowing to use different levels of theory at the same time in a seamless workflow. Any geometric or energetic parameters that could describe a molecular system can be used as objectives to drive the GA exploration. This allows us to turn the tables on routine protocols based on computing energetic optimizations and then analyzing the results in hopes of finding a suitable model that fits the intended restraints; i.e. those same analysis tools can guide the optimization process from the beginning.
+
+\subsubsection{Geometry measurement}
+% \addcontentsline{toc}{subsubsection}{Geometry measurement}
+\begin{itemize}
+	\item Angle. Given three atoms, this objective calculates the angle between those. By minimizing the difference between the measured angle and the target one, the final angle can be optimized. It will calculate the dihedral if four atoms are specified.
+
+	\item Distance. If two atoms are provided, this objective calculates the distance between. By minimizing the difference against a target value, the structure can be optimized to fulfill that requirement. It also supports calculating distances to groups of atoms by taking the centroid of the group.
+
+	\item Inertia. This objective calculates the inertia tensors of two structures and returns the sine of the smallest angle formed between any of the possible pairings. It can be useful to align ligands along the major axis of a protein.
+
+
+\end{itemize}\subsubsection{Spatial measurement}
+% \addcontentsline{toc}{subsubsection}{Spatial measurement}
+\begin{itemize}
+	\item Solvation. Solvent-Accessible Surface Area (SASA) and Solvent-Excluded Surface Area (SESA) are two common techniques to describe the solvation of a structure. It can be used to optimize structures in terms of exposure of inside pockets or their folding. By maximizing SASA or SESA, the structure will tend to open up; by minimizing those values, the trend will be towards a more compact conformation.
+
+	\item Volume. This objective calculates the volume occupied by a structure. It does so by computing the solvent-exposed surface of the structure, which is then considered as a polyhedron of thousands of triangular faces.
+
+
+\end{itemize}\subsubsection{Energy calculation}
+% \addcontentsline{toc}{subsubsection}{Energy calculation}
+\begin{itemize}
+	\item DSX. DrugScoreX is a knowledge-based docking scoring function developed by Neudert $\&$  Klebe $ \{ $ 10.1021/ci200274q$ \} $ . It is specially designed to compute interaction energies between protein structures and small compounds. This objective is a Python wrapper around the DSX executables and input files.
+
+	\item Energy. This objective allows to calculate the potential energy of a structure with the Molecular Mechanics force fields implemented in OpenMM. Parameters must be provided for custom residues.
+
+	\item LigScore. Another docking scoring function developed by Sali $ \{ $ IMP$ \} $  which allows to obtain protein-ligand interaction energies. While IMP is a C++ project with Python bindings, the LigScore function is only exposed through an executable. This objective can call that binary and parse the resulting energies from the output.
+
+	\item Vina. AutoDock Vina is a popular open-source package to perform protein-ligand docking. This objective calls the Vina executable in score-only mode to calculate the interaction energies between a protein and a ligand.
+
+	\item GOLD. This commercial software suite is one the most used solutions to calculate accurate docking poses. With this objective, all the scoring functions exposed in GOLD can be used as guiding evaluators in GaudiMM: PLP, GoldScore, ChemScore$ \ldots $  License is needed for this to work.
+
+	\item NWChem. This objective provides a way to run quantum mechanics calculations in this popular open-source software suite. Provided a template input-file, this objective will insert the appropriate coordinates, charge and multiplicity. While all methods implemented in NWChem are potentially usable, only semi-empirical ones are recommended in terms of speed; specially for large structures.
+
+
+\end{itemize}\subsubsection{High-level chemical descriptors}
+% \addcontentsline{toc}{subsubsection}{High-level chemical descriptors}
+\begin{itemize}
+	\item Contacts. This objective can calculate two type of distance-based energy descriptors. When the ‘hydrophobic’ mode is chosen, this objective will maximize potentially attracting interactions between close enough atoms by applying a Lennard-Jones-like scoring function. If the ‘clashes’ mode is chosen, it will minimize the steric hindrance of the structure by minimizing the volumetric overlap of the Van der Waals spheres of atoms that are too close.
+
+	\item HBonds. This objective uses geometrical criteria to calculate the number of hydrogen bonds between potential donors and acceptors.
+
+	\item Coordination. By applying a type of computer vision algorithm called Point Set Registration, this objective can identify potential coordination geometries around a metal center. It returns the RMSD similarity between the first coordination sphere and the ideal polyhedron: the lower the value, the better the geometry.
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 3 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[H] %FIXME!
+	\caption{List of objectives implemented in GaudiMM.}
+	\label{table:gaudi-objectives}
+ 			\centering
+\begin{tabular}{p{0.58in}p{2.86in}p{0.7in}}
+\hline
+%row no:1
+% \multicolumn{3}{|p{0.58in}|}{{\fontsize{8pt}{9.6pt}\selectfont Table 2. }} \\
+% \hhline{---}
+%row no:2
+\multicolumn{1}{|p{0.58in}}{\Centering {\fontsize{8pt}{9.6pt}\selectfont Name}} &
+\multicolumn{1}{p{2.86in}}{\Centering {\fontsize{8pt}{9.6pt}\selectfont Description}} &
+\multicolumn{1}{p{0.7in}|}{\Centering {\fontsize{8pt}{9.6pt}\selectfont Depends on}} \\
+\hhline{---}
+%row no:3
+\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont Angle}} &
+\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Optimize angle of three atoms, or dihedral of four atoms}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+\hhline{~~~}
+%row no:4
+\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont Contacts}} &
+\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Minimize steric clashes, maximize hydrophobic interactions}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+\hhline{~~~}
+%row no:5
+\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont Coordination}} &
+\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Optimize coordination geometry of metal center}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont In-house}} \\
+\hhline{~~~}
+%row no:6
+\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont Distance}} &
+\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Optimize distance between two or more atoms}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+\hhline{~~~}
+%row no:7
+\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont DSX}} &
+\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Docking scoring function }} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont DrugScoreX}} \\
+\hhline{~~~}
+%row no:8
+\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont Energy}} &
+\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Minimize molecular mechanics potential energy}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont OpenMM}} \\
+\hhline{~~~}
+%row no:9
+\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont HBonds}} &
+\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Detect hydrogen bonds }} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+\hhline{~~~}
+%row no:10
+\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont Inertia}} &
+\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Align axes of inertia of two or more molecules}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont In-house}} \\
+\hhline{~~~}
+%row no:11
+\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont LigScore}} &
+\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Docking scoring function}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont IMP}} \\
+\hhline{~~~}
+%row no:12
+\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont NWChem}} &
+\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Launch NWChem QM calculations}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont NWChem}} \\
+\hhline{~~~}
+%row no:13
+\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont Solvation}} &
+\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Measure solvent accessible solvent area}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+\hhline{~~~}
+%row no:14
+\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont Volume}} &
+\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Measure volume occupied by molecule}} &
+\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+\hhline{---}
+
+\end{tabular}
+ \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 3 ends here %%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection{Of tournaments and trade-offs: the selection stage}
+% \addcontentsline{toc}{subsection}{Of tournaments and trade-offs: the selection stage}
+Once the Individuals have been assigned a fitness score, these values must be compared to assess how good of a solution they make. In multi-objective optimization problems there is no ‘best’ solution in usual terms. Instead, a set of trade-offs between the involved (and usually conflicting) variables is required. NSGA-II solves this by following the Pareto optimality criterion explained before, which will iteratively collect the ‘best’ candidates found in the Pareto front of the population. However, when more variables (objectives) are added to the optimization, the Pareto front grows in dimensionality and enriching the Pareto optimal set can get difficult. Deb et al do not recommend more than three objectives for NSGA-II, but several extensions to the algorithm are available (MONSGA-II, NSGA-III) exist to improve this situation. Higher dimensionality will also involve a larger number of possible solutions (even when Pareto-optimality is reached).
+
+To ensure a rich Pareto front in constructed, NSGA-II includes a crowding parameter, and GaudiMM provides structural similarity comparisons when scores are very close to each other, resulting in a good compromise between diversity and number of solutions proposed.
+
+\subsection{Analyzing the results}
+% \addcontentsline{toc}{subsection}{Analyzing the results}
+In multi-objective optimization, ultimately choosing which solution is the ‘best’ solution is up to the decision maker: the researcher. Some strategies to make that decision involve reducing the fitness vector to a scalar using an adequate function. However, since that function is usually not characterized in tentative molecular modelling tasks, a UCSF Chimera extension has been developed GAUDIView along GaudiMM to aid in that decision in a more interactive manner.
+
+GAUDIView will list the proposed solutions along with the fitness of each objective in spreadsheet-like dialog. Upon clicking each entry, the UCSF Chimera canvas will load and render a 3D interactive depiction of the structure. The table can be sorted by columns and filtered by threshold criteria, which can reduce the complex surface of the Pareto front to the ‘interesting parts’ (according to the decision maker) dynamically.
+
+
+
+
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{./figures/04/gaudiview.png}
+	\caption[GaudiView]{Analysis of a GaudiMM dual docking calculation with GaudiView. Each row of the table represents one candidate solution that will be depicted in the 3D canvas upon selection.}
+	\label{fig:gaudiview}
+\end{figure}
+
+
+\subsection{The code behind}
+% \addcontentsline{toc}{subsection}{The code behind}
+GaudiMM was conceived with extensibility in mind. Stemming from quick drafts on UCSF Chimera Python interpreter, the codebase rapidly outgrew a single file of a hundred lines into a full-fledged library with thousands of lines of code. Using Python as the main language allowed to design a modular architecture focused on the reutilization of existing codebases easily looking forward obtaining a working proof-of-concept in very little time.
+
+However, UCSF Chimera is still the main library behind the scenes. This interactive 3D viewer offers lots of analysis tools and robust molecular abstractions that allowed us to implement most of GaudiMM genes and objectives in few lines of code. However, everything has a price and UCSF Chimera was not designed to be used as a library in other projects; instead it expects external projects to be executed within UCSF Chimera interface. To overcome this limitation, a separate package named PyChimera was developed. With PyChimera, other Python libraries can be used together with UCSF Chimera which allowed us to intertwin other projects in GaudiMM. That way, MM energies can be computed with OpenMM, Normal Modes Analysis calculated with ProDy, and more (see Table X). Further details are given in Chapter 5, where PyChimera has proved to also be instrumental in the development of new graphical interfaces.
+
+\section{GaudiMM as an educational tool: undergoing developments}
+% \addcontentsline{toc}{section}{GaudiMM as an educational tool: undergoing developments}
+The conceptual separation of exploration and evaluation implemented in GaudiMM gives a clear understanding of the different variables involved in the optimization process. This has proved to be a very valuable as a teaching tool in lower degrees of education. Students involved in GaudiMM development have contributed new modules even with a non-chemical background. Some highlights include a gene to navigate the chemical space or a coupled gene/objective pair to assess ligand binding pathways.
+
+\subsection{Navigating the chemical space}
+% \addcontentsline{toc}{subsection}{Navigating the chemical space}
+GaudiMM already allowed to navigate the chemical space via the dynamic building capabilities of the Molecule gene, but it presented two limitations: (1) it is restricted to the provided fragments library, and (2) it only allows to construct linear concatenations of those fragments (i.e. no ramifications or rings).
+
+A new approach based on graph theory and pharmacophore matching is being developed in our group as part of the PhD thesis of J. E. Sánchez-Aparicio. This method, which interprets molecules as non-directed graphs that can grow and shrink arbitrarily, does not require any preexisting libraries and naturally considers ramifications. It has been successfully applied to propose designs of small molecule inhibitors for\textit{ K. pulmoniae} NDM-1 $ \beta $ -lactamase.
+
+\subsection{Finding ligand binding pathways}
+% \addcontentsline{toc}{subsection}{Finding ligand binding pathways}
+Docking studies provides insight on how a small molecule can interact with a bigger host molecule by assessing feasible binding poses. However, those are just static snapshots of a dynamic behavior. To study how the ligand reaches its binding sites, long Molecular Dynamics with steering restraints are needed and do not always guarantee a successful ligand pathway.
+
+An alternative approach was considered for one of the MSc dissertations supervised during my PhD studies $ \{ $ $ \} $ . The protein space was flooded with small probes placed in a tight grid and queried for steric impediments, resulting in points with higher or lower pseudo-energy scores. Then, lower-energy points were traversed from the outer regions of the protein in hopes of finding a continuous path that reached the ligand binding site. To consider the ligand size, shape or volume, a second step was proposed. The calculated paths were segmented in 5Å pieces and each of the resulting pieces was then submitted to a docking simulation with reduced search radius. The resulting structures were low-energy conformations of the ligand along the proposed pathway. All these poses were finally concatenated together to emulate a smooth trajectory ideal for depiction purposes.
+
+This proof of concept proves how the versatility present in GaudiMM can be used as part of bigger protocols, and is being reimplemented as a gene able to guide the exploration of docking studies along feasible pathways in the PhD studies of J. E. Sánchez-Aparicio.
+
+\section{Conclusions $\&$  Further work}
+% \addcontentsline{toc}{section}{Conclusions $\&$  Further work}
+The development of GaudiMM was motivated by the need of applying simple descriptors in complex biomolecular systems featuring residues beyond the natural amino acids: metallic cofactors, oligosugar-derivatives and partially characterized organic molecules. The main idea was to at least have ‘some’ results around a hard-to-model structure, instead of saying that it could not be done. Even with low accuracy methods, GaudiMM soon started to prove that the approach is good enough to provide starting points valid for further refinement and processing with more accurate methods. In other words, GaudiMM is a good entry point for multiscale protocols, which is further discussed in Chapter 05. Examples of its potential applications and how it has been used in real research will be detailed in Chapter 06.
+
+When the collection of genes and objectives began to grow, it became unmanageable as a single file script, and a modular object-oriented architecture was devised to hold each descriptor as a separate, but compatible, pieces of code. Using Python as the programming language made this refactoring very easy and allowed implementing new descriptors fast and simply. The educational value of this technical decision was not obvious until degree and master students began to collaborate in the project as part of their final dissertation.
+
+These observations have made clear that GaudiMM provides a mental framework suitable for implementing proof-of-concept multiscale protocols and explaining basic concepts of molecular modeling to newcomers in the field.
+
+That said, there is room for improvement in the performance area. Genetic algorithms are easily parallelizable by design, but depending on UCSF Chimera for most of the functions means that communication across processes could be expensive in terms of memory usage and synchronization overhead. Since the calculations rarely involve more than a few hours, the focus shifted towards the implementation of new modules rather than optimizing the speed of the new ones. However, it is one of the main milestones of the GaudiMM v2.0 roadmap.
