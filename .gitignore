@@ -1,6 +1,5 @@
 *.html
 *~
-*.vscode
 _*/
 helpful/*
 dissertation.pdf
