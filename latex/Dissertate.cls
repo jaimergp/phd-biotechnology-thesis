@@ -1,4 +1,5 @@
 %!TEX TS-program = xelatex
+%!TEX root = dissertation.tex
 %!TEX encoding = UTF-8 Unicode
 % -------------------------------------------------------------------
 %  @LaTeX-class-file{
@@ -14,9 +15,12 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{Dissertate}[2014/03/25 v2.0 Dissertate Class]
 % Comment/uncomment these two lines for digital A4 PDF or print-ready B5 PDF
-\LoadClass[12pt, oneside, a4paper]{book}
-% \LoadClass[12pt, twoside, openright, b5paper]{book}
-
+% Remember to change the geometry package as well
+\LoadClass[14pt,oneside,a4paper]{extbook}
+% \LoadClass[14pt,twoside,openright,b5paper]{extbook}
+%\RequirePackage[width=5.75in,letterpaper]{geometry}
+%\RequirePackage[b5paper]{geometry}
+\RequirePackage{geometry}
 %
 % Options
 %
@@ -68,13 +72,11 @@
     {\endoldenumerate\end{spacing}}
 
 % Text layout.
-%\RequirePackage[width=5.75in, letterpaper]{geometry}
-\RequirePackage[b5paper]{geometry}
 \usepackage{ragged2e}
 %\RaggedRight
 \raggedbottom
-% \RequirePackage[draft]{graphicx}
-\RequirePackage{graphicx}
+\RequirePackage[draft]{graphicx}
+%\RequirePackage{graphicx}
 \parindent 12pt
 \RequirePackage{lettrine}
 \RequirePackage{setspace}
@@ -98,6 +100,7 @@
 \RequirePackage{color}
 \RequirePackage{xcolor}
 \usepackage{hyperref}
+\usepackage{nameref}
 \RequirePackage{url}
 \usepackage{fontspec}
 \defaultfontfeatures+[\rmfamily]{RawFeature={-calt}} % disable contextual alternative ligatures (long Q, etc)
@@ -118,8 +121,8 @@
 \setmonofont[Scale=MatchLowercase]{Source Code Pro}
 
 
-\RequirePackage[labelfont={bf,sf,sc,footnotesize,singlespacing},
-                textfont={sf,footnotesize,singlespacing},
+\RequirePackage[labelfont={bf,sf,sc,small,singlespacing},
+                textfont={sf,small,singlespacing},
                 justification={justified,RaggedRight},
                 singlelinecheck=false,
                 margin=0pt,
@@ -151,8 +154,9 @@
 
 % References.
 \renewcommand\bibname{References}
-\RequirePackage[super,comma,numbers]{natbib}
+\RequirePackage[super,comma,numbers,sort&compress]{natbib}
 \renewcommand{\bibnumfmt}[1]{[#1]}
+\setlength{\bibsep}{0pt}
 
 % Chapter headings
 \RequirePackage[palatino]{quotchap}
@@ -198,6 +202,7 @@
 \def\advisor#1{\gdef\@advisor{#1}}
 \def\coadvisorOne#1{\gdef\@coadvisorOne{#1}}
 \def\coadvisorTwo#1{\gdef\@coadvisorTwo{#1}}
+\def\tutor#1{\gdef\@tutor{#1}}
 \def\committeeInternal#1{\gdef\@committeeInternal{#1}}
 \def\committeeInternalOne#1{\gdef\@committeeInternalOne{#1}}
 \def\committeeInternalTwo#1{\gdef\@committeeInternalTwo{#1}}
@@ -237,31 +242,33 @@
 
 \hypersetup{
     colorlinks,
-    citecolor=SchoolColor,
+    citecolor=black,
     filecolor=black,
     linkcolor=black,
     urlcolor=SchoolColor,
 }
-
 % Formatting guidelines found in:
 % http://www.gsas.harvard.edu/publications/form_of_the_phd_dissertation.php
 \renewcommand{\frontmatter}{
     \input{frontmatter/personalize}
     \pagenumbering{roman}
     \maketitle
+    \makesignatures
     \copyrightpage
     \setcounter{page}{1}
     \setstretch{\dnormalspacing}
       \abstractpage
       \officialacknowledgments
       \dedicationpage
-      \acknowledgments
+      % \acknowledgments
     \setstretch{\dxcompressedspacing}
     \maketoc
     \makelof % optional
     \makelot % optional
-    \setcounter{page}{1}
-    \pagenumbering{arabic}
+    % \setcounter{page}{1}
+    \renewcommand{\thepage}{\arabic{page}}
+    % \pagenumbering{arabic}
+    \renewcommand\thepage{\arabic{page}}
     \setstretch{\dnormalspacing}
 }
 
@@ -299,37 +306,57 @@
 }
 \renewcommand{\maketitle}{
     \thispagestyle{empty}
-    \vspace*{\fill}
-    \vspace{10pt}
     \begin{center}
+    \includegraphics[width=0.5\textwidth]{figures/logoUAB.jpg} \\
+    %\vspace*{\fill}
+    \vspace{40pt}
     \Huge \textcolor{SchoolColor}{\thetitle} \normalsize \\
-    \vspace{50pt}
-    By\\
+    \vspace{40pt}
+    \textsc{a dissertation submitted by\\
     \theauthor\\
-    \vspace{60pt}
-    \textsc{A dissertation submitted in satisfaction of the\\
-    requirements for the degree of \\ \@degree\\
-    %in\\ \@department\\ in the\\  Graduate Division\\ of the\\
-    \vspace{80pt}
-    \vspace{50pt}
-    % Committee in charge:\\
-    % \vspace{20pt}
-    % Professor \@coadvisorOne, Co-chair\\
-    % Professor \@coadvisorTwo, Co-chair\\
-    % Professor \@committeeInternal\\
-    % Professor \@committeeExternal\\
-    \vspace{50pt}
+    \vspace{12pt}
+    \textit{\&} directed by \\
+    \@advisor \\}
+    \vspace{12pt}
+    \textsc{in fulfillment of the requirements \\
+    for the degree of \\
+    \@degree\\
+    % \vspace{12pt}
+    % \rule{10mm}{.1pt}\\
+    \vspace*{\fill}
     \@university\\
     \@degreemonth\ \@degreeyear}
-    \end{center} \vspace*{\fill}
+    \end{center}
 }
 
+\newcommand{\makesignatures}{
+    \newpage
+    \thispagestyle{empty}
+    \begin{center}
+    \includegraphics[width=0.5\textwidth]{figures/logoUAB.jpg} \\
+    %\vspace*{\fill}
+    \vspace{40pt}
+    \Huge \thetitle \normalsize \\
+    \vspace{40pt}
+    \textsc{a dissertation submitted by\\
+    \theauthor\\
+    \vspace{12pt}
+    \textit{\&} recommended for acceptance \\
+      by advisor \\
+    \vspace{120pt}
+    \@advisor \\}
+    \vspace*{\fill}
+    \textsc{\@university\\
+    \@degreemonth\ \@degreeyear}
+    \end{center}
+}
 \newcommand{\copyrightpage}{
     \newpage
     \thispagestyle{empty}
     \vspace*{\fill}
     \scshape \noindent \small \copyright \small \@degreeyear\hspace{3pt}-- \theauthor \\
-    \noindent all rights reserved.
+    \noindent Licensed as Creative Commons BY-NC-ND\\
+    \noindent Attribution-NonCommercial-NoDerivs \\
     \vspace*{\fill}
     \newpage
     \rm
@@ -337,9 +364,9 @@
 
 \newcommand{\abstractpage}{
     \newpage
-    \pagestyle{plain}
+    \pagestyle{fancy}
     \lhead{Advisor: \\\@advisor\\}
-    \rhead{\@author\\[\baselineskip]}
+    \rhead{Author: \\\@author\\}
     \renewcommand{\headrulewidth}{0.0pt}
     \vspace*{35pt}
     \begin{center}
@@ -408,7 +435,7 @@
 }
 
 \newcommand{\dedicationpage}{
-    \newpage \thispagestyle{fancy} \vspace*{\fill}
+    \newpage \thispagestyle{empty} \vspace*{\fill}
     \scshape \noindent \input{frontmatter/dedication}
     \vspace*{\fill} \newpage \thispagestyle{empty}  \rm
 }
@@ -417,9 +444,13 @@
 \renewcommand{\backmatter}{
     \input{endmatter/personalize}
     \clearpage
-    \bibliography{references}
-    % \addcontentsline{toc}{chapter}{References}
-    \bibliographystyle{apalike2}
+    {
+      \footnotesize
+      \setstretch{1.0}
+      \bibliography{references}
+      \addcontentsline{toc}{chapter}{Bibliography}
+      \bibliographystyle{ieeetr}
+    }
     %\include{endmatter/colophon}
 }
 
@@ -493,3 +524,20 @@
 \newcommand*{\setautorefcolor}[2]{%
   \@namedef{#1autorefcolor}{#2}%
 }
+
+% Same vertical space in numbered and unnumbered chapters
+\renewcommand{\@makechapterhead}[1]{%
+  \chapterheadstartvskip%
+  {\size@chapter{\sectfont\raggedleft
+    {\chapnumfont
+      \ifnum \c@secnumdepth >\m@ne%
+        \if@mainmatter\thechapter\else\phantom{\thechapter}%
+      \fi\else\phantom{\thechapter}\fi
+      \par\nobreak}%
+    {\raggedleft\advance\leftmargin10em\interlinepenalty\@M #1\par}}
+  \nobreak\chapterheadendvskip}}
+
+
+% Fix vertical space in lists (from https://tex.stackexchange.com/a/10689)
+\usepackage{enumitem}
+\setlist{noitemsep}

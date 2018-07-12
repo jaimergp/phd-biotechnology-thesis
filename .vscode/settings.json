@@ -1,0 +1,24 @@
+{
+    "editor.wordWrap": "on",
+    "editor.fontLigatures": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.aux": true,
+        "**/*.cpt": true,
+        "**/*.bbl": true,
+        "**/*.blg": true,
+        "**/*.lof": true,
+        "**/*.log": true,
+        "**/*.lot": true,
+        "**/*.out": true,
+        "**/*.synctex.gz": true,
+        "**/*.toc": true,
+        "**/*.xdv": true,
+        "**/.logged": true,
+        "**/__latexindent_temp.tex": true,
+    }
+}
