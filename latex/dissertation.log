@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/Arch Linux) (preloaded format=xelatex 2018.6.30)  12 JUL 2018 16:16
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/Arch Linux) (preloaded format=xelatex 2018.6.30)  12 JUL 2018 17:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1239,9 +1239,9 @@ LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
 Requested font "Lato Regular" at 14.4pt
- -> pï¿¾¿Wï¿¾¿8V
+ -> @} ï¿¿‹]U
 Requested font "Lato Regular/OT" at 14.4pt
- -> pï¿¾¶Wï¿¾¿8V
+ -> @t ï¿¿‹]U
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1249,11 +1249,11 @@ Requested font "Lato Regular/OT" at 14.4pt
 .................................................
 \g__fontspec_family_LatoRegular_int=\count314
 Requested font "Lato Bold/OT" at 14.4pt
- -> @ï¿¾¬Wï¿¾¿8V
+ -> ^^Pj ï¿¿‹]U
 Requested font "Lato Bold/I/OT" at 14.4pt
  -> 
 Requested font "Lato Regular/I/OT" at 14.4pt
- -> PmWï¿¾¿8V
+ ->  + ï¿¿‹]U
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1265,9 +1265,9 @@ Requested font "Lato Regular/I/OT" at 14.4pt
 . Lato Bold scale = 0.7797272203368125.
 .................................................
 Requested font "Lato Regular/I/OT" at 14.4pt
- -> ï¿¾ï¿¿‹Yï¿¾¿8V
+ -> `ï¿¾‰"ï¿¿‹]U
 Requested font "Lato Regular/I/OT" at 14.4pt
- ->  ï¿¿Yï¿¾¿8V
+ -> ï¿¿°ï¿¾Œ"ï¿¿‹]U
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1305,9 +1305,9 @@ Requested font "Lato Bold/I/OT" at 14.4pt
 .................................................
 LaTeX Info: Redefining \sffamily on input line 120.
 Requested font "Source Code Pro" at 14.4pt
- -> ï¿¾°"Zï¿¾¿8V
+ ->  ï¿¿²"ï¿¿‹]U
 Requested font "Source Code Pro/OT" at 14.4pt
- -> 00Zï¿¾¿8V
+ -> 
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1315,11 +1315,11 @@ Requested font "Source Code Pro/OT" at 14.4pt
 .................................................
 \g__fontspec_family_SourceCodePro_int=\count315
 Requested font "Source Code Pro/BI/OT" at 14.4pt
- -> ï¿¿ï¿¿¾Yï¿¾¿8V
+ -> ^^Pï¿¿¯"ï¿¿‹]U
 Requested font "Source Code Pro/B/OT" at 14.4pt
- -> ^^Pï¿¿‚Yï¿¾¿8V
+ -> 
 Requested font "Source Code Pro/I/OT" at 14.4pt
- -> ^^Pï¿¿‚Yï¿¾¿8V
+ -> 
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1331,18 +1331,18 @@ Requested font "Source Code Pro/I/OT" at 14.4pt
 . Source Code Pro scale = 0.8333322295440248.
 .................................................
 Requested font "Source Code Pro/B/OT" at 14.4pt
- -> ^^Pï¿¿‚Yï¿¾¿8V
+ -> 
 Requested font "Source Code Pro/B/OT" at 14.4pt
- -> ^^Pï¿¿‚Yï¿¾¿8V
+ -> 
 .................................................
 . fontspec info: "set-scale"
 . 
 . Source Code Pro/B scale = 0.8333322295440248.
 .................................................
 Requested font "Source Code Pro/BI/OT" at 14.4pt
- -> ^^Pï¿¿‚Yï¿¾¿8V
+ -> 
 Requested font "Source Code Pro/BI/OT" at 14.4pt
- -> ^^Pï¿¿‚Yï¿¾¿8V
+ -> 
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1987,7 +1987,7 @@ ABD: EveryShipout initializing macros (./frontmatter/personalize.tex)
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
 (Font)              scaled to size 11.99991pt on input line 10.
 Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 11.99991pt
- -> 
+ -> P(&ï¿¿‹]U
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `SourceCodePro' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2212,7 +2212,8 @@ LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
 (Font)              scaled to size 6.31787pt on input line 1.
 Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
  6.31787pt
- -> 
+ -> ï¿¿°
+Nï¿¿‹]U
 ) [11
 
 
@@ -2257,24 +2258,171 @@ calt;+pnum;+lnum;+smcp;mapping=tex-text;" at 17.28pt
 
 
 
-] [15] [16] [17] [18] [19] [20] [21]
+] [15] [16] [17] [18] [19]
+Overfull \hbox (23.18602pt too wide) in paragraph at lines 77--77
+[][][][]\TU/EBGaramond12(0)/m/n/10 Review 
+ []
+
+
+Overfull \hbox (0.84602pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 if 
+ []
+
+
+Overfull \hbox (9.18602pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 this 
+ []
+
+
+Overfull \hbox (0.89601pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 is 
+ []
+
+
+Overfull \hbox (4.31602pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 in- 
+ []
+
+
+Overfull \hbox (20.67603pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 cluded 
+ []
+
+
+Overfull \hbox (3.33601pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 or 
+ []
+
+
+Overfull \hbox (8.58601pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 not  
+ []
+
+
+Overfull \hbox (23.18602pt too wide) in paragraph at lines 77--77
+[][][][]\TU/EBGaramond12(0)/m/n/10 Review 
+ []
+
+
+Overfull \hbox (0.84602pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 if 
+ []
+
+
+Overfull \hbox (9.18602pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 this 
+ []
+
+
+Overfull \hbox (0.89601pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 is 
+ []
+
+
+Overfull \hbox (4.31602pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 in- 
+ []
+
+
+Overfull \hbox (20.67603pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 cluded 
+ []
+
+
+Overfull \hbox (3.33601pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 or 
+ []
+
+
+Overfull \hbox (8.58601pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 not  
+ []
+
+
+Overfull \hbox (23.18602pt too wide) in paragraph at lines 77--77
+[][][][]\TU/EBGaramond12(0)/m/n/10 Review 
+ []
+
+
+Overfull \hbox (0.84602pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 if 
+ []
+
+
+Overfull \hbox (9.18602pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 this 
+ []
+
+
+Overfull \hbox (0.89601pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 is 
+ []
+
+
+Overfull \hbox (4.31602pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 in- 
+ []
+
+
+Overfull \hbox (20.67603pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 cluded 
+ []
+
+
+Overfull \hbox (3.33601pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 or 
+ []
+
+
+Overfull \hbox (8.58601pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 not  
+ []
+
+
+Overfull \hbox (23.18602pt too wide) in paragraph at lines 77--77
+[][][][]\TU/EBGaramond12(0)/m/n/10 Review 
+ []
+
+
+Overfull \hbox (0.84602pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 if 
+ []
+
+
+Overfull \hbox (9.18602pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 this 
+ []
+
+
+Overfull \hbox (0.89601pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 is 
+ []
+
+
+Overfull \hbox (4.31602pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 in- 
+ []
+
+
+Overfull \hbox (20.67603pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 cluded 
+ []
+
+
+Overfull \hbox (3.33601pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 or 
+ []
+
+
+Overfull \hbox (8.58601pt too wide) in paragraph at lines 77--77
+\TU/EBGaramond12(0)/m/n/10 not  
+ []
+
+[20] [21]
 Overfull \hbox (14.18639pt too wide) in paragraph at lines 89--90
 \TU/EBGaramond12(0)/bx/n/12 emerged recently $\OMS/cmsy/m/n/12 f$ [][]\TU/EBGar
 amond12(0)/bx/n/12 https://opensourcemolecularmodeling.github.io/[][], [][]http
 s://omictools.com/[][]$\OMS/cmsy/m/n/12 g$
- []
-
-
-Overfull \hbox (1.30643pt too wide) in paragraph at lines 89--90
-\TU/EBGaramond12(0)/bx/n/12 facto online repository for open-source software, s
-hows more than 2000 repositories for â€˜chem-
- []
-
-
-Overfull \hbox (16.66635pt too wide) in paragraph at lines 93--94
-\TU/EBGaramond12(0)/bx/n/12 leased in 2000 $\OMS/cmsy/m/n/12 f$ [][]\TU/EBGaram
-ond12(0)/bx/n/12 http://plato.cgl.ucsf.edu/chimera/data/downloads/1.1602/docs/r
-elnotes.html$[]$
  []
 
 [22] [23]
@@ -2477,7 +2625,7 @@ ingâ€™ model: atoms are abstracted as spheres
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
 (Font)              scaled to size 9.99994pt on input line 67.
 Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 9.99994pt
- -> `Fï¿¾§ï¿¾¿8V
+ -> ï¿¾^^Mqï¿¿‹]U
 [41] [42] [43]
 Requested font "EBGaramond12-Italic--oml-ebgaramond" at 14.4pt
  -> /usr/share/texmf-dist/fonts/tfm/public/ebgaramond-maths/EBGaramond12-Italic
@@ -2510,7 +2658,7 @@ LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/it' will be
 (Font)              scaled to size 9.4768pt on input line 146.
 Requested font "Lato Regular/I/OT:script=latn;language=DFLT;mapping=tex-text;" 
 at 9.4768pt
- ->  Mï¿¾¬ï¿¾¿8V
+ -> ï¿¾°Muï¿¿‹]U
 [47] [48] [49]
 \openout3 = `dissertation-3.cpt'.
 
@@ -3875,7 +4023,13 @@ Overfull \hbox (11.74603pt too wide) in paragraph at lines 169--169
 
 \openout3 = `dissertation-20.cpt'.
 
- (./dissertation-20.cpt) [118] [119]
+ (./dissertation-20.cpt) [118]
+Overfull \hbox (8.58803pt too wide) in paragraph at lines 207--208
+\TU/EBGaramond12(0)/bx/n/12 following this strategy in an attempt to reproduce 
+experimental NMR models (PDB ID 1ZE9$[]$).
+ []
+
+[119]
 Overfull \hbox (6.76639pt too wide) in paragraph at lines 226--227
 \TU/EBGaramond12(0)/bx/n/12 a deep computational insight on the work described 
 in $[][]$Pillar[5]arene glyco(mimetic)rotaxanes
@@ -4232,7 +4386,7 @@ v8glr/what_does_the_future_of_computational_chemistry/[][]
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
 (Font)              scaled to size 8.33328pt on input line 7.
 Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 8.33328pt
- -> @ï¿¾¼ï¿¿³ï¿¾¿8V
+ ->  yï¿¾¼ï¿¿‹]U
 
 Overfull \hbox (31.57379pt too wide) in paragraph at lines 4--8
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
@@ -4244,11 +4398,11 @@ Overfull \hbox (31.57379pt too wide) in paragraph at lines 4--8
 
 
 
-] [151] [152])
+] [151] [152] [153] [154])
 
 Package natbib Warning: There were undefined citations.
 
-[153]
+[155]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 48.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 48.
  (./dissertation.aux (./chapters/00-preface.aux) (./chapters/01-intro.aux) (./c
@@ -4259,7 +4413,7 @@ hapters/02-methods.aux) (./chapters/03-objectives.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 48.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: B7F7A996CD84CC920E52C933E8F34156.
+(rerunfilecheck)             Checksum: 86A339E8B64A792959F1B5E8E8DD3040.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -4269,12 +4423,12 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 36871 strings out of 492970
- 719406 string characters out of 6139408
- 886535 words of memory out of 5000000
- 40079 multiletter control sequences out of 15000+600000
+ 36966 strings out of 492970
+ 721221 string characters out of 6139408
+ 892952 words of memory out of 5000000
+ 40174 multiletter control sequences out of 15000+600000
  539691 words of font info for 104 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 67i,15n,118p,10529b,711s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,15n,118p,10529b,839s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on dissertation.pdf (156 pages).
+Output written on dissertation.pdf (158 pages).
