@@ -7,16 +7,7 @@
 
 % the front matter
 \input{frontmatter/personalize}
-% \maketitle
-% \copyrightpage
 \frontmatter
-% \abstractpage
-% \tableofcontents
-% %\authorlist
-% \listoffigures
-% \dedicationpage
-% \acknowledgments
-
 
 \makeatletter
     \if@twoside
@@ -31,7 +22,8 @@
 \makeatother
 
 % include each chapter...
-% \setcounter{chapter}{-1}  % start chapter numbering at 0
+%\setcounter{chapter}{-1}  % start chapter numbering at 0
+\include{chapters/00-preface}
 \include{chapters/01-intro}
 \include{chapters/02-methods}
 \include{chapters/03-objectives}
@@ -39,24 +31,18 @@
 \include{chapters/05-integrative}
 \include{chapters/06-applicative}
 \include{chapters/07-conclusions}
+\include{chapters/08-epilog}
 
-% \begin{appendices}
-% \makeatletter
-%     \if@twoside
-%         \fancyhf[reh]{\textit{Appendix \thechapter}}
-%     \fi
-% \makeatother
-% \include{chapters/annex}
-% \end{appendices}
-
-\setstretch{\dnormalspacing}
+\begin{appendices}
+    \makeatletter
+        \if@twoside
+            \fancyhf[reh]{\textit{Appendix \thechapter}}
+        \fi
+    \makeatother
+    \include{chapters/appendix-a}
+\end{appendices}
 
 % the back matter
 \backmatter
-
-% \clearpage
-% \bibliography{references}
-% % \addcontentsline{toc}{chapter}{References}
-% \bibliographystyle{apalike2}
 
 \end{document}

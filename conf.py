@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# PhD Thesis documentation build configuration file, created by
+# Ph. D. Thesis documentation build configuration file, created by
 # sphinx-quickstart on Tue Nov  7 19:15:17 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -46,7 +46,7 @@ source_suffix = '.rst'
 master_doc = 'contents/index'
 
 # General information about the project.
-project = 'PhD Thesis'
+project = 'Ph. D. Thesis'
 copyright = '2017, Jaime Rodríguez-Guerra Pedregal'
 author = 'Jaime Rodríguez-Guerra Pedregal'
 
@@ -112,7 +112,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'PhDThesisdoc'
+htmlhelp_basename = 'Ph. D.Thesisdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -139,7 +139,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'PhDThesis.tex', 'PhD Thesis Documentation',
+    (master_doc, 'Ph. D.Thesis.tex', 'Ph. D. Thesis Documentation',
      'Jaime Rodríguez-Guerra Pedregal', 'manual'),
 ]
 
@@ -149,7 +149,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'phdthesis', 'PhD Thesis Documentation',
+    (master_doc, 'Ph. D.thesis', 'Ph. D. Thesis Documentation',
      [author], 1)
 ]
 
@@ -160,8 +160,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'PhDThesis', 'PhD Thesis Documentation',
-     author, 'PhDThesis', 'One line description of project.',
+    (master_doc, 'Ph. D.Thesis', 'Ph. D. Thesis Documentation',
+     author, 'Ph. D.Thesis', 'One line description of project.',
      'Miscellaneous'),
 ]
 

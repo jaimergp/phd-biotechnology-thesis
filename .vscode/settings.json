@@ -13,6 +13,7 @@
         "**/*.blg": true,
         "**/*.lof": true,
         "**/*.log": true,
+        "**/*.lot": true,
         "**/*.out": true,
         "**/*.synctex.gz": true,
         "**/*.toc": true,

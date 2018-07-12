@@ -21,7 +21,7 @@ Classic protein-ligand docking studies simply devote to finding the correct orie
 In rigid protein-ligand docking, both the protein and the ligand are considered rigid. This is, the protein remains still during the whole procedure and the ligand is simply moved around with rigid translation and rotation. The only variable during the analysis is the position of the ligand and its orientation; both encodable as a single 4x4 transformation matrix (see fig. \ref{fig:xform-matrices}).
 
 
-\begin{figure}[H] % FIXME!
+\begin{figure} % FIXME!
 	\begin{Center}
 		\includegraphics[width=\textwidth]{./figures/06/xform-matrices.png}
 	\end{Center}
@@ -29,14 +29,6 @@ In rigid protein-ligand docking, both the protein and the ligand are considered 
 	\label{fig:xform-matrices}
 \end{figure}
 
-
-
-
-
-
-\begin{Center}
-\textit{Figure X. }
-\end{Center}
 
 In GaudiMM, implementing rigid protein-ligand requires three genes:
 
@@ -156,7 +148,7 @@ Streptavidin is composed of for monomers arranged as a dimer of dimers, each abl
 
 Ward and collaborators were trying to build this hypothetical ligand, but simply bonding the copper cofactor to one biotin on each side would not result in a compound able to reach both sites: a linker or spacer was needed to connect the biotins to the cofactor. The question is: which is the optimal length so the resulting ligand reaches both sites? This is where GaudiMM could help.
 
-As briefly described in Chapter 04, the Molecule gene is used to load structures from standard files like PDB or Mol2, but it can also be configured to load several files from a directory structure. If that directory contains two or more subdirectories which, in turn, contain molecular files, those are used to dynamically generate structures on the fly. The subdirectories are sorted alphabetically and one structure is randomly picked from each one. The chosen fragments are concatenated following the subdirectory order, using the atoms configured as connectors (first and last atom in the file, by default).
+As briefly described in \autoref{chap:04}, the Molecule gene is used to load structures from standard files like PDB or Mol2, but it can also be configured to load several files from a directory structure. If that directory contains two or more subdirectories which, in turn, contain molecular files, those are used to dynamically generate structures on the fly. The subdirectories are sorted alphabetically and one structure is randomly picked from each one. The chosen fragments are concatenated following the subdirectory order, using the atoms configured as connectors (first and last atom in the file, by default).
 
 In the dibiotin example, five subdirectories would be needed to construct a biotin-linker-cofactor-linker-biotin structure; one for each fragment:
 
@@ -230,7 +222,7 @@ In the GaudiMM manuscript, an unfolded Alzheimer $ \beta $ -amyloid structure wa
 
 \section{Multiscale modeling of multivalent enzyme inhibitors}
 % \addcontentsline{toc}{section}{Multiscale modeling of multivalent enzyme inhibitors}
-GaudiMM was conceived to be the entry door to the multiscale funnel, while the tools presented in Chapter 05 fill in other gaps down the funnel. In this section, a real example on how all these developments work together and allow to create integrative workflows is presented. It is a deep computational insight on the work described in $``$Pillar[5]arene glyco(mimetic)rotaxanes for the functional interrogation of multivalency responsive glycosidases$"$  $ \{ $ Angewandte, 2018$ \} $ , a collaboration with the IIQ-CSIC in Seville, Spain.
+GaudiMM was conceived to be the entry door to the multiscale funnel, while the tools presented in \autoref{chap:05} fill in other gaps down the funnel. In this section, a real example on how all these developments work together and allow to create integrative workflows is presented. It is a deep computational insight on the work described in $``$Pillar[5]arene glyco(mimetic)rotaxanes for the functional interrogation of multivalency responsive glycosidases$"$  $ \{ $ Angewandte, 2018$ \} $ , a collaboration with the IIQ-CSIC in Seville, Spain.
 
 \subsection{Introduction to the problem}
 % \addcontentsline{toc}{subsection}{Introduction to the problem}
@@ -238,11 +230,11 @@ Biological molecules are usually classified in four separate families: nucleic a
 
 A protein featuring covalently attached oligosaccharidic chains (or glycans) is called a glycoprotein. Glycoproteins are key recognition processes such as those in the mammal immune system, but can also be used for like solvent retention in extracellular secretions that demand high viscosity (mucus) or protection against freezing damage.
 
-However, not all protein-saccharidic collaborations are strictly covalent. Glycoside hydrolases (or glycosidases) can specifically recognize glycosides and\ catalyze the hydrolysis of their intermonomer bonds in complex sugars.  They are key in natural polymers degradation like starch (amylase) or cellulose (cellulase), pathogenesis, anti-bacterial activity (lysozyme) and normal cell function. Other examples are lectins, which exhibit high affinity for specific saccharidic residues through non-bonded interactions. They are involved in biofilm formation $ \{ $ $ \} $ , immune response $ \{ $ $ \} $  or even antineoplastic activities $ \{ $ adwan2014$ \} $ , to name a few. Studying mechanisms of inhibition would allow to develop new antibacterial techniques or avoid biofilm formation, for example.
+However, not all protein-saccharidic collaborations are strictly covalent. Glycoside hydrolases (or glycosidases) can specifically recognize glycosides and\ catalyze the hydrolysis of their intermonomer bonds in complex sugars.  They are key in natural polymers degradation like starch (amylase) or cellulose (cellulase), pathogenesis, anti-bacterial activity (lysozyme) and normal cell function. Other examples are lectins, which exhibit high affinity for specific saccharidic residues through non-bonded interactions. They are involved in biofilm formation $ \{ $ $ \} $ , immune response $ \{ $ $ \} $  or even antineoplastic activities,\cite{adwan2014} to name a few. Studying mechanisms of inhibition would allow to develop new antibacterial techniques or avoid biofilm formation, for example.
 
 Most common strategies for enzyme inhibition involve designing a mimetic ligand that can block the binding site of the substrate through a key-and-lock mechanism preventing the enzyme from performing any further action. For lectins and glycosidases, glycomimetic compounds like iminosugar-containing ligands can be employed. Iminosugar moieties are standard saccharides whose oxygen atom in the ring has been replaced by a nitrogen atom. The first iminosugar characterized, 1-deoxynojirimycin (DNJ) was isolated from a natural source and showed to be an alpha-glucosidase inhibitor with anti-diabetic and antiviral activities. Since then, more iminosugars have been described in the literature.
 
-Recently, the general intuition around the classical lock-and-key inhibition behavior was recently questioned in a study that described 2000-fold inhibition enhancement towards the Jack bean -mannosidase (JbM) when twelve copies of DNJ were displayed around a C60 fullerene $ \{ $ $ \} $ . The strategy, termed Multivalent Enzyme Inhibition (MEI) $ \{ $ $ \} $ , has been further observed in other systems $ \{ $ $ \} $ . Knowing that JbM has a very accessible binding pocket and is multimeric in solution provides an understandable rationale behind this enhancement: a single C60 construct can block several sites at once. However, this idea cannot explain why monomeric enzymes with deep and narrow binding pockets are also inhibited by bulky multivalent conjugates $ \{ $ $ \} $ . Additionally, it has been observed that putative sugars also inhibit their corresponding catalytic enzymes if they are multivalently displayed in a conjugate, defying the assumption of specificity and non-promiscuity glucosidases are thought to exhibit.
+Recently, the general intuition around the classical lock-and-key inhibition behavior was recently questioned in a study that described 2000-fold inhibition enhancement towards the Jack bean $\beta$-mannosidase (JbM) when twelve copies of DNJ were displayed around a C60 fullerene $ \{ $ $ \} $ . The strategy, termed Multivalent Enzyme Inhibition (MEI) $ \{ $ $ \} $ , has been further observed in other systems $ \{ $ $ \} $ . Knowing that JbM has a very accessible binding pocket and is multimeric in solution provides an understandable rationale behind this enhancement: a single C60 construct can block several sites at once. However, this idea cannot explain why monomeric enzymes with deep and narrow binding pockets are also inhibited by bulky multivalent conjugates $ \{ $ $ \} $ . Additionally, it has been observed that putative sugars also inhibit their corresponding catalytic enzymes if they are multivalently displayed in a conjugate, defying the assumption of specificity and non-promiscuity glucosidases are thought to exhibit.
 
 To shed light on such counterintuitive phenomena, García-Fernández \textit{et al }specifically designed a series of two-component pillar[5]arene rotaxane conjugates that exhibited both glycomimetic and non-glycomimetic (putative) residues. The first component is a H-shaped central axel, which exhibits four sp\textsuperscript{2}-iminosugar-type\textsuperscript{[12]} 6-oxa-5\textit{N},6\textit{O}-oxomethylidenenojirimycin (ONJ) residues, one on each on the stop caps. The second component is the pillar[5]arene, which exhibits ten moieties of glucose, mannose or galactose, depending on the variant, one on each of its ten rims (see fig. \ref{fig:rotaxane-compounds}).
 
@@ -254,9 +246,9 @@ To test the contribution of the multivalent saccharides, two reduced models that
 
 \begin{figure}[H] % FIXME!
 	\begin{Center}
-		\includegraphics[width=\textwidth]{./figures/06/glyco-inhibitors.pdf}
+		\includegraphics[width=\textwidth]{./figures/06/glyco-inhibitors.png}
 	\end{Center}
-	\cprotect\caption[Tested inhibitors against ScGH13 and TmGH1]{Different inhibitors variants tested against the monomeric ScGH13 and dimeric TmGH1 proteins. In the computational studies, only divalent model (number 3) and rotaxane variant 5a were tested. (Reproduced from XXXX $ \{ $ $ \} $ ).}
+	\cprotect\caption[Tested inhibitors against ScGH13 and TmGH1]{Different inhibitors variants tested against the monomeric ScGH13 and dimeric TmGH1 proteins. In the computational studies, only divalent model (number 3) and rotaxane variant 5a were tested. (Reproduced from XXXX $ \{ $ $ \} $ ).} % FIXME!
 	\label{fig:rotaxane-compounds}
 \end{figure}
 
@@ -269,7 +261,7 @@ All these inhibitors and their controls were tested and measured on two glycosid
 
 
 \begin{table}[H]
-	\cprotect\caption[Glycosidases inhibition tests]{ $K_{i}$ (in $ \mu M $) for the different inhibitors tested against the monomeric ScGH13 and dimeric TmGH1 proteins. (Adapted from Nierengarten 2018 $ \{ $ $ \} $ ).}
+	\cprotect\caption[Glycosidases inhibition tests]{ $K_{i}$ (in $ μM $) for the different inhibitors tested against the monomeric ScGH13 and dimeric TmGH1 proteins. (Adapted from Nierengarten 2018 $ \{ $ $ \} $ ).}
 	\label{table:glycosidase-inhibition}
 	\footnotesize
 	\newcolumntype{C}{>{\centering\arraybackslash}X}%

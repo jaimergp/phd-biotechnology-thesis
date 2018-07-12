@@ -5,7 +5,7 @@
 	\itshape And there was light. \\
 	\itshape There was still nothing, \\
 	\itshape but you could see it a lot better.
-	\qauthor{Woody Allen}
+	\qauthor{---Woody Allen}
 \end{savequote}
 
 \chapter{GaudiMM}
@@ -18,7 +18,7 @@
 
 With the current computational resources, one cannot pretend to perform a global exploration of the potential energy surface; not even for small systems. As a result, whatever the theory applied, the starting point of any calculation must be somehow close to or distantly resembling to the expected final structure. If several possibilities are considered, then a number of different starting points must be assessed. In other words, global optimization is usually not affordable and performing several local optimizations with different starting variables is often preferred.
 
-The take-home message is that almost every model will need a starting structure. A first and key step in every molecular modeling exercise. As mentioned in Chapter 01, sometimes this is as easy as downloading a file from an online database or drawing molecules in an interactive display. However, that is not always the case if only partial experimental data is available. This can end up constituting a sort of $``$writer’s block$"$  or $``$blank sheet syndrome$"$ : many projects strive to even start because of the complexity to find convenient starting points in a reasonably short amount of time. Sometimes, the researcher has no other option than manually adjusting the structure in an iterative, trial-and-error scheme until the calculation succeeds.
+The take-home message is that almost every model will need a starting structure. A first and key step in every molecular modeling exercise. As mentioned in \autoref{chap:01}, sometimes this is as easy as downloading a file from an online database or drawing molecules in an interactive display. However, that is not always the case if only partial experimental data is available. This can end up constituting a sort of $``$writer’s block$"$  or $``$blank sheet syndrome$"$ : many projects strive to even start because of the complexity to find convenient starting points in a reasonably short amount of time. Sometimes, the researcher has no other option than manually adjusting the structure in an iterative, trial-and-error scheme until the calculation succeeds.
 
 Alleviating that frustrating process is one of the main the motivations behind the development of GaudiMM, the tool central to this chapter. GaudiMM, which stands for Genetic Algorithms with Unrestricted Descriptors for Intuitive Molecular Modeling, can be described as a molecular sketcher that will help to obtain reasonable starting models for their calculations. Like a grid on a fresh canvas or sidewheels in a bike, it allows to handle multidimensional problems in an easy, guided process.
 
@@ -102,13 +102,13 @@ Genetic algorithms (GA) are a special type of EA that implement ‘evolutionary�
 
 \subsubsection{Machine learning }
 % \addcontentsline{toc}{subsubsection}{Machine learning }
-Artificial Intelligence and Machine Learning are very popular computer science fields these days. Globally, they are algorithms that can ‘learn’ from their own ‘experience’ by extracting patterns and relationships out of the supplied data. They can be studied as non-linear statistical data modelling tools.
+Artificial Intelligence and Machine Learning are very popular computer science fields these days. Globally, they are algorithms that can ‘learn’ from their own ‘experience’ by extracting patterns and relationships out of the supplied data. They can be studied as non-linear statistical data modeling tools.
 
-One of the hottest branches of Machine Learning are Artificial Neural Networks and, especially, Deep Learning. The implemented algorithms in these categories mimic the way neurons work in the brain. Like all mathematical functions, each ‘neuron’ produces an output that depends on the input. Many neurons are grouped together in layers and these layers are concatenated, having the output of one layer fed as the input of the next one. Layers can back-propagate, and modify the input of previous layers, like the feedback mechanism of the brain. Ultimately, this construction generates a huge set of self-adjusting equations that can optimize wide ranges of observations. For example, they are actively used in speech recognition, computer vision or artificial intelligence. The hype produced by its success in other areas made it permeate towards some areas of science where its application is controversial and less ‘fancy’ algorithms like random walks (Monte Carlo and similar) are equally performant $ \{ $ $ \} $ . Chapter 01 contains more details in this aspect.
+One of the hottest branches of Machine Learning are Artificial Neural Networks and, especially, Deep Learning. The implemented algorithms in these categories mimic the way neurons work in the brain. Like all mathematical functions, each ‘neuron’ produces an output that depends on the input. Many neurons are grouped together in layers and these layers are concatenated, having the output of one layer fed as the input of the next one. Layers can back-propagate, and modify the input of previous layers, like the feedback mechanism of the brain. Ultimately, this construction generates a huge set of self-adjusting equations that can optimize wide ranges of observations. For example, they are actively used in speech recognition, computer vision or artificial intelligence. The hype produced by its success in other areas made it permeate towards some areas of science where its application is controversial and less ‘fancy’ algorithms like random walks (Monte Carlo and similar) are equally performant $ \{ $ $ \} $ . \autoref{chap:02} contains more details in this aspect.
 
 \subsection{Multi objective optimization}
 % \addcontentsline{toc}{subsection}{Multi objective optimization}
-Until now, the enumerated algorithms only consider scalar functions. This is, functions that return scalar magnitudes or ‘single values’. However, if the function returns n-dimensional data, navigating towards the optimum is not so intuitive. Since there is more than one target value, conflicting decisions might arise.
+Until now, the enumerated algorithms only consider scalar functions. This is, functions that return scalar magnitudes or ‘single values’. However, if the function returns $n$-dimensional data, navigating towards the optimum is not so intuitive. Since there is more than one target value, conflicting decisions might arise.
 
 Say we need to minimize a function that takes a vector in R3 and returns another vector in R3. Since we have to reach the origin by minimization; this is, all the elements in the vector must be 0. What if the first element in the vector is smaller, but the second is greater? One possibility is to construct a general function out of those functions, like the vector norm or the Euclidean distance. In more complex cases, simple weighted linear sum might work, but the weights must be carefully chosen for each case; otherwise, convergence problems might appear $ \{ $ $ \} $ .
 
@@ -217,16 +217,12 @@ This is, genes are more than simple \textit{allele} attribute holders: they are 
 Genes that fall in this category perform modifications on the atoms that conform the molecular structure and/or their connectivity. For example, they could increase the length of a ligand linker, change the metal element of a metallic cofactor or mutate some residues in a peptide sequence.
 
 \begin{itemize}
-	\item \textbf{Molecule gene}. It is the main gene, as it will be used to load molecular structures from files (PDB, mol2, xyz or anything else supported by UCSF Chimera). All other genes depend on the initial topology and coordinates provided by one or more Molecule genes. In addition to loading files, the `path` parameter support loading from a directory, whose contents determine the final behavior:
-
-\begin{itemize}
-	\item If the directory contains molecule files, the allele will be set to one of them randomly for each individual. This allows GaudiMM to deal test a library of compounds against certain criteria; i.e. virtual screening.
-
-	\item If the directory contains subdirectories which, in turn, contain molecules files, the gene will sort those subdirectories by name and then pick one molecule from each, in that order. The chosen molecules will constitute the allele and will be chained linearly as specified in the accompanying meta file, which lists the serial number of the potential donor and acceptor atoms.
-
-
-\end{itemize}
-	\item \textbf{Mutamers gene}. Given a residue position in a protein structure, it can replace its sidechain to any other natural amino acid specified in the configuration. Useful to study site mutations.
+	\item \textsc{Molecule}. It is the main gene, as it will be used to load molecular structures from files (PDB, mol2, xyz or anything else supported by UCSF Chimera). All other genes depend on the initial topology and coordinates provided by one or more Molecule genes. In addition to loading files, the `path` parameter support loading from a directory, whose contents determine the final behavior:
+	\begin{itemize}
+		\item If the directory contains molecule files, the allele will be set to one of them randomly for each individual. This allows GaudiMM to deal test a library of compounds against certain criteria; i.e. virtual screening.
+		\item If the directory contains subdirectories which, in turn, contain molecules files, the gene will sort those subdirectories by name and then pick one molecule from each, in that order. The chosen molecules will constitute the allele and will be chained linearly as specified in the accompanying meta file, which lists the serial number of the potential donor and acceptor atoms.
+	\end{itemize}
+	\item \textsc{Mutamers}. Given a residue position in a protein structure, it can replace its sidechain to any other natural amino acid specified in the configuration. Useful to study site mutations.
 \end{itemize}
 
 \subsubsection{Coordinates modifiers}
@@ -234,76 +230,53 @@ Genes that fall in this category perform modifications on the atoms that conform
 Genes that fall in this category only alter the positions of the atoms involved in a molecular structure. They can modify the full structure, like a rigid translation or rotation of the molecule, or only a part, like the sidechain orientation of a protein residue.
 
 \begin{itemize}
-	\item \textbf{Torsion gene}. It helps explore small molecules flexibility by performing bond rotations in the selected Molecule objects, if they exhibit free bond rotations.
+	\item \textsc{Torsion}. It helps explore small molecules flexibility by performing bond rotations in the selected Molecule objects, if they exhibit free bond rotations.
 
-	\item \textbf{Search gene}. It performs rigid transformations on Molecules (translation and rotation). A radius parameter can be set to limit the search sphere range. If the radius is zero, the molecule won’t be translated but can freely rotate around the anchor atom, which is useful for covalent bond emulation.
+	\item \textsc{Search}. It performs rigid transformations on Molecules (translation and rotation). A radius parameter can be set to limit the search sphere range. If the radius is zero, the molecule won’t be translated but can freely rotate around the anchor atom, which is useful for covalent bond emulation.
 
-	\item \textbf{Rotamers gene}. It allows to explore side-chain conformations in protein residues by applying Dunbrack’s $ \{ $ $ \} $  or Dynameomics rotamer libraries $ \{ $ $ \} $ .
+	\item \textsc{Rotamers}. It allows to explore side-chain conformations in protein residues by applying Dunbrack’s $ \{ $ $ \} $  or Dynameomics rotamer libraries $ \{ $ $ \} $ .
 
-	\item \textbf{NormalModes gene}. Given a Molecule object, it calculates normal modes with elastic network methods and applies the resulting collective motions as possible variants of the initial coordinates set.
+	\item \textsc{NormalModes}. Given a Molecule object, it calculates normal modes with elastic network methods and applies the resulting collective motions as possible variants of the initial coordinates set.
 
-	\item \textbf{Trajectory gene}. Given a molecular dynamics trajectory file, it can retrieve random frames and apply the resulting coordinates to any Molecule object.
+	\item \textsc{Trajectory}. Given a molecular dynamics trajectory file, it can retrieve random frames and apply the resulting coordinates to any Molecule object.
 \end{itemize}
 
 
-
-
-
-%%%%%%%%%%%%%%%%%%%% Table No: 2 starts here %%%%%%%%%%%%%%%%%%%%
-
-
-\begin{table}[H] %FIXME!
-	\caption{List of genes implemented in GaudiMM.}
+\begin{table}[hbtp]
+	\caption[List of genes implemented in GaudiMM]{List of genes implemented in GaudiMM.}
 	\label{table:gaudi-genes}
- 			\centering
-\begin{tabular}{p{0.64in}p{1.77in}p{0.7in}}
-\hline
-%row no:1
-% \multicolumn{3}{|p{0.64in}|}{{\fontsize{8pt}{9.6pt}\selectfont Table 1. }} \\
-% \hhline{---}
+\footnotesize
+\newcolumntype{L}{>{\hsize=.25\hsize\raggedright\arraybackslash}X}%
+\newcolumntype{M}{>{\hsize=.5\hsize\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\hsize=.25\hsize\raggedright\arraybackslash}X}%
+\begin{tabularx}{\textwidth}{LMR}
 %row no:2
-\multicolumn{1}{|p{0.64in}}{\Centering {\fontsize{8pt}{9.6pt}\selectfont Name}} &
-\multicolumn{1}{p{1.77in}}{\Centering {\fontsize{8pt}{9.6pt}\selectfont Description}} &
-\multicolumn{1}{p{0.7in}|}{\Centering {\fontsize{8pt}{9.6pt}\selectfont Depends on}} \\
-\hhline{---}
+\toprule
+\textsc{Name} & \textsc{Description} & \textsc{Depends on} \\
+\toprule
 %row no:3
-\multicolumn{1}{|p{0.64in}}{{\fontsize{8pt}{9.6pt}\selectfont Molecule}} &
-\multicolumn{1}{p{1.77in}}{{\fontsize{8pt}{9.6pt}\selectfont Load and build structures}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+ Molecule & Load and build structures & UCSF Chimera \\
 \hhline{~~~}
 %row no:4
-\multicolumn{1}{|p{0.64in}}{{\fontsize{8pt}{9.6pt}\selectfont Rotamers}} &
-\multicolumn{1}{p{1.77in}}{{\fontsize{8pt}{9.6pt}\selectfont Explore side chain flexibility}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+ Rotamers & Explore side chain flexibility & UCSF Chimera \\
 \hhline{~~~}
 %row no:5
-\multicolumn{1}{|p{0.64in}}{{\fontsize{8pt}{9.6pt}\selectfont Mutamers}} &
-\multicolumn{1}{p{1.77in}}{{\fontsize{8pt}{9.6pt}\selectfont Explore mutation of residues}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+ Mutamers & Explore mutation of residues & UCSF Chimera \\
 \hhline{~~~}
 %row no:6
-\multicolumn{1}{|p{0.64in}}{{\fontsize{8pt}{9.6pt}\selectfont NormalModes}} &
-\multicolumn{1}{p{1.77in}}{{\fontsize{8pt}{9.6pt}\selectfont Explore collective motions}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont ProDy}} \\
+ NormalModes & Explore collective motions & ProDy \\
 \hhline{~~~}
 %row no:7
-\multicolumn{1}{|p{0.64in}}{{\fontsize{8pt}{9.6pt}\selectfont Search}} &
-\multicolumn{1}{p{1.77in}}{{\fontsize{8pt}{9.6pt}\selectfont Translation and rotation of Molecules}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+ Search & Translation and rotation of Molecules & UCSF Chimera \\
 \hhline{~~~}
 %row no:8
-\multicolumn{1}{|p{0.64in}}{{\fontsize{8pt}{9.6pt}\selectfont Torsion}} &
-\multicolumn{1}{p{1.77in}}{{\fontsize{8pt}{9.6pt}\selectfont Dihedral rotation of bonds}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+ Torsion & Dihedral rotation of bonds & UCSF Chimera \\
 \hhline{~~~}
 %row no:9
-\multicolumn{1}{|p{0.64in}}{{\fontsize{8pt}{9.6pt}\selectfont Trajectory}} &
-\multicolumn{1}{p{1.77in}}{{\fontsize{8pt}{9.6pt}\selectfont Load frames from MD trajectories}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont MDTraj}} \\
-\hhline{---}
-
-\end{tabular}
- \end{table}
+ Trajectory & Load frames from MD trajectories & MDTraj \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 
 %%%%%%%%%%%%%%%%%%%% Table No: 2 ends here %%%%%%%%%%%%%%%%%%%%
@@ -321,128 +294,97 @@ As a result, GaudiMM ships with a rather diverse set of objectives, combining 3\
 \subsubsection{Geometry measurement}
 % \addcontentsline{toc}{subsubsection}{Geometry measurement}
 \begin{itemize}
-	\item Angle. Given three atoms, this objective calculates the angle between those. By minimizing the difference between the measured angle and the target one, the final angle can be optimized. It will calculate the dihedral if four atoms are specified.
+	\item \textsc{Angle}. Given three atoms, this objective calculates the angle between those. By minimizing the difference between the measured angle and the target one, the final angle can be optimized. It will calculate the dihedral if four atoms are specified.
 
-	\item Distance. If two atoms are provided, this objective calculates the distance between. By minimizing the difference against a target value, the structure can be optimized to fulfill that requirement. It also supports calculating distances to groups of atoms by taking the centroid of the group.
+	\item \textsc{Distance}. If two atoms are provided, this objective calculates the distance between. By minimizing the difference against a target value, the structure can be optimized to fulfill that requirement. It also supports calculating distances to groups of atoms by taking the centroid of the group.
 
-	\item Inertia. This objective calculates the inertia tensors of two structures and returns the sine of the smallest angle formed between any of the possible pairings. It can be useful to align ligands along the major axis of a protein.
+	\item \textsc{Inertia}. This objective calculates the inertia tensors of two structures and returns the sine of the smallest angle formed between any of the possible pairings. It can be useful to align ligands along the major axis of a protein.
 
 
 \end{itemize}\subsubsection{Spatial measurement}
 % \addcontentsline{toc}{subsubsection}{Spatial measurement}
 \begin{itemize}
-	\item Solvation. Solvent-Accessible Surface Area (SASA) and Solvent-Excluded Surface Area (SESA) are two common techniques to describe the solvation of a structure. It can be used to optimize structures in terms of exposure of inside pockets or their folding. By maximizing SASA or SESA, the structure will tend to open up; by minimizing those values, the trend will be towards a more compact conformation.
+	\item \textsc{Solvation}. Solvent-Accessible Surface Area (SASA) and Solvent-Excluded Surface Area (SESA) are two common techniques to describe the solvation of a structure. It can be used to optimize structures in terms of exposure of inside pockets or their folding. By maximizing SASA or SESA, the structure will tend to open up; by minimizing those values, the trend will be towards a more compact conformation.
 
-	\item Volume. This objective calculates the volume occupied by a structure. It does so by computing the solvent-exposed surface of the structure, which is then considered as a polyhedron of thousands of triangular faces.
+	\item \textsc{Volume}. This objective calculates the volume occupied by a structure. It does so by computing the solvent-exposed surface of the structure, which is then considered as a polyhedron of thousands of triangular faces.
 
 
 \end{itemize}\subsubsection{Energy calculation}
 % \addcontentsline{toc}{subsubsection}{Energy calculation}
 \begin{itemize}
-	\item DSX. DrugScoreX is a knowledge-based docking scoring function developed by Neudert $\&$  Klebe $ \{ $ 10.1021/ci200274q$ \} $ . It is specially designed to compute interaction energies between protein structures and small compounds. This objective is a Python wrapper around the DSX executables and input files.
+	\item \textsc{DSX}. DrugScoreX is a knowledge-based docking scoring function developed by Neudert $\&$  Klebe $ \{ $ 10.1021/ci200274q$ \} $ . It is specially designed to compute interaction energies between protein structures and small compounds. This objective is a Python wrapper around the DSX executables and input files.
 
-	\item Energy. This objective allows to calculate the potential energy of a structure with the Molecular Mechanics force fields implemented in OpenMM. Parameters must be provided for custom residues.
+	\item \textsc{Energy}. This objective allows to calculate the potential energy of a structure with the Molecular Mechanics force fields implemented in OpenMM. Parameters must be provided for custom residues.
 
-	\item LigScore. Another docking scoring function developed by Sali $ \{ $ IMP$ \} $  which allows to obtain protein-ligand interaction energies. While IMP is a C++ project with Python bindings, the LigScore function is only exposed through an executable. This objective can call that binary and parse the resulting energies from the output.
+	\item \textsc{LigScore}. Another docking scoring function developed by Sali $ \{ $ IMP$ \} $  which allows to obtain protein-ligand interaction energies. While IMP is a C++ project with Python bindings, the LigScore function is only exposed through an executable. This objective can call that binary and parse the resulting energies from the output.
 
-	\item Vina. AutoDock Vina is a popular open-source package to perform protein-ligand docking. This objective calls the Vina executable in score-only mode to calculate the interaction energies between a protein and a ligand.
+	\item \textsc{Vina}. AutoDock Vina is a popular open-source package to perform protein-ligand docking. This objective calls the Vina executable in score-only mode to calculate the interaction energies between a protein and a ligand.
 
-	\item GOLD. This commercial software suite is one the most used solutions to calculate accurate docking poses. With this objective, all the scoring functions exposed in GOLD can be used as guiding evaluators in GaudiMM: PLP, GoldScore, ChemScore$ \ldots $  License is needed for this to work.
+	\item \textsc{GOLD}. This commercial software suite is one the most used solutions to calculate accurate docking poses. With this objective, all the scoring functions exposed in GOLD can be used as guiding evaluators in GaudiMM: PLP, GoldScore, ChemScore$ \ldots $  License is needed for this to work.
 
-	\item NWChem. This objective provides a way to run quantum mechanics calculations in this popular open-source software suite. Provided a template input-file, this objective will insert the appropriate coordinates, charge and multiplicity. While all methods implemented in NWChem are potentially usable, only semi-empirical ones are recommended in terms of speed; specially for large structures.
+	\item \textsc{NWChem}. This objective provides a way to run quantum mechanics calculations in this popular open-source software suite. Provided a template input-file, this objective will insert the appropriate coordinates, charge and multiplicity. While all methods implemented in NWChem are potentially usable, only semi-empirical ones are recommended in terms of speed; specially for large structures.
 
 
 \end{itemize}\subsubsection{High-level chemical descriptors}
 % \addcontentsline{toc}{subsubsection}{High-level chemical descriptors}
 \begin{itemize}
-	\item Contacts. This objective can calculate two type of distance-based energy descriptors. When the ‘hydrophobic’ mode is chosen, this objective will maximize potentially attracting interactions between close enough atoms by applying a Lennard-Jones-like scoring function. If the ‘clashes’ mode is chosen, it will minimize the steric hindrance of the structure by minimizing the volumetric overlap of the Van der Waals spheres of atoms that are too close.
+	\item \textsc{Contacts}. This objective can calculate two type of distance-based energy descriptors. When the ‘hydrophobic’ mode is chosen, this objective will maximize potentially attracting interactions between close enough atoms by applying a Lennard-Jones-like scoring function. If the ‘clashes’ mode is chosen, it will minimize the steric hindrance of the structure by minimizing the volumetric overlap of the Van der Waals spheres of atoms that are too close.
 
-	\item HBonds. This objective uses geometrical criteria to calculate the number of hydrogen bonds between potential donors and acceptors.
+	\item \textsc{HBonds}. This objective uses geometrical criteria to calculate the number of hydrogen bonds between potential donors and acceptors.
 
-	\item Coordination. By applying a type of computer vision algorithm called Point Set Registration, this objective can identify potential coordination geometries around a metal center. It returns the RMSD similarity between the first coordination sphere and the ideal polyhedron: the lower the value, the better the geometry.
+	\item \textsc{Coordination}. By applying a type of computer vision algorithm called Point Set Registration, this objective can identify potential coordination geometries around a metal center. It returns the RMSD similarity between the first coordination sphere and the ideal polyhedron: the lower the value, the better the geometry.
 \end{itemize}
 
 
-
-%%%%%%%%%%%%%%%%%%%% Table No: 3 starts here %%%%%%%%%%%%%%%%%%%%
-
-
-\begin{table}[H] %FIXME!
-	\caption{List of objectives implemented in GaudiMM.}
+\begin{table}[hbtp]
+	\caption[List of objectives implemented in GaudiMM]{List of objectives implemented in GaudiMM.}
 	\label{table:gaudi-objectives}
- 			\centering
-\begin{tabular}{p{0.58in}p{2.86in}p{0.7in}}
-\hline
-%row no:1
-% \multicolumn{3}{|p{0.58in}|}{{\fontsize{8pt}{9.6pt}\selectfont Table 2. }} \\
-% \hhline{---}
-%row no:2
-\multicolumn{1}{|p{0.58in}}{\Centering {\fontsize{8pt}{9.6pt}\selectfont Name}} &
-\multicolumn{1}{p{2.86in}}{\Centering {\fontsize{8pt}{9.6pt}\selectfont Description}} &
-\multicolumn{1}{p{0.7in}|}{\Centering {\fontsize{8pt}{9.6pt}\selectfont Depends on}} \\
-\hhline{---}
+\footnotesize
+\newcolumntype{L}{>{\hsize=.15\hsize\raggedright\arraybackslash}X}%
+\newcolumntype{M}{>{\hsize=.65\hsize\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\hsize=.20\hsize\raggedright\arraybackslash}X}%
+\begin{tabularx}{\textwidth}{LMR}
+\toprule
+\textsc{Name} & \textsc{Description} & \textsc{Depends on} \\
+\toprule
 %row no:3
-\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont Angle}} &
-\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Optimize angle of three atoms, or dihedral of four atoms}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+ Angle & Optimize angle of three atoms, or dihedral of four atoms & UCSF Chimera \\
 \hhline{~~~}
 %row no:4
-\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont Contacts}} &
-\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Minimize steric clashes, maximize hydrophobic interactions}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+ Contacts & Minimize steric clashes, maximize hydrophobic interactions & UCSF Chimera \\
 \hhline{~~~}
 %row no:5
-\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont Coordination}} &
-\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Optimize coordination geometry of metal center}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont In-house}} \\
+ Coordination & Optimize coordination geometry of metal center & In-house \\
 \hhline{~~~}
 %row no:6
-\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont Distance}} &
-\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Optimize distance between two or more atoms}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+ Distance & Optimize distance between two or more atoms & UCSF Chimera \\
 \hhline{~~~}
 %row no:7
-\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont DSX}} &
-\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Docking scoring function }} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont DrugScoreX}} \\
+ DSX & Docking scoring function  & DrugScoreX \\
 \hhline{~~~}
 %row no:8
-\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont Energy}} &
-\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Minimize molecular mechanics potential energy}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont OpenMM}} \\
+ Energy & Minimize molecular mechanics potential energy & OpenMM \\
 \hhline{~~~}
 %row no:9
-\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont HBonds}} &
-\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Detect hydrogen bonds }} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+ HBonds & Detect hydrogen bonds  & UCSF Chimera \\
 \hhline{~~~}
 %row no:10
-\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont Inertia}} &
-\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Align axes of inertia of two or more molecules}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont In-house}} \\
+ Inertia & Align axes of inertia of two or more molecules & In-house \\
 \hhline{~~~}
 %row no:11
-\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont LigScore}} &
-\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Docking scoring function}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont IMP}} \\
+ LigScore & Docking scoring function & IMP \\
 \hhline{~~~}
 %row no:12
-\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont NWChem}} &
-\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Launch NWChem QM calculations}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont NWChem}} \\
+ NWChem & Launch NWChem QM calculations & NWChem \\
 \hhline{~~~}
 %row no:13
-\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont Solvation}} &
-\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Measure solvent accessible solvent area}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
+ Solvation & Measure solvent accessible solvent area & UCSF Chimera \\
 \hhline{~~~}
 %row no:14
-\multicolumn{1}{|p{0.58in}}{{\fontsize{8pt}{9.6pt}\selectfont Volume}} &
-\multicolumn{1}{p{2.86in}}{{\fontsize{8pt}{9.6pt}\selectfont Measure volume occupied by molecule}} &
-\multicolumn{1}{p{0.7in}|}{{\fontsize{8pt}{9.6pt}\selectfont UCSF Chimera}} \\
-\hhline{---}
+ Volume & Measure volume occupied by molecule & UCSF Chimera \\
+\bottomrule
 
-\end{tabular}
+\end{tabularx}
  \end{table}
 
 
@@ -458,7 +400,7 @@ To ensure a rich Pareto front in constructed, NSGA-II includes a crowding parame
 
 \subsection{Analyzing the results}
 % \addcontentsline{toc}{subsection}{Analyzing the results}
-In multi-objective optimization, ultimately choosing which solution is the ‘best’ solution is up to the decision maker: the researcher. Some strategies to make that decision involve reducing the fitness vector to a scalar using an adequate function. However, since that function is usually not characterized in tentative molecular modelling tasks, a UCSF Chimera extension has been developed GAUDIView along GaudiMM to aid in that decision in a more interactive manner.
+In multi-objective optimization, ultimately choosing which solution is the ‘best’ solution is up to the decision maker: the researcher. Some strategies to make that decision involve reducing the fitness vector to a scalar using an adequate function. However, since that function is usually not characterized in tentative molecular modeling tasks, a UCSF Chimera extension has been developed GAUDIView along GaudiMM to aid in that decision in a more interactive manner.
 
 GAUDIView will list the proposed solutions along with the fitness of each objective in spreadsheet-like dialog. Upon clicking each entry, the UCSF Chimera canvas will load and render a 3D interactive depiction of the structure. The table can be sorted by columns and filtered by threshold criteria, which can reduce the complex surface of the Pareto front to the ‘interesting parts’ (according to the decision maker) dynamically.
 
@@ -477,29 +419,12 @@ GAUDIView will list the proposed solutions along with the fitness of each object
 % \addcontentsline{toc}{subsection}{The code behind}
 GaudiMM was conceived with extensibility in mind. Stemming from quick drafts on UCSF Chimera Python interpreter, the codebase rapidly outgrew a single file of a hundred lines into a full-fledged library with thousands of lines of code. Using Python as the main language allowed to design a modular architecture focused on the reutilization of existing codebases easily looking forward obtaining a working proof-of-concept in very little time.
 
-However, UCSF Chimera is still the main library behind the scenes. This interactive 3D viewer offers lots of analysis tools and robust molecular abstractions that allowed us to implement most of GaudiMM genes and objectives in few lines of code. However, everything has a price and UCSF Chimera was not designed to be used as a library in other projects; instead it expects external projects to be executed within UCSF Chimera interface. To overcome this limitation, a separate package named PyChimera was developed. With PyChimera, other Python libraries can be used together with UCSF Chimera which allowed us to intertwin other projects in GaudiMM. That way, MM energies can be computed with OpenMM, Normal Modes Analysis calculated with ProDy, and more (see Table X). Further details are given in Chapter 5, where PyChimera has proved to also be instrumental in the development of new graphical interfaces.
+However, UCSF Chimera is still the main library behind the scenes. This interactive 3D viewer offers lots of analysis tools and robust molecular abstractions that allowed us to implement most of GaudiMM genes and objectives in few lines of code. However, everything has a price and UCSF Chimera was not designed to be used as a library in other projects; instead it expects external projects to be executed within UCSF Chimera interface. To overcome this limitation, a separate package named PyChimera was developed. With PyChimera, other Python libraries can be used together with UCSF Chimera which allowed us to intertwin other projects in GaudiMM. That way, MM energies can be computed with OpenMM, Normal Modes Analysis calculated with ProDy, and more (see table \ref{table:gaudi-genes}). Further details are given in \autoref{chap:05}, where PyChimera has proved to also be instrumental in the development of new graphical interfaces.
 
-\section{GaudiMM as an educational tool: undergoing developments}
-% \addcontentsline{toc}{section}{GaudiMM as an educational tool: undergoing developments}
-The conceptual separation of exploration and evaluation implemented in GaudiMM gives a clear understanding of the different variables involved in the optimization process. This has proved to be a very valuable as a teaching tool in lower degrees of education. Students involved in GaudiMM development have contributed new modules even with a non-chemical background. Some highlights include a gene to navigate the chemical space or a coupled gene/objective pair to assess ligand binding pathways.
-
-\subsection{Navigating the chemical space}
-% \addcontentsline{toc}{subsection}{Navigating the chemical space}
-GaudiMM already allowed to navigate the chemical space via the dynamic building capabilities of the Molecule gene, but it presented two limitations: (1) it is restricted to the provided fragments library, and (2) it only allows to construct linear concatenations of those fragments (i.e. no ramifications or rings).
-
-A new approach based on graph theory and pharmacophore matching is being developed in our group as part of the PhD thesis of J. E. Sánchez-Aparicio. This method, which interprets molecules as non-directed graphs that can grow and shrink arbitrarily, does not require any preexisting libraries and naturally considers ramifications. It has been successfully applied to propose designs of small molecule inhibitors for\textit{ K. pulmoniae} NDM-1 $ \beta $ -lactamase.
-
-\subsection{Finding ligand binding pathways}
-% \addcontentsline{toc}{subsection}{Finding ligand binding pathways}
-Docking studies provides insight on how a small molecule can interact with a bigger host molecule by assessing feasible binding poses. However, those are just static snapshots of a dynamic behavior. To study how the ligand reaches its binding sites, long Molecular Dynamics with steering restraints are needed and do not always guarantee a successful ligand pathway.
-
-An alternative approach was considered for one of the MSc dissertations supervised during my PhD studies $ \{ $ $ \} $ . The protein space was flooded with small probes placed in a tight grid and queried for steric impediments, resulting in points with higher or lower pseudo-energy scores. Then, lower-energy points were traversed from the outer regions of the protein in hopes of finding a continuous path that reached the ligand binding site. To consider the ligand size, shape or volume, a second step was proposed. The calculated paths were segmented in 5Å pieces and each of the resulting pieces was then submitted to a docking simulation with reduced search radius. The resulting structures were low-energy conformations of the ligand along the proposed pathway. All these poses were finally concatenated together to emulate a smooth trajectory ideal for depiction purposes.
-
-This proof of concept proves how the versatility present in GaudiMM can be used as part of bigger protocols, and is being reimplemented as a gene able to guide the exploration of docking studies along feasible pathways in the PhD studies of J. E. Sánchez-Aparicio.
 
 \section{Conclusions $\&$  Further work}
 % \addcontentsline{toc}{section}{Conclusions $\&$  Further work}
-The development of GaudiMM was motivated by the need of applying simple descriptors in complex biomolecular systems featuring residues beyond the natural amino acids: metallic cofactors, oligosugar-derivatives and partially characterized organic molecules. The main idea was to at least have ‘some’ results around a hard-to-model structure, instead of saying that it could not be done. Even with low accuracy methods, GaudiMM soon started to prove that the approach is good enough to provide starting points valid for further refinement and processing with more accurate methods. In other words, GaudiMM is a good entry point for multiscale protocols, which is further discussed in Chapter 05. Examples of its potential applications and how it has been used in real research will be detailed in Chapter 06.
+The development of GaudiMM was motivated by the need of applying simple descriptors in complex biomolecular systems featuring residues beyond the natural amino acids: metallic cofactors, oligosugar-derivatives and partially characterized organic molecules. The main idea was to at least have ‘some’ results around a hard-to-model structure, instead of saying that it could not be done. Even with low accuracy methods, GaudiMM soon started to prove that the approach is good enough to provide starting points valid for further refinement and processing with more accurate methods. In other words, GaudiMM is a good entry point for multiscale protocols, which is further discussed in \autoref{chap:05}. Examples of its potential applications and how it has been used in real research will be detailed in \autoref{chap:06}.
 
 When the collection of genes and objectives began to grow, it became unmanageable as a single file script, and a modular object-oriented architecture was devised to hold each descriptor as a separate, but compatible, pieces of code. Using Python as the programming language made this refactoring very easy and allowed implementing new descriptors fast and simply. The educational value of this technical decision was not obvious until degree and master students began to collaborate in the project as part of their final dissertation.
 
