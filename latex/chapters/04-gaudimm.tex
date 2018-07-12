@@ -22,105 +22,11 @@ The take-home message is that almost every model will need a starting structure.
 
 Alleviating that frustrating process is one of the main the motivations behind the development of GaudiMM, the tool central to this chapter. GaudiMM, which stands for Genetic Algorithms with Unrestricted Descriptors for Intuitive Molecular Modeling, can be described as a molecular sketcher that will help to obtain reasonable starting models for their calculations. Like a grid on a fresh canvas or sidewheels in a bike, it allows to handle multidimensional problems in an easy, guided process.
 
-Before introducing all its features and capabilities, it will be convenient to review optimization techniques and how they are applied routinely in computational chemistry and molecular modeling. That way, it will be easier to grasp the rationale behind the terminology used in some of its key concepts.
+\todo[inline]{Modular nature of the tool}
 
-\section{Theory behind the concept: Optimization problems}
-% \addcontentsline{toc}{section}{Theory behind the concept: Optimization problems}
-\subsection{Mathematical optimization and numerical methods}
-% \addcontentsline{toc}{subsection}{Mathematical optimization and numerical methods}
-Most of the procedures used to rapidly identify physically sound initial models of a molecular system stand on finding the way to ally the exploration of wide conformational spaces and the adequate guiding variables. In math speech, this is territory of optimization problems for non-smooth surfaces.
+Before introducing all its features and capabilities, it will be convenient to review \todo{multiobjective} optimization techniques and how they are applied routinely in computational chemistry and molecular modeling. That way, it will be easier to grasp the rationale behind the terminology used in some of its key concepts.
 
-Mathematically speaking, an optimization problem consists of, given a function $ f $ that connects a set $ A $ to the set of real numbers, finding an element $ x_{0} $ in A such that $ f(x_{0}) \leq f(x) $ for all $ x in A $  (minimization), or such that $ f(x_{0}) \geq f(x) $ for all $ x in A $ (maximization).
-
-\begin{align}
-	Given ~~ f:A \rightarrow R \nonumber \\
-	Sought: ~ x_{0} \in A ~ such ~ that ~ f(x_{0})  \leq f(x) ~,~x \in A ~~~ ( minimization ) \nonumber \\
-	~~~~~~~~~ or: x_{0} \in A ~ such ~ that ~ f(x_{0})  \geq f(x) ~,~x \in A ~~~ ( maximization )
-\end{align}
-
-$ f(x) $  is normally called the objective function, loss function or cost function for minimization problems, utility function or fitness function for maximization problems or, depending on the field, energy function or functional. However, all optimization problems can be expressed as minimization problems, negating  $ f(x) $  if the problem is to be maximized.
-
-The domain  $ A ~ of ~ f $ is usually named the ‘search space’ or the ‘choice set’, and each possible value of  $ A $  is called a candidate or feasible solution.  $ A $  is normally a subset of  $ R^{n} $ , as defined by equality and/or inequality constraints. The optimization definition can be extended to be subject to inequality and equality constraints, expressed as:
-
-\begin{align}
-	optimize_{x}~~~~~~~ f(x) \nonumber \\
-	subject~to~~~  g_{i}(x)  \leq 0,~~ i=1,  \ldots ,m \nonumber \\
-	~~~~~~~~~~~~~~~~~~~~~~~ h_{j}(x) =0,~~ j=1,  \ldots ,p
-\end{align}
-
-, where  \( g_{i}(x)  \)  are the inequality constraints,  \( h_{j}(x)  \)  are the equality constraints, and  \( m \)  and  \( p \)  are greater than 0. If  \( m \)  and  \( p \)  are equal to zero, the definition falls back to the unconstrained optimization problem.
-
-Depending on the form of the function being optimized and the specified constraints, several categories emerge, like convex or nonlinear optimization problems. In convex optimization, when f, g and h are either convex (minimization) or concave (maximization). This includes linear functions, defining the field of linear optimization. Nonlinear optimization deals with functions that cannot be written as linear expressions, which usually makes the problem harder.
-
-Solving this type of problems was initially studied by Fermat and Lagrange, who applied calculus-based formulae to identify optimum solutions. However, not all optimization problems can be solved analytically and, in fact, for some complex problems is usually easier (and faster) to compute numerical solutions iteratively until a convergence threshold is met. This approach was initiated by Newton and Gauss, and since then many applicable algorithms have been devised throughout the latest decades. A few will be highlighted for illustrative purposes.
-
-\subsubsection{Steepest descent and conjugate gradient}
-% \addcontentsline{toc}{subsubsection}{Steepest descent and conjugate gradient}
-To go down a smooth mountain, one simply takes steps in a direction towards the valley. There’s a lot of possible directions, but skilled mountaineers usually take the fastest: the steepest side. Climbing down that mountain can be expressed as finding the minimum of a convex three-dimensional function, so figuring out which direction we should take in every step is a matter of finding the gradient of that function at that point.
-
-A gradient is the $n$-dimensional generalization of a single-variable derivative, so instead of returning a scalar, it returns a vector. If derivatives gave us the rate of change of a function, gradients will tell the direction in which the function will experience the greatest change. In this three-dimensional problem, the gradient vector will point to the next step. By taking little steps in the direction pointed by the gradient, we will eventually get to the minimum.
-
-This is what the steepest descent algorithm does, but it can progress very slowly in almost ‘flat’ regions of the function. A similar method named conjugate gradient uses a similar approach, but the search direction is computed in a smarter way, making sure that the direction is orthogonal to the previous step gradient and the current one. It requires more operations, but the performance towards the optimum is better and usually worthy.
-
-Since these methods only compute $f(x)$ and $f’(x)$ (first derivatives), they are called first-order methods.
-
-\subsubsection{The Newton and quasi-Newton algorithms}
-% \addcontentsline{toc}{subsubsection}{The Newton and quasi-Newton algorithms}
-Newton numerical algorithms are similar to SD and CJ methods, but compute an additional differentiation step to use the information provided curvature of the function. This makes each iteration more expensive, but with certain functions fewer iterations might be needed (see fig. \ref{fig:gradientdescent}).
-
-Second derivatives can be generalized as Hessian matrices for problems of higher dimensions, but this can get very expensive to compute. As a result, several derived methods, called quasi-Newton methods, include alternative methods to compute it or supply equivalent information, like directly computing the inverse with numerical methods, updating it with successive gradient vectors$ \ldots $  Due to its performance, one of the most popular quasi-Newton algorithms is the BGFS algorithm (for Broyden, Fletcher, Goldfarb, Shanno) and its limited memory version L-BGFS.
-
-
-
-\begin{figure}[H]
-	\includegraphics[width=\textwidth]{./figures/04/gradientdescent.png}
-	\caption[Gradient descent vs Newton's optimization]{A comparison of gradient descent (green) and Newton's method (red) for minimizing a function (with small step sizes) starting with $ X_{0} $. Global minimum is $ X $. Newton's method uses curvature information to take a more direct route.}
-	\label{fig:gradientdescent}
-\end{figure}
-
-\subsubsection{The simplex algorithm}
-% \addcontentsline{toc}{subsubsection}{The simplex algorithm}
-Described by Dantzig during the World War II, this algorithm solves linear optimization problems by expressing functions and constraints in a n-dimensional generalized polyhedron called polytope. The algorithm shows that the optimum point of a convex polytope is one of the vertices and can be found by iteratively traversing the edges.
-
-\subsection{Heuristics: thinking abstract but practical}
-% \addcontentsline{toc}{subsection}{Heuristics: thinking abstract but practical}
-While all these numerical methods are very different in nature, they still perform the same kind of tasks: exploration, evaluation and selection. This is, they generate a candidate solution (exploration), solve the equations and assess how far they are from the exit condition (evaluation). Selection is often so trivial in scalar functions that is not even considered as a separate step. When it comes to the selecting a new candidate solution of all the possible in the search space, if $f(x)$ points to a scalar space, selecting $f(x_{0})$ vs $f(x_{1})$ is just a matter of seeing which value is smaller (minimization) or greater (maximization). However, if $f(x)$ points to a n-dimensional space, the selection is not straightforward because $f(x_{0}) < f(x_{1})$ will be only defined if all the elements in $x_{0}$ are smaller than $x_{1}$. This subject is studied in multi-objective optimization.
-
-In a simplified example, where we must find $f(x) = 0$ with $f(x) = ax + b$, ‘generating new candidate solutions’ would simply consist of assigning new values to x. While this can be done randomly until the solution is found, it’s usually more interesting to use a smarter approach. This what the gradients and hessian approaches provide: educated guesses towards finding the optima. However, they still require an equation to be available. When several variables are analyzed and the relationship between them is not differentiable or, simply, unknown, other type of algorithms must be employed, like heuristics.
-
-\subsubsection{Monte Carlo methods}
-% \addcontentsline{toc}{subsubsection}{Monte Carlo methods}
-In Monte Carlo methods are useful for studying problems that are characterized by a huge number of degrees of freedom but can be interpreted probabilistically. Since the expected value of an integral can be approximated by the empirical mean of a random sample, these methods allow to obtain numerical results by randomly sampling the search space. In the Metropolis variant, the sample is refined iteratively with random modifications that are either accepted or rejected depending on the new value of the sample or a random acceptance ratio.
-
-For example, to minimize the potential energy of a molecule, random states can be generated by introducing small perturbations to the atomic positions that follow a Boltzmann distribution. The energy of the new states is evaluated and either accepted or rejected by comparing their energies with current mean of the sample. For example, those with smaller energies are usually included and accepted in the ensemble. For those with higher energies, they can still be included with some probability that depends on the chosen acceptance ratio. Being a Markov chain, the probability distribution for the next iteration will be reparametrized with the state of the current sample and the process will continue iteratively until convergence.
-
-\subsubsection{Evolutionary algorithms}
-% \addcontentsline{toc}{subsubsection}{Evolutionary algorithms}
-Evolutionary algorithms (EA) can be explained as an extension to Monte Carlo’s: they also employ random generation of solutions as starting points, but following iterations employ biology-inspired heuristics to localize next candidate solutions. In each iteration, the ‘population’ of feasible solutions (individuals) are evaluated in the optimization environment, and each one is assessed a fitness score. Like in the Evolution theory, only the fittest will be allowed to survive (included in the sample for the next iteration).
-
-Genetic algorithms (GA) are a special type of EA that implement ‘evolutionary’ heuristics inspired on chromosomic changes. By mimicking chromosomes during the meiosis, candidate solutions can exchange some of their variables (mating or recombination), and some can experience a random change in one or more variables (mutation). By iterating over this ‘sexual’ cycle, fitter and fitter solutions will be obtained.
-
-\subsubsection{Machine learning }
-% \addcontentsline{toc}{subsubsection}{Machine learning }
-Artificial Intelligence and Machine Learning are very popular computer science fields these days. Globally, they are algorithms that can ‘learn’ from their own ‘experience’ by extracting patterns and relationships out of the supplied data. They can be studied as non-linear statistical data modeling tools.
-
-One of the hottest branches of Machine Learning are Artificial Neural Networks and, especially, Deep Learning. The implemented algorithms in these categories mimic the way neurons work in the brain. Like all mathematical functions, each ‘neuron’ produces an output that depends on the input. Many neurons are grouped together in layers and these layers are concatenated, having the output of one layer fed as the input of the next one. Layers can back-propagate, and modify the input of previous layers, like the feedback mechanism of the brain. Ultimately, this construction generates a huge set of self-adjusting equations that can optimize wide ranges of observations. For example, they are actively used in speech recognition, computer vision or artificial intelligence. The hype produced by its success in other areas made it permeate towards some areas of science where its application is controversial and less ‘fancy’ algorithms like random walks (Monte Carlo and similar) are equally performant $ \{ $ $ \} $ . \autoref{chap:02} contains more details in this aspect.
-
-\subsection{Multi objective optimization}
-% \addcontentsline{toc}{subsection}{Multi objective optimization}
-Until now, the enumerated algorithms only consider scalar functions. This is, functions that return scalar magnitudes or ‘single values’. However, if the function returns $n$-dimensional data, navigating towards the optimum is not so intuitive. Since there is more than one target value, conflicting decisions might arise.
-
-Say we need to minimize a function that takes a vector in R3 and returns another vector in R3. Since we have to reach the origin by minimization; this is, all the elements in the vector must be 0. What if the first element in the vector is smaller, but the second is greater? One possibility is to construct a general function out of those functions, like the vector norm or the Euclidean distance. In more complex cases, simple weighted linear sum might work, but the weights must be carefully chosen for each case; otherwise, convergence problems might appear $ \{ $ $ \} $ .
-
-One alternative which does not involve a dimensionality reduction (R3 to R in the previous example) is the Pareto optimality criterion. It is based on Pareto-dominance: a new solution dominates an existing one if one of the variables is improved without hurting the others. By enumerating a high number of solutions and comparing them in terms of Pareto-dominance, a reduced set of Pareto-dominating solution can be found. When no more Pareto-dominating solutions can be found, that set is said to be Pareto-optimal and constitutes the Pareto front: the solutions to the problem.
-
-Optimization processes like this are more common that they appear. At the supermarket, all clients decide on the trade-off between price and quality every day. Normally, humans solve this by setting a cutoff on one of the variables. For example, a maximum budget is set. However, if all possibilities are considered, the resulting solutions would range from the cheapest possible product to the most expensive one, including all the good enough (Pareto-dominating) combinations in between. However, if a new product is added to the catalog and is cheaper than its competitors without a decrease in quality, that new product will dominate all other products with the same quality but higher price.
-
-This type of optimization is very complex to model with classical optimization methods, and is usually easier to employ the heuristic methods. A particularly performant combination is using Genetic Algorithms, which results in Multi-Objective Genetic Algorithms (MOGA). This is the type of algorithm GaudiMM uses under the hood, whose implementation will be detailed below.
-
-\section{Implementation}
-% \addcontentsline{toc}{section}{Implementation}
-
+\section{Rationale behind the idea}
 
 %%%%%%%%%%%%%%%%%%%% Table No: 1 starts here %%%%%%%%%%%%%%%%%%%%
 
@@ -164,6 +70,16 @@ This type of optimization is very complex to model with classical optimization m
 
 
 GaudiMM is a Python package that allows to build and refine of chemobiological structures through multi-objective optimization. Built on top of the NSGA-II algorithm, it features a modular, extensible architecture that conceptually emphasizes the three main stages of the optimization process: exploration, evaluation and selection. This section will describe all the details behind its rationale and implementation in a molecular modeling environment. For practical use cases, please refer to \autoref{chap:06}, where several examples are presented.
+
+\section{Implementation}
+
+\todo[inline]{Complete this section}
+
+\begin{itemize}
+	\item Draft \& sketch molecules
+	\item Give answers to quick hypotheses
+	\item Worry about fine details later - starting points do not need them
+\end{itemize}
 
 \subsection{The NSGA-II algorithm}
 % \addcontentsline{toc}{subsection}{The NSGA-II algorithm}
@@ -398,14 +314,28 @@ Once the Individuals have been assigned a fitness score, these values must be co
 
 To ensure a rich Pareto front in constructed, NSGA-II includes a crowding parameter, and GaudiMM provides structural similarity comparisons when scores are very close to each other, resulting in a good compromise between diversity and number of solutions proposed.
 
-\subsection{Analyzing the results}
+\section{Analyzing the results of multi-objective optimization}
 % \addcontentsline{toc}{subsection}{Analyzing the results}
+
+\todo[inline]{Review context here (a big preceding section has been extracted into Methods). Maybe move into "Analyzing the results"}
+
+Usually, our minds are wired to think in scalar functions and values. This is, functions that return scalar magnitudes or ‘single values’. However, if the function returns $n$-dimensional data, navigating towards the optimum is not so intuitive. Since there is more than one target value, conflicting decisions might arise.
+
+Say we need to minimize a function that takes a vector in R3 and returns another vector in R3. Since we have to reach the origin by minimization; this is, all the elements in the vector must be 0. What if the first element in the vector is smaller, but the second is greater? One possibility is to construct a general function out of those functions, like the vector norm or the Euclidean distance. In more complex cases, simple weighted linear sum might work, but the weights must be carefully chosen for each case; otherwise, convergence problems might appear $ \{ $ $ \} $ .
+
+One alternative which does not involve a dimensionality reduction (R3 to R in the previous example) is the Pareto optimality criterion. It is based on Pareto-dominance: a new solution dominates an existing one if one of the variables is improved without hurting the others. By enumerating a high number of solutions and comparing them in terms of Pareto-dominance, a reduced set of Pareto-dominating solution can be found. When no more Pareto-dominating solutions can be found, that set is said to be Pareto-optimal and constitutes the Pareto front: the solutions to the problem.
+
+Optimization processes like this are more common that they appear. At the supermarket, all clients decide on the trade-off between price and quality every day. Normally, humans solve this by setting a cutoff on one of the variables. For example, a maximum budget is set. However, if all possibilities are considered, the resulting solutions would range from the cheapest possible product to the most expensive one, including all the good enough (Pareto-dominating) combinations in between. However, if a new product is added to the catalog and is cheaper than its competitors without a decrease in quality, that new product will dominate all other products with the same quality but higher price.
+
+This type of optimization is very complex to model with classical optimization methods, and is usually easier to employ the heuristic methods. A particularly performant combination is using Genetic Algorithms, which results in Multi-Objective Genetic Algorithms (MOGA). This is the type of algorithm GaudiMM uses under the hood, whose implementation will be detailed below.
+
+\todo[inline]{Single solution vs multiple solutions}
+
+\missingfigure{Pareto fronts}
+
 In multi-objective optimization, ultimately choosing which solution is the ‘best’ solution is up to the decision maker: the researcher. Some strategies to make that decision involve reducing the fitness vector to a scalar using an adequate function. However, since that function is usually not characterized in tentative molecular modeling tasks, a UCSF Chimera extension has been developed GAUDIView along GaudiMM to aid in that decision in a more interactive manner.
 
 GAUDIView will list the proposed solutions along with the fitness of each objective in spreadsheet-like dialog. Upon clicking each entry, the UCSF Chimera canvas will load and render a 3D interactive depiction of the structure. The table can be sorted by columns and filtered by threshold criteria, which can reduce the complex surface of the Pareto front to the ‘interesting parts’ (according to the decision maker) dynamically.
-
-
-
 
 
 \begin{figure}[H]
@@ -415,11 +345,11 @@ GAUDIView will list the proposed solutions along with the fitness of each object
 \end{figure}
 
 
-\subsection{The code behind}
+\section{The code behind}
 % \addcontentsline{toc}{subsection}{The code behind}
-GaudiMM was conceived with extensibility in mind. Stemming from quick drafts on UCSF Chimera Python interpreter, the codebase rapidly outgrew a single file of a hundred lines into a full-fledged library with thousands of lines of code. Using Python as the main language allowed to design a modular architecture focused on the reutilization of existing codebases easily looking forward obtaining a working proof-of-concept in very little time.
+GaudiMM was conceived with modularity and extensibility in mind. Stemming from quick drafts on UCSF Chimera's Python interpreter, the codebase rapidly outgrew a single file of a hundred lines into a full-fledged library with thousands of lines of code. Using Python as the main language allowed to design a modular architecture focused on the reutilization of existing codebases easily looking forward obtaining a working proof-of-concept in very little time. All the code is object-oriented, alleviating the process of writing new genes and objectives.
 
-However, UCSF Chimera is still the main library behind the scenes. This interactive 3D viewer offers lots of analysis tools and robust molecular abstractions that allowed us to implement most of GaudiMM genes and objectives in few lines of code. However, everything has a price and UCSF Chimera was not designed to be used as a library in other projects; instead it expects external projects to be executed within UCSF Chimera interface. To overcome this limitation, a separate package named PyChimera was developed. With PyChimera, other Python libraries can be used together with UCSF Chimera which allowed us to intertwin other projects in GaudiMM. That way, MM energies can be computed with OpenMM, Normal Modes Analysis calculated with ProDy, and more (see table \ref{table:gaudi-genes}). Further details are given in \autoref{chap:05}, where PyChimera has proved to also be instrumental in the development of new graphical interfaces.
+However, UCSF Chimera is still the main library behind the scenes. In fact, to our knowledge, GaudiMM is one of the few projects that relies on it for calculation purposes and not strictly for visualization. This interactive 3D viewer offers lots of analysis tools and robust molecular abstractions that allowed us to implement most of GaudiMM genes and objectives in few lines of code. However, everything has a price and UCSF Chimera was not designed to be used as a library in other projects; instead it expects external projects to be executed within UCSF Chimera interface. To overcome this limitation, a separate package named PyChimera was developed. With PyChimera, other Python libraries can be used together with UCSF Chimera which allowed us to intertwin other projects in GaudiMM. That way, MM energies can be computed with OpenMM, Normal Modes Analysis calculated with ProDy, and more (see tables \ref{table:gaudi-genes} and \ref{table:gaudi-objectives}). Further details are given in \autoref{chap:05}, where PyChimera has proved to also be instrumental in the development and distribution of new graphical interfaces.
 
 
 \section{Conclusions $\&$  Further work}

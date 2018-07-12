@@ -10,6 +10,8 @@
         "**/*.aux": true,
         "**/*.cpt": true,
         "**/*.bbl": true,
+        "**/*.bcf": true,
+        "**/*.run.xml": true,
         "**/*.blg": true,
         "**/*.lof": true,
         "**/*.log": true,
@@ -18,7 +20,8 @@
         "**/*.synctex.gz": true,
         "**/*.toc": true,
         "**/*.xdv": true,
-        "**/.logged": true,
+        "**/*.logged": true,
+        "**/*.tdo": true,
         "**/__latexindent_temp.tex": true,
     }
 }

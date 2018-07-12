@@ -16,6 +16,7 @@ dissertation.pdf
 *.fot
 *.cb
 *.cb2
+*.tdo
 
 ## Intermediate documents:
 *.dvi

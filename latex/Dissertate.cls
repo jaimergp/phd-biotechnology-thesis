@@ -265,6 +265,7 @@
     \maketoc
     \makelof % optional
     \makelot % optional
+    \listoftodos
     % \setcounter{page}{1}
     \renewcommand{\thepage}{\arabic{page}}
     % \pagenumbering{arabic}
@@ -447,6 +448,7 @@
     {
       \footnotesize
       \setstretch{1.0}
+      \raggedright
       \bibliography{references}
       \addcontentsline{toc}{chapter}{Bibliography}
       \bibliographystyle{ieeetr}
@@ -541,3 +543,5 @@
 % Fix vertical space in lists (from https://tex.stackexchange.com/a/10689)
 \usepackage{enumitem}
 \setlist{noitemsep}
+
+\usepackage[textsize=footnotesize]{todonotes}

@@ -64,7 +64,7 @@ In MM, molecules are described by a ‘ball and spring’ model: atoms are abstr
 	E_{FF}=E_{stretching}+E_{bending}+E_{torsional}+E_{non-bonding}+E_{cross} \\ \tag{Force field energy}
 \end{align}
 
-If each of the terms can be expressed as a function of the coordinates for the involved atoms, the potential energy can be obtained, and geometries and relative energies can be calculated by optimization. Thus, all that remains is to obtain the parameters for each type of interaction involved in the system under study. Fortunately, most molecules can be described as a composition of a small set of functional subunits or groups, the properties of which rarely change. For example, all C=O bonds are around 1.22A long. Instead of having to parameterize each type of atom and bond for each type of molecule, these similarities allow to construct set of parameters with reasonable easiness, in principle.
+If each of the terms can be expressed as a function of the coordinates for the involved atoms, the potential energy can be obtained, and geometries and relative energies can be calculated by optimization. Thus, all that remains is to obtain the parameters for each type of interaction involved in the system under study. Fortunately, most molecules can be described as a composition of a small set of functional subunits or groups, the properties of which rarely change. For example, all \texttt{C=O} bonds are around 1.22 \AA long. Instead of having to parameterize each type of atom and bond for each type of molecule, these similarities allow to construct set of parameters with reasonable easiness, in principle.
 
 As opposed to QM, these equations can be solved efficiently enough to consider time-dependent analysis. If one takes the force field equations and calculates the resulting forces and velocities, the position of the atoms can be figured out with high accuracy if the timestep is small enough (i.e. in the same order of magnitude as the smallest perturbation studied: hydrogen vibration, in the order of femtoseconds). This strategy gives rise to a field called Molecular Dynamics, which allows to study the behavior of molecules along time. Modern computer architectures allow to resolve each timestep around 10\textsuperscript{8 }times daily! Processes involving seconds in real-life can be calculated within a month.
 
@@ -177,3 +177,86 @@ Q\/SAR input data do not provide 3D-structural data (with the exception of the 3
 \end{figure}
 
 
+\section{Optimization problems in modeling}
+% \addcontentsline{toc}{section}{Theory behind the concept: Optimization problems}
+\subsection{Mathematical optimization and numerical methods}
+% \addcontentsline{toc}{subsection}{Mathematical optimization and numerical methods}
+Most of the procedures used to rapidly identify physically sound initial models of a molecular system stand on finding the way to ally the exploration of wide conformational spaces and the adequate guiding variables. In math speech, this is territory of optimization problems for non-smooth surfaces.
+
+Mathematically speaking, an optimization problem consists of, given a function $ f $ that connects a set $ A $ to the set of real numbers, finding an element $ x_{0} $ in A such that $ f(x_{0}) \leq f(x) $ for all $ x in A $  (minimization), or such that $ f(x_{0}) \geq f(x) $ for all $ x in A $ (maximization).
+
+\begin{align}
+	Given ~~ f:A \rightarrow R \nonumber \\
+	Sought: ~ x_{0} \in A ~ such ~ that ~ f(x_{0})  \leq f(x) ~,~x \in A ~~~ ( minimization ) \nonumber \\
+	~~~~~~~~~ or: x_{0} \in A ~ such ~ that ~ f(x_{0})  \geq f(x) ~,~x \in A ~~~ ( maximization )
+\end{align}
+
+$ f(x) $  is normally called the objective function, loss function or cost function for minimization problems, utility function or fitness function for maximization problems or, depending on the field, energy function or functional. However, all optimization problems can be expressed as minimization problems, negating  $ f(x) $  if the problem is to be maximized.
+
+The domain  $ A ~ of ~ f $ is usually named the ‘search space’ or the ‘choice set’, and each possible value of  $ A $  is called a candidate or feasible solution.  $ A $  is normally a subset of  $ R^{n} $ , as defined by equality and/or inequality constraints. The optimization definition can be extended to be subject to inequality and equality constraints, expressed as:
+
+\begin{align}
+	optimize_{x}~~~~~~~ f(x) \nonumber \\
+	subject~to~~~  g_{i}(x)  \leq 0,~~ i=1,  \ldots ,m \nonumber \\
+	~~~~~~~~~~~~~~~~~~~~~~~ h_{j}(x) =0,~~ j=1,  \ldots ,p
+\end{align}
+
+, where  \( g_{i}(x)  \)  are the inequality constraints,  \( h_{j}(x)  \)  are the equality constraints, and  \( m \)  and  \( p \)  are greater than 0. If  \( m \)  and  \( p \)  are equal to zero, the definition falls back to the unconstrained optimization problem.
+
+Depending on the form of the function being optimized and the specified constraints, several categories emerge, like convex or nonlinear optimization problems. In convex optimization, when f, g and h are either convex (minimization) or concave (maximization). This includes linear functions, defining the field of linear optimization. Nonlinear optimization deals with functions that cannot be written as linear expressions, which usually makes the problem harder.
+
+Solving this type of problems was initially studied by Fermat and Lagrange, who applied calculus-based formulae to identify optimum solutions. However, not all optimization problems can be solved analytically and, in fact, for some complex problems is usually easier (and faster) to compute numerical solutions iteratively until a convergence threshold is met. This approach was initiated by Newton and Gauss, and since then many applicable algorithms have been devised throughout the latest decades. A few will be highlighted for illustrative purposes.
+
+\subsubsection{Steepest descent and conjugate gradient}
+% \addcontentsline{toc}{subsubsection}{Steepest descent and conjugate gradient}
+To go down a smooth mountain, one simply takes steps in a direction towards the valley. There’s a lot of possible directions, but skilled mountaineers usually take the fastest: the steepest side. Climbing down that mountain can be expressed as finding the minimum of a convex three-dimensional function, so figuring out which direction we should take in every step is a matter of finding the gradient of that function at that point.
+
+A gradient is the $n$-dimensional generalization of a single-variable derivative, so instead of returning a scalar, it returns a vector. If derivatives gave us the rate of change of a function, gradients will tell the direction in which the function will experience the greatest change. In this three-dimensional problem, the gradient vector will point to the next step. By taking little steps in the direction pointed by the gradient, we will eventually get to the minimum.
+
+This is what the steepest descent algorithm does, but it can progress very slowly in almost ‘flat’ regions of the function. A similar method named conjugate gradient uses a similar approach, but the search direction is computed in a smarter way, making sure that the direction is orthogonal to the previous step gradient and the current one. It requires more operations, but the performance towards the optimum is better and usually worthy.
+
+Since these methods only compute $f(x)$ and $f’(x)$ (first derivatives), they are called first-order methods.
+
+\subsubsection{The Newton and quasi-Newton algorithms}
+% \addcontentsline{toc}{subsubsection}{The Newton and quasi-Newton algorithms}
+Newton numerical algorithms are similar to SD and CJ methods, but compute an additional differentiation step to use the information provided curvature of the function. This makes each iteration more expensive, but with certain functions fewer iterations might be needed (see fig. \ref{fig:gradientdescent}).
+
+Second derivatives can be generalized as Hessian matrices for problems of higher dimensions, but this can get very expensive to compute. As a result, several derived methods, called quasi-Newton methods, include alternative methods to compute it or supply equivalent information, like directly computing the inverse with numerical methods, updating it with successive gradient vectors$ \ldots $  Due to its performance, one of the most popular quasi-Newton algorithms is the BGFS algorithm (for Broyden, Fletcher, Goldfarb, Shanno) and its limited memory version L-BGFS.
+
+
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{./figures/04/gradientdescent.png}
+	\caption[Gradient descent vs Newton's optimization]{A comparison of gradient descent (green) and Newton's method (red) for minimizing a function (with small step sizes) starting with $ X_{0} $. Global minimum is $ X $. Newton's method uses curvature information to take a more direct route.}
+	\label{fig:gradientdescent}
+\end{figure}
+
+\subsubsection{The simplex algorithm}
+% \addcontentsline{toc}{subsubsection}{The simplex algorithm}
+Described by Dantzig during the World War II, this algorithm solves linear optimization problems by expressing functions and constraints in a n-dimensional generalized polyhedron called polytope. The algorithm shows that the optimum point of a convex polytope is one of the vertices and can be found by iteratively traversing the edges.
+
+\subsection{Heuristics: thinking abstract but practical}
+% \addcontentsline{toc}{subsection}{Heuristics: thinking abstract but practical}
+While all these numerical methods are very different in nature, they still perform the same kind of tasks: exploration, evaluation and selection. This is, they generate a candidate solution (exploration), solve the equations and assess how far they are from the exit condition (evaluation). Selection is often so trivial in scalar functions that is not even considered as a separate step. When it comes to the selecting a new candidate solution of all the possible in the search space, if $f(x)$ points to a scalar space, selecting $f(x_{0})$ vs $f(x_{1})$ is just a matter of seeing which value is smaller (minimization) or greater (maximization). However, if $f(x)$ points to a n-dimensional space, the selection is not straightforward because $f(x_{0}) < f(x_{1})$ will be only defined if all the elements in $x_{0}$ are smaller than $x_{1}$. This subject is studied in multi-objective optimization.
+
+In a simplified example, where we must find $f(x) = 0$ with $f(x) = ax + b$, ‘generating new candidate solutions’ would simply consist of assigning new values to x. While this can be done randomly until the solution is found, it’s usually more interesting to use a smarter approach. This what the gradients and hessian approaches provide: educated guesses towards finding the optima. However, they still require an equation to be available. When several variables are analyzed and the relationship between them is not differentiable or, simply, unknown, other type of algorithms must be employed, like heuristics.
+
+\subsubsection{Monte Carlo methods}
+% \addcontentsline{toc}{subsubsection}{Monte Carlo methods}
+In Monte Carlo methods are useful for studying problems that are characterized by a huge number of degrees of freedom but can be interpreted probabilistically. Since the expected value of an integral can be approximated by the empirical mean of a random sample, these methods allow to obtain numerical results by randomly sampling the search space. In the Metropolis variant, the sample is refined iteratively with random modifications that are either accepted or rejected depending on the new value of the sample or a random acceptance ratio.
+
+For example, to minimize the potential energy of a molecule, random states can be generated by introducing small perturbations to the atomic positions that follow a Boltzmann distribution. The energy of the new states is evaluated and either accepted or rejected by comparing their energies with current mean of the sample. For example, those with smaller energies are usually included and accepted in the ensemble. For those with higher energies, they can still be included with some probability that depends on the chosen acceptance ratio. Being a Markov chain, the probability distribution for the next iteration will be reparametrized with the state of the current sample and the process will continue iteratively until convergence.
+
+\subsubsection{Evolutionary algorithms}
+% \addcontentsline{toc}{subsubsection}{Evolutionary algorithms}
+Evolutionary algorithms (EA) can be explained as an extension to Monte Carlo’s: they also employ random generation of solutions as starting points, but following iterations employ biology-inspired heuristics to localize next candidate solutions. In each iteration, the ‘population’ of feasible solutions (individuals) are evaluated in the optimization environment, and each one is assessed a fitness score. Like in the Evolution theory, only the fittest will be allowed to survive (included in the sample for the next iteration).
+
+Genetic algorithms (GA) are a special type of EA that implement ‘evolutionary’ heuristics inspired on chromosomic changes. By mimicking chromosomes during the meiosis, candidate solutions can exchange some of their variables (mating or recombination), and some can experience a random change in one or more variables (mutation). By iterating over this ‘sexual’ cycle, fitter and fitter solutions will be obtained.
+
+\subsubsection{Machine learning }
+% \addcontentsline{toc}{subsubsection}{Machine learning }
+Artificial Intelligence and Machine Learning are very popular computer science fields these days. Globally, they are algorithms that can ‘learn’ from their own ‘experience’ by extracting patterns and relationships out of the supplied data. They can be studied as non-linear statistical data modeling tools.
+
+One of the hottest branches of Machine Learning are Artificial Neural Networks and, especially, Deep Learning. The implemented algorithms in these categories mimic the way neurons work in the brain. Like all mathematical functions, each ‘neuron’ produces an output that depends on the input. Many neurons are grouped together in layers and these layers are concatenated, having the output of one layer fed as the input of the next one. Layers can back-propagate, and modify the input of previous layers, like the feedback mechanism of the brain. Ultimately, this construction generates a huge set of self-adjusting equations that can optimize wide ranges of observations. For example, they are actively used in speech recognition, computer vision or artificial intelligence. The hype produced by its success in other areas made it permeate towards some areas of science where its application is controversial and less ‘fancy’ algorithms like random walks (Monte Carlo and similar) are equally performant $ \{ $ $ \} $ .
+
+\todo[inline]{Maybe advance multiobjective optimization here?}
