@@ -1,9 +1,8 @@
 *.html
 *~
-*.vscode
 _*/
 helpful/*
-*.pdf
+dissertation.pdf
 .logged
 ## Core latex/pdflatex auxiliary files:
 *.aux
