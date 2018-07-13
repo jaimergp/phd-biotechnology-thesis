@@ -20,7 +20,9 @@ dissertation.pdf
 
 ## Intermediate documents:
 *.dvi
+**/*.dvi
 *.xdv
+**/*.xdv
 *-converted-to.*
 # these rules might exclude image files for figures etc.
 # *.ps
