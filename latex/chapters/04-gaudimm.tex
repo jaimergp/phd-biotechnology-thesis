@@ -83,7 +83,7 @@ GaudiMM is a Python package that allows to build and refine of chemobiological s
 
 \subsection{The NSGA-II algorithm}
 % \addcontentsline{toc}{subsection}{The NSGA-II algorithm}
-NSGA-II is a multi-objective genetic algorithm (MOGA) developed by K. Deb. It has been thoroughly tested and benchmarked in well-characterized multi-objective problems $ \{ $ $ \} $  and is considered a prototypical MOGA.
+NSGA-II is a multi-objective genetic algorithm (MOGA) developed by K. Deb. It has been thoroughly tested and benchmarked in well-characterized multi-objective problems\cite{nsgaii} and is considered a prototypical MOGA.
 
 The algorithm can be described in three main stages (exploration, evaluation and selection) that are executed iteratively until an exit condition is met (usually, convergence or maximum steps). Generating new candidate solutions or individuals is considered within the \textit{exploration} stage, and can be achieved by random attribute generation or combining previously existing individuals. In the evaluation stage, the candidates are assessed with different functions or objectives, each returning a scalar that represents a fitness score for that objective. Finally, the selection stage collects all the individuals and compares their scores to select the best individuals according to the Pareto dominance criterion.
 
@@ -150,7 +150,7 @@ Genes that fall in this category only alter the positions of the atoms involved 
 
 	\item \textsc{Search}. It performs rigid transformations on Molecules (translation and rotation). A radius parameter can be set to limit the search sphere range. If the radius is zero, the molecule won’t be translated but can freely rotate around the anchor atom, which is useful for covalent bond emulation.
 
-	\item \textsc{Rotamers}. It allows to explore side-chain conformations in protein residues by applying Dunbrack’s $ \{ $ $ \} $  or Dynameomics rotamer libraries $ \{ $ $ \} $ .
+	\item \textsc{Rotamers}. It allows to explore side-chain conformations in protein residues by applying Dunbrack’s\cite{dunbrack1993backbone} or Dynameomics\cite{scouras2011dynameomics} rotamer libraries.
 
 	\item \textsc{NormalModes}. Given a Molecule object, it calculates normal modes with elastic network methods and applies the resulting collective motions as possible variants of the initial coordinates set.
 
@@ -228,17 +228,17 @@ As a result, GaudiMM ships with a rather diverse set of objectives, combining 3\
 \end{itemize}\subsubsection{Energy calculation}
 % \addcontentsline{toc}{subsubsection}{Energy calculation}
 \begin{itemize}
-	\item \textsc{DSX}. DrugScoreX is a knowledge-based docking scoring function developed by Neudert $\&$  Klebe $ \{ $ 10.1021/ci200274q$ \} $ . It is specially designed to compute interaction energies between protein structures and small compounds. This objective is a Python wrapper around the DSX executables and input files.
+	\item \textsc{DSX}. DrugScoreX is a knowledge-based docking scoring function developed by Neudert $\&$  Klebe.\cite{neudert2011dsx} It is specially designed to compute interaction energies between protein structures and small compounds. This objective is a Python wrapper around the DSX executables and input files.
 
 	\item \textsc{Energy}. This objective allows to calculate the potential energy of a structure with the Molecular Mechanics force fields implemented in OpenMM. Parameters must be provided for custom residues.
 
-	\item \textsc{LigScore}. Another docking scoring function developed by Sali $ \{ $ IMP$ \} $  which allows to obtain protein-ligand interaction energies. While IMP is a C++ project with Python bindings, the LigScore function is only exposed through an executable. This objective can call that binary and parse the resulting energies from the output.
+	\item \textsc{LigScore}. Another docking scoring function developed by Sali\cite{krammer2005ligscore} which allows to obtain protein-ligand interaction energies. While the parent project, IMP,\cite{russel2012putting} is a C++ project with Python bindings, the LigScore function is only exposed through an executable. This objective can call that binary and parse the resulting energies from the output.
 
-	\item \textsc{Vina}. AutoDock Vina is a popular open-source package to perform protein-ligand docking. This objective calls the Vina executable in score-only mode to calculate the interaction energies between a protein and a ligand.
+	\item \textsc{Vina}. AutoDock Vina\cite{trott2010autodock} is a popular open-source package to perform protein-ligand docking. This objective calls the Vina executable in score-only mode to calculate the interaction energies between a protein and a ligand.
 
-	\item \textsc{GOLD}. This commercial software suite is one the most used solutions to calculate accurate docking poses. With this objective, all the scoring functions exposed in GOLD can be used as guiding evaluators in GaudiMM: PLP, GoldScore, ChemScore$ \ldots $  License is needed for this to work.
+	\item \textsc{GOLD}. This commercial software suite is one the most used solutions to calculate accurate docking poses. With this objective, all the scoring functions exposed in GOLD\cite{gold} can be used as guiding evaluators in GaudiMM: PLP, GoldScore, ChemScore$ \ldots $  License is needed for this to work.
 
-	\item \textsc{NWChem}. This objective provides a way to run quantum mechanics calculations in this popular open-source software suite. Provided a template input-file, this objective will insert the appropriate coordinates, charge and multiplicity. While all methods implemented in NWChem are potentially usable, only semi-empirical ones are recommended in terms of speed; specially for large structures.
+	\item \textsc{NWChem}. This objective provides a way to run quantum mechanics calculations in this popular open-source software suite.\cite{nwchem} Provided a template input-file, this objective will insert the appropriate coordinates, charge and multiplicity. While all methods implemented in NWChem are potentially usable, only semi-empirical ones are recommended in terms of speed; specially for large structures.
 
 
 \end{itemize}\subsubsection{High-level chemical descriptors}
@@ -321,9 +321,9 @@ To ensure a rich Pareto front in constructed, NSGA-II includes a crowding parame
 
 Usually, our minds are wired to think in scalar functions and values. This is, functions that return scalar magnitudes or ‘single values’. However, if the function returns $n$-dimensional data, navigating towards the optimum is not so intuitive. Since there is more than one target value, conflicting decisions might arise.
 
-Say we need to minimize a function that takes a vector in R3 and returns another vector in R3. Since we have to reach the origin by minimization; this is, all the elements in the vector must be 0. What if the first element in the vector is smaller, but the second is greater? One possibility is to construct a general function out of those functions, like the vector norm or the Euclidean distance. In more complex cases, simple weighted linear sum might work, but the weights must be carefully chosen for each case; otherwise, convergence problems might appear $ \{ $ $ \} $ .
+Say we need to minimize a function that takes a vector in $R^{3}$ and returns another vector in $R^{3}$. Since we have to reach the origin by minimization; this is, all the elements in the vector must be 0. What if the first element in the vector is smaller, but the second is greater? One possibility is to construct a general function out of those functions, like the vector norm or the Euclidean distance. In more complex cases, simple weighted linear sum might work, but the weights must be carefully chosen for each case; otherwise, convergence problems might appear.\cite{das1997closer}
 
-One alternative which does not involve a dimensionality reduction (R3 to R in the previous example) is the Pareto optimality criterion. It is based on Pareto-dominance: a new solution dominates an existing one if one of the variables is improved without hurting the others. By enumerating a high number of solutions and comparing them in terms of Pareto-dominance, a reduced set of Pareto-dominating solution can be found. When no more Pareto-dominating solutions can be found, that set is said to be Pareto-optimal and constitutes the Pareto front: the solutions to the problem.
+One alternative which does not involve a dimensionality reduction ($R^{3}$ to $R$ in the previous example) is the Pareto optimality criterion. It is based on Pareto-dominance: a new solution dominates an existing one if one of the variables is improved without hurting the others. By enumerating a high number of solutions and comparing them in terms of Pareto-dominance, a reduced set of Pareto-dominating solution can be found. When no more Pareto-dominating solutions can be found, that set is said to be Pareto-optimal and constitutes the Pareto front: the solutions to the problem.
 
 Optimization processes like this are more common that they appear. At the supermarket, all clients decide on the trade-off between price and quality every day. Normally, humans solve this by setting a cutoff on one of the variables. For example, a maximum budget is set. However, if all possibilities are considered, the resulting solutions would range from the cheapest possible product to the most expensive one, including all the good enough (Pareto-dominating) combinations in between. However, if a new product is added to the catalog and is cheaper than its competitors without a decrease in quality, that new product will dominate all other products with the same quality but higher price.
 
