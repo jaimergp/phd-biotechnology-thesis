@@ -14,13 +14,7 @@
 % \section{Introduction $\&$  motivation}
 % \addcontentsline{toc}{section}{Introduction $\&$  motivation}
 
-\Lettrine{The vast availability of molecular modeling tools}, techniques and approaches might trick beginners into thinking that every imaginable system can be accurately modeled with sufficient expertise: the only challenge is learning how to use them correctly. In a (very optimistic) way, that first impression will end up being true someday; i.e. when hardware is powerful enough to calculate everything with quantum mechanics. Fortunately for scientific software developers, that day is still far away and accuracy-speed tradeoffs are needed.
-
-With the current computational resources, one cannot pretend to perform a global exploration of the potential energy surface; not even for small systems. As a result, whatever the theory applied, the starting point of any calculation must be somehow close to or distantly resembling to the expected final structure. If several possibilities are considered, then a number of different starting points must be assessed. In other words, global optimization is usually not affordable and performing several local optimizations with different starting variables is often preferred.
-
-The take-home message is that almost every model will need a starting structure. A first and key step in every molecular modeling exercise. As mentioned in \autoref{chap:01}, sometimes this is as easy as downloading a file from an online database or drawing molecules in an interactive display. However, that is not always the case if only partial experimental data is available. This can end up constituting a sort of $``$writer’s block$"$  or $``$blank sheet syndrome$"$ : many projects strive to even start because of the complexity to find convenient starting points in a reasonably short amount of time. Sometimes, the researcher has no other option than manually adjusting the structure in an iterative, trial-and-error scheme until the calculation succeeds.
-
-Alleviating that frustrating process is one of the main the motivations behind the development of GaudiMM, the tool central to this chapter. GaudiMM, which stands for Genetic Algorithms with Unrestricted Descriptors for Intuitive Molecular Modeling, can be described as a molecular sketcher that will help to obtain reasonable starting models for their calculations. Like a grid on a fresh canvas or sidewheels in a bike, it allows to handle multidimensional problems in an easy, guided process.
+\todo[inline]{See nueva-gaudi}
 
 \todo[inline]{Modular nature of the tool}
 
@@ -361,3 +355,5 @@ When the collection of genes and objectives began to grow, it became unmanageabl
 These observations have made clear that GaudiMM provides a mental framework suitable for implementing proof-of-concept multiscale protocols and explaining basic concepts of molecular modeling to newcomers in the field.
 
 That said, there is room for improvement in the performance area. Genetic algorithms are easily parallelizable by design, but depending on UCSF Chimera for most of the functions means that communication across processes could be expensive in terms of memory usage and synchronization overhead. Since the calculations rarely involve more than a few hours, the focus shifted towards the implementation of new modules rather than optimizing the speed of the new ones. However, it is one of the main milestones of the GaudiMM v2.0 roadmap.
+
+\todo[inline]{Further work: dimensionality reduction of the Pareto front for common cases: linearization of multidimensional resutls, new algorithms}

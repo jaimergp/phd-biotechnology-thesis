@@ -2,10 +2,13 @@
 \chapter{General conclusions}
 \label{chap:07}
 
-\Lettrine{In this dissertation} several software projects have been presented, focusing on the motivations behind their inception and their potential applicability in form of illustrative cases. Additionally, the computational insights behind the collaboration with an experimental group showcase how they would be applied in real life cases. Hopefully, these are enough to prove them useful; extensive conclusions have been already commented on their respective chapters and there is no need to go into detail again. This is only a brief summary on each of them.
+\Lettrine{In this dissertation} a series of pieces of software has been presented and several applications have been brought. The computational platforms have been developed thanks to the unique modularity that offers Python. A possible list of conclusive arguments could be the following:
+
+% This approach useful for both molecular modelers and experimentalists.
+
 
 \begin{enumerate}
-	\item GaudiMM has been presented as a versatile molecular optimization framework. Its plurigenetic, multiobjective implementation allows researchers to perform all types of docking, restrained exploration and molecular design, to name a few applications. This approach useful for both molecular modelers and experimentalists. For the former, GaudiMM is able to generate starting structures for any multiscale protocol. For the latter, it can be a valuable asset to discard non-feasible hypothesis.
+	\item GaudiMM has been presented as a versatile molecular optimization framework[DETAILS ON ARCHITETURE AND NOVEL PARADIGM]. Its uncoupled plurigenetic, multiobjective implementation provides researchers an unprecedented flexibility in molecular modeling.  The concept of recipe ease a possible path to perform hypothesis-driven modeling as well as other simulations like docking or restrained exploration.
 
 	\item Tangram is a collection of more than 15 tools for UCSF Chimera that will help in the generation of input files for 3\textsuperscript{rd} party software and diverse interactive structural analysis within a single graphical interface and user experience.
 
@@ -15,33 +18,23 @@
 
 	\item ESIgen can save hours of manual text manipulation in computational chemistry. Its ability to automatically generate technical reports suitable for attachment as supporting information or internal communication with colleagues will be hopefully appreciated by this community.
 
-	\item EasyMECP is a very specific tool designed to facilitate the calculation of minimum energy crossing points (MECP) with Gaussian. It uses the popular code by J. M. Harvey, but provides a user-friendly wrapper that alleviates the job set-up significantly.
+	\item EasyMECP is a very specific tool designed to facilitate the calculation of minimum energy crossing points (MECP) with Gaussian. It uses the popular code by J. M. Harvey, but provides a user-friendly wrapper that alleviates the job set-up significantly.\todo{Maybe adieu}
 \end{enumerate}
 
-Unfortunately, some unfinished projects could not make it to this compilation but will constitute further steps in the future of these ongoing endeavours. At the end of the day, even if only one of these tools end up in the workflow of a future molecular modeler, the effort will have been worth it.
+% Unfortunately, some unfinished projects could not make it to this compilation but will constitute further steps in the future of these ongoing endeavours. At the end of the day, even if only one of these tools end up in the workflow of a future molecular modeler, the effort will have been worth it.
 
 Finally, these last following paragraphs will try to sum up some points learned that are not directly linked to the results presented, but to the process of obtaining them.
 
 Initially, the ‘novel software platform’ in the title of this dissertation only referred to GaudiMM, but during its development several weak points in the workflow of lab-mates and colleagues were identified. What started as innocent efforts to help automate some manual steps or provide easier access to new technology ended up as big projects on their own. This kind of opportunities was not anticipated, but it perfectly fitted the intentions of this thesis.
 
-\section{GaudiMM as an educational tool: undergoing developments}
-% \addcontentsline{toc}{section}{GaudiMM as an educational tool: undergoing developments}
-\todo[inline]{Review this section in this new position}
-The conceptual separation of exploration and evaluation implemented in GaudiMM gives a clear understanding of the different variables involved in the optimization process. This has proved to be a very valuable as a teaching tool in lower degrees of education. Students involved in GaudiMM development have contributed new modules even with a non-chemical background. Some highlights include a gene to navigate the chemical space or a coupled gene/objective pair to assess ligand binding pathways.
+- IDEAS
 
-\subsection{Navigating the chemical space}
-% \addcontentsline{toc}{subsection}{Navigating the chemical space}
-GaudiMM already allowed to navigate the chemical space via the dynamic building capabilities of the Molecule gene, but it presented two limitations: (1) it is restricted to the provided fragments library, and (2) it only allows to construct linear concatenations of those fragments (i.e. no ramifications or rings).
+	- He podido dar los primeros pasos a un tipo de desarrollo capaz de competir en funcionalidad con suites comerciales ya existentes (particularmente caras en algunos casos).
 
-A new approach based on graph theory and pharmacophore matching is being developed in our group as part of the Ph. D. thesis of J. E. Sánchez-Aparicio. This method, which interprets molecules as non-directed graphs that can grow and shrink arbitrarily, does not require any preexisting libraries and naturally considers ramifications. It has been successfully applied to propose designs of small molecule inhibitors for\textit{ K. pulmoniae} NDM-1 $ \beta $ -lactamase.
+	- Además de reproducir resultados ya existentes, este tipo de plataformas ha permitido entrar en temas de modeling donde no hay inputs (huérfanos). ES un approach flexible capaz de mezclar descriptores sencillos con energías de coordinación para proporcionar soluciones no caracterizables previamente (al menos sin una inversión importante de recursos computacionales, o tiempo).
 
-\subsection{Finding ligand binding pathways}
-% \addcontentsline{toc}{subsection}{Finding ligand binding pathways}
-Docking studies provides insight on how a small molecule can interact with a bigger host molecule by assessing feasible binding poses. However, those are just static snapshots of a dynamic behavior. To study how the ligand reaches its binding sites, long Molecular Dynamics with steering restraints are needed and do not always guarantee a successful ligand pathway.
+	- LISTA: casos más interesantes comentados en chapter 06.
 
-An alternative approach was considered for one of the MSc dissertations supervised during my Ph. D. studies $ \{ $ $ \} $ . The protein space was flooded with small probes placed in a tight grid and queried for steric impediments, resulting in points with higher or lower pseudo-energy scores. Then, lower-energy points were traversed from the outer regions of the protein in hopes of finding a continuous path that reached the ligand binding site. To consider the ligand size, shape or volume, a second step was proposed. The calculated paths were segmented in 5Å pieces and each of the resulting pieces was then submitted to a docking simulation with reduced search radius. The resulting structures were low-energy conformations of the ligand along the proposed pathway. All these poses were finally concatenated together to emulate a smooth trajectory ideal for depiction purposes.
-
-This proof of concept proves how the versatility present in GaudiMM can be used as part of bigger protocols, and is being reimplemented as a gene able to guide the exploration of docking studies along feasible pathways in the Ph. D. studies of J. E. Sánchez-Aparicio.
-
+	The conceptual separation of exploration and evaluation implemented in GaudiMM gives a clear understanding of the different variables involved in the optimization process. This has proved to be a very valuable as a teaching tool in lower degrees of education. Students involved in GaudiMM development have contributed new modules even with a non-chemical background. Some highlights include a gene to navigate the chemical space or a coupled gene/objective pair to assess ligand binding pathways, detailed in Appendix X.
 
 

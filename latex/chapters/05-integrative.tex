@@ -7,21 +7,30 @@
 	\qauthor{---Peter H. Salus}
 \end{savequote}
 
-\chapter{An Integrative Platform}
+\chapter{Python-based molecular modeling workflows}
 \label{chap:05}
 
-\section{Introduction \& motivation}
+\section{Statement}
 % \addcontentsline{toc}{section}{Introduction $\&$  motivation}
-\Lettrine{There is no silver bullet} in molecular modeling. So many tools, techniques, algorithms and approaches exist because different models are needed depending on the problem at hand. For some studies, a single simulation can be enough, but the more complex the system being modeled is, the more intricate simulation schemes are needed. This usually means combining methods with different supporting theories, whose technical implementation might assume common abstractions in that field that do not play well with subsequent stages in the multiscale protocol.
 
-To perform this kind of studies, the researcher resorts to accumulated expertise in combining different file formats or, in some fortunate cases, even automating the conversions with scripting languages. Switching from program to program can be confusing for beginners, especially those programs were not meant to be used together – a common situation in advanced molecular modeling. In those cases, some might prefer using a single cohesive user experience, normally in the form of a graphical interface. In this chapter we will discuss the state of the art of graphical interfaces and how one of them was adopted as the central hub for our in-house molecular modeling tools.
+To perform this kind of studies, the researcher resorts to accumulated expertise in combining different file formats or, in some fortunate cases, even automating the conversions with scripting languages. Switching from program to program can be confusing for beginners,\todo{beginners -> "Even for experts"} especially those programs were not meant to be used together – a common situation in advanced molecular modeling. In those cases, some might prefer using a single cohesive user experience, normally in the form of a graphical interface. In this chapter we will discuss the state of the art of graphical interfaces and how one of them was adopted as the central hub for our in-house molecular modeling tools.
 
 Of course, not all tasks benefit equally from a graphical interface. Some can be equally improved by providing smart command-line tools. The remaining part of the present chapter will introduce complementary developments designed to improv the workflow and daily routine of computational chemists and molecular modelers alike.
 
-\section{Implementation of a common interactive canvas}
+The entire list of developments is presented in Table X. \todo{Make this table}
+
+Table X:
+
+- Tangram
+- PyChimera
+- ... more backend tools
+
+\section{Implementation of a common interactive canvas: Tangram}
 % \addcontentsline{toc}{section}{Implementation of a common interactive canvas}
+
 Stemming from the former Midas program, UCSF Chimera describe itself as \textit{a highly extensible program for interactive visualization and analysis of molecular structures and related data, including density maps, supramolecular assemblies, sequence alignments, docking results, trajectories, and conformational ensembles}. It consists of an interactive 3D visualizer built on top of C++ core with Python bindings, which is responsible of providing much of that promised ‘extensibility’. GaudiMM, commented in \autoref{chap:04}, heavily uses UCSF Chimera as a backend library, but being a command-line tool, does not need any graphical interaction. In this section, we present Tangram, a set of extensions designed to add new pieces to the arsenal of molecular modeling tools already present in UCSF Chimera.
 
+\todo[inline]{GaudiView become the start of the 2nd wave of dev efforts in this thesis}
 
  \begin{table}[hbtp]
 	\caption{Tangram Suite: Technical datasheet}
@@ -69,7 +78,7 @@ The different \textit{tans} or Tangram can be of very different nature. Some pro
 	\item \textsc{Calculation setup}
 
 	\begin{itemize}
-		\item \textsc{Cauchian}: QM and QM/MM calculations setup, with Gaussian and garleek
+		\item \textsc{QMSetup}: QM and QM/MM calculations setup, with Gaussian and garleek
 
 		\item \textsc{MMSetup}: Setup MD calculations with OpenMM and OMMProtocol
 
@@ -85,6 +94,8 @@ The different \textit{tans} or Tangram can be of very different nature. Some pro
 		\item \textsc{BondOrder}: Automatic bond order perception for UCSF Chimera [WIP]
 
 		\item \textsc{OrbiTraj}: A subtle modification to UCSF Chimera’s MD Movie extension to allow the visualization of volumetric data along a molecular trajectory
+
+		\item \textsc{NormalModes}: Perform Normal Modes Analysis and view them directly on-screen
 	\end{itemize}
 
 	\item \textsc{Interaction analysis}
@@ -100,8 +111,6 @@ The different \textit{tans} or Tangram can be of very different nature. Some pro
 	\item \textsc{Structure analysis}
 
 	\begin{itemize}
-		\item \textsc{NormalModes}: Perform Normal Modes Analysis and view them directly on-screen
-
 		\item \textsc{PoPMuSiCGUI}: Depict and apply the predictions made by PoPMuSiC calculations
 
 		\item \textsc{PropKaGUI}: Analyze and depict the expected pKa values of protein residues with PropKa 3.1
@@ -109,6 +118,10 @@ The different \textit{tans} or Tangram can be of very different nature. Some pro
 		\item \textsc{SubAlign}: Align two, potentially different, molecules based on partial matches of substructures
 	\end{itemize}
 \end{itemize}
+
+
+\todo[inline]{Focus on only the important ones from now on, mainly multiscale: extract the visualization helpers into an appendix}
+%
 
 \subsection{Calculation setup}
 % \addcontentsline{toc}{subsection}{Calculation setup}
@@ -250,6 +263,7 @@ UCSF Chimera provides several utilities for molecular superposition. The ‘matc
 \subsection{PyChimera behind the scenes}
 % \addcontentsline{toc}{subsection}{PyChimera behind the scenes}
 
+\todo[inline]{ Pass Pychimera to commnad-line section}
 
 Most of the extensions listed in this section relies on libraries developed by 3\textsuperscript{rd} parties that are not present in the UCSF Chimera Python distribution. Installing new packages inside UCSF Chimera is possible, but not very straight-forward. Additionally, some of the packages required by Tangram need long compilation times that would constitute a high entry barrier for beginners. To ease the process, the full Tangram suite can be installed with a single executable that is available in the central code repository (\href{https://github.com/insilichem/tangram/releases}{https://github.com/insilichem/tangram/releases}).
 
@@ -310,11 +324,10 @@ While a project might be conceived for command-line usage, this does not mean th
 
 In this section, the motivation, features and implementation of four different packages will be discussed: (1) OMMProtocol, (2) Garleek, (3) ESIgen, and (4) EasyMECP. Unlike GaudiMM, discussed in the previous chapter, they do not provide novel molecular modeling methods, but they do make them easier to use by automating repetitive tasks or abstracting away the technical details. This, ultimately, ends up saving the user some precious time.
 
+\todo[inline]{More context for each backend tool: OMMProtocol-MM}
+
 \subsection{GPU-accelerated Molecular Dynamics, the easy way: OMMProtocol}
 % \addcontentsline{toc}{subsection}{GPU-accelerated Molecular Dynamics, the easy way: OMMProtocol}
-
-
-
 
 Molecular Mechanics (MM) and Molecular Dynamics (MD) are widely used in structural biology since they allow observing evolution of large biomolecules along time with affordable timescales and computational resources. This is particularly true after the popularization of General-Purpose Graphic Processing Units (GPGPUs) and their usage for calculations beyond graphics renderization. While long-established MM suites like Amber,\cite{amber} Gromacs\cite{gromacs} or CHARMM\cite{brooks1983} have been progressively implementing GPU acceleration in their code for some years now, a relatively recent project caught the community attention with its performance, flexibility, open-design and availability: the free OpenMM library.\cite{openmm}
 
@@ -492,6 +505,8 @@ Both interfaces are based on the same usage principle: the user only needs to wr
 
 \subsection{Easy MECP calculations}
 % \addcontentsline{toc}{subsection}{Easy MECP calculations}
+
+\todo[inline]{Appendix?}
 
 Minimum Energy Crossing Points (MECP) are defined as the consensus conformation of a molecular system that can feature low-energy minima in different spin states. A computational method to calculate them computationally was proposed by J. N. Harvey in 1998,\cite{harvey1998} using Gaussian, GAMESS and custom Fortran routines orchestrated by shell scripts. The method and its related source code has been used widely across several research groups since then. However, setting up the MECP procedure involves recompiling the Fortran binary for each system, since it is memory allocation requires the manual specification of the number of atoms. Convergence thresholds and other hardcoded values are scattered all over the source code, which does not allow easy access to these parameters. All these technical difficulties should not concern the user.
 

@@ -1,0 +1,30 @@
+
+From 01-intro:
+
+Multidimensional search spaces are hard to navigate with a single method, so most popular approaches resort to multistep protocols that recruit different techniques along the process. This adds one more challenge to the scientific work: putting all the software to work together.
+
+---
+
+The covalent bond of a hydrogen atom stretches at a frequency of 1ps, but other harmonic vibrations can take up to nanoseconds in macromolecules where collective motions are present. A key cofactor in a new catalysis method can be comprised of less than 10 atoms, while proteins and nucleic acids that develop critical functions in our cells can be made of tens of thousands. Some studies like enzyme inhibition, biocatalysis or artificial metalloenzymes often require looking at both sides of the scale to obtain valuable information.
+
+This is hard because the bigger a system is and slower the phenomena, less accuracy can be afforded in reasonable time periods. Highly accurate methods like quantum mechanics are usually disregarded when more than 500 atoms are considered. Faster methods like semi-empirical approaches to QM or polarizable molecular mechanics can help in bigger systems, but at the cost of less accuracy. Following that trend, mesoscale methods stop considering atoms individually altogether and group them in coarse-grained entities. If possible, they can also take great advantage of the existing symmetry in the structures under study.
+
+---
+
+From 04-gaudi:
+
+\Lettrine{The vast availability of molecular modeling tools}, techniques and approaches might trick beginners into thinking that every imaginable system can be accurately modeled with sufficient expertise: the only challenge is learning how to use them correctly. In a (very optimistic) way, that first impression will end up being true someday; i.e. when hardware is powerful enough to calculate everything with quantum mechanics. Fortunately for scientific software developers, that day is still far away and accuracy-speed tradeoffs are needed.
+
+With the current computational resources, one cannot pretend to perform a global exploration of the potential energy surface; not even for small systems. As a result, whatever the theory applied, the starting point of any calculation must be somehow close to or distantly resembling to the expected final structure. If several possibilities are considered, then a number of different starting points must be assessed. In other words, global optimization is usually not affordable and performing several local optimizations with different starting variables is often preferred.
+
+The take-home message is that almost every model will need a starting structure. A first and key step in every molecular modeling exercise. As mentioned in \autoref{chap:01}, sometimes this is as easy as downloading a file from an online database or drawing molecules in an interactive display. However, that is not always the case if only partial experimental data is available. This can end up constituting a sort of $``$writer’s block$"$  or $``$blank sheet syndrome$"$ : many projects strive to even start because of the complexity to find convenient starting points in a reasonably short amount of time. Sometimes, the researcher has no other option than manually adjusting the structure in an iterative, trial-and-error scheme until the calculation succeeds.
+
+Alleviating that frustrating process is one of the main the motivations behind the development of GaudiMM, the tool central to this chapter. GaudiMM, which stands for Genetic Algorithms with Unrestricted Descriptors for Intuitive Molecular Modeling, can be described as a molecular sketcher that will help to obtain reasonable starting models for their calculations. Like a grid on a fresh canvas or sidewheels in a bike, it allows to handle multidimensional problems in an easy, guided process.
+
+
+---
+
+
+From 05-integrative:
+
+\Lettrine{There is no silver bullet} in molecular modeling. So many tools, techniques, algorithms and approaches exist because different models are needed depending on the problem at hand. For some studies, a single simulation can be enough, but the more complex the system being modeled is, the more intricate simulation schemes are needed. This usually means combining methods with different supporting theories, whose technical implementation might assume common abstractions in that field that do not play well with subsequent stages in the multiscale protocol.
