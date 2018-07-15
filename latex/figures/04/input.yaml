@@ -1,0 +1,36 @@
+# GaudiMM input files are formatted in YAML
+# This is a comment
+output:
+    path: ./results
+    name: cyclodecane-experiment
+
+genes:
+-   name: Decane
+    module: gaudi.genes.molecule
+    path: decane.mol2
+
+-   name: Torsion
+    module: gaudi.genes.torsion
+    target: Decane
+    anchor: Decane/1
+
+objectives:
+-   name: Clashes
+    module: gaudi.objectives.contacts
+    which: clashes
+    weight: -1.0  # minimize
+    probes: [Decane]
+    radius: 5.0
+
+-   name: Distance
+    module: gaudi.objectives.distance
+    weight: -1.0
+    probes: [Decane/1]
+    target: Decane/10
+    threshold: covalent # 1.5 A for C-C
+
+-   name: Angle
+    module: gaudi.objectives.angle
+    weight: -1.0
+    threshold: 109.5
+    probes: [Decane/1, Decane/10, Decane/9]

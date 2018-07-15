@@ -6,9 +6,9 @@
 \begin{document}
 
 % the front matter
-\input{frontmatter/personalize}
-\frontmatter
-
+% \input{frontmatter/personalize}
+% \frontmatter
+\
 \makeatletter
     \if@twoside
         \pagestyle{fancy}
@@ -20,27 +20,30 @@
         \fancyhf[reh]{\textit{Chapter \thechapter}}
     \fi
 \makeatother
+\setstretch{\dnormalspacing}
 
 % include each chapter...
-%\setcounter{chapter}{-1}  % start chapter numbering at 0
-\include{chapters/00-preface}
-\include{chapters/01-intro}
-\include{chapters/02-methods}
-\include{chapters/03-objectives}
+%\include{chapters/00-preface}
+%\include{chapters/01-intro}
+%\include{chapters/02-methods}
+% \include{chapters/03-objectives}
+\setcounter{chapter}{3}  % start chapter numbering at 0
 \include{chapters/04-gaudimm}
-\include{chapters/05-integrative}
-\include{chapters/06-applicative}
-\include{chapters/07-conclusions}
-\include{chapters/08-epilog}
+% \include{chapters/05-integrative}
+% \include{chapters/06-applicative}
+% \include{chapters/07-conclusions}
+% \include{chapters/08-epilog}
 
-\begin{appendices}
-    \makeatletter
-        \if@twoside
-            \fancyhf[reh]{\textit{Appendix \thechapter}}
-        \fi
-    \makeatother
-    \include{chapters/appendix-a}
-\end{appendices}
+% \begin{appendices}
+%     \makeatletter
+%         \if@twoside
+%             \fancyhf[reh]{\textit{Appendix \thechapter}}
+%         \fi
+%     \makeatother
+%     \include{chapters/appendix-a}
+%     \include{chapters/appendix-b}
+%     \include{chapters/appendix-c}
+% \end{appendices}
 
 % the back matter
 \backmatter

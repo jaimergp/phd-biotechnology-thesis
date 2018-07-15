@@ -11,6 +11,18 @@ This is hard because the bigger a system is and slower the phenomena, less accur
 
 ---
 
+A modeler knows which techniques and theories must be applied depending on the task at hand, which is even more difficult if one has to take into account the diversity of software implementations. Just choosing where to begin can be a daunting task.
+
+---
+
+Even though the horizon might look like exciting, we still must solve some issues in the current state of the art.  Only by providing solid foundations we will be able to build a strong future. In molecular modeling, problems may arise anytime during the full process. Missing structural data, lack of parameters or software incompatibilities are the most common issues and will be detailed in the following points.
+
+---
+
+While molecular modeling platforms aim to solve the fragmentation problem, the tool landscape is too vast to be tackled by a sole project. For this reason, most platforms offer an extensibility layer that allows third-party programmers (or advanced users!) to develop their own modules and use them as an additional component of the platform.
+
+---
+
 From 04-gaudi:
 
 \Lettrine{The vast availability of molecular modeling tools}, techniques and approaches might trick beginners into thinking that every imaginable system can be accurately modeled with sufficient expertise: the only challenge is learning how to use them correctly. In a (very optimistic) way, that first impression will end up being true someday; i.e. when hardware is powerful enough to calculate everything with quantum mechanics. Fortunately for scientific software developers, that day is still far away and accuracy-speed tradeoffs are needed.
@@ -21,9 +33,19 @@ The take-home message is that almost every model will need a starting structure.
 
 Alleviating that frustrating process is one of the main the motivations behind the development of GaudiMM, the tool central to this chapter. GaudiMM, which stands for Genetic Algorithms with Unrestricted Descriptors for Intuitive Molecular Modeling, can be described as a molecular sketcher that will help to obtain reasonable starting models for their calculations. Like a grid on a fresh canvas or sidewheels in a bike, it allows to handle multidimensional problems in an easy, guided process.
 
+---
+
+GaudiMM is a Python package that allows to build and refine of chemobiological structures through multi-objective optimization. Built on top of the NSGA-II algorithm, it features a modular, extensible architecture that conceptually emphasizes the three main stages of the optimization process: exploration, evaluation and selection. This section will describe all the details behind its rationale and implementation in a molecular modeling environment. For practical use cases, please refer to \autoref{chap:06}, where several examples are presented.
 
 ---
 
+\begin{itemize}
+	\item Draft \& sketch molecules
+	\item Give answers to quick hypotheses
+	\item Worry about fine details later - starting points do not need them
+\end{itemize}
+
+---
 
 From 05-integrative:
 

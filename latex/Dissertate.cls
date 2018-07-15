@@ -75,8 +75,8 @@
 \usepackage{ragged2e}
 %\RaggedRight
 \raggedbottom
-\RequirePackage[draft]{graphicx}
-%\RequirePackage{graphicx}
+% \RequirePackage[draft]{graphicx}
+\RequirePackage{graphicx}
 \parindent 12pt
 \RequirePackage{lettrine}
 \RequirePackage{setspace}
@@ -95,6 +95,7 @@
 \usepackage{multirow}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{listings}
 
 % Fonts.
 \RequirePackage{color}
