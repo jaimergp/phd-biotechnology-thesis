@@ -24,6 +24,7 @@ The following pages will introduce the major families of software approaches in 
 % \addcontentsline{toc}{subsection}{Methods focused on energy description}
 \subsection{Quantum Mechanics (QM)}
 % \addcontentsline{toc}{subsubsection}{Quantum Mechanics (QM)}
+\label{section:qm}
 
 The main idea behind quantum chemistry is that molecules and, by extension, all ordinary matter, can be viewed as composed only of positively charged nuclei and negatively charged electrons. Mathematically, this can be expressed with the time-independent Schrödinger equation:
 
@@ -49,6 +50,7 @@ A workaround would involve a semi-classical approach. In Ab Initio Molecular Dyn
 
 \subsection{Force fields: Molecular mechanic, Molecular dynamics and Metadynamics}
 % \addcontentsline{toc}{subsubsection}{Force fields: Molecular mechanic, Molecular dynamics and Metadynamics}
+\label{section:mm-md}
 Depending on the phenomena under study, explicit consideration of electrons is not always necessary. If that’s the case, the Schrödinger equation can be bypassed and the electronic energy can be written as a parametric function of the nuclear coordinates. Those parameters are fitted to reproduce either experimental measurements or results obtained with higher levels of theory (i.e. QM). The set of parameters needed to write the set of equations is called ‘force field’, and the theory behind this strategy is called ‘Molecular mechanics’ (MM). Given the size of nuclei, these can be treated classically with Newton’s second law with sufficient accuracy, resulting in equations much simpler than their QM counterpart, which allow faster computations and, as a result, dealing with larger systems (tens of thousands of atoms). Neglecting the existence of electrons has some consequences, though: bonding information is lost and must be provided explicitly, rather than being an inherent result of the equation.
 
 In MM, molecules are described by a ‘ball and spring’ model: atoms are abstracted as spheres of given radius and ‘softness’, and bonds have length and ‘stiffness’. In such an ensemble, the potential energy of the system can be described as the sum of several components: stretching, bending, torsions, non-bonding interactions (usually, Van der Waals and Coulomb), and a cross-term of the first three.
@@ -65,6 +67,8 @@ Gaining access to such magnitudes allows to calculate properties not available i
 
 \subsection{QM/MM}
 % \addcontentsline{toc}{subsubsection}{QM/MM}
+\label{section:qmmm}
+
 Dealing with big systems (more than 300-500 atoms) with QM techniques is not feasible due to computational restraints. In some cases, though, only a subset of the system actually needs explicit consideration of the electrons. One strategy would consist of pruning the nonimportant parts, replacing them by smaller functional units which would keep the system’s "chemical identity".
 
 In other studies, like enzyme reactivity, the nonreactive part of the enzyme is assumed to be important in keeping the active site conformation, and as such, cannot be pruned out. While some authors do model enzyme reactivity with a prune-and-freeze strategy (the \textit{quantum chemical cluster}\cite{siegbahn2009recent}), a large part of the research community prefers to consider the whole protein in the calculation. This can be approached with QM/MM methods, in which the reactive atoms and its immediate surroundings are studied with QM, while the rest of the system is treated classically. The energy of the system is then calculated as a sum of the QM energy, the MM energy and the interaction between both.

@@ -450,7 +450,7 @@
       \footnotesize
       \setstretch{1.0}
       \raggedright
-      \bibliography{references}
+      \bibliography{dissertation}
       \addcontentsline{toc}{chapter}{Bibliography}
       \bibliographystyle{ieeetr}
     }
