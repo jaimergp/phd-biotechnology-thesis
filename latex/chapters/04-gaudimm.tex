@@ -79,6 +79,7 @@ As other optimization methods, this algorithm can be described in three main sta
 
 In more detail, NSGA-II starts with the generation of a random set of potential solutions (\textit{individuals}) which comprise the so-called \textit{initial population}. This first set of individuals is then evaluated with one or more \textit{objectives} and each individual is assigned a \textit{fitness} score vector, the elements of which are the result of those cost functions. At this point, a small subset of the population is submitted to a round of random modification of parameters (\textit{mutation}) or exchanging some of their attributes (\textit{recombination}), and are then assessed by the same cost functions. Being random, the results of these variations can be better or worse than their preceding counterparts (parents). Finally, both the offspring and the parental generation ($ \mu $ +$ \lambda $ strategy) compete in the selection tournament, which will rule which ones will replace the initial population. After a number of iterations, the initial population will have evolved and, eventually, will end up providing reasonable solutions to the problem that represent a compromise between the analyzed variables (see fig. \ref{fig:nsga}).
 
+\todo[inline]{PDF Conversion needed}
 \begin{figure} % FIXME!
 	\vspace*{-1cm}
 	\includegraphics[width=0.9\textheight,angle=90]{./figures/04/nsga.png}
@@ -101,6 +102,7 @@ For example, a typical optimization problem is finding the dihedral torsion that
 
 The key part of genetic algorithms is the implementation of variation operators as part of the exploration stage. Instead of merely trusting randomness, existing solutions are combined in hopes of obtaining a better child solution. These two operations are called \textit{mutation} and \textit{crossover} or mating, mimicking what happens in the cell nucleus at the chromosomic level.
 
+\todo[inline]{PDF Conversion needed}
 
 \begin{figure}[H] % FIXME!
 	\includegraphics[width=\textwidth]{./figures/04/ga-crossover-mut.png}
@@ -189,7 +191,7 @@ Genes that fall in this category only alter the positions of the atoms involved 
 % \addcontentsline{toc}{subsection}{Of environments and objectives: the evaluation stage}
 After generating candidate solutions, these must be evaluated with the optimization criteria. In genetic algorithms, this is usually called assessing the fitness of the individuals: fitter individuals are more qualified to survive in the environment.
 
-Mimicking these concepts, the GaudiMM implementation creates an \texttt{Environment} object that list the optimization criteria, each represented by an \texttt{Objective} entity. Objectives are also independent units that can be instantiated multiple times in the same \texttt{Environment}, but the defined interface is simpler that in genes: a ‘weight’ attribute defines the optimization type (maximization or minimization), and a function named \texttt{evaluate} that takes an \texttt{Individual} object and returns a numerical value as result. What the \texttt{evaluate} function does behind the scenes does not actually matters as long as a number is produced: calculate a distance between two atoms, retrieve a parameter from a database, compute the potential energy with an external MM library$ \ldots $
+Mimicking these concepts, the GaudiMM implementation creates an \texttt{Environment} object that list the optimization criteria, each represented by an \texttt{Objective} entity. Objectives are also independent units that can be instantiated multiple times in the same \texttt{Environment}, but the defined interface is simpler that in genes: a \textit{weight} attribute defines the optimization type (maximization or minimization), and a function named \texttt{evaluate} that takes an \texttt{Individual} object and returns a numerical value as result. What the \texttt{evaluate} function does behind the scenes does not actually matters as long as a number is produced: calculate a distance between two atoms, retrieve a parameter from a database, compute the potential energy with an external MM library$ \ldots $
 
 As a result, GaudiMM ships with a rather diverse set of objectives, combining 3\textsuperscript{rd} party packages and custom developments in the same distribution. Together they cover all kinds of energetic, geometric and spatial measurements, allowing to use different levels of theory at the same time in a seamless workflow. Any geometric or energetic parameters that could describe a molecular system can be used as objectives to drive the GA exploration. This allows us to turn the tables on routine protocols based on computing energetic optimizations and then analyzing the results in hopes of finding a suitable model that fits the intended restraints; i.e. those same analysis tools can guide the optimization process from the beginning.
 
@@ -230,7 +232,7 @@ As a result, GaudiMM ships with a rather diverse set of objectives, combining 3\
 \end{itemize}\subsubsection{High-level chemical descriptors}
 % \addcontentsline{toc}{subsubsection}{High-level chemical descriptors}
 \begin{itemize}
-	\item \textsc{Contacts}. This objective can calculate two type of distance-based energy descriptors. When the ‘hydrophobic’ mode is chosen, this objective will maximize potentially attracting interactions between close enough atoms by applying a Lennard-Jones-like scoring function. If the ‘clashes’ mode is chosen, it will minimize the steric hindrance of the structure by minimizing the volumetric overlap of the Van der Waals spheres of atoms that are too close.
+	\item \textsc{Contacts}. This objective can calculate two type of distance-based energy descriptors. When the \textit{hydrophobic} mode is chosen, this objective will maximize potentially attracting interactions between close enough atoms by applying a Lennard-Jones-like scoring function. If the \textit{clashes} mode is chosen, it will minimize the steric hindrance of the structure by minimizing the volumetric overlap of the Van der Waals spheres of atoms that are too close.
 
 	\item \textsc{HBonds}. This objective uses geometrical criteria to calculate the number of hydrogen bonds between potential donors and acceptors.
 
@@ -391,7 +393,7 @@ GaudiView will list the proposed solutions along with the fitness of each object
 \section{Conclusions $\&$  Further work}
 % \addcontentsline{toc}{section}{Conclusions $\&$  Further work}
 
-The development of GaudiMM was motivated by the need of applying simple descriptors in complex biomolecular systems featuring residues beyond the natural amino acids: metallic cofactors, oligosugar-derivatives and partially characterized organic molecules. The main idea was to at least have ‘some’ results around a hard-to-model structure, instead of saying that it could not be done. Even with low accuracy methods, GaudiMM soon started to prove that the approach is good enough to provide starting points valid for further refinement and processing with more accurate methods; in other words, GaudiMM is a good entry point for multiscale protocols. This and other examples of its potential applications, including how it has been used in real cases of research, will be detailed in \autoref{chap:06}.
+The development of GaudiMM was motivated by the need of applying simple descriptors in complex biomolecular systems featuring residues beyond the natural amino acids: metallic cofactors, oligosugar-derivatives and partially characterized organic molecules. The main idea was to at least have \textit{some} results around a hard-to-model structure, instead of saying that it could not be done. Even with low accuracy methods, GaudiMM soon started to prove that the approach is good enough to provide starting points valid for further refinement and processing with more accurate methods; in other words, GaudiMM is a good entry point for multiscale protocols. This and other examples of its potential applications, including how it has been used in real cases of research, will be detailed in \autoref{chap:06}.
 
 These observations have made clear that GaudiMM provides a mental framework suitable for implementing proof-of-concept multiscale protocols and explaining basic concepts of molecular modeling to newcomers in the field.
 

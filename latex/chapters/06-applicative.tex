@@ -12,7 +12,7 @@ Versatility usually comes at a cost, normally difficulty of use or complicated i
 
 \subsection{Ligand docking}
 % \addcontentsline{toc}{subsection}{Ligand docking}
-GaudiMM was initially devised as an extensible protein-ligand tool, but later grew into a multi-purpose molecular modeling tool: the idea of docking can be further abstracted as simply ‘finding structural geometries compatible with certain requirements’, which is in turn a very specific type of restrained optimization problems. This is what GaudiMM does by combining genes (which point out where to look for those structures) and objectives (impose the ‘requirements’).
+GaudiMM was initially devised as an extensible protein-ligand tool, but later grew into a multi-purpose molecular modeling tool: the idea of docking can be further abstracted as simply \textit{finding structural geometries compatible with certain requirements}, which is in turn a very specific type of restrained optimization problems. This is what GaudiMM does by combining genes (which point out where to look for those structures) and objectives (impose the \textit{requirements}).
 
 \subsubsection{Protein-ligand docking}
 % \addcontentsline{toc}{subsubsection}{Protein-ligand docking}
@@ -20,6 +20,7 @@ Classic protein-ligand docking studies simply devote to finding the correct orie
 
 In rigid protein-ligand docking, both the protein and the ligand are considered rigid. This is, the protein remains still during the whole procedure and the ligand is simply moved around with rigid translation and rotation. The only variable during the analysis is the position of the ligand and its orientation; both encodable as a single 4x4 transformation matrix (see fig. \ref{fig:xform-matrices}).
 
+\todo[inline]{PDF Conversion needed}
 
 \begin{figure} % FIXME!
 	\begin{Center}
@@ -46,7 +47,7 @@ To study the flexibility of the ligand, the Torsion gene can be used. This gene 
 
 To study protein flexibility, the Rotamers gene must be applied to the desired protein residues. This gene will randomly modify the dihedral torsions of the sidechains of the specified residues according to the angles provided by the rotamer library (defaults to Dunbrack’s,\cite{dunbrack1993backbone} but Dynameomics'\cite{scouras2011dynameomics} and Richardson’s\cite{lovell2000penultimate} are also available). The Rotamers gene only deals with sidechain flexibility, considering the backbone rigid. If backbone motions are needed in the study, three options are provided.
 
-First, if the biomolecule is a small enough, the same Torsion gene could be configured in such a way that only CO-NH peptide bonds are considered. This would grant full flexibility to the structure, but its feasibility would depend on the structure size (twenty residues could be considered an upper limit). Second, for big structures, the NormalModes gene could be used. This will create an Elastic Network Model (ENM) based on Gaussian Networks to calculate the normal modes of the structure and provide 20 conformers based on the most energetic motions, like ‘breathing’ and ‘hinging’. Third, if a trajectory file is available (from molecular dynamics, energy optimization or conformational analysis), this can be loaded with the Trajectory gene and each frame would be considered as possible source of coordinates. Alternatively, since the Molecule gene can load collections of files and use them randomly, if the built-in variation tools are not enough for the user, a conformer library can be created elsewhere and configured as a Molecule entry.
+First, if the biomolecule is a small enough, the same Torsion gene could be configured in such a way that only CO-NH peptide bonds are considered. This would grant full flexibility to the structure, but its feasibility would depend on the structure size (twenty residues could be considered an upper limit). Second, for big structures, the NormalModes gene could be used. This will create an Elastic Network Model (ENM) based on Gaussian Networks to calculate the normal modes of the structure and provide 20 conformers based on the most energetic motions, like \textit{breathing} and \textit{hinging}. Third, if a trajectory file is available (from molecular dynamics, energy optimization or conformational analysis), this can be loaded with the Trajectory gene and each frame would be considered as possible source of coordinates. Alternatively, since the Molecule gene can load collections of files and use them randomly, if the built-in variation tools are not enough for the user, a conformer library can be created elsewhere and configured as a Molecule entry.
 
 No matter the genes applied to consider one or other kind of flexibility, the objectives are usually the same. The most commonly applied one is clashes minimization through the Contacts objective. This is a simple criterion that minimizes the volumetric overlap of the Van der Waals spheres of non-bonded atoms. While this objective eliminates steric impediments, it does not provide a way to identify good poses, so it is usually accompanied by more objectives. Several docking scoring functions from other programs have been integrated in GaudiMM, like IMP’s LigScore,\cite{krammer2005ligscore} DrugScoreX,\cite{neudert2011dsx} AutoDock Vina’s\cite{trott2010autodock} or GOLD’s ChemScore, PLP and GoldScore.\cite{verdonk2003improved} If more accurate calculations are needed, full molecular mechanics force fields can be used with the Energy objective (which implements OpenMM behind the scenes), or even Quantum Mechanics analysis through the NWChem objective. Objectives can be also used as dynamic restraints, as described in the following subsection.
 
@@ -83,6 +84,7 @@ GaudiMM capabilities for standard protein-docking was studied in its first publi
 
 
 
+\todo[inline]{PDF Conversion needed}
 
 \begin{figure}[H] % FIXME!
 	\begin{Center}
@@ -101,7 +103,7 @@ GaudiMM capabilities for standard protein-docking was studied in its first publi
 % \addcontentsline{toc}{subsubsection}{Covalently restrained docking}
 Not all docking studies consider a free ligand. Sometimes the ligand is covalently bonded to some part of the protein. While there is no specific gene to implement a covalent bond, it can be mimicked through a Search gene configured with radius=0 and rotate=True. Since the origin of this null search sphere should be set to the atom that is part of the covalent bond, an extra atom should be added in one of the molecules.
 
-As this null Search gene will consider all possible rotations from that point, an Angle objective between the involved atoms in the covalent bond is recommended so that the resulting rotation matches the expected geometry of the new bond (109.5\textdegree for \textit{sp\textsuperscript{3}}, 120\textdegree for \textit{sp\textsuperscript{2}}, 180\textdegree for \textit{sp\textsuperscript{1}}). If more covalent interactions are needed, those can be modeled with the Distance objective set to minimize the distance between the involved atoms to its covalent bond distance (automatically calculated with the ‘covalent’ keyword). This strategy was successfully applied in several studies that will be further described in subsequent sections.
+As this null Search gene will consider all possible rotations from that point, an Angle objective between the involved atoms in the covalent bond is recommended so that the resulting rotation matches the expected geometry of the new bond (109.5\textdegree for \textit{sp\textsuperscript{3}}, 120\textdegree for \textit{sp\textsuperscript{2}}, 180\textdegree for \textit{sp\textsuperscript{1}}). If more covalent interactions are needed, those can be modeled with the Distance objective set to minimize the distance between the involved atoms to its covalent bond distance (automatically calculated with the \textit{covalent} keyword). This strategy was successfully applied in several studies that will be further described in subsequent sections.
 
 \subsubsection{Competitive multi-ligand docking}
 % \addcontentsline{toc}{subsubsection}{Competitive multi-ligand docking}
@@ -116,7 +118,7 @@ For the evaluation, four objectives were applied: (1) Minimization of clashes so
 
 Under this scheme, several satisfactory solutions were obtained (see fig. \ref{fig:phenanthroline}) and submitted to a MD simulation to test their stability. Unfortunately, the trajectories did not report any long-lasting interaction between the ligands inside the protein and this alternative model was discarded.
 
-\begin{figure}[H] % FIXME!
+\begin{figure}[H]
 	\begin{Center}
 		\includegraphics[width=\textwidth]{./figures/06/dual_phn.png}
 	\end{Center}
@@ -129,13 +131,13 @@ Under this scheme, several satisfactory solutions were obtained (see fig. \ref{f
 % \addcontentsline{toc}{subsection}{Metal-centric docking: coordination-guided explorations}
 Previous sections showed how different genes can be combined to perform different types of docking studies, but essentially keeping the same objectives. However, those can also change the nature of the calculation substantially. Depending on the evaluation stage, the same genes can provide different results.
 
-In a docking study, a small compound tries to find a suitable binding site within a macromolecule structure. In protein-ligand docking, these happen to be an organic molecule (ligand) and a protein. However, not all ligands are exclusively organic, sometimes the compound under study will feature a metallic center, an increasingly popular trend in drug design $ \{ $ $ \} $ . Support for metal atoms in ligands is not always supported by docking software, and those who do support it have their limitations (i.e. GOLD supports metal as protein cofactors, but not as part of the ligand). Workarounds have been devised to make them work properly,\cite{hbondtrick} but those should not be needed.
+In a docking study, a small compound tries to find a suitable binding site within a macromolecule structure. In protein-ligand docking, these happen to be an organic molecule (ligand) and a protein. However, not all ligands are exclusively organic, sometimes the compound under study will feature a metallic center, an increasingly popular trend in drug design \todo{Citation needed}. Support for metal atoms in ligands is not always supported by docking software, and those who do support it have their limitations (i.e. GOLD supports metal as protein cofactors, but not as part of the ligand). Workarounds have been devised to make them work properly,\cite{hbondtrick} but those should not be needed.
 
 In GaudiMM, whether a metal can be dealt with or not depends on the objectives chosen. The Contacts objectives treats all atoms equally, since it only needs the Van der Waals radius, but more specific measures are usually needed for valuable results. GaudiMM includes an objective that can identify coordination spheres by geometrically analyzing the surroundings of any metal atom. If this atom is being moved with the Search gene so it visits different regions of the protein, it can be used to perform protein-metal docking.
 
 The idea behind the Coordination objective was initially described in \citet{mujika2017elucidating}, where a multi-objective docking procedure was used to locate octahedral geometries of an aluminum ion within pre-optimized structures of Alzheimer’s beta-peptides. The octahedral geometry could be described by using several distance, angle and dihedral objectives set to match those in an ideal octahedron: coordination bonds of around 2 \AA, $90^{\circ}$ for the donor-metal-donor angle, and a dihedral of $109.5^{\circ}$ for compatible sp3 geometries.
 
-After validating the utility of this proof-of-concept, a first generalization of the method was implemented in the Coordination objective, which was applied in \citet{gaudimm} to guide the folding of an unfolded siderophore (further described in \autoref[section]{section:section:siderophore}). A posterior refinement of this objective has been extensively reviewed in ‘GaudiMetals’ $ \{ $ $ \} $ , where different modifications of the initial score function are discussed and benchmarked against a dataset of 106 metal-containing structures, increasing the initial success rate from $ \sim $ 80$\%$  to a $ \sim $ 100$\%$ .
+After validating the utility of this proof-of-concept, a first generalization of the method was implemented in the Coordination objective, which was applied in \citet{gaudimm} to guide the folding of an unfolded siderophore (further described in \autoref[section]{section:section:siderophore}). A posterior refinement of this objective has been extensively reviewed in \citet{gaudimetals}\cite{gaudimetals} where different modifications of the initial score function are discussed and benchmarked against a dataset of 106 metal-containing structures, increasing the initial success rate from $ \sim $ 80$\%$  to a $ \sim $ 100$\%$ .
 
 In short, this objective scans the surroundings of the selected metal ion for suitable donor atom types (like terminal sp3 oxygen atoms in aspartic acid). If sufficient donors are found within 3.0 \AA, their positions with respect to the metal center are compared to those that the vertices of the ideal polyhedron corresponding to the expected geometry would occupy. This comparison is performed with a point-set registration method called Coherent Point Drift,\cite{myronenko2010point} which admits missing points. This means that geometries with vacancies can be considered seamlessly. If the comparison is successful, a RMSD value is returned and two additional checks are calculated: (1) the directionality of the hypothetical coordination bond is assessed through the absolute difference of the sines of the angles and dihedrals of the involved atoms against the ideal ones, and (2) the ideal distance is compared to the measured distance and the absolute difference is. All these terms are summed linearly, which should result in a value of zero for perfect geometries. By minimizing this function over a few generations, coordination geometries can be identified.
 
@@ -166,14 +168,13 @@ In the dibiotin example, five subdirectories would be needed to construct a biot
 
 As exposed, not all subdirectories must contain different fragments. In fact, it is very useful to only use more than one fragment for the parts of the construction that are unknown. In this particular example, only the linkers needed to be assessed. For an easier synthesis, both linkers should be symmetric, so only one of them was actually chosen randomly. The second linker was always the same as the first. Another strategy would have involved building all the possible variations beforehand and testing each one separately. However, having this fragment-builder allowed to change linkers rapidly, without manual intervention. Additionally, all of them will compete at the same time, thus avoiding any possible bias in the scoring functions.
 
-Since biotin exhibits a high affinity for streptavidin, it can be assumed that it will stay in its crystallographic binding site no matter what fragments it could possibly be attached to. This allowed to simplify the calculations: instead of having a 5-fragment construction, the biotins were fixed into their crystallographic binding site and a 3-fragment linker-cofactor-linker dynamical ligand was used instead. To assess if a candidate construct was long-enough to reach both sites, one of the linkers was anchored to one of the biotins following the null-sphere procedure described in ‘Covalently restrained docking’. \todo{check this!}
+Since biotin exhibits a high affinity for streptavidin, it can be assumed that it will stay in its crystallographic binding site no matter what fragments it could possibly be attached to. This allowed to simplify the calculations: instead of having a 5-fragment construction, the biotins were fixed into their crystallographic binding site and a 3-fragment linker-cofactor-linker dynamical ligand was used instead. To assess if a candidate construct was long-enough to reach both sites, one of the linkers was anchored to one of the biotins following the null-sphere procedure described in \textit{Covalently restrained docking}. \todo{check this!}
 Then, a distance minimization objective was applied to the other linker to push it into the second binding site, where a second biotin was placed to accept the simulated covalent bond. In order to bring flexibility into the ligand, all the bonds in the linkers were allowed to freely rotate with the Torsion genes; biotin and cofactor bonds were considered frozen (see fig. \ref{fig:dibiotin-linker-length}).
 
 
+\todo[inline]{PDF Conversion needed}
 
-
-
-\begin{figure}[H] % FIXME!
+\begin{figure}[H]
 	\begin{Center}
 		\includegraphics[width=\textwidth]{./figures/06/dibiotin-scheme.png}
 	\end{Center}
@@ -181,7 +182,7 @@ Then, a distance minimization objective was applied to the other linker to push 
 	\label{fig:dibiotin-linker-length}
 \end{figure}
 
-The results showed that a linker compatible with the length of a linear heptane would be enough to reach both binding sites simultaneously, which helped guide a successful synthesis and crystallization of the ligand $ \{ $ manuscript in preparation$ \} $ .
+The results showed that a linker compatible with the length of a linear heptane would be enough to reach both binding sites simultaneously, which helped guide a successful synthesis and crystallization of the ligand (manuscript in preparation).
 
 \subsection{Conformational analysis}
 % \addcontentsline{toc}{subsection}{Conformational analysis}
@@ -192,6 +193,7 @@ To perform conformational analysis only one operation is needed: modify the coor
 
 A specific case of guided conformational analysis was described in GaudiMM’s original publication, where an unfolded apo-enterobactin siderophore was used as the input structure of a conformational analysis configured to reproduce the metal-bound form of the enterobactin as found in E. coli FepB.\cite{3tlk} The unbound form was retrieved from PubChem\cite{Enterobactin} and an iron ion was placed next to it. A Torsion gene was configured to explore rotatable bonds, and a Search gene was instructed to move the iron ion within a radius of 5A. A Coordination objective, already in commented in \autoref[section]{section:dibiotin-linker-length-optimization}, was set up to find octahedral geometries by analyzing terminal oxygen atoms, and a Distance objective held the central ring closed. This strategy successfully reproduced the experimental structure with a RMSD under 1.0 Å (see fig. \ref{fig:siderophore}).
 
+\todo[inline]{High-resolution needed}
 
 \begin{figure}[H] % FIXME!
 	\begin{Center}
@@ -208,6 +210,7 @@ In the GaudiMM manuscript, an unfolded Alzheimer $ \beta $ -amyloid structure wa
 
 
 
+\todo[inline]{Hi Res needed}
 
 
 \begin{figure}[H] % FIXME!
@@ -223,7 +226,7 @@ In the GaudiMM manuscript, an unfolded Alzheimer $ \beta $ -amyloid structure wa
 
 \section{Multiscale modeling of multivalent enzyme inhibitors}
 % \addcontentsline{toc}{section}{Multiscale modeling of multivalent enzyme inhibitors}
-GaudiMM was conceived to be the entry door to the multiscale funnel, while the tools presented in \autoref{chap:05} fill in other gaps down the funnel. In this section, a real example on how all these developments work together and allow to create integrative workflows is presented. It is a deep computational insight on the work described in $``$Pillar[5]arene glyco(mimetic)rotaxanes for the functional interrogation of multivalency responsive glycosidases$"$  $ \{ $ Angewandte, 2018$ \} $ , a collaboration with the IIQ-CSIC in Seville, Spain.
+GaudiMM was conceived to be the entry door to the multiscale funnel, while the tools presented in \autoref{chap:05} fill in other gaps down the funnel. In this section, a real example on how all these developments work together and allow to create integrative workflows is presented. It is a deep computational insight on the work described in \textit{Pillar[5]arene glyco(mimetic)rotaxanes for the functional interrogation of multivalency responsive glycosidases},\cite{rotaxane} a collaboration with the IIQ-CSIC in Seville, Spain.
 
 \subsection{Introduction to the problem}
 % \addcontentsline{toc}{subsection}{Introduction to the problem}
@@ -231,11 +234,13 @@ Biological molecules are usually classified in four separate families: nucleic a
 
 A protein featuring covalently attached oligosaccharidic chains (or glycans) is called a glycoprotein. Glycoproteins are key recognition processes such as those in the mammal immune system, but can also be used for like solvent retention in extracellular secretions that demand high viscosity (mucus) or protection against freezing damage.
 
-However, not all protein-saccharidic collaborations are strictly covalent. Glycoside hydrolases (or glycosidases) can specifically recognize glycosides and\ catalyze the hydrolysis of their intermonomer bonds in complex sugars.  They are key in natural polymers degradation like starch (amylase) or cellulose (cellulase), pathogenesis, anti-bacterial activity (lysozyme) and normal cell function. Other examples are lectins, which exhibit high affinity for specific saccharidic residues through non-bonded interactions. They are involved in biofilm formation $ \{ $ $ \} $ , immune response $ \{ $ $ \} $  or even antineoplastic activities,\cite{adwan2014} to name a few. Studying mechanisms of inhibition would allow to develop new antibacterial techniques or avoid biofilm formation, for example.
+However, not all protein-saccharidic collaborations are strictly covalent. Glycoside hydrolases (or glycosidases) can specifically recognize glycosides and\ catalyze the hydrolysis of their intermonomer bonds in complex sugars.  They are key in natural polymers degradation like starch (amylase) or cellulose (cellulase), pathogenesis, anti-bacterial activity (lysozyme) and normal cell function. Other examples are lectins, which exhibit high affinity for specific saccharidic residues through non-bonded interactions. They are involved in biofilm formation,\todo{Citation needed} immune response\citation{needed} or even antineoplastic activities,\cite{adwan2014} to name a few. Studying mechanisms of inhibition would allow to develop new antibacterial techniques or avoid biofilm formation, for example.
 
 Most common strategies for enzyme inhibition involve designing a mimetic ligand that can block the binding site of the substrate through a key-and-lock mechanism preventing the enzyme from performing any further action. For lectins and glycosidases, glycomimetic compounds like iminosugar-containing ligands can be employed. Iminosugar moieties are standard saccharides whose oxygen atom in the ring has been replaced by a nitrogen atom. The first iminosugar characterized, 1-deoxynojirimycin (DNJ) was isolated from a natural source and showed to be an alpha-glucosidase inhibitor with anti-diabetic and antiviral activities. Since then, more iminosugars have been described in the literature.
 
-Recently, the general intuition around the classical lock-and-key inhibition behavior was recently questioned in a study that described 2000-fold inhibition enhancement towards the Jack bean $\beta$-mannosidase (JbM) when twelve copies of DNJ were displayed around a $C_{60}$ fullerene $ \{ $ $ \} $ . The strategy, termed Multivalent Enzyme Inhibition (MEI) $ \{ $ $ \} $ , has been further observed in other systems $ \{ $ $ \} $ . Knowing that JbM has a very accessible binding pocket and is multimeric in solution provides an understandable rationale behind this enhancement: a single C60 construct can block several sites at once. However, this idea cannot explain why monomeric enzymes with deep and narrow binding pockets are also inhibited by bulky multivalent conjugates $ \{ $ $ \} $ . Additionally, it has been observed that putative sugars also inhibit their corresponding catalytic enzymes if they are multivalently displayed in a conjugate, defying the assumption of specificity and non-promiscuity glucosidases are thought to exhibit.
+\todo[inline]{This paragraph needs some citations}
+
+Recently, the general intuition around the classical lock-and-key inhibition behavior was recently questioned in a study that described 2000-fold inhibition enhancement towards the Jack bean $\beta$-mannosidase (JbM) when twelve copies of DNJ were displayed around a $C_{60}$ fullerene.\cite{compain2010glycosidase} The strategy, termed Multivalent Enzyme Inhibition (MEI), was then observed in other systems. Knowing that JbM has a very accessible binding pocket and is multimeric in solution provides an understandable rationale behind this enhancement: a single C60 construct can block several sites at once. However, this idea cannot explain why monomeric enzymes with deep and narrow binding pockets are also inhibited by bulky multivalent conjugates. Additionally, it has been observed that putative sugars also inhibit their corresponding catalytic enzymes if they are multivalently displayed in a conjugate, defying the assumption of specificity and non-promiscuity glucosidases are thought to exhibit.
 
 To shed light on such counterintuitive phenomena, García-Fernández \textit{et al }specifically designed a series of two-component pillar[5]arene rotaxane conjugates that exhibited both glycomimetic and non-glycomimetic (putative) residues. The first component is a H-shaped central axel, which exhibits four sp\textsuperscript{2}-iminosugar-type\textsuperscript{[12]} 6-oxa-5\textit{N},6\textit{O}-oxomethylidenenojirimycin (ONJ) residues, one on each on the stop caps. The second component is the pillar[5]arene, which exhibits ten moieties of glucose, mannose or galactose, depending on the variant, one on each of its ten rims (see fig. \ref{fig:rotaxane-compounds}).
 
@@ -249,7 +254,7 @@ To test the contribution of the multivalent saccharides, two reduced models that
 	\begin{Center}
 		\includegraphics[width=\textwidth]{./figures/06/glyco-inhibitors.png}
 	\end{Center}
-	\cprotect\caption[Tested inhibitors against ScGH13 and TmGH1]{Different inhibitors variants tested against the monomeric ScGH13 and dimeric TmGH1 proteins. In the computational studies, only divalent model (number 3) and rotaxane variant 5a were tested. (Reproduced from XXXX $ \{ $ $ \} $ ).} % FIXME!
+	\cprotect\caption[Tested inhibitors against ScGH13 and TmGH1]{Different inhibitors variants tested against the monomeric ScGH13 and dimeric TmGH1 proteins. In the computational studies, only divalent model (number 3) and rotaxane variant 5a were tested. Reproduced from Nierengarten, 2018.\cite{rotaxane}}
 	\label{fig:rotaxane-compounds}
 \end{figure}
 
@@ -262,7 +267,7 @@ All these inhibitors and their controls were tested and measured on two glycosid
 
 
 \begin{table}[H]
-	\cprotect\caption[Glycosidases inhibition tests]{ $K_{i}$ (in $ μM $) for the different inhibitors tested against the monomeric ScGH13 and dimeric TmGH1 proteins. (Adapted from Nierengarten 2018 $ \{ $ $ \} $ ).}
+	\cprotect\caption[Glycosidases inhibition tests]{ $K_{i}$ (in $ μM $) for the different inhibitors tested against the monomeric ScGH13 and dimeric TmGH1 proteins. Reproduced from Nierengarten, 2018.\cite{rotaxane}}
 	\label{table:glycosidase-inhibition}
 	\footnotesize
 	\newcolumntype{C}{>{\centering\arraybackslash}X}%
@@ -340,9 +345,7 @@ To assess the first possibility, a GaudiMM calculation was set up following this
 \end{itemize}
 \end{itemize}
 
-
-
-
+\todo[inline]{PDF Conversion needed}
 
 \begin{figure}[H] % FIXME!
 	\begin{Center}
@@ -399,7 +402,7 @@ This observation makes the next question obvious: how long should it be then? Th
 \end{itemize}
 
 
-
+\todo[inline]{PDF Conversion needed}
 
 
 \begin{figure}[H] % FIXME!
@@ -419,6 +422,7 @@ A second hypothesis would consist of considering that two divalent ligands can o
 To assess that possibility, two molecules were superposed against the crystallographic binding sites of the dimer structure contained in PDB ID 2WBG, which features an analog inhibitor compound suitable for structural alignment. Then, dihedral torsions of the rotatable bonds of the ligand were analyzed looking for a combination that could have them interact at the interface. This interaction was implemented as a distance minimization between a carboxylic oxygen of one ligand and a carboxylic hydrogen of the other (see fig. \ref{fig:divalent-interface}).
 
 
+\todo[inline]{PDF Conversion needed}
 
 \begin{figure}[H] % FIXME!
 	\begin{Center}
@@ -482,5 +486,5 @@ Of course, GaudiMM is not the answer to every question. It only helps guide the 
 
 \section{Final conclusions}
 % \addcontentsline{toc}{section}{Final conclusions}
-Throughout this chapter, it has been shown that, while computational studies can be strictly theoretical, there is no point in denying that molecular modeling is a helpful tool for experimental works. \textit{In silico} can go hand in hand with \textit{in vitro}, and some research groups would argue that they must. It is common to see how experimental groups maintain strong alliances with theoretical groups, and some are even creating their own computational shops within their established wet-lab structure $ \{ $ $ \} $ $ \{ $ $ \} $ $ \{ $ $ \} $ . Fruitful joint efforts like this bring different points of view and ways of thinking to the discussion table, which can only enhance the brainstorming sessions, especially when counterintuitive phenomena like the aforementioned happen.
+Throughout this chapter, it has been shown that, while computational studies can be strictly theoretical, there is no point in denying that molecular modeling is a helpful tool for experimental works. \textit{In silico} can go hand in hand with \textit{in vitro}, and some research groups would argue that they must. It is common to see how experimental groups maintain strong alliances with theoretical groups, and some are even creating their own computational shops within their established wet-lab structure \todo{Citations needed}. Fruitful joint efforts like this bring different points of view and ways of thinking to the discussion table, which can only enhance the brainstorming sessions, especially when counterintuitive phenomena like the aforementioned happen.
 

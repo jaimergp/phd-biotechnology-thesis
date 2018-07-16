@@ -166,7 +166,7 @@ QMSetup helps preparing Gaussian input files from UCSF Chimera for QM and ONIOM 
 
 
 
-\begin{figure} % FIXME! Rename GUI to QMSetup
+\begin{figure}
 	\begin{Center}
 		\includegraphics[width=\textwidth]{./figures/05/tangram_qm.png}
 	\end{Center}
@@ -179,7 +179,7 @@ QMSetup helps preparing Gaussian input files from UCSF Chimera for QM and ONIOM 
 % \addcontentsline{toc}{subsubsection}{MMSetup}
 MMSetup provides a graphical interface for setting up Molecular Dynamics simulations (see \autoref[section]{section:mm-md})  in UCSF Chimera using OpenMM behind the scenes. It recognizes opened molecules and offers different methods to prepare the final structure that will undergo the simulation (see fig. \ref{fig:tangram-mmsetup}). For example, OpenMM’s PDBFixer\cite{pdbfixer} can be used to add hydrogens and missing residues. Even missing loops can be modeled with this integration. Once the structure is prepared, the simulation protocol must be configured with its individual stages: minimization, equilibration and production by default. Then, the user can choose between running in situ and observing the evolution in real time (ideal for educational purposes) or creating an input file that can be run separately in cluster computers for speed.
 
-\begin{figure} % FIXME! Rename GUI to QMSetup
+\begin{figure}
 	\begin{Center}
 		\includegraphics[width=\textwidth]{./figures/05/tangram_mm.png}
 	\end{Center}
@@ -196,7 +196,7 @@ For non-metallic organic compounds, Antechamber\cite{wang2001antechamber} routin
 
 In the CaDAs approach, the metal ion is wrapped with positively-charged dummy atoms placed at the vertices of its expected coordination geometry. While the main idea is simple, building these systems accurately by hand is often disregarded for its difficulty. The DummyMetal extension can take a molecular structure, adapt the metal centers with the CaDAs method (see fig. \ref{fig:tangram-dummy}) and generate Amber-compatible \texttt{PRMTOP}, \texttt{INPCRD} and \texttt{FRCMOD} files. Since OpenMM can load Amber files seamlessly, the resulting files can be loaded in MMSetup to launch an MD simulation right away.
 
-\begin{figure} % FIXME! Rename GUI to QMSetup
+\begin{figure}
 	\begin{Center}
 		\includegraphics[width=\textwidth]{./figures/05/tangram_dummy.png}
 	\end{Center}
@@ -219,7 +219,7 @@ While a graphic interface can help with interactive tasks, there are other parts
 
 Conceiving a project for command-line usage does not mean that a different interface can be built on top of that backend. In fact, MMSetup is just an interface around OMMProtocol, which in turn it’s a user-friendly application around OpenMM. In QMSetup, the QM/MM support for additional force fields is provided by Garleek, which handles the Gaussian-Tinker programmatic interfacing. These two tools --OMMProtocol and Garleek-- do not rely on UCSF Chimera and can be used as standalone command-line applications. However, since they are built with a decoupled architecture where the Python API is separate from the command-line interface (see fig. \ref{fig:uncoupled-layers}), they can support the aforementioned graphical interfaces.
 
-\begin{figure} % FIXME! Rename GUI to QMSetup
+\begin{figure}
 	\begin{Center}
 		\includegraphics[width=\textwidth]{./figures/05/library-vs-app-layers-crop.pdf}
 	\end{Center}
@@ -275,9 +275,9 @@ PyChimera also includes some features particularly useful for developers, like e
 
 \todo[inline]{Fix cropped X axis labes and add Y label}
 
-\begin{figure}[hbtp] % FIXME! Redo to unlist tangram_*
+\begin{figure}[hbtp]
 	\begin{Center}
-		\includegraphics[width=\textwidth]{./figures/05/ghstats-crop.pdf}
+		\includegraphics[width=\textwidth]{./figures/05/ghstats.pdf}
 	\end{Center}
 	\cprotect\caption[Popularity of InsiliChem packages]{Popularity of InsiliChem packages developed during this Ph. D. Thesis, measured as the sum of \textit{Code Impact} (registered visits and interactions in the source code repository), and \textit{Installations} (downloads of compiled packages and requests from command-line installers, such as \texttt{conda} or \texttt{pip}). For ESIgen, number of unique web app users is also listed in Installations. PyChimera is a clear highlight above the rest.}
 	\label{fig:ghstats}
@@ -328,6 +328,7 @@ With OMMProtocol, setting up GPU-accelerated MD simulations can be as easy as lo
 
 OpenMM default input format compatibility is extended with even more file types by integrating other libraries together, like MDTraj,\cite{mdtraj} ParmEd\cite{parmed} or openmoltools.\cite{openmoltools} This means that existing structure preparation workflows do not need to be disrupted: OMMProtocol will load Amber’s PRMTOP, Charmm’s PSF and Gromacs’ TOP files seamlessly.
 
+\todo[inline]{PDF Conversion needed}
 
 \begin{figure}[H] % FIXME!
 	\begin{Center}
@@ -341,6 +342,7 @@ OpenMM default input format compatibility is extended with even more file types 
 Finally, OMMProtocol is complemented by a second utility called \texttt{ommanalyze}, that drafts support for trajectory analysis protocols following the same spirit as OMMProtocol. This part of the project is only a stub so far, but it already provides automated, constant-memory RMSD analysis, and energy, temperature, and volume plots (see fig. \ref{fig:ommanalyze}).
 
 
+\todo[inline]{PDF Conversion needed}
 
 \begin{figure}[H] % FIXME!
 	\begin{Center}
@@ -395,6 +397,7 @@ One of the features already included in Gaussian is the ONIOM method,\cite{svens
 Garleek is a Python package born after a collaboration with Dr. Ignacio Funes and Prof. Feliu Maseras. Garleek is designed to use this protocol to delegate the MM calculations to any other MM suite. (see fig. \ref{fig:garleek}). In the present state, it has full compatibility with all TINKER-provided force fields, like Amber99SB,\cite{amber99sb}\footnote{Gaussian does include the Amber forcefield, but an outdated version (94 and 98).} CHARMM,\cite{mackerell1998all} AMOEBA,\cite{amoeba} MMFF\cite{halgren1996merck} or MM3.\cite{allinger1989molecular} Since the underlying architecture implemented in Garleek provides a straight set of guidelines, adding more MM packages is as easy as possible, thus avoiding reinventing the wheel. Garleek has been described in Journal of Computational Chemistry's Special Issue\cite{garleek} dedicated to the memory of Prof. Dr. Keiji Morokuma.
 
 
+\todo[inline]{PDF Conversion needed}
 
 \begin{figure}[H] % FIXME!
 	\includegraphics[width=\textwidth]{./figures/05/garleek.png}
