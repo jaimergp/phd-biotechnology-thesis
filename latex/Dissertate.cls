@@ -266,7 +266,6 @@
     \maketoc
     \makelof % optional
     \makelot % optional
-    \listoftodos
     % \setcounter{page}{1}
     \renewcommand{\thepage}{\arabic{page}}
     % \pagenumbering{arabic}

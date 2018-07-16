@@ -13,7 +13,7 @@ molecular modeling workflows}
 
 \Lettrine{Multiscale} modeling usually consists of multistep protocols that recruit different techniques along the process. In addition to the scientific challenge itself, a technical barrier can arise: putting all the software to work together. To solve it, the researcher resorts to accumulated expertise in combining different file formats or, in some fortunate cases, even automating the conversions with scripting languages. Switching from program to program can be confusing and distracting, especially if those programs were not meant to be used together --a common situation in advanced molecular modeling. In those cases, some might prefer using a single cohesive user experience, normally in the form of a graphical interface (see \autoref{chap:01} for more details). The first part of this chapter will present the Tangram suite, a collection of graphical extensions for UCSF Chimera written in Python and Tk.
 
-Of course, not all tasks benefit equally from a graphical interface. Some can be further improved by providing smart command-line tools. The remaining part of the present chapter will introduce complementary developments designed to improve the workflow and daily routine of computational chemists and molecular modelers alike. Both graphical and command-line developments are presented in table \ref{table:insilichem-suite}.
+Of course, not all tasks benefit equally from a graphical interface. Some can be further improved by providing smart command-line tools. The remaining part of the present chapter will introduce complementary developments designed to improve the workflow and daily routine of computational chemists and molecular modelers alike. Both graphical and command-line developments (including GaudiMM) are presented in table \ref{table:insilichem-suite}.
 
 
 \begin{table}[hbtp]
@@ -38,6 +38,8 @@ Of course, not all tasks benefit equally from a graphical interface. Some can be
 		\tableheading{Command-line tools} \\
 		\toprule
 		%row no:5
+		\textsc{GaudiMM}\cite{gaudimm} & Modular multiobjective molecular optimization platform  \\
+		\midrule
 		\textsc{PyChimera}\cite{pychimera} & Use UCSF Chimera modules in any Python 2.7 project  \\
 		\midrule
 		\textsc{OMMProtocol}\cite{ommprotocol} & GPU-accelerated Molecular Dynamics protocols with OpenMM  \\
@@ -175,19 +177,32 @@ QMSetup helps preparing Gaussian input files from UCSF Chimera for QM and ONIOM 
 
 \subsubsection{MMSetup}
 % \addcontentsline{toc}{subsubsection}{MMSetup}
-MMSetup provides a graphical interface for setting up Molecular Dynamics simulations (see \autoref[section]{section:mm-md})  in UCSF Chimera using OpenMM behind the scenes. It recognizes opened molecules and offers different methods to prepare the final structure that will undergo the simulation. For example, OpenMM’s PDBFixer\cite{pdbfixer} can be used to add hydrogens and missing residues. Even missing loops can be modeled with this integration. Once the structure is prepared, the simulation protocol must be configured with its individual stages: minimization, equilibration and production by default. Then, the user can choose between running in situ and observing the evolution in real time (ideal for educational purposes) or creating an input file that can be run separately in cluster computers for speed.
+MMSetup provides a graphical interface for setting up Molecular Dynamics simulations (see \autoref[section]{section:mm-md})  in UCSF Chimera using OpenMM behind the scenes. It recognizes opened molecules and offers different methods to prepare the final structure that will undergo the simulation (see fig. \ref{fig:tangram-mmsetup}). For example, OpenMM’s PDBFixer\cite{pdbfixer} can be used to add hydrogens and missing residues. Even missing loops can be modeled with this integration. Once the structure is prepared, the simulation protocol must be configured with its individual stages: minimization, equilibration and production by default. Then, the user can choose between running in situ and observing the evolution in real time (ideal for educational purposes) or creating an input file that can be run separately in cluster computers for speed.
 
-\missingfigure{MMSetup dialog}
+\begin{figure} % FIXME! Rename GUI to QMSetup
+	\begin{Center}
+		\includegraphics[width=\textwidth]{./figures/05/tangram_mm.png}
+	\end{Center}
+	\caption[Tangram MMSetup]{Tangram MMSetup can configure OpenMM calculations in UCSF Chimera, which can be run directly on-screen or in a separate job.}
+	\label{fig:tangram-mmsetup}
+\end{figure}
+
 
 \subsubsection{DummyMetal}
 % \addcontentsline{toc}{subsubsection}{DummyMetal}
-In Molecular Mechanics, dealing with residues foreign to default force fields is one of the most difficult tasks. They require custom parameterization that in some cases can involve more complex calculations than the Molecular Dynamics simulation itself. When they are obtained, it’s difficult to reuse them in other structures that also feature that residue because the connectivity or oxidation state might have changed. This is particularly painful if the new residue contains a metallic species.
+In Molecular Mechanics, dealing with residues foreign to default force fields is one of the most difficult tasks. They require custom parameterization that in some cases can involve more complex calculations than the Molecular Dynamics simulation itself. When they are obtained, it is difficult to reuse them in other structures that also feature that residue because the connectivity or oxidation state might have changed. This is particularly painful if the new residue contains a metallic species.
 
-For non-metallic organic compounds, Antechamber\cite{wang2001antechamber} routines are usually enough. However, for metal ions, the process is more intricate. Most methods proposed to generalize this process use high-level calculations in a reduced model, like Seminario’s method derived MCPB.py routines,\cite{mcpbpy} but there are alternatives that skips those calculations by implementing virtual positions around the metal ion: the ‘Cationic Dummy Atoms (CaDAs)’ approach.\cite{duarte2014}
+For non-metallic organic compounds, Antechamber\cite{wang2001antechamber} routines are usually enough. However, for metal ions, the process is more intricate. Most methods proposed to generalize this process use high-level calculations in a reduced model, like Seminario’s method derived MCPB.py routines,\cite{mcpbpy} but there are alternatives that skips those calculations by implementing virtual positions around the metal ion: the \textit{Cationic Dummy Atoms} (CaDAs) approach.\cite{duarte2014}
 
-In the CaDAs approach, the metal ion is wrapped with positively-charged dummy atoms placed at the vertices of its expected coordination geometry. While the main idea is simple, building these systems accurately by hand is often disregarded for its difficulty. The DummyMetal extension can take a molecular structure, adapt the metal centers with the CaDAs method and generate Amber-compatible PRMTOP, INPCRD and FRCMOD files. Since OpenMM can load Amber files seamlessly, the resulting files can be loaded in MMSetup to launch an MD simulation right away.
+In the CaDAs approach, the metal ion is wrapped with positively-charged dummy atoms placed at the vertices of its expected coordination geometry. While the main idea is simple, building these systems accurately by hand is often disregarded for its difficulty. The DummyMetal extension can take a molecular structure, adapt the metal centers with the CaDAs method (see fig. \ref{fig:tangram-dummy}) and generate Amber-compatible \texttt{PRMTOP}, \texttt{INPCRD} and \texttt{FRCMOD} files. Since OpenMM can load Amber files seamlessly, the resulting files can be loaded in MMSetup to launch an MD simulation right away.
 
-\missingfigure{Screenshot here! DummyMetal}
+\begin{figure} % FIXME! Rename GUI to QMSetup
+	\begin{Center}
+		\includegraphics[width=\textwidth]{./figures/05/tangram_dummy.png}
+	\end{Center}
+	\caption[Tangram DummyMetal]{With Tangram DummyMetal, metal centers can be easily modeled in MM force fields by following the CaDAs approach.}
+	\label{fig:tangram-dummy}
+\end{figure}
 
 \subsubsection{NormalModes}
 % \addcontentsline{toc}{subsubsection}{NormalModes}
@@ -202,9 +217,15 @@ Since the interface itself is decoupled from the code that calls ProDy routines 
 % \addcontentsline{toc}{section}{Optimizing workflows from the command-line}
 While a graphic interface can help with interactive tasks, there are other parts of the workflow of a molecular modeler that cannot benefit directly from a GUI. This type of software can be regarded as \textit{backend} code that provides new, unsupervised calculation methods or, in other cases, an improved workflow that allows to perform the same calculation in an easier way.
 
-Conceiving a project for command-line usage does not mean that a different interface can be built on top of that backend. In fact, MMSetup is just an interface around OMMProtocol, which in turn it’s a user-friendly application around OpenMM. In QMSetup, the QM/MM support for additional force fields is provided by Garleek, which handles the Gaussian-Tinker programmatic interfacing. These two tools --OMMProtocol and Garleek-- do not rely on UCSF Chimera and can be used as standalone command-line applications. However, since they are built with a decoupled architecture where the Python API is separate from the command-line interface, they can support the aforementioned graphical interfaces.
+Conceiving a project for command-line usage does not mean that a different interface can be built on top of that backend. In fact, MMSetup is just an interface around OMMProtocol, which in turn it’s a user-friendly application around OpenMM. In QMSetup, the QM/MM support for additional force fields is provided by Garleek, which handles the Gaussian-Tinker programmatic interfacing. These two tools --OMMProtocol and Garleek-- do not rely on UCSF Chimera and can be used as standalone command-line applications. However, since they are built with a decoupled architecture where the Python API is separate from the command-line interface (see fig. \ref{fig:uncoupled-layers}), they can support the aforementioned graphical interfaces.
 
-\missingfigure{Decoupled libraries and app layers}
+\begin{figure} % FIXME! Rename GUI to QMSetup
+	\begin{Center}
+		\includegraphics[width=\textwidth]{./figures/05/library-vs-app-layers-crop.pdf}
+	\end{Center}
+	\caption[Uncoupled software architecture]{By structuring code in separate responsibility layers, new interfaces can be added easily without modifying the core logic.}
+	\label{fig:uncoupled-layers}
+\end{figure}
 
 In this section, the motivation, features and implementation of five different packages will be discussed: (1) PyChimera, (2) OMMProtocol, (3) Garleek, (4) ESIgen, and (5) EasyMECP. Unlike GaudiMM, discussed in the previous chapter, they do not provide novel molecular modeling methods, but they do make them easier to use by automating repetitive tasks or abstracting away the technical details. This, ultimately, ends up saving the user some precious time.
 
@@ -250,14 +271,15 @@ This new package was called PyChimera.\cite{pychimera} It does not try to alter 
 	\end{tabularx}
 \end{table}
 
-PyChimera also includes some features particularly useful for developers, like exploring the UCSF Chimera codebase from augmented Python interpreters (IPython,\cite{ipython} Jupyter Notebooks\cite{kluyver2016jupyter}) or providing autocompletions and help messages in advanced text editors (Sublime Text, Visual Studio Code). PyChimera was accepted for publication in Bioinformatics\cite{pychimera} and is the most popular package uploaded in the InsiliChem repositories (see fig. \ref{fig:ghstats}).
+PyChimera also includes some features particularly useful for developers, like exploring the UCSF Chimera codebase from augmented Python interpreters (IPython,\cite{ipython} Jupyter Notebooks\cite{kluyver2016jupyter}) or providing autocompletions and help messages in advanced text editors (Sublime Text, Visual Studio Code). PyChimera was accepted for publication in \textit{Bioinformatics}\cite{pychimera} and is the most popular package uploaded in the InsiliChem repositories (see fig. \ref{fig:ghstats}).
 
+\todo[inline]{Fix cropped X axis labes and add Y label}
 
 \begin{figure}[hbtp] % FIXME! Redo to unlist tangram_*
 	\begin{Center}
-		\includegraphics[width=\textwidth]{./figures/05/ghstats.png}
+		\includegraphics[width=\textwidth]{./figures/05/ghstats-crop.pdf}
 	\end{Center}
-	\cprotect\caption[Popularity of InsiliChem packages]{Popularity of InsiliChem packages developed during this Ph. D. Thesis, measured as the sum of \textit{Code Impact} (registered visits and interactions in the source code repository), and \textit{Installations} (downloads of compiled packages and requests from command-line installers, such as conda or pip). For ESIgen, number of unique web app users is also listed in Installations. PyChimera is a clear highlight above the rest.}
+	\cprotect\caption[Popularity of InsiliChem packages]{Popularity of InsiliChem packages developed during this Ph. D. Thesis, measured as the sum of \textit{Code Impact} (registered visits and interactions in the source code repository), and \textit{Installations} (downloads of compiled packages and requests from command-line installers, such as \texttt{conda} or \texttt{pip}). For ESIgen, number of unique web app users is also listed in Installations. PyChimera is a clear highlight above the rest.}
 	\label{fig:ghstats}
 \end{figure}
 
@@ -364,7 +386,7 @@ One of the features already included in Gaussian is the ONIOM method,\cite{svens
 		\textit{Documentation} & \href{http://garleek.readthedocs.io}{garleek.readthedocs.io} \\
 		\midrule
 		%row no:7
-		\textit{Citation} & JCC, 2018. (Submitted) \\
+		\textit{Citation} & Journal of Computational Chemistry, 2018. (In press) \\
 		\bottomrule
 
 	\end{tabularx}
@@ -423,7 +445,7 @@ Computational chemistry, as all fields related to structural studies of molecule
 	\end{tabularx}
 \end{table}
 
-The drag-and-drop web application is meant for quick one-off usages where the user can inspect the structure interactively with the included 3D viewer\cite{rose2018ngl} (see fig. \ref{fig:esigen}). A public web app demo can be found at \url{http://esi.insilichem.com}, which demonstrates how the web content can be seamlessly exported to DOI-citable repositories like Zenodo\cite{zenodo} or FigShare\cite{figshare} or downloaded to disk in several formats (PDF documents, plain text, or even JSON\footnote{JavaScript Object Notation} programmatic objects). The command-line executable \texttt{esigen} allows to process several computational chemistry logfiles in batch with a single action. It will generate only plain-text files meant for further typesetting in text processors like Microsoft Word or LaTeX.
+The drag-and-drop web application is meant for quick one-off usages where the user can inspect the structure interactively with the included 3D viewer\cite{rose2018ngl} (see fig. \ref{fig:esigen}). A public web app demo can be found at \href{http://esi.insilichem.com}, which demonstrates how the web content can be seamlessly exported to DOI-citable repositories like Zenodo\cite{zenodo} or FigShare\cite{figshare} or downloaded to disk in several formats (PDF documents, plain text, or even JSON\footnote{JavaScript Object Notation} programmatic objects). The command-line executable \texttt{esigen} allows to process several computational chemistry logfiles in batch with a single action. It will generate only plain-text files meant for further typesetting in text processors like Microsoft Word or LaTeX.
 
 
 

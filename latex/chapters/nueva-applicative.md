@@ -49,7 +49,7 @@ Title: Benchmark and applications
                 - From now on, preliminar results involve:
                     - Micromolar affinity with Sav
                     - XRAY obtained & refined with help of our model (even more useful this way)
-                    - THe only difference is a 180º flip in the amide group (due to a now corrected bug). Everything else fits previous predictions.
+                    - THe only difference is a 180\textdegree flip in the amide group (due to a now corrected bug). Everything else fits previous predictions.
 
 6.2 - Metal ions: organization and binding site prediction
 

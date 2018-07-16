@@ -97,7 +97,7 @@ The initial step of all the iterations in the algorithm is the exploration, whic
 
 Since GaudiMM is based on a genetic algorithm, the implementation follows the same biologicist terminology. In GaudiMM any candidate solution is encoded in a special object called \texttt{Individual}. All \texttt{Individual} objects in the simulation are defined by the same high-level attributes, which are called \textit{genes}. In the same fashion, the state of each gene is defined by its \textit{allele} attribute. Depending on the gene, the allele can be a list of numbers, a path to a file, a matrix$ \ldots $
 
-For example, a typical optimization problem is finding the dihedral torsion that gives the minimum energy in the ethane molecule. The \texttt{Individuals} featured in this example would only need exploring a single variable, the torsion angle of the C-C bond, with values ranging from 0 to 360º. In GaudiMM-speak, the gene would be the bond \textit{rotator} and the allele the different angles.
+For example, a typical optimization problem is finding the dihedral torsion that gives the minimum energy in the ethane molecule. The \texttt{Individuals} featured in this example would only need exploring a single variable, the torsion angle of the C-C bond, with values ranging from 0 to 360\textdegree. In GaudiMM-speak, the gene would be the bond \textit{rotator} and the allele the different angles.
 
 The key part of genetic algorithms is the implementation of variation operators as part of the exploration stage. Instead of merely trusting randomness, existing solutions are combined in hopes of obtaining a better child solution. These two operations are called \textit{mutation} and \textit{crossover} or mating, mimicking what happens in the cell nucleus at the chromosomic level.
 
@@ -336,7 +336,7 @@ This configuration is enough to run a simple multi-objetive optimization process
 	\label{fig:gaudimm-input-file}
 \end{figure}
 
-However, after the first attempt, the user might realize that some of the results are indeed decane conformations whose ends are 1.5 Å apart, but not in the expected orientation. In other words, they do not respect the sp\textsuperscript{3} tetrahedral geometry. To fix it, an additional \texttt{Angle} objective set to match 109.5º between the end atoms and one of their neighbours would suffice. The final recipe can be consulted in table \ref{table:cyclodecane}.
+However, after the first attempt, the user might realize that some of the results are indeed decane conformations whose ends are 1.5 Å apart, but not in the expected orientation. In other words, they do not respect the sp\textsuperscript{3} tetrahedral geometry. To fix it, an additional \texttt{Angle} objective set to match 109.5\textdegree between the end atoms and one of their neighbours would suffice. The final recipe can be consulted in table \ref{table:cyclodecane}.
 
 \begin{table}[hbtp]
 	\caption{Final recipe for the cyclodecane example}
@@ -366,7 +366,7 @@ However, after the first attempt, the user might realize that some of the result
 		\texttt{Distance} & Bring terminal carbon atoms within 1.5 Å \\
 		\midrule
 		%row no:7
-		\texttt{Angle} & Force terminal carbon atoms to match a 109.5º angle \\
+		\texttt{Angle} & Force terminal carbon atoms to match a 109.5\textdegree angle \\
 		\bottomrule
 
 	\end{tabularx}
