@@ -1,8 +1,12 @@
+dissertation.pdf
+dissertation.aux
+dissertation.log
+
 *.html
 *~
 _*/
 helpful/*
-dissertation.pdf
+
 .logged
 ## Core latex/pdflatex auxiliary files:
 *.aux
