@@ -7,7 +7,9 @@
 
 % the front matter
 % \input{frontmatter/personalize}
-% \frontmatter
+ \frontmatter
+ % \tableofcontents
+ % \listoftodos
 
 \makeatletter
     \if@twoside
@@ -22,30 +24,30 @@
 \makeatother
 \setstretch{\dnormalspacing}
 
-\listoftodos
 
 % include each chapter...
-% \include{chapters/00-preface}
-% \include{chapters/01-intro}
-% \include{chapters/02-methods}
-% \include{chapters/03-objectives}
-% \include{chapters/04-gaudimm}
-% \include{chapters/05-integrative}
-\setcounter{chapter}{5}  % start chapter numbering at 0
+%\setcounter{chapter}{5}  % start chapter numbering at 0
+\include{chapters/00-preface}
+\include{chapters/01-intro}
+\include{chapters/02-methods}
+\include{chapters/03-objectives}
+\include{chapters/04-gaudimm}
+\include{chapters/05-integrative}
 \include{chapters/06-applicative}
-% \include{chapters/07-conclusions}
-% \include{chapters/08-epilog}
+\include{chapters/07-conclusions}
+\include{chapters/08-epilog}
 
-% \begin{appendices}
-%     \makeatletter
-%         \if@twoside
-%             \fancyhf[reh]{\textit{Appendix \thechapter}}
-%         \fi
-%     \makeatother
-%     \include{chapters/appendix-a}
-%     \include{chapters/appendix-b}
-%     \include{chapters/appendix-c}
-% \end{appendices}
+\begin{appendices}
+    \makeatletter
+        \if@twoside
+            \fancyhf[reh]{\textit{Appendix \thechapter}}
+        \fi
+    \makeatother
+    \include{chapters/appendix-a}
+    \include{chapters/appendix-b}
+    \include{chapters/appendix-c}
+    \include{chapters/appendix-d}
+\end{appendices}
 
 % the back matter
 \backmatter

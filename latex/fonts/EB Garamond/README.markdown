@@ -1,5 +1,5 @@
 # EB Garamond
-## Claude Garamont’s designs go opensource.
+## Claude Garamont's designs go opensource.
 
 This project aims at providing a free version of the Garamond types, based on the Designs of the Berner specimen from 1592.
 
@@ -22,6 +22,6 @@ For the use with Xe- and LuaLaTeX I’m working on a configuration for mycrotype
 - EBGaramond-InitialsF2: Foreground (the letter) of initials
 - EBGaramond-Lettrines: Workbench for Initials fonts (not included in releases)
 
-This is a work in progress, so expect bugs! The qualitiy of the fonts still varies widely! You can see every font’s current state in its *-Glyphs.pdf file in the specimen section.
+This is a work in progress, so expect bugs! The qualitiy of the fonts still varies widely! You can see every font's current state in its *-Glyphs.pdf file in the specimen section.
 
 For more infos please visit http://www.georgduffner.at/ebgaramond/

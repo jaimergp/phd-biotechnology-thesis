@@ -12,7 +12,7 @@
 \label{chap:04}
 
 
-\Lettrine{Multiscale} approaches are implicitly restricted by their own design. They are based on a sequential series of steps, which are chained one after another to answer the initial question. Each step must be resolved separately, which can potentially become a bottleneck or even a blocking step if the results are not successfully obtained.
+\Lettrine{There} is an implicit restriction in multiscale approaches due to their own design. They are based on a sequential series of steps, which are chained one after another to answer the initial question. Each step must be resolved separately, which can potentially become a bottleneck or even a blocking step if the results are not successfully obtained.
 
 % Indirectly, methods that suffer from insufficient sampling capacity can only operate with subregions of the system under study, deliberately ignoring details outside that region.
 
@@ -71,7 +71,7 @@ Following sections will describe: (1) the algorithmic and (2) implementation det
 
 %%%%%%%%%%%%%%%%%%%% Table No: 1 ends here %%%%%%%%%%%%%%%%%%%%
 
-\section{Algorithmic details: multiobjective optimization \& NSGA-II}
+\section[Algorithmic details]{Algorithmic details: \\ multiobjective optimization \& NSGA-II}
 
 GaudiMM is built on top of a multiobjective genetic algorithm (MOGA), NSGA-II, developed by K. Deb.\cite{nsgaii} It has been thoroughly tested and benchmarked in well-characterized multi-objective problems and is considered a prototypical MOGA.
 
@@ -79,10 +79,9 @@ As other optimization methods, this algorithm can be described in three main sta
 
 In more detail, NSGA-II starts with the generation of a random set of potential solutions (\textit{individuals}) which comprise the so-called \textit{initial population}. This first set of individuals is then evaluated with one or more \textit{objectives} and each individual is assigned a \textit{fitness} score vector, the elements of which are the result of those cost functions. At this point, a small subset of the population is submitted to a round of random modification of parameters (\textit{mutation}) or exchanging some of their attributes (\textit{recombination}), and are then assessed by the same cost functions. Being random, the results of these variations can be better or worse than their preceding counterparts (parents). Finally, both the offspring and the parental generation ($ \mu $ +$ \lambda $ strategy) compete in the selection tournament, which will rule which ones will replace the initial population. After a number of iterations, the initial population will have evolved and, eventually, will end up providing reasonable solutions to the problem that represent a compromise between the analyzed variables (see fig. \ref{fig:nsga}).
 
-\todo[inline]{PDF Conversion needed}
 \begin{figure} % FIXME!
 	\vspace*{-1cm}
-	\includegraphics[width=0.9\textheight,angle=90]{./figures/04/nsga.png}
+	\includegraphics[width=0.9\textheight,angle=90]{./figures/04/nsga.pdf}
 	\cprotect\caption[NSGA-II algorithm]{Flowchart of the modular NSGA-II multi-objective genetic algorithm (MOGA) implemented in GaudiMM. $ N $ is the number of individuals in the initial population $P$. Values $\lambda$ and $\mu$ are related to the number of children produced at each generation and the number of individuals selected for the next generation, respectively. Together they control the offspring population size, $ P_{0} $. Constants $ mut $ and $ cx $ are the probabilities associated to mutation and crossover.}
 	\label{fig:nsga}
 \end{figure}
@@ -98,14 +97,13 @@ The initial step of all the iterations in the algorithm is the exploration, whic
 
 Since GaudiMM is based on a genetic algorithm, the implementation follows the same biologicist terminology. In GaudiMM any candidate solution is encoded in a special object called \texttt{Individual}. All \texttt{Individual} objects in the simulation are defined by the same high-level attributes, which are called \textit{genes}. In the same fashion, the state of each gene is defined by its \textit{allele} attribute. Depending on the gene, the allele can be a list of numbers, a path to a file, a matrix$ \ldots $
 
-For example, a typical optimization problem is finding the dihedral torsion that gives the minimum energy in the ethane molecule. The \texttt{Individuals} featured in this example would only need exploring a single variable, the torsion angle of the C-C bond, with values ranging from 0 to 360\textdegree. In GaudiMM-speak, the gene would be the bond \textit{rotator} and the allele the different angles.
+For example, a typical optimization problem is finding the dihedral torsion that gives the minimum energy in the ethane molecule. The \texttt{Individuals} featured in this example would only need exploring a single variable, the torsion angle of the C-C bond, with values ranging from 0 to 360$^\circ$. In GaudiMM-speak, the gene would be the bond \textit{rotator} and the allele the different angles.
 
 The key part of genetic algorithms is the implementation of variation operators as part of the exploration stage. Instead of merely trusting randomness, existing solutions are combined in hopes of obtaining a better child solution. These two operations are called \textit{mutation} and \textit{crossover} or mating, mimicking what happens in the cell nucleus at the chromosomic level.
 
-\todo[inline]{PDF Conversion needed}
 
 \begin{figure}[H] % FIXME!
-	\includegraphics[width=\textwidth]{./figures/04/ga-crossover-mut.png}
+	\includegraphics[width=\textwidth]{./figures/04/ga-crossover-mut-crop.pdf}
 	\caption[Mutation and crossover]{Mutation and crossover operations introduce variability in the parental population.}
 	\label{fig:cxmut}
 \end{figure}
@@ -138,7 +136,7 @@ Genes that fall in this category only alter the positions of the atoms involved 
 
 	\item \textsc{Search}. It performs rigid transformations on \texttt{Molecules} (translation and rotation). A radius parameter can be set to limit the search sphere range. If the radius is zero, the molecule will not be translated but can freely rotate around the anchor atom, which is useful for covalent bond emulation.
 
-	\item \textsc{Rotamers}. It allows to explore side-chain conformations in protein residues by applying Dunbrack’s\cite{dunbrack1993backbone} or Dynameomics\cite{scouras2011dynameomics} rotamer libraries.
+	\item \textsc{Rotamers}. It allows to explore side-chain conformations in protein residues by applying Dunbrack's\cite{dunbrack1993backbone} or Dynameomics\cite{scouras2011dynameomics} rotamer libraries.
 
 	\item \textsc{NormalModes}. Given a \texttt{Molecule} object, it calculates normal modes with elastic network methods and applies the resulting collective motions as possible variants of the initial coordinates set.
 
@@ -338,7 +336,7 @@ This configuration is enough to run a simple multi-objetive optimization process
 	\label{fig:gaudimm-input-file}
 \end{figure}
 
-However, after the first attempt, the user might realize that some of the results are indeed decane conformations whose ends are 1.5 Å apart, but not in the expected orientation. In other words, they do not respect the sp\textsuperscript{3} tetrahedral geometry. To fix it, an additional \texttt{Angle} objective set to match 109.5\textdegree between the end atoms and one of their neighbours would suffice. The final recipe can be consulted in table \ref{table:cyclodecane}.
+However, after the first attempt, the user might realize that some of the results are indeed decane conformations whose ends are 1.5 Å apart, but not in the expected orientation. In other words, they do not respect the sp\textsuperscript{3} tetrahedral geometry. To fix it, an additional \texttt{Angle} objective set to match 109.5$^\circ$ between the end atoms and one of their neighbours would suffice. The final recipe can be consulted in table \ref{table:cyclodecane}.
 
 \begin{table}[hbtp]
 	\caption{Final recipe for the cyclodecane example}
@@ -368,13 +366,13 @@ However, after the first attempt, the user might realize that some of the result
 		\texttt{Distance} & Bring terminal carbon atoms within 1.5 Å \\
 		\midrule
 		%row no:7
-		\texttt{Angle} & Force terminal carbon atoms to match a 109.5\textdegree angle \\
+		\texttt{Angle} & Force terminal carbon atoms to match a $109.5^\circ$ angle \\
 		\bottomrule
 
 	\end{tabularx}
 \end{table}
 
-Albeit useless, this toy example illustrates the flexibility of the paradigm proposed in GaudiMM. For more practical use cases, please refer to models detailed in \autoref{chapter:06}.
+Albeit useless, this toy example illustrates the flexibility of the paradigm proposed in GaudiMM. For more practical use cases, please refer to models detailed in \autoref{chap:06}.
 
 \section{Analyzing the results of multi-objective optimization}
 \label{section:gaudimm-results}

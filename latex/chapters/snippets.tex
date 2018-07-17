@@ -29,7 +29,7 @@ From 04-gaudi:
 
 With the current computational resources, one cannot pretend to perform a global exploration of the potential energy surface; not even for small systems. As a result, whatever the theory applied, the starting point of any calculation must be somehow close to or distantly resembling to the expected final structure. If several possibilities are considered, then a number of different starting points must be assessed. In other words, global optimization is usually not affordable and performing several local optimizations with different starting variables is often preferred.
 
-The take-home message is that almost every model will need a starting structure. A first and key step in every molecular modeling exercise. As mentioned in \autoref{chap:01}, sometimes this is as easy as downloading a file from an online database or drawing molecules in an interactive display. However, that is not always the case if only partial experimental data is available. This can end up constituting a sort of $``$writer’s block$"$  or $``$blank sheet syndrome$"$ : many projects strive to even start because of the complexity to find convenient starting points in a reasonably short amount of time. Sometimes, the researcher has no other option than manually adjusting the structure in an iterative, trial-and-error scheme until the calculation succeeds.
+The take-home message is that almost every model will need a starting structure. A first and key step in every molecular modeling exercise. As mentioned in \autoref{chap:01}, sometimes this is as easy as downloading a file from an online database or drawing molecules in an interactive display. However, that is not always the case if only partial experimental data is available. This can end up constituting a sort of $``$writer's block$"$  or $``$blank sheet syndrome$"$ : many projects strive to even start because of the complexity to find convenient starting points in a reasonably short amount of time. Sometimes, the researcher has no other option than manually adjusting the structure in an iterative, trial-and-error scheme until the calculation succeeds.
 
 Alleviating that frustrating process is one of the main the motivations behind the development of GaudiMM, the tool central to this chapter. GaudiMM, which stands for Genetic Algorithms with Unrestricted Descriptors for Intuitive Molecular Modeling, can be described as a molecular sketcher that will help to obtain reasonable starting models for their calculations. Like a grid on a fresh canvas or sidewheels in a bike, it allows to handle multidimensional problems in an easy, guided process.
 
@@ -50,3 +50,23 @@ GaudiMM is a Python package that allows to build and refine of chemobiological s
 From 05-integrative:
 
 \Lettrine{There is no silver bullet} in molecular modeling. So many tools, techniques, algorithms and approaches exist because different models are needed depending on the problem at hand. For some studies, a single simulation can be enough, but the more complex the system being modeled is, the more intricate simulation schemes are needed. This usually means combining methods with different supporting theories, whose technical implementation might assume common abstractions in that field that do not play well with subsequent stages in the multiscale protocol.
+
+---
+
+From 06-applicative:
+
+In \textit{rigid protein-ligand docking}, both the protein and the ligand are considered inflexible. This is, the protein remains still during the whole procedure and the ligand is simply moved around with rigid translation and rotation. The only variable during the analysis is the position of the ligand and its orientation.
+
+In GaudiMM, implementing rigid protein-ligand requires three genes:
+
+\begin{itemize}
+	\item A \texttt{Molecule} gene to load the protein structure.
+	\item Another \texttt{Molecule} gene to load the ligand itself.
+	\item A \texttt{Search} gene to translate and rotate the ligand around the protein surroundings.
+\end{itemize}
+
+Rigid protein-ligand docking can be useful for massive virtual screenings of small compounds with few internal rotation variables. However, in most protein-ligand dockings some kind of flexibility is required. In addition to rigid transformation, dihedral torsion around bonds with free rotation must be considered. Taking those into account require additional genes.
+
+To study the flexibility of the ligand, the \texttt{Torsion} gene can be used. This gene analyzes the bonds of the compound, finds which ones are rotatable and apply random torsions on them. Protein flexibility is normally treated by considering a rigid backbone and modifying the dihedral torsions of the sidechains of the specified residues according to the angles provided by a rotamer library, such as Dunbrack's,\cite{dunbrack1993backbone} Dynameomics'\cite{scouras2011dynameomics} or Richardson's.\cite{lovell2000penultimate} This behavior is available in the \texttt{Rotamers} gene.
+
+No matter the genes applied to consider one or other kind of flexibility, the objectives are usually the same. The most commonly applied one is clashes minimization through the \texttt{Contacts} objective. This is a simple criterion that minimizes the volumetric overlap of the Van der Waals spheres of close atoms. While this objective eliminates steric impediments, it does not provide a way to identify good poses, so it is usually accompanied by more objectives. Several docking scoring functions from other programs have been integrated in GaudiMM, like IMP's LigScore,\cite{krammer2005ligscore} DrugScoreX,\cite{neudert2011dsx} AutoDock Vina's\cite{trott2010autodock} or GOLD's ChemScore, PLP and GoldScore.\cite{verdonk2003improved} If more accurate calculations are needed, full molecular mechanics force fields can be used with the \texttt{Energy} objective (which implements OpenMM behind the scenes), or even Quantum Mechanics analysis through the \texttt{NWChem} objective. To exemplify how such a scheme could be applied in a real case, a benchmark of several popular docking datasets was performed.

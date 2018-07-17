@@ -5,7 +5,7 @@
         - stop learning new mindsets (physics vs chemistry, etc)
     - each component in those stages is a separate, independent module.
         - recombining those in new recipes allows solving different modeling tasks
-        - devising new strategies is easy: just combine the ingredients and test (hypotheses-driven comp. modeling -- you can ask )
+        - devising new strategies is easy: just combine the ingredients and test (hypotheses-driven comp. modeling --- you can ask )
         - multiobjective optimization
 
 Given Python modular nature, and the existing ecosystem of scientific packages, it is the perfect language to implement this idea. Following sections will describe the implementation details of the platform, how to analyze the proposed results, and the notion of recipe. Application examples will be given in Chapter 06.

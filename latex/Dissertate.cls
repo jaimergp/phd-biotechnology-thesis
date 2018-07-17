@@ -16,7 +16,7 @@
 \ProvidesClass{Dissertate}[2014/03/25 v2.0 Dissertate Class]
 % Comment/uncomment these two lines for digital A4 PDF or print-ready B5 PDF
 % Remember to change the geometry package as well
-\LoadClass[14pt,oneside,a4paper]{extbook}
+\LoadClass[12pt,oneside,a4paper]{extbook}
 % \LoadClass[14pt,twoside,openright,b5paper]{extbook}
 %\RequirePackage[width=5.75in,letterpaper]{geometry}
 %\RequirePackage[b5paper]{geometry}
@@ -75,8 +75,8 @@
 \usepackage{ragged2e}
 %\RaggedRight
 \raggedbottom
-% \RequirePackage[draft]{graphicx}
-\RequirePackage{graphicx}
+\RequirePackage[draft]{graphicx}
+% \RequirePackage{graphicx}
 \parindent 12pt
 \RequirePackage{lettrine}
 \RequirePackage{setspace}
