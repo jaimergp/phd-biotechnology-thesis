@@ -8,11 +8,11 @@
 
 
 \begin{enumerate}
-	\item \textsc{GaudiMM} has been presented as a versatile molecular optimization framework with high modularity. Its uncoupled plurigenetic, multiobjective implementation provides researchers an unprecedented flexibility in molecular modeling. Instead of conforming to the requirements of a sequential multistep protocol, the same methods can work synergistically in the same modeling exercise. The concept of \textit{recipe} paves the way towards performing hypothesis-driven modeling as well as other simulations like dockings or restrained conformational exploration.
+	\item \textsc{GaudiMM} has been presented as a versatile molecular optimization framework with high modularity. Its uncoupled plurigenetic, multi-objective implementation provides researchers an unprecedented flexibility in molecular modeling. Instead of conforming to the requirements of a sequential multistep protocol, the same methods can work synergistically in the same modeling exercise. The concept of \textit{recipe} paves the way towards performing hypothesis-driven modeling as well as other simulations like dockings or restrained conformational exploration.
 
 	\item \textsc{Tangram} is a collection of more than 15 tools for UCSF Chimera that will help in the generation of input files for 3\textsuperscript{rd} party software and diverse interactive structural analysis within a single graphical interface and user experience.
 
-	\item \textsc{OMMProtocol} provides a user-friendly, single-file interface to the powerful, GPU-accelerated OpenMM molecular dynamics libraries. The communion of these tools have brought a 20-fold speed increase to the previously followed MD protocols in our group.
+	\item \textsc{OMMProtocol} provides a user-friendly, single-file interface to the powerful, GPU-accelerated OpenMM molecular dynamics libraries. These tools have brought a 20-fold speed increase to the previously followed MD protocols in our group.
 
 	\item \textsc{Garleek} has been designed to help in those QM/MM studies that require extended molecular mechanics force fields. By seamlessly interfacing Gaussian with modern MM suites, more accurate calculations can be obtained.
 
@@ -25,7 +25,7 @@ These ongoing efforts have been the first steps towards developing a suite able 
 
 \subsection*{On GaudiMM}
 
-In addition to reproducing and benchmarking known problems, this platform has been able to model orphan systems where currently available information is scarce. This is thanks to a versatile approach: creating optimization synergies between deliberate simplistic chemical and geometric descriptors. Some of the tasks that have benefitted from this idea are:
+In addition to reproducing and benchmarking known problems, this platform has been able to model orphan systems where currently available information is scarce. This is thanks to a versatile approach: creating optimization synergies between deliberate simplistic chemical and geometric descriptors. Some tasks that have benefitted from this idea are:
 
 \begin{itemize}
 	\item \textsc{Exotic docking prediction}. GaudiMM expands the possibilities of docking calculations beyond the traditional flexible protein-ligand dockings, enabling unconventional docking studies like competitive docking or multicovalent restraints (see \autoref[section]{section:proteinliganddocking} for a benchmark on standard protein-ligand docking and the take on more exotic cases).
@@ -36,10 +36,10 @@ In addition to reproducing and benchmarking known problems, this platform has be
 
 Additionally, the conceptual separation of exploration and evaluation as implemented in GaudiMM gives a clear understanding of the different variables involved in an optimization process. This has proved to be a very valuable as a teaching tool in lower degrees of education. Students involved in GaudiMM development have contributed new modules even with a non-chemical background. Some highlights include a gene to navigate the chemical space or a coupled gene/objective pair to assess ligand binding pathways, detailed in \autoref[appendix]{chap:appendix-b}.
 
+Of course, there is further work to do. GaudiMM's approach has a modestly steep learning curve and configuring an input file is mostly done on the text editor. A general-purpose graphic interface would be desirable and is something to consider. In the short term, the concept of application-specific interfaces is very attractive (e.g. searching metal binding sites or optimizing the length of linkers).
 
-Of course, there is further work to do. GaudiMM's approach has a modestly steep learning curve and configuring an input file is mostly done by hand. A helper GUI for this task would be desirable and is something to consider in the short term, especially for specific applications (e.g. searching metal binding sites or optimizing the length of linkers).
+Analyzing results from a multi-objective process can be daunting at first because considering the optimality of two or more criteria simultaneously is not intuitive. While GaudiView is available to perform sorting and filtering on the candidate solutions, certain applications could benefit from a unified scoring term. However, this would require constructing a weighted linear sum of the objectives by benchmarking big datasets. In that matter, machine learning approaches could be very helpful.
 
-Analysing results from a multi-objective optimization process could be a real tour de force because of the large number of possible solutions that needs to be filtered. , this hypothetical application-specific interfaces could also include a particular linearization of the multiobjective recipe. This way, the end-user should only look for a single score value. This would require parameterizing the weights of the linear sum by benchmarking big datasets. In this task, machine learning could be very helpful.
 
 \section*{On Python}
 
@@ -47,6 +47,6 @@ Without Python and its great ecosystem (UCSF Chimera, the SciPy stack and the Om
 
 The \textit{de facto} Python installation already provides a library for high-level operations, freeing the developer from dealing with technical nuances. Beyond the official distribution, the catalog of ready-to-use packages is excellent, allowing to prototype projects in very little time just by importing the needed requirements. This is particularly true in scientific software, where it shines as the perfect glue language to stick different projects together.
 
-Moreover, the emphasis on readibility and self-documented code contributes to maintaining good practices along the full development cycle, even when different people are involved. This is particularly important for long-lasting efforts in research and fruitful investment in research.
+Moreover, the emphasis on readability and self-documented code contributes to maintaining good practices along the full development cycle, even when different people are involved. This is particularly important for long-lasting efforts in research and fruitful investment in research.
 
 This Ph.D. hopefully illustrates how Python and its exceptional ecosystem offer molecular modelers with a versatile canvas for innovative science.
