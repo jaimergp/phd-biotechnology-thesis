@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/Arch Linux) (preloaded format=xelatex 2018.7.5)  18 JUL 2018 20:04
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/Arch Linux) (preloaded format=xelatex 2018.7.5)  18 JUL 2018 20:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1253,7 +1253,7 @@ LaTeX Info: Redefining \] on input line 2818.
 Requested font "Lato Regular" at 12.0pt
  -> 
 Requested font "Lato Regular/OT" at 12.0pt
- -> 
+ -> ï¿¿°ï¿¿„lï¿¾‡8V
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1263,7 +1263,7 @@ Requested font "Lato Regular/OT" at 12.0pt
 Requested font "Lato Bold/OT" at 12.0pt
  -> 
 Requested font "Lato Bold/I/OT" at 12.0pt
- -> ï¿¾€ï¿¾Œ^^QWï¿¿U
+ -> pï¿¿œlï¿¾‡8V
 Requested font "Lato Regular/I/OT" at 12.0pt
  -> 
 .................................................
@@ -1277,9 +1277,9 @@ Requested font "Lato Regular/I/OT" at 12.0pt
 . Lato Bold scale = 0.7797268490977592.
 .................................................
 Requested font "Lato Regular/I/OT" at 12.0pt
- -> ï¿¾€ï¿¾¢^^SWï¿¿U
+ -> ï¿¾°ï¿¿´nï¿¾‡8V
 Requested font "Lato Regular/I/OT" at 12.0pt
- -> ï¿¾°ï¿¾¦^^SWï¿¿U
+ -> ï¿¿ ï¿¿¸nï¿¾‡8V
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1317,9 +1317,9 @@ Requested font "Lato Bold/I/OT" at 12.0pt
 .................................................
 LaTeX Info: Redefining \sffamily on input line 121.
 Requested font "Source Code Pro" at 12.0pt
- -> @ï¿¿´^^SWï¿¿U
+ -> pFoï¿¾‡8V
 Requested font "Source Code Pro/OT" at 12.0pt
- ->  ^^B^^TWï¿¿U
+ -> PToï¿¾‡8V
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1327,11 +1327,11 @@ Requested font "Source Code Pro/OT" at 12.0pt
 .................................................
 \g__fontspec_family_SourceCodePro_int=\count323
 Requested font "Source Code Pro/BI/OT" at 12.0pt
- -> ï¿¾ ï¿¿¾^^SWï¿¿U
+ -> ï¿¿Poï¿¾‡8V
 Requested font "Source Code Pro/B/OT" at 12.0pt
- -> ï¿¿°ï¿¿»^^SWï¿¿U
+ ->  Noï¿¾‡8V
 Requested font "Source Code Pro/I/OT" at 12.0pt
- -> ï¿¿°ï¿¿»^^SWï¿¿U
+ ->  Noï¿¾‡8V
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1343,18 +1343,18 @@ Requested font "Source Code Pro/I/OT" at 12.0pt
 . Source Code Pro scale = 0.833334657882258.
 .................................................
 Requested font "Source Code Pro/B/OT" at 12.0pt
- -> ï¿¿°ï¿¿»^^SWï¿¿U
+ ->  Noï¿¾‡8V
 Requested font "Source Code Pro/B/OT" at 12.0pt
- -> ï¿¿°ï¿¿»^^SWï¿¿U
+ ->  Noï¿¾‡8V
 .................................................
 . fontspec info: "set-scale"
 . 
 . Source Code Pro/B scale = 0.833334657882258.
 .................................................
 Requested font "Source Code Pro/BI/OT" at 12.0pt
- -> ï¿¿°ï¿¿»^^SWï¿¿U
+ ->  Noï¿¾‡8V
 Requested font "Source Code Pro/BI/OT" at 12.0pt
- -> ï¿¿°ï¿¿»^^SWï¿¿U
+ ->  Noï¿¾‡8V
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2180,7 +2180,7 @@ LaTeX Font Info:    Font shape `TU/LatoRegular(0)/bx/n' will be
 (Font)              scaled to size 9.35669pt on input line 15.
 Requested font "Lato Bold/OT:script=latn;language=DFLT;mapping=tex-text;" at 9.
 35669pt
- -> P^^T9Wï¿¿U
+ -> 0Vï¿¾”ï¿¾‡8V
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LatoRegular' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2194,25 +2194,25 @@ LaTeX Font Info:    Font shape `TU/LatoRegular(0)/bx/sc' will be
 (Font)              scaled to size 8.53796pt on input line 15.
 Requested font "Lato Bold/OT:script=latn;language=DFLT;mapping=tex-text;" at 8.
 53796pt
- -> @ï¿¾’9Wï¿¿U
+ -> ï¿¾€ï¿¾œï¿¾”ï¿¾‡8V
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/bx/sc' will be
 (Font)              scaled to size 9.35669pt on input line 15.
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
 (Font)              scaled to size 9.4768pt on input line 15.
 Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
  9.4768pt
- -> ï¿¿{9Wï¿¿U
+ ->  ï¿¿ï¿¾”ï¿¾‡8V
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
 (Font)              scaled to size 8.64758pt on input line 15.
 Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
  8.64758pt
- -> ï¿¿°ï¿¾—9Wï¿¿U
+ -> ï¿¿€6ï¿¾ï¿¾‡8V
 (./dissertation-2.cpt
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
 (Font)              scaled to size 6.31787pt on input line 1.
 Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
  6.31787pt
- -> 
+ -> ^^Pï¿¾²ï¿¾—ï¿¾‡8V
 ) [10
 
 
@@ -2310,12 +2310,12 @@ LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/it' will be
 (Font)              scaled to size 8.64758pt on input line 1.
 Requested font "Lato Regular/I/OT:script=latn;language=DFLT;mapping=tex-text;" 
 at 8.64758pt
- -> ^^PNHWï¿¿U
+ -> ï¿¿ ï¿¾¦ï¿¾£ï¿¾‡8V
 ) [17] [18]
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
 (Font)              scaled to size 9.12494pt on input line 80.
 Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 9.12494pt
- -> 
+ -> ï¿¾ï¿¾½ï¿¾£ï¿¾‡8V
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `SourceCodePro' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2581,7 +2581,7 @@ LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/it' will be
 (Font)              scaled to size 9.12494pt on input line 1.
 )
 Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 8.33328pt
- -> ï¿¾€ ï¿¾Wï¿¿U
+ -> @ï¿¾žï¿¿œï¿¾‡8V
  [65] [66]
 File: ./figures/04/gaudiview.png Graphic file (type bmp)
 <./figures/04/gaudiview.png>
@@ -2997,7 +2997,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  38970 strings out of 492970
  754357 string characters out of 6139409
- 932923 words of memory out of 5000000
+ 933923 words of memory out of 5000000
  42105 multiletter control sequences out of 15000+600000
  538585 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
