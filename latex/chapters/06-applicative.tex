@@ -1,4 +1,7 @@
 %!TEX root = ../dissertation.tex
+
+\todo[inline]{savequote needed}
+
 \chapter{Benchmark \textit{\&} Application}
 \label{chap:06}
 
@@ -11,7 +14,7 @@ While GaudiMM's approach to molecular modeling can be daunting at first, once th
 
 \subsection{From standard to more exotic dockings}
 % \addcontentsline{toc}{section}{GaudiMM as a versatile molecular modeling tool}
-
+\label{section:proteinliganddocking}
 Classic protein-ligand docking studies devote to finding the correct orientation and position of a small molecule (the ligand) within the cavity of a bigger one (normally, a protein). It usually cares about supramolecular recognition only, which means that analyzed interactions are mostly non-bonded. As a result, covalent bonds and coordination geometries are usually left out. However, a lot of systems do exhibit this type of recognition. In our group, we work with metallodrugs and artificial enzymes, two fields where these phenomena play an important role. As a result, we had big interest in considering these aspects in our docking calculations.
 
 In fact, GaudiMM was initially devised as an extensible protein-ligand tool, but later grew into a multi-purpose molecular modeling platform. The transition was smooth because the idea of docking can be further abstracted as simply \textit{finding structural geometries compatible with certain requirements}, which is in turn a very specific type of restrained optimization problems. In this section, we will present how GaudiMM can perform several types of docking.
@@ -226,7 +229,7 @@ The results showed that a linker compatible with the length of a linear heptane 
 
 
 \subsection{Metal ions: Organization \& binding site prediction}
-
+\label{section:metal-applications}
 In two of the previous examples, a metal ion was present in a nonstandard residue. GaudiMM was able to deal with them because the recipes applied did not take any special considerations. All atoms were treated as different-radius spheres connected to other spheres. In some cases, this strategy can be successful, but in others special treatment might be necessary.
 
 This section will present the applications of a novel strategy to deal with metal ions in molecular modeling. Instead of resorting to complex parameterization exercises (see \autoref[appendix]{chap:appendix-c} for further details) like those expected in Molecular Mechanics, some properties of the metal ions can be described with geometry measurements.
@@ -368,6 +371,7 @@ The main driver of the optimization was the Coordination objective, which was se
 
 \section[Multiscale modeling of multivalent enzyme inhibitors]{Case study:\\
 Multiscale modeling of multivalent enzyme inhibitors}
+\label{section:rotaxane}
 % \addcontentsline{toc}{section}{Multiscale modeling of multivalent enzyme inhibitors}
 GaudiMM was conceived to be the entry door to the multiscale funnel, while the tools presented in \autoref{chap:05} fill in other gaps down the funnel. In this section, a real example on how all these developments work together and allow to create integrative workflows is presented. It is a deep computational insight on the work described in \textit{Pillar[5]arene glyco(mimetic)rotaxanes for the functional interrogation of multivalency responsive glycosidases},\cite{rotaxane} a collaboration with the IIQ-CSIC in Seville, Spain.
 
@@ -474,7 +478,7 @@ To assess the first possibility, a GaudiMM calculation was set up following this
 
 
 \begin{table}[hbtp]
-	\caption{Recipe used in the evaluation of a single di-ONJ ligand. The ligand was positioned in such a way that one of the terminal iminosugars matched the crystallographic structure of the ligand in the original 2WBG protein structure}
+	\caption[Single di-ONJ recipe]{Recipe used in the evaluation of a single di-ONJ ligand. The ligand was positioned in such a way that one of the terminal iminosugars matched the crystallographic structure of the ligand in the original 2WBG protein structure}
 	\label{table:recipe-single-divalent}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
@@ -535,7 +539,7 @@ The evaluation part is the same: the non-frozen iminosugar will be forced to rea
 
 
 \begin{table}[hbtp]
-	\caption{Recipe used in the evaluation of a stretchable di-ONJ ligand. The ligand was positioned in such a way that one of the terminal iminosugars matched the crystallographic structure of the ligand in the original protein structure\cite{pdb:2wbg}}
+	\caption[Stretchable di-ONJ recipe]{Recipe used in the evaluation of a stretchable di-ONJ ligand. The ligand was positioned in such a way that one of the terminal iminosugars matched the crystallographic structure of the ligand in the original protein structure\cite{pdb:2wbg}}
 	\label{table:recipe-single-divalent}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
@@ -575,7 +579,7 @@ A second hypothesis would consist of considering that two di-ONJ ligands can occ
 To assess that possibility, two molecules were superposed against the crystallographic binding sites of the dimer structure,\cite{pdb:2wbg} which features an analog inhibitor compound suitable for structural alignment. Then, dihedral torsions of the rotatable bonds of the ligand were analyzed looking for a combination that could have them interact at the interface. This interaction was implemented as a distance minimization between a carboxylic oxygen of one ligand and a carboxylic hydrogen of the other (see table \ref{table:recipe-two-divalent} and fig. \ref{fig:divalent-interface}).
 
 \begin{table}[hbtp]
-	\caption{Recipe used in the evaluation of a two di-ONJ ligands. The ligand wass positioned in such a way that one of the terminal iminosugars matched the crystallographic structures of the ligand in the original X-ray protein structure}
+	\caption[Double di-ONJ recipe]{Recipe used in the evaluation of a two di-ONJ ligands. The ligand wass positioned in such a way that one of the terminal iminosugars matched the crystallographic structures of the ligand in the original X-ray protein structure}
 	\label{table:recipe-two-divalent}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
@@ -649,7 +653,7 @@ In the binding mode A (same axel), the structure did not reach the second bindin
 
 
 \begin{table}[hbtp]
-	\caption{Recipe used in the evaluation of the pillar[5]ene ligand. The ligand wass positioned in such a way that one of the terminal iminosugars matched the crystallographic structure of the ligand in one of the monomers of the original 2WBG protein structure.}
+	\caption[Pillar-5-ene recipe]{Recipe used in the evaluation of the pillar[5]ene ligand. The ligand wass positioned in such a way that one of the terminal iminosugars matched the crystallographic structure of the ligand in one of the monomers of the original 2WBG protein structure.}
 	\label{table:recipe-rotaxane}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%

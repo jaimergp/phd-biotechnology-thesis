@@ -316,7 +316,7 @@ All calculations normally start by configuring one or more \texttt{Molecule} gen
 
 The set of genes will simply generate different variants of the starting model, which can potentially include non-feasible structures. As a result, after choosing which genes to apply, the user must decide which variables will guide the optimization of the structure by choosing one or more objectives. For example, it is common to request a \texttt{Contacts} gene to minimize the steric clashes that can arise from moving a small molecule around a bigger one.  If more requirements are needed, like maximizing the number of hydrogen bonds, the corresponding objectives can be added too.
 
-It must be remembered that the objectives simply assign a score to a candidate solution. It is up to the selection step to favour the promotion of candidates that satisfy the optimization criteria (i.e., low number of clashes with good hydrogen bonds) and discard those that do not. As an example, a trivial molecular modeling task will be explained.
+It must be remembered that the objectives simply assign a score to a candidate solution. It is up to the selection step to favor the promotion of candidates that satisfy the optimization criteria (i.e., low number of clashes with good hydrogen bonds) and discard those that do not. As an example, a trivial molecular modeling task will be explained.
 
 \subsection{Tutorial: Obtaining a cyclic alkane}
 
@@ -332,7 +332,7 @@ This configuration is enough to run a simple multi-objetive optimization process
 
 \begin{figure}[hbtp]
 	\lstinputlisting[basicstyle=\small\ttfamily,language=Python]{./figures/04/input.yaml}
-	\caption{Minimal GaudiMM input file for the optimization of linear decane into a cyclodecane.}
+	\caption[GaudiMM input example]{Minimal GaudiMM input file for the optimization of linear decane into a cyclodecane.}
 	\label{fig:gaudimm-input-file}
 \end{figure}
 

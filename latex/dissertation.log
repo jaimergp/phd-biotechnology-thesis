@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/Arch Linux) (preloaded format=xelatex 2018.6.30)  18 JUL 2018 09:43
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/Arch Linux) (preloaded format=xelatex 2018.7.5)  18 JUL 2018 20:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/jrgp/pub/thesis/latex/dissertation
-(/home/jrgp/pub/thesis/latex/dissertation.tex
+**/home/jrodriguez/pub/thesis/latex/dissertation
+(/home/jrodriguez/pub/thesis/latex/dissertation.tex
 LaTeX2e <2018-04-01> patch level 2
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (./Dissertate.cls
@@ -943,7 +943,7 @@ otf
 . fontspec info: "defining-font"
 . 
 . Font family 'EBGaramond12(0)' created for font 'EBGaramond12' with options
-. [Ligatures = {Common, TeX},Scale = 1,SmallCapsFeatures={},Extension =
+. [Ligatures = TeX,Scale = 1,SmallCapsFeatures={},Extension =
 . .otf,Ligatures=TeX,RawFeature={-calt},Numbers =
 . {Proportional,Lining},UprightFont = *-Regular,ItalicFont = *-Italic,BoldFont
 . = *-Regular,BoldItalicFont = *-Italic].
@@ -951,77 +951,77 @@ otf
 .  This font family consists of the following NFSS series/shapes:
 .  
 . - 'normal' (m/n) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-calt;
-+pnum;+lnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+pnum;
++lnum;mapping=tex-text;"
 . - 'small caps'  (m/sc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-calt;
-+pnum;+lnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+pnum;
++lnum;+smcp;mapping=tex-text;"
 . - 'bold' (bx/n) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-calt;
-+pnum;+lnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+pnum;
++lnum;mapping=tex-text;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-calt;
-+pnum;+lnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+pnum;
++lnum;+smcp;mapping=tex-text;"
 . - 'italic' (m/it) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-calt;+
-pnum;+lnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;-calt;+pnum;+
+lnum;mapping=tex-text;"
 . - 'italic small caps'  (m/itsc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-calt;+
-pnum;+lnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;-calt;+pnum;+
+lnum;+smcp;mapping=tex-text;"
 . - 'bold italic' (bx/it) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-calt;+
-pnum;+lnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;-calt;+pnum;+
+lnum;mapping=tex-text;"
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-calt;+
-pnum;+lnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;-calt;+pnum;+
+lnum;+smcp;mapping=tex-text;"
 .................................................
-LaTeX Info: Redefining \rmfamily on input line 84.
+LaTeX Info: Redefining \rmfamily on input line 83.
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 84.
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;mapping=tex-text;" at 12.0pt
+(Font)              scaled to size 12.0pt on input line 83.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;mapping=tex-text;" at 12.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'EBGaramond12(1)' created for font 'EBGaramond12' with options
-. [Ligatures = {Common, TeX},Scale = 1,SmallCapsFeatures={},Extension =
-. .otf,Numbers = {Proportional,Lining},UprightFont = *-Regular,ItalicFont =
-. *-Italic,BoldFont = *-Regular,BoldItalicFont = *-Italic].
+. [Ligatures = TeX,Scale = 1,SmallCapsFeatures={},Extension = .otf,Numbers =
+. {Proportional,Lining},UprightFont = *-Regular,ItalicFont = *-Italic,BoldFont
+. = *-Regular,BoldItalicFont = *-Italic].
 .  
 .  This font family consists of the following NFSS series/shapes:
 .  
 . - 'normal' (m/n) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;+pnum;
-+lnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+pnum;+lnum;
+mapping=tex-text;"
 . - 'small caps'  (m/sc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;+pnum;
-+lnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+pnum;+lnum;
++smcp;mapping=tex-text;"
 . - 'bold' (bx/n) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;+pnum;
-+lnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+pnum;+lnum;
+mapping=tex-text;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;+pnum;
-+lnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+pnum;+lnum;
++smcp;mapping=tex-text;"
 . - 'italic' (m/it) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+pnum;+
-lnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+pnum;+lnum;m
+apping=tex-text;"
 . - 'italic small caps'  (m/itsc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+pnum;+
-lnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+pnum;+lnum;+
+smcp;mapping=tex-text;"
 . - 'bold italic' (bx/it) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+pnum;+
-lnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+pnum;+lnum;m
+apping=tex-text;"
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+pnum;+
-lnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+pnum;+lnum;+
+smcp;mapping=tex-text;"
 .................................................
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'EBGaramond12(2)' created for font 'EBGaramond12' with options
-. [Ligatures = {Common, TeX},Scale = 1,SmallCapsFeatures={},Extension =
+. [Ligatures = TeX,Scale = 1,SmallCapsFeatures={},Extension =
 . .otf,Style={Swash},Numbers = {Proportional,Lining},UprightFont =
 . *-Italic,ItalicFont = *-Italic,BoldFont = *-Italic,BoldItalicFont =
 . *-Italic].
@@ -1029,64 +1029,64 @@ lnum;+smcp;mapping=tex-text;"
 .  This font family consists of the following NFSS series/shapes:
 .  
 . - 'normal' (m/n) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+swsh;+
-pnum;+lnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+swsh;+pnum;+
+lnum;mapping=tex-text;"
 . - 'small caps'  (m/sc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+swsh;+
-pnum;+lnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+swsh;+pnum;+
+lnum;+smcp;mapping=tex-text;"
 . - 'bold' (bx/n) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+swsh;+
-pnum;+lnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+swsh;+pnum;+
+lnum;mapping=tex-text;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+swsh;+
-pnum;+lnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+swsh;+pnum;+
+lnum;+smcp;mapping=tex-text;"
 . - 'italic' (m/it) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+swsh;+
-pnum;+lnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+swsh;+pnum;+
+lnum;mapping=tex-text;"
 . - 'italic small caps'  (m/itsc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+swsh;+
-pnum;+lnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+swsh;+pnum;+
+lnum;+smcp;mapping=tex-text;"
 . - 'bold italic' (bx/it) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+swsh;+
-pnum;+lnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+swsh;+pnum;+
+lnum;mapping=tex-text;"
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+swsh;+
-pnum;+lnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+swsh;+pnum;+
+lnum;+smcp;mapping=tex-text;"
 .................................................
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'EBGaramond12(3)' created for font 'EBGaramond12' with options
-. [Ligatures = {Common, TeX},Scale = 1,SmallCapsFeatures={},Extension =
-. .otf,Numbers = {Proportional,OldStyle},UprightFont = *-Regular,ItalicFont =
+. [Ligatures = TeX,Scale = 1,SmallCapsFeatures={},Extension = .otf,Numbers =
+. {Proportional,OldStyle},UprightFont = *-Regular,ItalicFont =
 . *-Italic,BoldFont = *-Regular,BoldItalicFont = *-Italic].
 .  
 .  This font family consists of the following NFSS series/shapes:
 .  
 . - 'normal' (m/n) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;+pnum;
-+onum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+pnum;+onum;
+mapping=tex-text;"
 . - 'small caps'  (m/sc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;+pnum;
-+onum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+pnum;+onum;
++smcp;mapping=tex-text;"
 . - 'bold' (bx/n) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;+pnum;
-+onum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+pnum;+onum;
+mapping=tex-text;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;+pnum;
-+onum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+pnum;+onum;
++smcp;mapping=tex-text;"
 . - 'italic' (m/it) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+pnum;+
-onum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+pnum;+onum;m
+apping=tex-text;"
 . - 'italic small caps'  (m/itsc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+pnum;+
-onum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+pnum;+onum;+
+smcp;mapping=tex-text;"
 . - 'bold italic' (bx/it) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+pnum;+
-onum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+pnum;+onum;m
+apping=tex-text;"
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+pnum;+
-onum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+pnum;+onum;+
+smcp;mapping=tex-text;"
 .................................................
 Requested font "[EBGaramondInitials.otf]/OT" at 12.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramondInitials.o
@@ -1098,26 +1098,12 @@ Missing character: There is no   in font [EBGaramondInitials.otf]/OT!
 . Font "EBGaramondInitials" does not contain any OpenType `Script'
 . information.
 .................................................
-
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common, TeX' (liga) not available for font
-* 'EBGaramondInitials' with script '' and language ''.
-*************************************************
 \g__fontspec_family_EBGaramondInitials_int=\count309
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common, TeX' (liga) not available for font
-* 'EBGaramondInitials' with script '' and language ''.
-*************************************************
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'EBGaramondInitials(0)' created for font 'EBGaramondInitials'
-. with options [Ligatures = {Common, TeX},Scale =
-. 1,SmallCapsFeatures={},Extension =
+. with options [Ligatures = TeX,Scale = 1,SmallCapsFeatures={},Extension =
 . .otf,BoldFont={},ItalicFont={},SmallCapsFont={}].
 .  
 .  This font family consists of the following NFSS series/shapes:
@@ -1126,45 +1112,46 @@ Missing character: There is no   in font [EBGaramondInitials.otf]/OT!
 . <->s*[1]"[EBGaramondInitials.otf]/OT:mapping=tex-text;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-LaTeX Info: Redefining \oldstylenums on input line 121.
-LaTeX Info: Redefining \liningnums on input line 122.
-LaTeX Info: Redefining \textin on input line 123.
+LaTeX Info: Redefining \oldstylenums on input line 120.
+LaTeX Info: Redefining \liningnums on input line 121.
+LaTeX Info: Redefining \textin on input line 122.
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'EBGaramond12(4)' created for font 'EBGaramond12' with options
-. [Ligatures = {Common, TeX},Scale = 1,SmallCapsFeatures={},Extension =
-. .otf,Numbers = {Monospaced,Lining},UprightFont = *-Regular,ItalicFont =
-. *-Italic,BoldFont = *-Regular,BoldItalicFont = *-Italic].
+. [Ligatures = TeX,Scale = 1,SmallCapsFeatures={},Extension = .otf,Numbers =
+. {Monospaced,Lining},UprightFont = *-Regular,ItalicFont = *-Italic,BoldFont =
+. *-Regular,BoldItalicFont = *-Italic].
 .  
 .  This font family consists of the following NFSS series/shapes:
 .  
 . - 'normal' (m/n) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;+tnum;
-+lnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+tnum;+lnum;
+mapping=tex-text;"
 . - 'small caps'  (m/sc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;+tnum;
-+lnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+tnum;+lnum;
++smcp;mapping=tex-text;"
 . - 'bold' (bx/n) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;+tnum;
-+lnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+tnum;+lnum;
+mapping=tex-text;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;+tnum;
-+lnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+tnum;+lnum;
++smcp;mapping=tex-text;"
 . - 'italic' (m/it) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+tnum;+
-lnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+tnum;+lnum;m
+apping=tex-text;"
 . - 'italic small caps'  (m/itsc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+tnum;+
-lnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+tnum;+lnum;+
+smcp;mapping=tex-text;"
 . - 'bold italic' (bx/it) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+tnum;+
-lnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+tnum;+lnum;m
+apping=tex-text;"
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;+tnum;+
-lnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+tnum;+lnum;+
+smcp;mapping=tex-text;"
 .................................................
-) (/usr/share/texmf-dist/tex/latex/ebgaramond-maths/ebgaramond-maths.sty
+)
+(/usr/share/texmf-dist/tex/latex/ebgaramond-maths/ebgaramond-maths.sty
 Package: ebgaramond-maths 2014/11/30 v1.1 ebgaramond-maths for use with EBGaram
 ond
 LaTeX Font Info:    Redeclaring symbol font `letters' on input line 24.
@@ -1264,9 +1251,9 @@ LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
 Requested font "Lato Regular" at 12.0pt
- -> Ôøø∞oÔøø∑ÔøæÑÔøø∞U
+ -> 
 Requested font "Lato Regular/OT" at 12.0pt
- -> Ôøø∞^^L^^^ÔøæÖÔøø∞U
+ -> 
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1276,9 +1263,9 @@ Requested font "Lato Regular/OT" at 12.0pt
 Requested font "Lato Bold/OT" at 12.0pt
  -> 
 Requested font "Lato Bold/I/OT" at 12.0pt
- -> ÔøøÄ^^^^^^ÔøæÖÔøø∞U
+ -> ÔøæÄÔøæå^^QWÔøøèU
 Requested font "Lato Regular/I/OT" at 12.0pt
- -> Ôøæê'^^^ÔøæÖÔøø∞U
+ -> 
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1290,9 +1277,9 @@ Requested font "Lato Regular/I/OT" at 12.0pt
 . Lato Bold scale = 0.7797268490977592.
 .................................................
 Requested font "Lato Regular/I/OT" at 12.0pt
- -> 
+ -> ÔøæÄÔøæ¢^^SWÔøøèU
 Requested font "Lato Regular/I/OT" at 12.0pt
- -> Ôøæê7 ÔøæÖÔøø∞U
+ -> Ôøæ∞Ôøæ¶^^SWÔøøèU
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1330,9 +1317,9 @@ Requested font "Lato Bold/I/OT" at 12.0pt
 .................................................
 LaTeX Info: Redefining \sffamily on input line 121.
 Requested font "Source Code Pro" at 12.0pt
- ->  Ôøæã ÔøæÖÔøø∞U
+ -> @Ôøø¥^^SWÔøøèU
 Requested font "Source Code Pro/OT" at 12.0pt
- -> Ôøæ†Ôøæò ÔøæÖÔøø∞U
+ ->  ^^B^^TWÔøøèU
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1340,11 +1327,11 @@ Requested font "Source Code Pro/OT" at 12.0pt
 .................................................
 \g__fontspec_family_SourceCodePro_int=\count323
 Requested font "Source Code Pro/BI/OT" at 12.0pt
- -> @g ÔøæÖÔøø∞U
+ -> Ôøæ†Ôøøæ^^SWÔøøèU
 Requested font "Source Code Pro/B/OT" at 12.0pt
- -> ÔøæÄ* ÔøæÖÔøø∞U
+ -> Ôøø∞Ôøøª^^SWÔøøèU
 Requested font "Source Code Pro/I/OT" at 12.0pt
- -> ÔøæÄ* ÔøæÖÔøø∞U
+ -> Ôøø∞Ôøøª^^SWÔøøèU
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1356,18 +1343,18 @@ Requested font "Source Code Pro/I/OT" at 12.0pt
 . Source Code Pro scale = 0.833334657882258.
 .................................................
 Requested font "Source Code Pro/B/OT" at 12.0pt
- -> ÔøæÄ* ÔøæÖÔøø∞U
+ -> Ôøø∞Ôøøª^^SWÔøøèU
 Requested font "Source Code Pro/B/OT" at 12.0pt
- -> ÔøæÄ* ÔøæÖÔøø∞U
+ -> Ôøø∞Ôøøª^^SWÔøøèU
 .................................................
 . fontspec info: "set-scale"
 . 
 . Source Code Pro/B scale = 0.833334657882258.
 .................................................
 Requested font "Source Code Pro/BI/OT" at 12.0pt
- -> ÔøæÄ* ÔøæÖÔøø∞U
+ -> Ôøø∞Ôøøª^^SWÔøøèU
 Requested font "Source Code Pro/BI/OT" at 12.0pt
- -> ÔøæÄ* ÔøæÖÔøø∞U
+ -> Ôøø∞Ôøøª^^SWÔøøèU
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1826,18 +1813,24 @@ positioning.code.tex
 File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 )
 \c@@todonotes@numberoftodonotes=\count357
-) (./dissertation.aux (./chapters/06-applicative.aux
+) (./dissertation.aux (./chapters/00-preface.aux)
+(./chapters/01-intro.aux) (./chapters/02-methods.aux)
+(./chapters/03-objectives.aux) (./chapters/04-gaudimm.aux)
+(./chapters/05-integrative.aux) (./chapters/06-applicative.aux
 
 LaTeX Warning: Label `table:recipe-single-divalent' multiply defined.
 
-))
+) (./chapters/07-conclusions.aux) (./chapters/08-epilog.aux)
+(./chapters/appendix-a.aux) (./chapters/appendix-b.aux)
+(./chapters/appendix-c.aux) (./chapters/appendix-d.aux))
 \openout1 = `dissertation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/EBGaramond-Maths/m/it on input li
 ne 6.
 LaTeX Font Info:    Try loading font information for OML+EBGaramond-Maths on in
 put line 6.
- (/usr/share/texmf-dist/tex/latex/ebgaramond-maths/OMLEBGaramond-Maths.fd
+
+(/usr/share/texmf-dist/tex/latex/ebgaramond-maths/OMLEBGaramond-Maths.fd
 File: OMLEBGaramond-Maths.fd 2014/09/01 font definitions for OML/EBGaramond-Mat
 hs.
 )
@@ -2007,14 +2000,61 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-ABD: EveryShipout initializing macros
+ABD: EveryShipout initializing macros (./frontmatter/personalize.tex)
+(./frontmatter/personalize.tex)
+File: figures/logoUAB.jpg Graphic file (type bmp)
+<figures/logoUAB.jpg>
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 11.
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;mapping=tex-text;" at 24.88pt
+(Font)              scaled to size 24.88pt on input line 10.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;mapping=tex-text;" at 24.88pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 11.
+LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/sc' will be
+(Font)              scaled to size 12.0pt on input line 10.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;+smcp;mapping=tex-text;" at 12.0pt
+ -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
+.otf
+LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/itsc' will be
+(Font)              scaled to size 12.0pt on input line 10.
+Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;-calt;+p
+num;+lnum;+smcp;mapping=tex-text;" at 12.0pt
+ -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
+otf
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
+
+) [1
+
+]
+File: figures/logoUAB.jpg Graphic file (type bmp)
+<figures/logoUAB.jpg>
+ [2]
+LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/sc' will be
+(Font)              scaled to size 10.95pt on input line 10.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;+smcp;mapping=tex-text;" at 10.95pt
+ -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
+.otf
+LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
+(Font)              scaled to size 10.95pt on input line 10.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;mapping=tex-text;" at 10.95pt
+ -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
+.otf
+
+[3] (./frontmatter/dedication.tex) [4]
+LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
+(Font)              scaled to size 17.28pt on input line 10.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;mapping=tex-text;" at 17.28pt
+ -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
+.otf
+ (./frontmatter/abstract.tex) [1]
+(./frontmatter/official-acknowledgments.tex) [2]
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 10.
 
 (/usr/share/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
@@ -2028,33 +2068,21 @@ File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 Requested font "pplb8t" at 100.0pt
  -> /usr/share/texmf-dist/fonts/tfm/adobe/palatino/pplb8t.tfm
  (./dissertation.toc
-LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 2.
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;+smcp;mapping=tex-text;" at 12.0pt
- -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
-.otf
-LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/itsc' will be
-(Font)              scaled to size 12.0pt on input line 2.
-Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-c
-alt;+pnum;+lnum;+smcp;mapping=tex-text;" at 12.0pt
- -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
-otf
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/bx/n' will be
-(Font)              scaled to size 12.0pt on input line 2.
+(Font)              scaled to size 10.95pt on input line 2.
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
 (Font)              scaled to size 8.0pt on input line 2.
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;mapping=tex-text;" at 8.0pt
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;mapping=tex-text;" at 8.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
 (Font)              scaled to size 6.0pt on input line 2.
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;mapping=tex-text;" at 6.0pt
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;mapping=tex-text;" at 6.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
-Requested font "EBGaramond12-Italic--oml-ebgaramond" at 12.0pt
+Requested font "EBGaramond12-Italic--oml-ebgaramond" at 10.95pt
  -> /usr/share/texmf-dist/fonts/tfm/public/ebgaramond-maths/EBGaramond12-Italic
 --oml-ebgaramond.tfm
 Requested font "EBGaramond12-Italic--oml-ebgaramond" at 8.0pt
@@ -2063,20 +2091,20 @@ Requested font "EBGaramond12-Italic--oml-ebgaramond" at 8.0pt
 Requested font "EBGaramond12-Italic--oml-ebgaramond" at 6.0pt
  -> /usr/share/texmf-dist/fonts/tfm/public/ebgaramond-maths/EBGaramond12-Italic
 --oml-ebgaramond.tfm
-Requested font "cmsy10" at 12.0pt
+Requested font "cmsy10" at 10.95pt
  -> /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 Requested font "cmsy8" at 8.0pt
  -> /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
 Requested font "cmsy6" at 6.0pt
  -> /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
-Requested font "cmex10" at 12.0pt
+Requested font "cmex10" at 10.95pt
  -> /usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 Requested font "cmex8" at 8.0pt
  -> /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
 Requested font "cmex7" at 6.0pt
  -> /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
-Requested font "cmr12" at 12.0pt
- -> /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+Requested font "cmr10" at 10.95pt
+ -> /usr/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 
 (/usr/share/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
@@ -2086,85 +2114,231 @@ Requested font "cmr8" at 8.0pt
  -> /usr/share/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 Requested font "cmr6" at 6.0pt
  -> /usr/share/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
-)
+ [3
+
+] [4])
 \tf@toc=\write6
 \openout6 = `dissertation.toc'.
 
+ [5]
+(./dissertation.lof (./dissertation-1.cpt) (./dissertation-3.cpt)
+(./dissertation-5.cpt) (./dissertation-7.cpt) (./dissertation-9.cpt)
+(./dissertation-11.cpt) (./dissertation-13.cpt) (./dissertation-15.cpt)
+(./dissertation-20.cpt) (./dissertation-22.cpt) (./dissertation-24.cpt)
+[6
 
-(/usr/share/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
-File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
+] (./dissertation-28.cpt) (./dissertation-30.cpt) (./dissertation-32.cpt))
+\tf@lof=\write7
+\openout7 = `dissertation.lof'.
 
-) [1
 
+[7] (./dissertation.lot (./dissertation-17.cpt) (./dissertation-19.cpt)
+(./dissertation-26.cpt))
+\tf@lot=\write8
+\openout8 = `dissertation.lot'.
+
+ [8
+
+] (./dissertation.tdo)
+\tf@tdo=\write9
+\openout9 = `dissertation.tdo'.
+
+ [9
 
 ]
-(./dissertation.tdo)
-\tf@tdo=\write7
-\openout7 = `dissertation.tdo'.
+\openout2 = `chapters/00-preface.aux'.
 
- [2
 
-]
-\openout2 = `chapters/06-applicative.aux'.
-
- (./chapters/06-applicative.tex
-Chapter 6.
+(./chapters/00-preface.tex
+LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
+(Font)              scaled to size 45.76036pt on input line 7.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;mapping=tex-text;" at 45.76036pt
+ -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
+.otf
+LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
+(Font)              scaled to size 65.94041pt on input line 7.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;mapping=tex-text;" at 65.94041pt
+ -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
+.otf
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/it' will be
-(Font)              scaled to size 24.88pt on input line 2.
-Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-c
-alt;+pnum;+lnum;mapping=tex-text;" at 24.88pt
+(Font)              scaled to size 10.95pt on input line 7.
+Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;-calt;+p
+num;+lnum;mapping=tex-text;" at 10.95pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
 otf
+File: ./figures/01/penicillin.jpg Graphic file (type bmp)
+<./figures/01/penicillin.jpg>
+\openout3 = `dissertation-1.cpt'.
+
+\openout3 = `dissertation-2.cpt'.
+
+LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/bx/n' will be
+(Font)              scaled to size 12.0pt on input line 15.
+LaTeX Font Info:    Font shape `TU/LatoRegular(0)/bx/n' will be
+(Font)              scaled to size 9.35669pt on input line 15.
+Requested font "Lato Bold/OT:script=latn;language=DFLT;mapping=tex-text;" at 9.
+35669pt
+ -> P^^T9WÔøøèU
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `LatoRegular' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+
+LaTeX Font Warning: Font shape `TU/LatoRegular(0)/bx/sc' undefined
+(Font)              using `TU/LatoRegular(0)/bx/n' instead on input line 15.
+
+LaTeX Font Info:    Font shape `TU/LatoRegular(0)/bx/sc' will be
+(Font)              scaled to size 8.53796pt on input line 15.
+Requested font "Lato Bold/OT:script=latn;language=DFLT;mapping=tex-text;" at 8.
+53796pt
+ -> @Ôøæí9WÔøøèU
+LaTeX Font Info:    Font shape `TU/LatoRegular(0)/bx/sc' will be
+(Font)              scaled to size 9.35669pt on input line 15.
+LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
+(Font)              scaled to size 9.4768pt on input line 15.
+Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
+ 9.4768pt
+ -> Ôøøê{9WÔøøèU
+LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
+(Font)              scaled to size 8.64758pt on input line 15.
+Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
+ 8.64758pt
+ -> Ôøø∞Ôøæó9WÔøøèU
+(./dissertation-2.cpt
+LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
+(Font)              scaled to size 6.31787pt on input line 1.
+Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
+ 6.31787pt
+ -> 
+) [10
+
+
+] [11]
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 28.
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
-(Font)              scaled to size 48.936pt on input line 6.
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;mapping=tex-text;" at 48.936pt
+(Font)              scaled to size 10.0pt on input line 28.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;mapping=tex-text;" at 10.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
-LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
-(Font)              scaled to size 70.5165pt on input line 6.
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;mapping=tex-text;" at 70.5165pt
- -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
-.otf
+) [12]
+\openout2 = `chapters/01-intro.aux'.
+
+ (./chapters/01-intro.tex
+LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/sl' in size <10> not avail
+able
+(Font)              Font shape `TU/EBGaramond12(0)/m/it' tried instead on input
+ line 3.
+LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/it' will be
+(Font)              scaled to size 10.0pt on input line 3.
+Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;-calt;+p
+num;+lnum;mapping=tex-text;" at 10.0pt
+ -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
+otf
+
+Chapter 1.
+[13
+
+
+
+]
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/sc' will be
-(Font)              scaled to size 14.4pt on input line 8.
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;+smcp;mapping=tex-text;" at 14.4pt
+(Font)              scaled to size 14.4pt on input line 27.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;+smcp;mapping=tex-text;" at 14.4pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
-LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/it' will be
-(Font)              scaled to size 12.0pt on input line 10.
-Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-c
-alt;+pnum;+lnum;mapping=tex-text;" at 12.0pt
- -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
-otf
-[3
+ [14]
+File: ./figures/01/thong.pdf Graphic file (type pdf)
+<use ./figures/01/thong.pdf>
+\openout3 = `dissertation-3.cpt'.
+
+\openout3 = `dissertation-4.cpt'.
+
+ (./dissertation-4.cpt) [15] [16]
+Overfull \hbox (2.48003pt too wide) in paragraph at lines 62--62
+[][][][]\TU/EBGaramond12(0)/m/n/10 Citation 
+ []
 
 
-]
+Overfull \hbox (2.48003pt too wide) in paragraph at lines 62--62
+[][][][]\TU/EBGaramond12(0)/m/n/10 Citation 
+ []
+
+
+Overfull \hbox (2.48003pt too wide) in paragraph at lines 62--62
+[][][][]\TU/EBGaramond12(0)/m/n/10 Citation 
+ []
+
+
+Overfull \hbox (2.48003pt too wide) in paragraph at lines 62--62
+[][][][]\TU/EBGaramond12(0)/m/n/10 Citation 
+ []
+
+
+Overfull \hbox (2.48003pt too wide) in paragraph at lines 62--62
+[][][][]\TU/EBGaramond12(0)/m/n/10 Citation 
+ []
+
+
+Overfull \hbox (2.48003pt too wide) in paragraph at lines 62--62
+[][][][]\TU/EBGaramond12(0)/m/n/10 Citation 
+ []
+
+
+Overfull \hbox (2.48003pt too wide) in paragraph at lines 62--62
+[][][][]\TU/EBGaramond12(0)/m/n/10 Citation 
+ []
+
+
+Overfull \hbox (2.48003pt too wide) in paragraph at lines 62--62
+[][][][]\TU/EBGaramond12(0)/m/n/10 Citation 
+ []
+
+File: ./figures/01/multiscaleprotocol.png Graphic file (type bmp)
+<./figures/01/multiscaleprotocol.png>
+\openout3 = `dissertation-5.cpt'.
+
+\openout3 = `dissertation-6.cpt'.
+
+(./dissertation-6.cpt
+LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/it' will be
+(Font)              scaled to size 8.64758pt on input line 1.
+Requested font "Lato Regular/I/OT:script=latn;language=DFLT;mapping=tex-text;" 
+at 8.64758pt
+ -> ^^PNHWÔøøèU
+) [17] [18]
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
+(Font)              scaled to size 9.12494pt on input line 80.
+Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 9.12494pt
+ -> 
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `SourceCodePro' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+File: ./figures/01/xkcd927.png Graphic file (type bmp)
+<./figures/01/xkcd927.png>
+ [19] [20]
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
-(Font)              scaled to size 9.59998pt on input line 25.
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;mapping=tex-text;" at 9.59998pt
+(Font)              scaled to size 9.59998pt on input line 104.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;mapping=tex-text;" at 9.59998pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 25.
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;mapping=tex-text;" at 10.0pt
+(Font)              scaled to size 7.0pt on input line 104.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;mapping=tex-text;" at 7.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 25.
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;mapping=tex-text;" at 7.0pt
- -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
-.otf
-LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 25.
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;mapping=tex-text;" at 5.0pt
+(Font)              scaled to size 5.0pt on input line 104.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;mapping=tex-text;" at 5.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
 Requested font "EBGaramond12-Italic--oml-ebgaramond" at 10.0pt
@@ -2181,50 +2355,130 @@ Requested font "cmex7" at 7.0pt
 Requested font "cmex7" at 5.0pt
  -> /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
-(Font)              scaled to size 8.39998pt on input line 25.
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;mapping=tex-text;" at 8.39998pt
+(Font)              scaled to size 8.39998pt on input line 104.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;mapping=tex-text;" at 8.39998pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
-LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
-(Font)              scaled to size 8.33328pt on input line 25.
-Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 8.33328pt
- -> 
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `SourceCodePro' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `TU/LatoRegular(0)/bx/n' will be
-(Font)              scaled to size 9.35669pt on input line 30.
-Requested font "Lato Bold/OT:script=latn;language=DFLT;mapping=tex-text;" at 9.
-35669pt
- -> P^^MPÔøæÖÔøø∞U
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `LatoRegular' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
+ [21] [22] [23]
+Overfull \hbox (6.8585pt too wide) in paragraph at lines 143--144
+\TU/EBGaramond12(0)/bx/n/10.95 ing/deep learning/neural networks/blockchain pro
+jects recently launched (i.e. TensorFlow,$[]$ Theano$[]$
+ []
+
+[24]
+Overfull \hbox (7.7634pt too wide) in paragraph at lines 147--148
+\TU/EBGaramond12(0)/bx/n/10.95 ous sections have tried to shed light on all the
+ graphical suites, both with commercial and non-commercial
+ []
+
+[25]) [26]
+\openout2 = `chapters/02-methods.aux'.
+
+ (./chapters/02-methods.tex
+LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/it' will be
+(Font)              scaled to size 7.0pt on input line 7.
+Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;-calt;+p
+num;+lnum;mapping=tex-text;" at 7.0pt
+ -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
+otf
+
+Chapter 2.
+LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/it' will be
+(Font)              scaled to size 24.88pt on input line 11.
+Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;-calt;+p
+num;+lnum;mapping=tex-text;" at 24.88pt
+ -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
+otf
+[27
 
 
-LaTeX Font Warning: Font shape `TU/LatoRegular(0)/bx/sc' undefined
-(Font)              using `TU/LatoRegular(0)/bx/n' instead on input line 30.
 
-LaTeX Font Info:    Font shape `TU/LatoRegular(0)/bx/sc' will be
-(Font)              scaled to size 8.53796pt on input line 30.
-Requested font "Lato Bold/OT:script=latn;language=DFLT;mapping=tex-text;" at 8.
-53796pt
- -> 
-LaTeX Font Info:    Font shape `TU/LatoRegular(0)/bx/sc' will be
-(Font)              scaled to size 9.35669pt on input line 30.
-LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
-(Font)              scaled to size 9.4768pt on input line 30.
-Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
- 9.4768pt
- -> PÔøæ¥QÔøæÖÔøø∞U
-LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
-(Font)              scaled to size 8.64758pt on input line 30.
-Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
- 8.64758pt
- -> 
+] [28] [29] [30] [31] [32] [33] [34] [35]
+Overfull \hbox (22.06943pt too wide) in paragraph at lines 123--123
+|[]\TU/EBGaramond12(0)/m/sc/14.4 Beyond cartesian coordinates: navigating the c
+hemical space| 
+ []
+
+
+Overfull \hbox (10.83788pt too wide) in paragraph at lines 127--128
+\TU/EBGaramond12(0)/bx/n/10.95 docking calculations for massive datasets of dru
+g-like compounds. In most implementations, the database
+ []
+
+[36]
+File: ./figures/02/chemical_space.png Graphic file (type bmp)
+<./figures/02/chemical_space.png>
+ [37]
+File: ./figures/02/smiles.png Graphic file (type bmp)
+<./figures/02/smiles.png>
+\openout3 = `dissertation-7.cpt'.
+
+\openout3 = `dissertation-8.cpt'.
+
+ (./dissertation-8.cpt) [38] [39]
+Overfull \hbox (6.75114pt too wide) in paragraph at lines 165--166
+[]\TU/EBGaramond12(0)/bx/n/10.95 In macromolecular studies where the conformati
+onal space is untreatable, experimental data is needed
+ []
+
+[40] [41] [42] [43]
+File: ./figures/04/gradientdescent.png Graphic file (type bmp)
+<./figures/04/gradientdescent.png>
+ [44] [45]
+Overfull \hbox (7.33002pt too wide) in paragraph at lines 232--232
+[][][][]\TU/EBGaramond12(0)/m/n/10 REVIEW 
+ []
+
+
+Overfull \hbox (7.33002pt too wide) in paragraph at lines 232--232
+[][][][]\TU/EBGaramond12(0)/m/n/10 REVIEW 
+ []
+
+
+Overfull \hbox (7.33002pt too wide) in paragraph at lines 232--232
+[][][][]\TU/EBGaramond12(0)/m/n/10 REVIEW 
+ []
+
+
+Overfull \hbox (7.33002pt too wide) in paragraph at lines 232--232
+[][][][]\TU/EBGaramond12(0)/m/n/10 REVIEW 
+ []
+
+[46] [47] [48]
+File: ./figures/02/FrentePareto.pdf Graphic file (type pdf)
+<use ./figures/02/FrentePareto.pdf>
+) [49]
+\openout2 = `chapters/03-objectives.aux'.
+
+ (./chapters/03-objectives.tex
+Chapter 3.
+
+Overfull \hbox (3.06648pt too wide) in paragraph at lines 8--9
+[]\TU/EBGaramond12(0)/bx/n/10.95 Most molecular modeling tools are designed as 
+standalone pieces not meant to be part of broader,
+ []
+
+
+Overfull \hbox (3.37305pt too wide) in paragraph at lines 10--11
+[]\TU/EBGaramond12(0)/bx/n/10.95 They present unintentionally opinionated abstr
+actions and problem-solving strategies that force
+ []
+
+[50
+
+
+
+]) [51]
+\openout2 = `chapters/04-gaudimm.aux'.
+
+ (./chapters/04-gaudimm.tex
+Chapter 4.
+[52
+
+
+
+]
 Requested font "[EBGaramond12-Regular.otf]/OT" at 10.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
@@ -2235,7 +2489,7 @@ otf
 . fontspec info: "defining-font"
 . 
 . Font family 'EBGaramond12(5)' created for font 'EBGaramond12' with options
-. [Ligatures = {Common, TeX},Scale = 1,SmallCapsFeatures={},Extension =
+. [Ligatures = TeX,Scale = 1,SmallCapsFeatures={},Extension =
 . .otf,Ligatures=TeX,RawFeature={-calt},Numbers =
 . {Proportional,Lining},UprightFont = *-Regular,ItalicFont = *-Italic,BoldFont
 . = *-Regular,BoldItalicFont = *-Italic,RawFeature=+tnum].
@@ -2243,257 +2497,492 @@ otf
 .  This font family consists of the following NFSS series/shapes:
 .  
 . - 'normal' (m/n) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-calt;
-+pnum;+lnum;+tnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+pnum;
++lnum;+tnum;mapping=tex-text;"
 . - 'small caps'  (m/sc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-calt;
-+pnum;+lnum;+tnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+pnum;
++lnum;+tnum;+smcp;mapping=tex-text;"
 . - 'bold' (bx/n) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-calt;
-+pnum;+lnum;+tnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+pnum;
++lnum;+tnum;mapping=tex-text;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-calt;
-+pnum;+lnum;+tnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+pnum;
++lnum;+tnum;+smcp;mapping=tex-text;"
 . - 'italic' (m/it) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-calt;+
-pnum;+lnum;+tnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;-calt;+pnum;+
+lnum;+tnum;mapping=tex-text;"
 . - 'italic small caps'  (m/itsc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-calt;+
-pnum;+lnum;+tnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;-calt;+pnum;+
+lnum;+tnum;+smcp;mapping=tex-text;"
 . - 'bold italic' (bx/it) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-calt;+
-pnum;+lnum;+tnum;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;-calt;+pnum;+
+lnum;+tnum;mapping=tex-text;"
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
-. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-calt;+
-pnum;+lnum;+tnum;+smcp;mapping=tex-text;"
+. <->s*[1]"[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;-calt;+pnum;+
+lnum;+tnum;+smcp;mapping=tex-text;"
 .................................................
 LaTeX Font Info:    Font shape `TU/EBGaramond12(5)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 36.
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;+tnum;mapping=tex-text;" at 10.0pt
+(Font)              scaled to size 10.0pt on input line 44.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;+tnum;mapping=tex-text;" at 10.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;+tnum;+smcp;mapping=tex-text;" at 10.0pt
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;+tnum;+smcp;mapping=tex-text;" at 10.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
-\openout3 = `dissertation-1.cpt'.
+Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;-calt;+p
+num;+lnum;+tnum;mapping=tex-text;" at 10.0pt
+ -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
+otf
+ [53]
+File: ./figures/04/nsga.pdf Graphic file (type pdf)
+<use ./figures/04/nsga.pdf>
+\openout3 = `dissertation-9.cpt'.
 
-\openout3 = `dissertation-2.cpt'.
+\openout3 = `dissertation-10.cpt'.
 
-(./dissertation-2.cpt
+ (./dissertation-10.cpt) [54] [55]
+File: ./figures/04/ga-crossover-mut-crop.pdf Graphic file (type pdf)
+<use ./figures/04/ga-crossover-mut-crop.pdf>
+ [56] [57]
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;+tnum;mapping=tex-text;" at 7.0pt
+ -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
+.otf
+ [58] [59]
+Overfull \hbox (6.28625pt too wide) in paragraph at lines 209--210
+[]\TU/EBGaramond12(0)/m/sc/10.95 Solvation\TU/EBGaramond12(0)/bx/n/10.95 . Solv
+ent-Accessible Surface Area (SASA) and Solvent-Excluded Surface Area (SESA)
+ []
+
+[60] [61]
+Overfull \hbox (6.29054pt too wide) in paragraph at lines 301--302
+[]\TU/EBGaramond12(0)/bx/n/10.95 To ensure a rich Pareto front in constructed, 
+NSGA-II includes a crowding parameter, and GaudiMM
+ []
+
+[62] [63] [64]
+Overfull \hbox (8.51501pt too wide) in paragraph at lines 331--332
+[]\TU/EBGaramond12(0)/bx/n/10.95 This configuration is enough to run a simple m
+ulti-objetive optimization process. Since the \TU/SourceCodePro(0)/m/n/10.95 Co
+ntacts
+ []
+
+(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(./figures/04/input.yaml
+
+LaTeX Font Warning: Font shape `TU/SourceCodePro(0)/m/it' undefined
+(Font)              using `TU/SourceCodePro(0)/m/n' instead on input line 1.
+
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/it' will be
+(Font)              scaled to size 9.12494pt on input line 1.
+)
+Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 8.33328pt
+ -> ÔøæÄ ÔøæÅWÔøøèU
+ [65] [66]
+File: ./figures/04/gaudiview.png Graphic file (type bmp)
+<./figures/04/gaudiview.png>
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 1.
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;mapping=tex-text;" at 10.95pt
+(Font)              scaled to size 14.4pt on input line 391.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;-calt;+
+pnum;+lnum;mapping=tex-text;" at 14.4pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
-Requested font "EBGaramond12-Italic--oml-ebgaramond" at 10.95pt
+Requested font "EBGaramond12-Italic--oml-ebgaramond" at 14.4pt
  -> /usr/share/texmf-dist/fonts/tfm/public/ebgaramond-maths/EBGaramond12-Italic
 --oml-ebgaramond.tfm
-Requested font "cmsy10" at 10.95pt
+Requested font "cmsy10" at 14.4pt
  -> /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-Requested font "cmex10" at 10.95pt
+Requested font "cmex10" at 14.4pt
  -> /usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
-Requested font "cmr10" at 10.95pt
- -> /usr/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
-LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
-(Font)              scaled to size 6.31787pt on input line 1.
-Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
- 6.31787pt
- -> @"bÔøæÖÔøø∞U
-)
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;+tnum;mapping=tex-text;" at 7.0pt
- -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
-.otf
- [4]
-LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
-(Font)              scaled to size 9.99994pt on input line 89.
-Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 9.99994pt
- ->  QPÔøæÖÔøø∞U
-LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/it' will be
-(Font)              scaled to size 10.0pt on input line 89.
-Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-c
-alt;+pnum;+lnum;mapping=tex-text;" at 10.0pt
- -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
-otf
-LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/it' will be
-(Font)              scaled to size 7.0pt on input line 89.
-Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-c
-alt;+pnum;+lnum;mapping=tex-text;" at 7.0pt
- -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
-otf
- [5] [6] [7]
+Requested font "cmr12" at 14.4pt
+ -> /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 391.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 391.
+
+[67]) [68]
+\openout2 = `chapters/05-integrative.aux'.
+
+ (./chapters/05-integrative.tex
+Chapter 5.
+[69
+
+
+
+]
+File: ./figures/05/funnel2.pdf Graphic file (type pdf)
+<use ./figures/05/funnel2.pdf>
+ [70] [71] [72]
+File: ./figures/05/tangram_qm.png Graphic file (type bmp)
+<./figures/05/tangram_qm.png>
+
+Overfull \hbox (11.36227pt too wide) in paragraph at lines 188--189
+\TU/EBGaramond12(0)/bx/n/10.95 MMSetup provides a graphical interface for setti
+ng up Molecular Dynamics simulations (see section [][]2.2.2[][])
+ []
+
+[73] [74]
+File: ./figures/05/tangram_mm.png Graphic file (type bmp)
+<./figures/05/tangram_mm.png>
+ [75]
+File: ./figures/05/tangram_dummy.png Graphic file (type bmp)
+<./figures/05/tangram_dummy.png>
+ [76]
+Overfull \hbox (1.54552pt too wide) in paragraph at lines 219--220
+[]\TU/EBGaramond12(0)/bx/n/10.95 This extension reuses some of the visualizatio
+n functionality already implemented in UCSF Chimera
+ []
+
+File: ./figures/05/library-vs-app-layers-crop.pdf Graphic file (type pdf)
+<use ./figures/05/library-vs-app-layers-crop.pdf>
+
+Overfull \hbox (14.43196pt too wide) in paragraph at lines 238--239
+\TU/EBGaramond12(0)/bx/n/10.95 cussed: (1) PyChimera, (2) OMMProtocol, (3) Garl
+eek, (4) ESIgen, and (5) EasyMECP. Unlike GaudiMM,
+ []
+
+[77] [78]
+File: ./figures/05/ghstats.pdf Graphic file (type pdf)
+<use ./figures/05/ghstats.pdf>
+\openout3 = `dissertation-11.cpt'.
+
+\openout3 = `dissertation-12.cpt'.
+
+ (./dissertation-12.cpt) [79] [80]
+File: ./figures/05/ommprotocol-crop.pdf Graphic file (type pdf)
+<use ./figures/05/ommprotocol-crop.pdf>
+ [81]
+File: ./figures/05/ommanalyze.pdf Graphic file (type pdf)
+<use ./figures/05/ommanalyze.pdf>
+ [82] [83]
+File: ./figures/05/garleek-crop.pdf Graphic file (type pdf)
+<use ./figures/05/garleek-crop.pdf>
+\openout3 = `dissertation-13.cpt'.
+
+\openout3 = `dissertation-14.cpt'.
+
+
+(./dissertation-14.cpt) [84] [85]
+File: ./figures/05/esigen.png Graphic file (type bmp)
+<./figures/05/esigen.png>
+\openout3 = `dissertation-15.cpt'.
+
+\openout3 = `dissertation-16.cpt'.
+
+ (./dissertation-16.cpt) [86] [87] [88]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 511.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 511.
+
+[89]) [90]
+\openout2 = `chapters/06-applicative.aux'.
+
+ (./chapters/06-applicative.tex [91
+
+
+]
+Chapter 6.
+[92
+
+]
+\openout3 = `dissertation-17.cpt'.
+
+\openout3 = `dissertation-18.cpt'.
+
+ (./dissertation-18.cpt) [93] [94]
 File: ./figures/06/dual_phn.png Graphic file (type bmp)
 <./figures/06/dual_phn.png>
- [8]
+ [95] [96] [97]
 File: ./figures/06/streptavidin.png Graphic file (type bmp)
 <./figures/06/streptavidin.png>
-
-
-LaTeX Warning: Reference `chap:04' on page 9 undefined on input line 173.
-
-[9]
-Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-c
-alt;+pnum;+lnum;+tnum;mapping=tex-text;" at 10.0pt
- -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
-otf
+ [98]
 File: ./figures/06/dibiotin-scheme.png Graphic file (type bmp)
 <./figures/06/dibiotin-scheme.png>
 File: ./figures/06/dibiotin-solution.png Graphic file (type bmp)
 <./figures/06/dibiotin-solution.png>
- [10] [11]
+ [99] [100] [101]
+Overfull \hbox (3.03242pt too wide) in paragraph at lines 245--246
+\TU/EBGaramond12(0)/bx/n/10.95 ing this strategy in an attempt to reproduce exp
+erimental Zn-bounded NMR models (PDB ID 1ZE9$[]$). 
+ []
 
-LaTeX Warning: Reference `chap:appendix-c' on page 12 undefined on input line 2
-32.
-
-[12] [13]
 File: ./figures/06/peptide-folding.png Graphic file (type bmp)
 <./figures/06/peptide-folding.png>
-\openout3 = `dissertation-3.cpt'.
+[102] [103]
+\openout3 = `dissertation-19.cpt'.
 
- (./dissertation-3.cpt)
-Overfull \hbox (3.57442pt too wide) in paragraph at lines 299--300
-\TU/EBGaramond12(0)/bx/n/12 with a point-set registration method called Coheren
-t Point Drift,$[]$ which admits missing points.
- []
-
-[14] [15]
+ (./dissertation-19.cpt)
 File: ./figures/06/coordination-crop.pdf Graphic file (type pdf)
 <use ./figures/06/coordination-crop.pdf>
-\openout3 = `dissertation-4.cpt'.
+\openout3 = `dissertation-20.cpt'.
 
-\openout3 = `dissertation-5.cpt'.
+\openout3 = `dissertation-21.cpt'.
 
- (./dissertation-5.cpt
-LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
-(Font)              scaled to size 9.12494pt on input line 1.
-Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 9.12494pt
- -> ÔøøêSuÔøæÖÔøø∞U
-) [16] [17]
+ (./dissertation-21.cpt) [104] [105]
 File: ./figures/06/siderophore.png Graphic file (type bmp)
 <./figures/06/siderophore.png>
-\openout3 = `dissertation-6.cpt'.
+\openout3 = `dissertation-22.cpt'.
 
-\openout3 = `dissertation-7.cpt'.
+\openout3 = `dissertation-23.cpt'.
 
- (./dissertation-7.cpt
-LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/it' will be
-(Font)              scaled to size 8.64758pt on input line 1.
-Requested font "Lato Regular/I/OT:script=latn;language=DFLT;mapping=tex-text;" 
-at 8.64758pt
- -> @]ÔøøñÔøæÑÔøø∞U
-) [18]
 
-LaTeX Warning: Reference `chap:05' on page 19 undefined on input line 372.
-
-[19]
-Overfull \hbox (5.42093pt too wide) in paragraph at lines 382--383
-\TU/EBGaramond12(0)/bx/n/12 bean $\OML/EBGaramond-Maths/m/it/12 ^^L$\TU/EBGaram
-ond12(0)/bx/n/12 -mannosidase (JbM) when twelve copies of DNJ were displayed ar
-ound a $\OML/EBGaramond-Maths/m/it/12 C[]$ \TU/EBGaramond12(0)/bx/n/12 fulleren
-e.$[]$
+(./dissertation-23.cpt) [106] [107]
+Overfull \hbox (5.59163pt too wide) in paragraph at lines 386--387
+\TU/EBGaramond12(0)/bx/n/10.95 tioned in a study that described 2000-fold inhib
+ition enhancement towards the Jack bean $\OML/EBGaramond-Maths/m/it/10.95 ^^L$\
+TU/EBGaramond12(0)/bx/n/10.95 -mannosidase
  []
 
-[20]
+
+Overfull \hbox (3.37602pt too wide) in paragraph at lines 390--391
+\TU/EBGaramond12(0)/bx/n/10.95 component pillar[5]arene rotaxane conjugates tha
+t exhibited both glycomimetic and non-glycomimetic
+ []
+
+
+Overfull \hbox (0.26385pt too wide) in paragraph at lines 390--391
+\TU/EBGaramond12(0)/bx/n/10.95 (putative) residues. The first component is a H-
+shaped central axel, which exhibits four sp$[]$-iminosugar-
+ []
+
+[108]
 File: ./figures/06/glyco-inhibitors-crop.pdf Graphic file (type pdf)
 <use ./figures/06/glyco-inhibitors-crop.pdf>
-\openout3 = `dissertation-8.cpt'.
+\openout3 = `dissertation-24.cpt'.
 
-\openout3 = `dissertation-9.cpt'.
+\openout3 = `dissertation-25.cpt'.
 
- (./dissertation-9.cpt) [21] [22]
-\openout3 = `dissertation-10.cpt'.
+ (./dissertation-25.cpt) [109] [110]
+\openout3 = `dissertation-26.cpt'.
 
-\openout3 = `dissertation-11.cpt'.
+\openout3 = `dissertation-27.cpt'.
 
- (./dissertation-11.cpt
+ (./dissertation-27.cpt
 Missing character: There is no Œº in font EBGaramond12-Italic--oml-ebgaramond!
 )
-Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-c
-alt;+pnum;+lnum;+tnum;mapping=tex-text;" at 7.0pt
+Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;-calt;+p
+num;+lnum;+tnum;mapping=tex-text;" at 7.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
 otf
 Missing character: There is no ÔÅ≠ in font [EBGaramond12-Italic.otf]/OT:script=la
-tn;language=DFLT;+liga;-calt;+pnum;+lnum;+tnum;mapping=tex-text;!
+tn;language=DFLT;-calt;+pnum;+lnum;+tnum;mapping=tex-text;!
 Missing character: There is no ÔÅ≠ in font [EBGaramond12-Italic.otf]/OT:script=la
-tn;language=DFLT;+liga;-calt;+pnum;+lnum;+tnum;mapping=tex-text;!
+tn;language=DFLT;-calt;+pnum;+lnum;+tnum;mapping=tex-text;!
 Missing character: There is no ÔÅ≠ in font [EBGaramond12-Italic.otf]/OT:script=la
-tn;language=DFLT;+liga;-calt;+pnum;+lnum;+tnum;mapping=tex-text;!
- [23]
-
-LaTeX Warning: Reference `appendix:more-tangram' on page 24 undefined on input 
-line 462.
-
-
-Overfull \hbox (3.3144pt too wide) in paragraph at lines 464--465
-[]\TU/EBGaramond12(0)/bx/n/12 Best candidates are checked for stability with lo
-ng molecular dynamics trajectories (more
- []
-
-
-Overfull \hbox (8.48373pt too wide) in paragraph at lines 467--467
+tn;language=DFLT;-calt;+pnum;+lnum;+tnum;mapping=tex-text;!
+ [111]
+Overfull \hbox (8.48373pt too wide) in paragraph at lines 471--471
 |[]\TU/EBGaramond12(0)/m/sc/12 Can a single divalent ligand reach both sites? I
 f not, how long should
  []
 
-[24]
+[112]
 File: ./figures/06/one-divalent-stretch-crop.pdf Graphic file (type pdf)
 <use ./figures/06/one-divalent-stretch-crop.pdf>
- [25]
+ [113]
 File: ./figures/06/divalent-fragments-stretch-crop.pdf Graphic file (type pdf)
 <use ./figures/06/divalent-fragments-stretch-crop.pdf>
- [26]
-Overfull \hbox (3.7637pt too wide) in paragraph at lines 571--571
+ [114]
+Overfull \hbox (3.7637pt too wide) in paragraph at lines 575--575
 |[]\TU/EBGaramond12(0)/m/sc/12 Can two divalent ligands occupy both sites simul
 taneously? Do they
  []
 
-[27]
+[115]
 File: ./figures/06/divalent-interface-meeting.png Graphic file (type bmp)
 <./figures/06/divalent-interface-meeting.png>
 
 
-LaTeX Warning: Reference `section:fig:ommprotocol' on page 28 undefined on inpu
-t line 625.
+LaTeX Warning: Reference `section:fig:ommprotocol' on page 116 undefined on inp
+ut line 629.
 
-[28] [29] [30] [31] [32] [33]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 705.
+[116] [117]
+Overfull \hbox (22.67014pt too wide) in paragraph at lines 640--641
+[]\TU/EBGaramond12(0)/bx/n/10.95 This interaction strategy does not offer any a
+dvantage over the divalent binding (its iminosugar-
+ []
 
-Overfull \hbox (5.71002pt too wide) in paragraph at lines 705--705
+[118] [119] [120]
+Overfull \hbox (5.71002pt too wide) in paragraph at lines 709--709
 [][][][]\TU/EBGaramond12(0)/m/n/10 Citations 
  []
 
 
-Overfull \hbox (5.71002pt too wide) in paragraph at lines 705--705
+Overfull \hbox (5.71002pt too wide) in paragraph at lines 709--709
 [][][][]\TU/EBGaramond12(0)/m/n/10 Citations 
  []
 
 
-Overfull \hbox (5.71002pt too wide) in paragraph at lines 705--705
+Overfull \hbox (5.71002pt too wide) in paragraph at lines 709--709
 [][][][]\TU/EBGaramond12(0)/m/n/10 Citations 
  []
 
 
-Overfull \hbox (5.71002pt too wide) in paragraph at lines 705--705
+Overfull \hbox (5.71002pt too wide) in paragraph at lines 709--709
 [][][][]\TU/EBGaramond12(0)/m/n/10 Citations 
  []
 
-) [34] (./endmatter/personalize.tex) (./dissertation.bbl [35
+) [121]
+\openout2 = `chapters/07-conclusions.aux'.
+
+ (./chapters/07-conclusions.tex
+Chapter 7.
+
+Overfull \hbox (4.76006pt too wide) in paragraph at lines 15--16
+[]\TU/EBGaramond12(0)/m/sc/10.95 OMMProtocol \TU/EBGaramond12(0)/bx/n/10.95 pro
+vides a user-friendly, single-file interface to the powerful, GPU-accelerated
+ []
+
+[122
 
 
 
-]) [36]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 55.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 55.
+]
+Overfull \hbox (2.12167pt too wide) in paragraph at lines 28--29
+\TU/EBGaramond12(0)/bx/n/10.95 creating optimization synergies between delibera
+te simplistic chemical and geometric descriptors. Some
+ []
 
-(./dissertation.aux (./chapters/06-applicative.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 55.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 55.
+
+Overfull \hbox (0.73595pt too wide) in paragraph at lines 37--38
+[]\TU/EBGaramond12(0)/bx/n/10.95 Additionally, the conceptual separation of exp
+loration and evaluation as implemented in GaudiMM
+ []
+
+[123]) [124]
+\openout2 = `chapters/08-epilog.aux'.
+
+ (./chapters/08-epilog.tex
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+[125
+
+
+
+]) [126]
+\openout2 = `chapters/appendix-a.aux'.
+
+ (./chapters/appendix-a.tex
+Appendix A.
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 9.
+
+[127
+
+
+
+]
+File: ./figures/01/publication-trends_crop.pdf Graphic file (type pdf)
+<use ./figures/01/publication-trends_crop.pdf>
+ [128] [129]
+Underfull \hbox (badness 4981) in paragraph at lines 43--43
+[][][][][]$[][][][][] [] [] [] [][][] [] [][][][][][] [] [][][]$[][]\TU/EBGaram
+ond12(0)/m/n/10 , [][]$[][][][][] [] [] [] [][][][][] [] [][][][][][] [] [][][]
+$[][], [][]$[][][][][] [] [] [] [][][][][] [] [][][][][][][][][] [] [][][]$[][]
+, re-
+ []
+
+[130]
+Overfull \hbox (20.04121pt too wide) in paragraph at lines 45--46
+\TU/EBGaramond12(0)/bx/n/10.95 implemented in major MD software (Amber, Charmm,
+ Gromacs, NAMD, HTMD, AceMD, OpenMM$[]$
+ []
+
+[131]
+File: ./figures/01/publication-trends-ml_crop.pdf Graphic file (type pdf)
+<use ./figures/01/publication-trends-ml_crop.pdf>
+) [132]
+\openout2 = `chapters/appendix-b.aux'.
+
+ (./chapters/appendix-b.tex
+Appendix B.
+[133
+
+
+
+]) [134]
+\openout2 = `chapters/appendix-c.aux'.
+
+ (./chapters/appendix-c.tex
+Appendix C.
+[135
+
+
+
+] [136] [137]) [138]
+\openout2 = `chapters/appendix-d.aux'.
+
+ (./chapters/appendix-d.tex
+Appendix D.
+[139
+
+
+
+]
+File: ./figures/05/tangram_nciplot.png Graphic file (type bmp)
+<./figures/05/tangram_nciplot.png>
+\openout3 = `dissertation-28.cpt'.
+
+\openout3 = `dissertation-29.cpt'.
+
+ (./dissertation-29.cpt) [140] [141]
+File: ./figures/05/tangram_snfg.png Graphic file (type bmp)
+<./figures/05/tangram_snfg.png>
+\openout3 = `dissertation-30.cpt'.
+
+\openout3 = `dissertation-31.cpt'.
+
+ (./dissertation-31.cpt) [142]
+[143]
+File: ./figures/05/tangram_popmusic.png Graphic file (type bmp)
+<./figures/05/tangram_popmusic.png>
+\openout3 = `dissertation-32.cpt'.
+
+\openout3 = `dissertation-33.cpt'.
+
+ (./dissertation-33.cpt)) [144] [145] [146] (./endmatter/personalize.tex)
+(./dissertation.bbl
+Overfull \hbox (30.3738pt too wide) in paragraph at lines 4--8
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][]$[][]\TU/EBGaramond12(0)/m/n/10 .  
+ []
+
+[147
+
+
+
+] [148] [149] [150] [151] [152] [153] [154] [155] [156] [157] [158]
+[159] [160] [161] [162]) [163]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 54.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 54.
+ (./dissertation.aux (./chapters/00-preface.aux)
+(./chapters/01-intro.aux) (./chapters/02-methods.aux)
+(./chapters/03-objectives.aux) (./chapters/04-gaudimm.aux)
+(./chapters/05-integrative.aux) (./chapters/06-applicative.aux)
+(./chapters/07-conclusions.aux) (./chapters/08-epilog.aux)
+(./chapters/appendix-a.aux) (./chapters/appendix-b.aux)
+(./chapters/appendix-c.aux) (./chapters/appendix-d.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 54.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 54.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 95F0A87D181807B219CD38DC97511C62.
+(rerunfilecheck)             Checksum: A9A655A1A0710EB3EE67E4CFC764C010.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2506,12 +2995,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37555 strings out of 492970
- 726690 string characters out of 6139408
- 863816 words of memory out of 5000000
- 40914 multiletter control sequences out of 15000+600000
- 538569 words of font info for 96 fonts, out of 8000000 for 9000
+ 38970 strings out of 492970
+ 754357 string characters out of 6139409
+ 932923 words of memory out of 5000000
+ 42105 multiletter control sequences out of 15000+600000
+ 538585 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 67i,15n,118p,10529b,672s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,15n,118p,10535b,1590s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on dissertation.pdf (36 pages).
+Output written on dissertation.pdf (167 pages).

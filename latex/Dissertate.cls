@@ -256,11 +256,11 @@
     \maketitle
     \makesignatures
     \copyrightpage
+    \dedicationpage
     \setcounter{page}{1}
     \setstretch{\dnormalspacing}
       \abstractpage
       \officialacknowledgments
-      \dedicationpage
       % \acknowledgments
     \setstretch{\dxcompressedspacing}
     \maketoc
@@ -420,8 +420,8 @@
     }
     \noindent
     \input{frontmatter/official-acknowledgments}
-    \vspace*{\fill}
     \if@twoside
+       \vspace*{\fill}
         \newpage \thispagestyle{empty}  \rm
         % insert blank page
         \pagestyle{empty}

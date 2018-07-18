@@ -63,9 +63,16 @@ Of course, not all tasks benefit equally from a graphical interface. Some can be
 
 Stemming from the former Midas program, UCSF Chimera is presented as \textit{a highly extensible program for interactive visualization and analysis of molecular structures and related data, including density maps, supramolecular assemblies, sequence alignments, docking results, trajectories, and conformational ensembles}. It consists of an interactive 3D visualizer built on top of C++ core with Python bindings, which is responsible of providing much of that promised \textit{extensibility}. GaudiMM, commented in \autoref{chap:04}, heavily uses UCSF Chimera as a backend library, but being a command-line tool, does not need any graphical interaction.
 
-After developing GaudiView as the results viewer for GaudiMM (see \autoref[section]{section:gaudimm-results} and \autoref[appendix]{appendix:more-tangram}), the potential of having simple but powerful graphical interfaces for common modeling tasks became evident. In this section, we present Tangram, a set of extensions designed to add new pieces to the arsenal of molecular modeling tools already present in UCSF Chimera.
+After developing GaudiView as the results viewer for GaudiMM (see \autoref[section]{section:gaudimm-results} and \autoref[appendix]{appendix:more-tangram}), the potential of having simple but powerful graphical interfaces for common modeling tasks became evident. In this section, we present Tangram, a set of extensions designed to add new pieces to the arsenal of molecular modeling tools already present in UCSF Chimera (see fig. \ref{fig:tangram-funnel}.
 
-\missingfigure{Tangram funnel}
+\begin{figure}
+	\begin{Center}
+		\includegraphics[width=\textwidth]{./figures/05/funnel2.pdf}
+	\end{Center}
+	\caption[Multiscale funnel]{Molecular modeling methods can be depicted in 3D funnel, where the width represents the sampling capacity and accuracy is depicted with depth. Less accurate methods with high sampling capacity would be depicted at the top, while most accurate methods would be at the bottom of the funnel. In this sense, GaudiMM can help access the entry of the funnel, while the Tangram interfaces will connect further steps down the accuracy scale.}
+	\label{fig:tangram-funnel}
+\end{figure}
+
 
 \begin{table}[hbtp]
 	\caption{Tangram Suite: Technical datasheet}
