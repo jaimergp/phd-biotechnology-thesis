@@ -65,6 +65,7 @@ Stemming from the former Midas program, UCSF Chimera is presented as \textit{a h
 
 After developing GaudiView as the results viewer for GaudiMM (see \autoref[section]{section:gaudimm-results} and \autoref[appendix]{appendix:more-tangram}), the potential of having simple but powerful graphical interfaces for common modeling tasks became evident. In this section, we present Tangram, a set of extensions designed to add new pieces to the arsenal of molecular modeling tools already present in UCSF Chimera.
 
+\missingfigure{Tangram funnel}
 
 \begin{table}[hbtp]
 	\caption{Tangram Suite: Technical datasheet}
@@ -285,6 +286,7 @@ PyChimera also includes some features particularly useful for developers, like e
 
 \subsection{GPU-accelerated Molecular Dynamics, the easy way: OMMProtocol}
 % \addcontentsline{toc}{subsection}{GPU-accelerated Molecular Dynamics, the easy way: OMMProtocol}
+\label{section:ommprotocol}
 
 Molecular Mechanics (MM) and Molecular Dynamics (MD) (see \autoref[section]{section:mm-md}) are widely used in structural biology since they allow observing evolution of large biomolecules along time with affordable timescales and computational resources. This is particularly true after the popularization of General-Purpose Graphic Processing Units (GPGPUs) and their usage for calculations beyond graphics renderization. While long-established MM suites like Amber,\cite{amber} Gromacs\cite{gromacs} or CHARMM\cite{brooks1983} have been progressively implementing GPU acceleration in their code for some years now, a relatively recent project caught the community attention with its performance, flexibility, open-design and availability: the free OpenMM library.\cite{openmm}
 

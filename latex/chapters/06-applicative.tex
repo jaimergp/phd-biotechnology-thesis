@@ -170,7 +170,7 @@ Ward and collaborators were trying to build this hypothetical ligand, but simply
 	\label{fig:streptavidin}
 \end{figure}
 
-As briefly described in \autoref{chap:04}, the Molecule gene can also be configured to build new molecules by chaining fragments found in a given directory structure. The subdirectories are sorted alphabetically and one fragment is randomly picked from each. The chosen fragments are concatenated following the subdirectory order, using the atoms configured as connectors (first and last atom in the file, by default).
+As briefly described in \autoref{chap:04}, the \textit{Molecule} gene can also be configured to build new molecules by chaining fragments found in a given directory structure. The subdirectories are sorted alphabetically and one fragment is randomly picked from each. The chosen fragments are concatenated following the subdirectory order, using the atoms configured as connectors (first and last atom in the file, by default).
 
 
 
@@ -366,7 +366,8 @@ The main driver of the optimization was the Coordination objective, which was se
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Case study: Multiscale modeling of multivalent enzyme inhibitors}
+\section[Multiscale modeling of multivalent enzyme inhibitors]{Case study:\\
+Multiscale modeling of multivalent enzyme inhibitors}
 % \addcontentsline{toc}{section}{Multiscale modeling of multivalent enzyme inhibitors}
 GaudiMM was conceived to be the entry door to the multiscale funnel, while the tools presented in \autoref{chap:05} fill in other gaps down the funnel. In this section, a real example on how all these developments work together and allow to create integrative workflows is presented. It is a deep computational insight on the work described in \textit{Pillar[5]arene glyco(mimetic)rotaxanes for the functional interrogation of multivalency responsive glycosidases},\cite{rotaxane} a collaboration with the IIQ-CSIC in Seville, Spain.
 
@@ -374,19 +375,17 @@ GaudiMM was conceived to be the entry door to the multiscale funnel, while the t
 % \addcontentsline{toc}{subsection}{Introduction to the problem}
 Biological molecules are usually classified in four separate families: nucleic acids, lipids, saccharides and proteins. Far from being separate entities, they can be found together in many processes. A particularly interesting combination is when proteins and saccharides work together.
 
-A protein featuring covalently attached oligosaccharidic chains (or glycans) is called a glycoprotein. Glycoproteins are key recognition processes such as those in the mammal immune system, but can also be used for like solvent retention in extracellular secretions that demand high viscosity (mucus) or protection against freezing damage.
+Glycoside hydrolases (or glycosidases) can specifically recognize glycosides and catalyze the hydrolysis of their intermonomer bonds in complex sugars.  They are key in natural polymers degradation like starch (amylase) or cellulose (cellulase), pathogenesis, anti-bacterial activity (lysozyme) and normal cell function. Other examples are lectins, which exhibit high affinity for specific saccharidic residues through non-bonded interactions. They are involved in biofilm formation,\cite{tielker2005pseudomonas} immune response\cite{turner1996mannose} or even antineoplastic activities,\cite{adwan2014} to name a few. Studying mechanisms of inhibition would allow to develop new antibacterial techniques or avoid biofilm formation, for example.
 
-However, not all protein-saccharidic collaborations are strictly covalent. Glycoside hydrolases (or glycosidases) can specifically recognize glycosides and\ catalyze the hydrolysis of their intermonomer bonds in complex sugars.  They are key in natural polymers degradation like starch (amylase) or cellulose (cellulase), pathogenesis, anti-bacterial activity (lysozyme) and normal cell function. Other examples are lectins, which exhibit high affinity for specific saccharidic residues through non-bonded interactions. They are involved in biofilm formation,\cite{tielker2005pseudomonas} immune response\cite{turner1996mannose} or even antineoplastic activities,\cite{adwan2014} to name a few. Studying mechanisms of inhibition would allow to develop new antibacterial techniques or avoid biofilm formation, for example.
+Most common strategies for enzyme inhibition involve designing a mimetic ligand that can block the binding site of the substrate through a key-and-lock mechanism preventing the enzyme from performing any further action. For lectins and glycosidases, glycomimetic compounds like iminosugar-containing\footnote{Iminosugar moieties are standard saccharides whose oxygen atom in the ring has been replaced by a nitrogen atom.} ligands can be employed.  The first iminosugar characterized, 1-deoxynojirimycin (DNJ) was isolated from a natural source and showed to be an α-glucosidase inhibitor with anti-diabetic and antiviral activities. Since then, more iminosugars have been described in the literature.
 
-Most common strategies for enzyme inhibition involve designing a mimetic ligand that can block the binding site of the substrate through a key-and-lock mechanism preventing the enzyme from performing any further action. For lectins and glycosidases, glycomimetic compounds like iminosugar-containing ligands can be employed. Iminosugar moieties are standard saccharides whose oxygen atom in the ring has been replaced by a nitrogen atom. The first iminosugar characterized, 1-deoxynojirimycin (DNJ) was isolated from a natural source and showed to be an alpha-glucosidase inhibitor with anti-diabetic and antiviral activities. Since then, more iminosugars have been described in the literature.
-
-Recently, the general intuition around the classical lock-and-key inhibition behavior was recently questioned in a study that described 2000-fold inhibition enhancement towards the Jack bean $\beta$-mannosidase (JbM) when twelve copies of DNJ were displayed around a $C_{60}$ fullerene.\cite{compain2010glycosidase} The strategy, termed Multivalent Enzyme Inhibition (MEI), was then observed in other systems. Knowing that JbM has a very accessible binding pocket and is multimeric in solution provides an understandable rationale behind this enhancement: a single C60 construct can block several sites at once. However, this idea cannot explain why monomeric enzymes with deep and narrow binding pockets are also inhibited by bulky multivalent conjugates. Additionally, it has been observed that putative sugars also inhibit their corresponding catalytic enzymes if they are multivalently displayed in a conjugate, defying the assumption of specificity and non-promiscuity glucosidases are thought to exhibit.
+Recently, the general intuition around the classical lock-and-key inhibition mechanicsm was questioned in a study that described 2000-fold inhibition enhancement towards the Jack bean $\beta$-mannosidase (JbM) when twelve copies of DNJ were displayed around a $C_{60}$ fullerene.\cite{compain2010glycosidase} The strategy, termed Multivalent Enzyme Inhibition (MEI), was then observed in other systems. Knowing that JbM has a very accessible binding pocket and is multimeric in solution provides an understandable rationale behind this enhancement: a single $C_{60}$  construct can block several sites at once. However, this idea cannot explain why monomeric enzymes with deep and narrow binding pockets are also inhibited by bulky multivalent conjugates. Additionally, it has been observed that putative sugars also inhibit their corresponding catalytic enzymes if they are multivalently displayed in a conjugate, defying the assumption of specificity and non-promiscuity glucosidases are thought to exhibit.
 
 \subsection{Experimental results}
 
-To shed light on such counterintuitive phenomena, García-Fernández \textit{et al }specifically designed a series of two-component pillar[5]arene rotaxane conjugates that exhibited both glycomimetic and non-glycomimetic (putative) residues. The first component is a H-shaped central axel, which exhibits four sp\textsuperscript{2}-iminosugar-type\textsuperscript{[12]} 6-oxa-5\textit{N},6\textit{O}-oxomethylidenenojirimycin (ONJ) residues, one on each on the stop caps. The second component is the pillar[5]arene, which exhibits ten moieties of glucose, mannose or galactose, depending on the variant, one on each of its ten rims (see fig. \ref{fig:rotaxane-compounds}).
+To shed light on these counterintuitive observations, García-Fernández et al  designed a series of two-component pillar[5]arene rotaxane conjugates that exhibited both glycomimetic and non-glycomimetic (putative) residues. The first component is a H-shaped central axel, which exhibits four sp\textsuperscript{2}-iminosugar-type\textsuperscript{[12]} 6-oxa-5\textit{N},6\textit{O}-oxomethylidenenojirimycin (ONJ) residues, one on each on the stop caps. The second component is the pillar[5]arene, which displays ten moieties of glucose, mannose or galactose, depending on the variant, one on each of its ten rims (see fig. \ref{fig:rotaxane-compounds}).
 
-To test the contribution of the multivalent saccharides, two reduced models that did not account for the pillar[5]ene were also considered: 1) a monovalent ONJ compound only bearing the hexyltriazolyl aglycone segment present in the rotaxane, and 2) a divalent ONJ compound, which emulates one of the stoppers halves of the central axel of the rotaxane.
+To test the contribution of the multivalent saccharides, two reduced models that did not include the pillar[5]ene were also considered: 1) a monovalent ONJ compound only bearing the hexyltriazolyl aglycone segment present in the rotaxane, and 2) a divalent ONJ compound, which emulates one of the stoppers halves of the central axel of the rotaxane.
 
 
 
@@ -400,14 +399,14 @@ To test the contribution of the multivalent saccharides, two reduced models that
 
 
 
-All these inhibitors and their controls were tested and measured on two glycosidases for which crystallographic data evidenced the existence of deep binding pockets: the monomeric GH13 α-glucosidase from \textit{Saccharomyces cerevisiae} (\textit{ScGH13}, yeast maltase) and the dimeric GH13glucosidase from \textit{Thermotoga maritima} (\textit{TmGH1}). The inhibition potency was measured experimentally and reported in $ \mu M $ units (see table \ref{table:glycosidase-inhibition}). Further details are out of the scope of this dissertation but can be found in the manuscript.
+All these inhibitors and their controls were tested and measured on two glycosidases for which crystallographic data evidenced the existence of deep binding pockets: the monomeric GH13 α-glucosidase from \textit{Saccharomyces cerevisiae} (\textit{ScGH13}, yeast maltase) and the dimeric GH1 $\beta$-glucosidase from \textit{Thermotoga maritima} (\textit{TmGH1}). The inhibition power was measured experimentally and reported in $ \mu M $ units (see table \ref{table:glycosidase-inhibition}). Further details are out of the scope of this dissertation but can be found in the manuscript.\cite{rotaxane}
 
 
 %%%%%%%%%%%%%%%%%%%% Table No: 2 starts here %%%%%%%%%%%%%%%%%%%%
 
 
 \begin{table}[H]
-	\cprotect\caption[Glycosidases inhibition tests]{ $K_{i}$ (in $ μM $) for the different inhibitors tested against the monomeric ScGH13 and dimeric TmGH1 proteins. Reproduced from Nierengarten, 2018.\cite{rotaxane}}
+	\cprotect\caption[Glycosidases inhibition tests]{ $K_{i}$ (in $ μM $) for the different inhibitors tested against the monomeric ScGH13 and dimeric TmGH1 proteins. Reproduced from Nierengarten et al, 2018.\cite{rotaxane}}
 	\label{table:glycosidase-inhibition}
 	\footnotesize
 	\newcolumntype{C}{>{\centering\arraybackslash}X}%
@@ -443,32 +442,33 @@ All these inhibitors and their controls were tested and measured on two glycosid
 
 
 
-For the monomeric ScGH13, results were not surprising: the monovalent ONJ is a strong inhibitor with $K_{i} = 4.3 \pm 0.5 \mu M $, and the divalent ONJ shows a 1.7-fold enhancement explainable by statistics alone: two iminosugar moieties are available in each molecule. The pillar[5]ene variant, featuring four iminosugars, should have increased that value again but stayed at $ 2.3 \pm 0.1 \mu M $ . The trend was not the same in the dimeric TmGH1, though. The monovalent ONJ model was a very weak inhibitor ($ K_{i} = 109 \pm 5 \mu M$), but the divalent variant showed a 36-fold enhancement ($ K_{i} = 3.0 \pm 0.2 \mu M$). The pillar[5]ene variants did not improve this Ki but did not cancel it either.
+For the monomeric ScGH13, results were not surprising: the monovalent ONJ is a strong inhibitor with $K_{i} = 4.3 \pm 0.5 \mu M $, and the divalent ONJ shows a 1.7-fold enhancement explainable by statistics alone: two iminosugar moieties are available in each molecule. The pillar[5]ene variant, featuring four iminosugars, should have increased that value again but stayed at $ 2.3 \pm 0.1 \mu M $, maybe due to steric impediments. The trend was not the same in the dimeric TmGH1, though. The monovalent ONJ model was a very weak inhibitor ($ K_{i} = 109 \pm 5 \mu M$), but the divalent variant showed a 36-fold enhancement ($ K_{i} = 3.0 \pm 0.2 \mu M$). The pillar[5]ene variants did not improve this $K_{i}$ but did not cancel it either.
 
 This surprising enhancement in the inhibition power of the divalent ONJ compound towards the dimeric TmGH1 could not be explained by stoichiometry alone. One hypothesis was to consider that the dimeric conformation observed in the X-Ray data was not the only one present in solution, leaving room to the idea that the divalent ONJ compound was able to reach the binding sites of two hypothetical monomers at the same time and force a blocked dimerization. However, for that to be possible the di-ONJ ligand must be long enough, something that was not entirely safe to assure. If a single di-ONJ ligand was not enough, could two di-ONJ molecules occupy a binding site each and then stabilize each other via the free ONJ end? What about the hydrophobic tail? Is the same interaction profile feasible for the pillar[5]arene variants? At this point, computational insights were requested in hopes of finding structural models that could help explain the experimental observations. The questions posed are summarized now:
 
 \begin{itemize}
 	\item Can a single di-ONJ ligand reach both sites? If not, how long should it be?
 	\item Can two di-ONJ ligands occupy both sites simultaneously? Do they interact?
-	\item Does the pillar-[5]-ene compound fit in the dimer? Can it occupy both sites comfortably? If so, in which conformation?
+	\item Does the pillar[5]ene compound fit in the dimer? Can it occupy both sites comfortably? If so, in which conformation?
 \end{itemize}
 
 \subsection{Computational approaches towards an explanation}
 % \addcontentsline{toc}{subsection}{Methods $\&$  results}
-A project like this, in which computational insights are needed to clarify experimental observations, is perfect to prove how GaudiMM allows to formulate (bio)chemical hypothesis as optimization problems solvable by a multi-objective genetic algorithm. Each question might need a slightly different resolution strategy, which will be described in the following subsections, but the main protocol remains the same:
+A project like this, in which computational insights are needed to clarify experimental observations, is perfect to prove how GaudiMM allows to formulate (bio)chemical hypothesis as optimization problems solvable by a multi-objective genetic algorithm. Each question might need a slightly different resolution strategy, which will be described in the corresponding subsections, but the main protocol remains the same:
 
 \begin{enumerate}
-	\item The problem is formulated as a combination of genes and objectives in GaudiMM.
+	\item The problem is formulated as a GaudiMM \textit{recipe} and run.
 
-	\item All the candidate structures are analyzed interactively with GaudiView and any needed Tangram extensions. Interaction profilers are particularly useful at this stage.
+	\item All the candidate structures are analyzed interactively with GaudiView and any needed Tangram extensions. Interaction profilers (see \autoref[appendix]{appendix:more-tangram} are particularly useful at this stage.
 
-	\item Best-looking candidates are checked for stability with long molecular dynamics trajectories (more than 100 ns). The protocol involves using explicit solvent and full-atom treatment using the GPU acceleration provided by OMMProtocol.
+	\item Best candidates are checked for stability with long molecular dynamics trajectories (more than 100 ns). The protocol involves using explicit solvent and full-atom treatment using the GPU acceleration provided by OMMProtocol.
 \end{enumerate}
 
 \subsubsection{Can a single divalent ligand reach both sites? If not, how long should it be?}
 % \addcontentsline{toc}{subsubsection}{Can a single divalent ligand reach both sites? If not, how long should it be?}
 \label{section:di-ONJ-stretch}
-The Ki of the divalent ligand and the rotaxane cannot be explained by stoichiometry alone and it was suggested that both binding sites are reached simultaneously. However, it was not entirely clear if the di-ONJ ligand was long enough to reach them both. When the iminosugar residues are set to be as far as possible from each other, they can get 30 Å apart. In the crystallographic structure of 2WBG PDB, the crystalized ligands are 40 Å apart in a straight line. Additionally, it must be considered that the dimer interface is curved and a greater length must be covered in order to reach both sites in an energetically feasible manner. Alternatively, another dimerization structure could happen in solution and that should be assessed with solvated molecular dynamics, too.
+
+The $K_{i}$ of the divalent ligand and the rotaxane against TmGH1 cannot be explained by stoichiometry alone and it was suggested that both binding sites are reached simultaneously. However, it was not entirely clear if the di-ONJ ligand was long enough to reach them both. When the iminosugar residues are set to be as far as possible from each other, they can get 30 Å apart. In the crystallographic structure of TmGH1,\cite{pdb:2wbg} the crystalized ligands are 40 Å apart in a straight line. Additionally, it must be considered that the dimer interface is curved and a greater length must be covered in order to reach both sites in an energetically feasible manner. Alternatively, another dimerization structure could happen in solution and that could be analyzed with a combination of protein-protein docking and solvated molecular dynamics.
 
 To assess the first possibility, a GaudiMM calculation was set up following this strategy: one of the iminosugars was fixed to the crystallographic site of one dimer, and the other iminosugar was instructed to reach the binding site in the opposite dimer by exploring the dihedral torsions of its rotatable bonds (see fig. \ref{fig:one-divalent-stretch}). To discard steric impediments, unfavourable clashes were minimized. This can be achieved with the recipe detailed in table \ref{table:recipe-single-divalent}.
 
@@ -489,7 +489,7 @@ To assess the first possibility, a GaudiMM calculation was set up following this
 		\texttt{Molecule} & Load the protein model obtained after cleaning the PDB structure \texttt{2WBG} (waters and ligands removed) \\
 		\midrule
 		%row no:3
-		\texttt{Molecule} & Load the ligand using a Mol2 file obtained with ChemCraft \\
+		\texttt{Molecule} & Load the divalent ligand using a Mol2 file obtained with ChemCraft \\
 		\midrule
 		\texttt{Torsion} & Explore the free rotations of the ligand molecule. \\
 		\toprule
@@ -500,7 +500,7 @@ To assess the first possibility, a GaudiMM calculation was set up following this
 		\texttt{Contacts} & Minimize steric clashes \\
 		\midrule
 		%row no:6
-		\texttt{Distance} & Bring the other iminosugar end of the ligand as close as possible to the center of mass of the original crystallographic ligand in PDB 2WBG \\
+		\texttt{Distance} & Bring the free iminosugar end of the ligand as close as possible to the center of mass of the original crystallographic ligand in the X-ray structure\cite{pdb:2wbg} \\
 
 		\bottomrule
 
@@ -520,51 +520,7 @@ To assess the first possibility, a GaudiMM calculation was set up following this
 
 The results of this preliminary calculation confirmed that the synthesized divalent ligand was not long enough to reach the both sites. If one site was forced to be occupied by one of the iminosugars, the other end will stay at a distance of 12 \AA, even considering severe steric impediments. Seeing that a single divalent ligand cannot occupy both sites simultaneously, an inhibition mechanism by sliding is proposed. This is a, a single divalent molecule must be able to switch from one site to the other, taking advantage of having an iminosugar on both ends.
 
-This observation makes the next question obvious: how long should it be then? The ligand is, simply put, two iminosugars connected by two chains of 10 atoms each. If we consider longer linkers, it might be possible to reach both. To assess that possibility, a library of linkers ranging from 13 to 16-carbon linear alkanes was constructed and the same protocol was applied, but changing the Molecule gene to consider a dynamic construction of molecules as explained in \autoref[section]{section:dibiotin-linker-length-optimization} (see fig. \ref{fig:divalent-length}). This can be set up by building this directory hierarchy:
-
-\todo[inline]{Might be not necessary - consider appendix}
-
-\begin{itemize}
-	\item Dynamic-ligand/
-
-\begin{itemize}
-	\item 01-iminosugar/
-
-\begin{itemize}
-	\item Iminosugar-a.mol2
-
-
-\end{itemize}
-	\item 02-linker/
-
-\begin{itemize}
-	\item alkane-12.mol2, alkane-13C.mol2, $ \ldots $ , alkane-16C.mol2
-
-
-\end{itemize}
-	\item 03-connector/
-
-\begin{itemize}
-	\item T-connector.mol2
-
-
-\end{itemize}
-	\item 04-linker/
-
-\begin{itemize}
-	\item alkane-12.mol2, alkane-13C.mol2, $ \ldots $ , alkane-16C.mol2
-
-
-\end{itemize}
-	\item 05-iminosugar/
-
-\begin{itemize}
-	\item Iminosugar-b.mol2
-\end{itemize}
-\end{itemize}
-\end{itemize}
-
-
+This observation makes the next question obvious: how long should it be then? The ligand is, simply put, two iminosugars connected by two chains of 10 atoms each. If we consider longer linkers, it might be possible to reach both. To assess that possibility, a library of linkers ranging from 13 to 16-carbon linear alkanes was constructed and the same protocol was applied, but changing the \texttt{Molecule} gene to consider a dynamic construction of molecules as explained in \autoref[section]{section:dibiotin-linker-length-optimization} (see fig. \ref{fig:divalent-length}). The fragments can be chained as \textit{iminosugar + linker + hydrophobic connector + linker + iminosugar}.
 
 \begin{figure}[H] % FIXME!
 	\begin{Center}
@@ -574,16 +530,52 @@ This observation makes the next question obvious: how long should it be then? Th
 	\label{fig:divalent-length}
 \end{figure}
 
-The resulting ligand is always a linear concatenation iminosugar-linker-connector-linker-iminosugar compound, whose total length depends on the selected linkers. Again, for synthesis easiness, \textit{02-linker} and \textit{04-linker} fragments were set to be symmetric: they will always list the same alkane. The evaluation part is still the same: the non-frozen iminosugar will be forced to reach the other dimer, but only long enough ligands will be able to do so. The results show that linkers longer than 13 carbons are able to reach both sites comfortably without the need to slide from one to the other.
+
+The evaluation part is the same: the non-frozen iminosugar will be forced to reach the other dimer, but only long enough ligands will be able to do so. The results show that linkers longer than 13 carbons are able to reach both sites comfortably without the need to slide from one to the other.
+
+
+\begin{table}[hbtp]
+	\caption{Recipe used in the evaluation of a stretchable di-ONJ ligand. The ligand was positioned in such a way that one of the terminal iminosugars matched the crystallographic structure of the ligand in the original protein structure\cite{pdb:2wbg}}
+	\label{table:recipe-single-divalent}
+	\footnotesize
+	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
+	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
+	\newcommand{\tableheading}[1]{\multicolumn{2}{c}{\textsc{#1}}}
+	\begin{tabularx}{\textwidth}{RL}
+		\toprule
+		%row no:1
+		\tableheading{Genes}\\
+		\toprule
+		%row no:2
+		\texttt{Molecule} & Load the protein model obtained after cleaning the PDB structure \texttt{2WBG} (waters and ligands removed) \\
+		\midrule
+		%row no:3
+		\texttt{Molecule} & Construct variants of the di-ONJ ligand using five fragments: \textit{ONJ + linker + hydrophobic tail + linker + ONJ}\\
+		\midrule
+		\texttt{Torsion} & Explore the free rotations of the resulting ligand construction. \\
+		\toprule
+		%row no:4
+		\tableheading{Objectives}\\
+		\toprule
+		%row no:5
+		\texttt{Contacts} & Minimize steric clashes \\
+		\midrule
+		%row no:6
+		\texttt{Distance} & Bring the other iminosugar end of the ligand as close as possible to the center of mass of the original crystallographic ligand in the X-ray structure\cite{pdb:2wbg} \\
+
+		\bottomrule
+
+	\end{tabularx}
+\end{table}
 
 \subsubsection{Can two divalent ligands occupy both sites simultaneously? Do they interact?}
 % \addcontentsline{toc}{subsubsection}{Can two divalent ligands occupy both sites simultaneously? Do they interact?}
-A second hypothesis would consist of considering that two divalent ligands can occupy both sites of the same dimer simultaneously. If that is the case, they could even stabilize each other by interacting at the dimer interface via their free iminosugar moieties (which can form hydrogen bonds through their hydroxyl groups) or the coupling of their hydrophobic tails.
+A second hypothesis would consist of considering that two di-ONJ ligands can occupy both sites of the same dimer simultaneously. If that is the case, they could even stabilize each other by interacting at the dimer interface via their free iminosugar moieties (which can form hydrogen bonds through their hydroxyl groups) or the coupling of their hydrophobic tails.
 
-To assess that possibility, two molecules were superposed against the crystallographic binding sites of the dimer structure contained in PDB ID 2WBG, which features an analog inhibitor compound suitable for structural alignment. Then, dihedral torsions of the rotatable bonds of the ligand were analyzed looking for a combination that could have them interact at the interface. This interaction was implemented as a distance minimization between a carboxylic oxygen of one ligand and a carboxylic hydrogen of the other (see table \ref{table:recipe-two-divalent} and fig. \ref{fig:divalent-interface}).
+To assess that possibility, two molecules were superposed against the crystallographic binding sites of the dimer structure,\cite{pdb:2wbg} which features an analog inhibitor compound suitable for structural alignment. Then, dihedral torsions of the rotatable bonds of the ligand were analyzed looking for a combination that could have them interact at the interface. This interaction was implemented as a distance minimization between a carboxylic oxygen of one ligand and a carboxylic hydrogen of the other (see table \ref{table:recipe-two-divalent} and fig. \ref{fig:divalent-interface}).
 
 \begin{table}[hbtp]
-	\caption{Recipe used in the evaluation of a two di-ONJ ligands. The ligand wass positioned in such a way that one of the terminal iminosugars matched the crystallographic structure sof the ligand in the original 2WBG protein structure}
+	\caption{Recipe used in the evaluation of a two di-ONJ ligands. The ligand wass positioned in such a way that one of the terminal iminosugars matched the crystallographic structures of the ligand in the original X-ray protein structure}
 	\label{table:recipe-two-divalent}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
@@ -598,13 +590,13 @@ To assess that possibility, two molecules were superposed against the crystallog
 		\texttt{Molecule} & Load the protein model obtained after cleaning the PDB structure \texttt{2WBG} (waters and ligands removed) \\
 		\midrule
 		%row no:3
-		\texttt{Molecule} & Load one copy ligand using a Mol2 file obtained with ChemCraft, positioned in binding site of monomer A \\
+		\texttt{Molecule} & Load one copy of the di-ONJ ligand using a Mol2 file obtained with ChemCraft, positioned in the binding site of monomer A \\
 		\midrule
-		\texttt{Molecule} & Load another ligand using a Mol2 file obtained with ChemCraft, positioned in binding site of monomer B \\
+		\texttt{Molecule} & Load another di-ONJ molecule, but positioned in the binding site of monomer B \\
 		\midrule
-		\texttt{Torsion} & Explore the free rotations of the ligand copy A. \\
+		\texttt{Torsion} & Explore the free rotations of the di-ONJ copy in monomer A \\
 		\midrule
-		\texttt{Torsion} & Explore the free rotations of the ligand copy B. \\
+		\texttt{Torsion} & Explore the free rotations of the di-ONJ copy in monomer B \\
 		\toprule
 		%row no:4
 		\tableheading{Objectives}\\
@@ -630,13 +622,13 @@ To assess that possibility, two molecules were superposed against the crystallog
 \end{figure}
 
 
-The analysis showed that this interaction is structurally feasible, which was further confirmed by an explicitly solvated, full-atom molecular dynamics trajectory: the interaction remained stable for more than 100 nanoseconds. Simulating this system (100,000+ atoms) for such a long period of time can take months with ordinary CPUs, but thanks to the GPU acceleration implemented in OpenMM and OMMProtocol, these trajectories could be obtained within a week. An equivalent protocol in the commercial, GPU-accelerated version of Amber usually takes two weeks.
+The analysis showed that this interaction is structurally feasible, which was further confirmed by an explicitly solvated, full-atom molecular dynamics trajectory: the interaction remained stable for more than 100 nanoseconds. Simulating this system (100,000+ atoms) for such a long period of time can take months with ordinary CPUs, but thanks to the GPU acceleration implemented in OpenMM and OMMProtocol (see \autoref[section]{section:fig:ommprotocol}), these trajectories could be obtained within a week.\footnote{An equivalent protocol in the commercial, GPU-accelerated version of Amber installed in our facilities would have taken two weeks.}
 
-While the computational model offers an answer to whether this structure is possible of not, this specific protocol cannot answer whether this interaction is favored. To assess that possibility, broader sampling would be needed: metadynamics, replica exchange, free energy perturbation$ \ldots $  In fact, there is no experimental information to support this hypothetic interaction: the stoichiometry suggested leans towards 1:1, and not 2:1.
+While the computational model offers an answer to whether this structure is possible of not, this specific protocol cannot answer whether this interaction is favored. To assess that possibility, broader sampling would be needed (like metadynamics), which demanded more computational time than the available within the submission deadline. Additionally, there is no experimental information to support this hypothetic interaction: the stoichiometry suggested leans towards 1:1, and not 2:1.
 
 \subsubsection{Does the rotaxane compound fit? Can it occupy both sites? How?}
 % \addcontentsline{toc}{subsubsection}{Does the rotaxane compound fit? Can it occupy both sites? How?}
-The pillar[5]ene variants exhibit a slightly worse $K_{i}$ but still comparable to the di-ONJ compound, so one would expect a similar interaction profile. The divalent ligand has been shown that it cannot reach both sites of a dimer, suggesting that its inhibition mechanism is based on a sliding motion. However, the divalent ligand only represents half of the H-shaped component of the rotaxane compound. This has two conflicting consequences: (1) the H-shaped component is larger and could use the iminosugars of opposed axels to reach both binding sites, and (2) the crown component adds a volume that might work against this interaction through steric impediment. This raises two possibilities:
+The pillar[5]ene variants exhibit a slightly worse $K_{i}$ but still comparable to the di-ONJ compound, so one would expect a similar interaction profile. The divalent ligand has been shown that it cannot reach both sites of a dimer, suggesting that its inhibition mechanism might be based on a sliding motion between the binding sites. However, the divalent ligand only represents half of the H-shaped component of the rotaxane compound. This has two conflicting consequences: (1) the H-shaped component is larger and could use the iminosugars of opposed axels to reach both binding sites, and (2) the volume of the crown component might work against this interaction through steric impediment. This raises two possibilities:
 
 \begin{enumerate}
 	\item The rotaxane interacts with the protein via iminosugars on the \textbf{same} axel.
@@ -669,7 +661,7 @@ In the binding mode A (same axel), the structure did not reach the second bindin
 		\tableheading{Genes}\\
 		\toprule
 		%row no:2
-		\texttt{Molecule} & Load the protein model obtained after cleaning the PDB structure \texttt{2WBG} (waters and ligands removed) \\
+		\texttt{Molecule} & Load the protein model obtained after cleaning the PDB structure\cite{pdb:2wbg} (waters and ligands removed) \\
 		\midrule
 		%row no:3
 		\texttt{Molecule} & Load the structure of the pillar[5]ene as obtained through a preliminary 3D model in ChemCraft \\
@@ -690,21 +682,21 @@ In the binding mode A (same axel), the structure did not reach the second bindin
 	\end{tabularx}
 \end{table}
 
-Once parameterized, two candidate structures of each binding mode were submitted to a molecular dynamics analysis with OMMProtocol. Both revealed stable bindings to their respective sites, with additional stabilization of the structure via internal cross-interactions.
+Once parameterized with Antechamber,\cite{wang2001antechamber} two candidate structures of each binding mode were submitted to a molecular dynamics analysis with OMMProtocol. Both revealed stable bindings to their respective sites, with additional stabilization of the structure via internal cross-interactions.
 
-The unsurprising results observed for binding mode A (same axel) agree with the experimental evidences. It exhibits the same binding profile as a single divalent molecule, compatible with the sliding mechanism, hence the comparable Ki values. The slight difference might be due to \todo{the entropic stabilization} of the crown-component via secondary binding sites.
+The unsurprising results observed for binding mode A (same axel) agree with the experimental evidences. It exhibits the same binding profile as a single divalent molecule, compatible with the sliding mechanism, hence the comparable $K_{i}$ values. The slight difference might be due to the entropic stabilization of the crown-component via secondary binding sites.
 
-Unfortunately, while the binding mode B (different axels) showed a promising interaction profile, there is no experimental evidence to back it up. If this binding mode was feasible, a higher Ki should be observed, but that is not the case.
+Unfortunately, while the binding mode B (different axels) showed a promising interaction profile, there is no experimental evidence to back it up. If this binding mode was feasible, a higher $K_{i}$ should be observed, but that is not the case.
 
 \subsection{Discussion \& Further work}
 % \addcontentsline{toc}{subsection}{Discussion $\&$  Further work}
-This joint study was an excellent opportunity to prove how GaudiMM has proved can be a valuable asset for both experimental and computational communities. The computational feedback has provided illustrative models on what can be happening at the molecular level and even proposed alternative explanations to be confirmed experimentally. This can be argued in three points.
+This joint study was an excellent opportunity to show how GaudiMM can be a valuable asset for both experimental and computational communities. The computational feedback has provided illustrative models on what can be happening at the molecular level and even proposed alternative explanations to be confirmed experimentally. This can be argued in three points.
 
-First, GaudiMM can provide results directly applicable to the wet-lab. The different di-ONJ variants tested opened doors to synthesizing ligands of optimum length that would explain how the di-ONJ ligand exhibits that excellent inhibition power without incurring in additional costs. Doing this experimentally would have involved more steps of synthesis and tests, only to discard most of the candidate ligands. With this computational framework, this can be obtained within a day. Of course, this does not replace the experimental data; it just reflects that computational assessment can at least provide a way to save some money from the increasingly tight budgets, both in materials and human work.
+First, GaudiMM can provide results directly applicable to the wet-lab. The different di-ONJ variants tested opened doors to synthesizing ligands of optimum length that would explain how the di-ONJ ligand exhibits that excellent inhibition power without incurring in additional costs. Doing this experimentally would have involved more steps of synthesis and tests, only to discard most of the candidate ligands. With this computational framework, this can be obtained within a day. Of course, this does not replace the experimental data; it just reflects that computational assessment can at least provide a way to save material and human resources.
 
 Second, it allows to create new types of computational studies in a simpler, consistent way. Testing if the di-ONJ compound or the rotaxane can reach both binding sites of a dimeric protein would be normally done with a steered molecular dynamics simulation. However, parameterization would be needed first. For the rotaxane alone, this would take more than a day. The actual simulation would take around a week. With GaudiMM, this can be obtained in hours. Then, if the results are positive, a MD simulation would be in order. However, if the results did not show anything promising, those expensive computational and time resources could be invested in testing a different hypothesis. In the same fashion, testing if two divalent ONJ ligands can interact at the interface would be usually studied with molecular docking, but there is no software suite that can perform a multi-ligand, restrained study like the one herein presented.
 
-Third, even if the researchers prefer to go straight to the MD stage without confirming the feasibility of the hypothesis first, they would still need to build the initial structure first. The researcher usually constructs those manually, with the aid of an interactive 3D viewer and related tools. This is normally doable with small ligands, but it starts getting disturbingly complex when bigger structures are involved. Setting up a rotaxane model suitable for MD assessment would have involved hours of finetuning and trial-and-error attempts. With GaudiMM, these can be obtained automatically when the correct recipe is used.
+Third, even if the researchers prefer to go straight to the MD stage without confirming the feasibility of the hypothesis first, they would still need to build the initial structure. The researcher usually constructs those manually, with the aid of an interactive 3D viewer and related tools. This is normally doable with small ligands, but it starts getting disturbingly complex when bigger structures are involved. Setting up a rotaxane model suitable for MD assessment would have involved hours of finetuning and trial-and-error attempts. With GaudiMM, these can be obtained automatically when the correct recipe is used.
 
 Of course, GaudiMM is not the answer to every question. It only helps guide the creation of new hypothesis at the initial steps of the brainstorming. For more accurate results, higher levels of theory must be applied through more advanced protocols. Even molecular dynamics might not be enough if quantitative magnitudes are demanded, such as binding energy or free energy. To obtain those, one would have to employ broad sampling methods like metadynamics or free energy perturbation, hybrid schemes like QM/MM, or even QM calculations of reduced cluster models. Those are out the scope of this dissertation and could not be performed within the available timeframe.
 
