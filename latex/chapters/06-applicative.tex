@@ -1,6 +1,6 @@
 %!TEX root = ../dissertation.tex
 
-\todo[inline]{savequote needed}
+% \todo[inline]{savequote needed}
 
 \chapter{Benchmark \textit{\&} Application}
 \label{chap:06}
@@ -30,7 +30,7 @@ GaudiMM capabilities for flexible protein-ligand docking were studied in its fir
 All the entries in each dataset were analyzed with full torsion flexibility on the ligand, which could move and rotate within 12 Å of the crystallographic position. The results were analyzed considering the best RMSD of each calculation against the crystallographic reference structure. The correct binding pose was considered successfully reproduced if the RMSD was under than 3.0 Å. Despite not being the target usage of GaudiMM, the recipe reported success rates of up to 57.6$\%$ (see table \ref{table:docking-benchmark}), a value comparable to several works in the literature.\cite{pagadala2017software} With more efforts directed at optimizing the exploration stage (especially the variation operators on torsion and orientation), the number of hits would highly increase and compete with other docking software.
 
 \begin{table}[hbtp]
-	\caption{Recipe applied in the docking benchmark}
+	\caption[Recipe applied in the docking benchmark]{Recipe applied in the docking benchmark.}
 	\label{table:docking-recipe}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
@@ -98,7 +98,7 @@ This strategy allows competitive multi-ligand docking, something which is direct
 Both concepts ---covalent bond emulation and competitive docking--- were tested during the design of an artificial metalloenzyme featuring a copper-containing phenanthroline cofactor covalently attached at the position M89C of the dimeric \textit{Lactococcal multidrug resistance Regulator} (LmrR) protein. While the final structures in that work (manuscript under preparation) propose a single cofactor, having two ligands simultaneously attached to both monomers was also considered at the beginning of the study. To assess that possibility, a GaudiMM calculation was set up to see if two covalently attached ligands can fit within the dimeric interface (see table \ref{table:phn-recipe} for details).
 
 \begin{table}[hbtp]
-	\caption{Recipe applied for the LmrR competitive docking calculations}
+	\caption[Recipe applied for the LmrR competitive docking calculations]{Recipe applied for the LmrR competitive docking calculations.}
 	\label{table:phn-recipe}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
@@ -180,7 +180,7 @@ As briefly described in \autoref{chap:04}, the \textit{Molecule} gene can also b
 In principle, the dibiotin ligand could be constructed out of five fragments: \textit{biotin A + linker A + cofactor + linker B + biotin B}. However, since biotin exhibits a high affinity for streptavidin, it can be assumed that it will stay in its crystallographic binding site. This allowed to simplify the calculations: instead of having a 5-fragment construction, the biotins were fixed into their crystallographic binding site and a 3-fragment \textit{linker + cofactor + linker} dynamical ligand was used instead (see fig. \ref{fig:dibiotin-linker-length}). To assess if a candidate construct was long-enough to reach both sites, one of the linkers was anchored to one of the biotins following the null-sphere procedure described in \autoref[section]{section:multidocking}. Then, a distance minimization objective was applied to the other linker to push it into the second binding site, where a second biotin was placed to accept the simulated covalent bond. All the bonds in the linkers were allowed to freely rotate with the \texttt{Torsion} gene; biotin and cofactor bonds were considered frozen (see table \ref{table:strep-recipe}).
 
 \begin{table}[hbtp]
-	\caption{Recipe applied for the Streptavidin-dibiotin system}
+	\caption[Recipe applied for the Streptavidin-dibiotin system]{Recipe applied for the Streptavidin-dibiotin system.}
 	\label{table:strep-recipe}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
@@ -194,7 +194,7 @@ In principle, the dibiotin ligand could be constructed out of five fragments: \t
 		%row no:2
 		\texttt{Molecule} & Load the streptavidin dimer, with biotin ligands already frozen in their binding sites  \\
 		\midrule
-		\texttt{Molecule} & Load a 3-fragment directory to build different versions of the \textit{linkerA-cofactor-linkerB}construction. Linker library included linear alkanes ranging from pentane up to dodecane. The cofactor was DFT-minimized. \\
+		\texttt{Molecule} & Load a 3-fragment directory to build different versions of the \textit{linkerA-cofactor-linkerB}construction. Linker library included linear alkanes ranging from pentane up to dodecane. The cofactor was DFT-minimized \\
 		\midrule
 		\texttt{Torsion} & Explore the flexibility of the linkers (bonds of biotins and cofactor were considered frozen) \\
 		\midrule
@@ -264,7 +264,7 @@ Metal-protein and metal-peptide interactions are not unusual at all: around 30\%
 GaudiMM features an objective specifically designed for that purpose: the \texttt{Coordination} objective. The idea was initially described in Mujika et al.,\cite{mujika2017elucidating} where a multi-objective docking procedure was used to locate possible octahedral coordination sites of an aluminum ion within pre-optimized structures of Alzheimer's β-peptides. The octahedral geometry could be described by using several distances, angles and dihedral objectives\footnote{This was done with a very early version of GaudiMM, when the notion of objective was in development. As a result, some of the modules here listed do not have an exact correspondence with the current ones.} set to match those in an ideal octahedron: coordination bonds of around 2 \AA, $90^{\circ}$ for the donor-metal-donor angle, and a dihedral of $109.5^{\circ}$ for compatible sp\textsuperscript{3} geometries (see table \ref{table:alum-recipe}).
 
 \begin{table}[hbtp]
-	\cprotect\caption{Recipe applied for the Al(III)-amyloid complexes.}
+	\cprotect\caption[Recipe applied for the Al(III)-amyloid complexes]{Recipe applied for the Al(III)-amyloid complexes.}
 	\label{table:alum-recipe}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
@@ -322,7 +322,7 @@ To assess the guiding capacities of the \texttt{Coordination} objective, an illu
 The main driver of the optimization was the Coordination objective, which was set up to find octahedral geometries by analyzing terminal oxygen atoms. This strategy successfully reproduced three of the four structures found in \textit{E. coli}'s FepB. RMSD values were under 1.0 Å in all cases (see table \ref{table:siderophore} and fig. \ref{fig:siderophore}).
 
 \begin{table}[hbtp]
-	\caption{Recipe applied for the enterobactin exercise}
+	\caption[Recipe applied for the enterobactin exercise]{Recipe applied for the enterobactin exercise.}
 	\label{table:siderophore}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
@@ -352,7 +352,7 @@ The main driver of the optimization was the Coordination objective, which was se
 		\texttt{Coordination} & Match an octahedral geometry by querying the terminal oxygen atoms of the enterobactin rings \\
 		\midrule
 		%row no:6
-		\texttt{Distance} & Since UCSF Chimera does not support dihedral torsions in closed rings, the central ring of the enterobactin was deliberately opened so their torsion bonds could be explored. This distance keeps the ring functionally closed while that happens. \\
+		\texttt{Distance} & Since UCSF Chimera does not support dihedral torsions in closed rings, the central ring of the enterobactin was deliberately opened so their torsion bonds could be explored. This distance keeps the ring functionally closed while that happens \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -478,7 +478,7 @@ To assess the first possibility, a GaudiMM calculation was set up following this
 
 
 \begin{table}[hbtp]
-	\caption[Single di-ONJ recipe]{Recipe used in the evaluation of a single di-ONJ ligand. The ligand was positioned in such a way that one of the terminal iminosugars matched the crystallographic structure of the ligand in the original 2WBG protein structure}
+	\caption[Single di-ONJ recipe]{Recipe used in the evaluation of a single di-ONJ ligand. The ligand was positioned in such a way that one of the terminal iminosugars matched the crystallographic structure of the ligand in the original 2WBG protein structure.}
 	\label{table:recipe-single-divalent}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
@@ -495,7 +495,7 @@ To assess the first possibility, a GaudiMM calculation was set up following this
 		%row no:3
 		\texttt{Molecule} & Load the divalent ligand using a Mol2 file obtained with ChemCraft \\
 		\midrule
-		\texttt{Torsion} & Explore the free rotations of the ligand molecule. \\
+		\texttt{Torsion} & Explore the free rotations of the ligand molecule \\
 		\toprule
 		%row no:4
 		\tableheading{Objectives}\\
@@ -539,7 +539,7 @@ The evaluation part is the same: the non-frozen iminosugar will be forced to rea
 
 
 \begin{table}[hbtp]
-	\caption[Stretchable di-ONJ recipe]{Recipe used in the evaluation of a stretchable di-ONJ ligand. The ligand was positioned in such a way that one of the terminal iminosugars matched the crystallographic structure of the ligand in the original protein structure\cite{pdb:2wbg}}
+	\caption[Stretchable di-ONJ recipe]{Recipe used in the evaluation of a stretchable di-ONJ ligand. The ligand was positioned in such a way that one of the terminal iminosugars matched the crystallographic structure of the ligand in the original protein structure.\cite{pdb:2wbg}}
 	\label{table:recipe-single-divalent}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
@@ -556,7 +556,7 @@ The evaluation part is the same: the non-frozen iminosugar will be forced to rea
 		%row no:3
 		\texttt{Molecule} & Construct variants of the di-ONJ ligand using five fragments: \textit{ONJ + linker + hydrophobic tail + linker + ONJ}\\
 		\midrule
-		\texttt{Torsion} & Explore the free rotations of the resulting ligand construction. \\
+		\texttt{Torsion} & Explore the free rotations of the resulting ligand construction \\
 		\toprule
 		%row no:4
 		\tableheading{Objectives}\\
@@ -579,7 +579,7 @@ A second hypothesis would consist of considering that two di-ONJ ligands can occ
 To assess that possibility, two molecules were superposed against the crystallographic binding sites of the dimer structure,\cite{pdb:2wbg} which features an analog inhibitor compound suitable for structural alignment. Then, dihedral torsions of the rotatable bonds of the ligand were analyzed looking for a combination that could have them interact at the interface. This interaction was implemented as a distance minimization between a carboxylic oxygen of one ligand and a carboxylic hydrogen of the other (see table \ref{table:recipe-two-divalent} and fig. \ref{fig:divalent-interface}).
 
 \begin{table}[hbtp]
-	\caption[Double di-ONJ recipe]{Recipe used in the evaluation of a two di-ONJ ligands. The ligand wass positioned in such a way that one of the terminal iminosugars matched the crystallographic structures of the ligand in the original X-ray protein structure}
+	\caption[Double di-ONJ recipe]{Recipe used in the evaluation of a two di-ONJ ligands. The ligand wass positioned in such a way that one of the terminal iminosugars matched the crystallographic structures of the ligand in the original X-ray protein structure.}
 	\label{table:recipe-two-divalent}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
@@ -670,7 +670,7 @@ In the binding mode A (same axel), the structure did not reach the second bindin
 		%row no:3
 		\texttt{Molecule} & Load the structure of the pillar[5]ene as obtained through a preliminary 3D model in ChemCraft \\
 		\midrule
-		\texttt{Torsion} & Explore the free rotations of the pillar[5]ene. \\
+		\texttt{Torsion} & Explore the free rotations of the pillar[5]ene \\
 		\toprule
 		%row no:4
 		\tableheading{Objectives}\\

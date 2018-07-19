@@ -1,12 +1,12 @@
 %!TEX root = ../dissertation.tex
-\begin{savequote}[0.6\textwidth]
-	\itshape In the beginning, there was nothing. \\
-	\itshape And God said, Let there be light. \\
-	\itshape And there was light. \\
-	\itshape There was still nothing, \\
-	\itshape but you could see it a lot better.
-	\qauthor{---Woody Allen}
-\end{savequote}
+% \begin{savequote}[0.6\textwidth]
+% 	\itshape In the beginning, there was nothing. \\
+% 	\itshape And God said, Let there be light. \\
+% 	\itshape And there was light. \\
+% 	\itshape There was still nothing, \\
+% 	\itshape but you could see it a lot better.
+% 	\qauthor{---Woody Allen}
+% \end{savequote}
 
 \chapter{GaudiMM}
 \label{chap:04}
@@ -36,7 +36,7 @@ Following sections will describe: (1) the algorithmic and (2) implementation det
 
 
 \begin{table}[hbtp]
-	\caption{GaudiMM: technical datasheet}
+	\caption[GaudiMM: technical datasheet]{GaudiMM: technical datasheet.}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
 	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
@@ -339,7 +339,7 @@ This configuration is enough to run a simple multi-objective optimization proces
 However, after the first attempt, the user might realize that some results are indeed decane conformations whose ends are 1.5 Å apart, but not in the expected orientation. In other words, they do not respect the sp\textsuperscript{3} tetrahedral geometry. To fix it, an additional \texttt{Angle} objective set to match 109.5$^\circ$ between the end atoms and one of their neighbors would suffice. The final recipe can be consulted in table \ref{table:cyclodecane}.
 
 \begin{table}[hbtp]
-	\caption{Final recipe for the cyclodecane example}
+	\caption[Final recipe for the cyclodecane example]{Final recipe for the cyclodecane example.}
 	\label{table:cyclodecane}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%

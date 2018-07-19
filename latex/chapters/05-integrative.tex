@@ -1,11 +1,11 @@
 %!TEX root = ../dissertation.tex
-\begin{savequote}[75mm]
-	\itshape Write programs that do one thing and do it well. \\
-	\itshape Write programs to work together. \\
-	\itshape Write programs to handle text streams, \\
-	\itshape because that is a universal interface.
-	\qauthor{---Peter H. Salus}
-\end{savequote}
+% \begin{savequote}[75mm]
+% 	\itshape Write programs that do one thing and do it well. \\
+% 	\itshape Write programs to work together. \\
+% 	\itshape Write programs to handle text streams, \\
+% 	\itshape because that is a universal interface.
+% 	\qauthor{---Peter H. Salus}
+% \end{savequote}
 
 \chapter[Python-based molecular modeling workflows]{Python-based \\
 molecular modeling workflows}
@@ -17,7 +17,7 @@ Of course, not all tasks benefit equally from a graphical interface. Some can be
 
 
 \begin{table}[hbtp]
-	\caption{The full InsiliChem Molecular Modeling software suite}
+	\caption[The full InsiliChem Molecular Modeling software suite]{The full InsiliChem Molecular Modeling software suite.}
 	\label{table:insilichem-suite}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
@@ -75,7 +75,7 @@ After developing GaudiView as the results viewer for GaudiMM (see \autoref[secti
 
 
 \begin{table}[hbtp]
-	\caption{Tangram Suite: Technical datasheet}
+	\caption[Tangram Suite: Technical datasheet]{Tangram Suite: Technical datasheet.}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
 	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
@@ -114,7 +114,7 @@ The different \textit{tans} or components of Tangram can be of very different na
 
 
 \begin{table}[hbtp]
-	\caption{Full list of Tangram extensions}
+	\caption[Full list of Tangram extensions]{Full list of Tangram extensions.}
 	\label{table:tangram-suite}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
@@ -247,7 +247,7 @@ This is possible thanks to the \texttt{conda} package manager,\cite{conda} which
 This new package was called PyChimera.\cite{pychimera} It does not try to alter the original UCSF Chimera installation; it only allows to load new packages from other locations outside the Chimera installation. For that reason, most Tangram extensions (those with external dependencies) will only work if a patched UCSF Chimera instance is loaded with the special \texttt{tangram} command.
 
 \begin{table}[hbtp]
-	\caption{PyChimera: Technical datasheet}
+	\caption[PyChimera: Technical datasheet]{PyChimera: Technical datasheet.}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
 	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
@@ -300,7 +300,7 @@ Molecular Mechanics (MM) and Molecular Dynamics (MD) (see \autoref[section]{sect
 OpenMM presents a layered API designed for easy reutilization of its code in other projects. In fact, to use OpenMM, one is expected to write Python scripts to configure the simulation. These scripts are not harder to write that input files for other suites; they just happen to use that scripting language. That said, it could be easier. Users should not need to care about missing parenthesis, import statements or ending quotes. OMMProtocol was conceived to overcome this barrier by providing an easy to read and easy to write input file that abstracts away all the key underlying configuration steps with the concept of \textit{protocol}: each input file contains all the stages involved in the simulation (like minimization, equilibration or production), avoiding the hassle of chained restarts.
 
 \begin{table}[hbtp]
-	\caption{OMMProtocol: Technical datasheet}
+	\caption[OMMProtocol: Technical datasheet]{OMMProtocol: Technical datasheet.}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
 	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
@@ -368,7 +368,7 @@ Gaussian\cite{gaussian} is one of the most popular QM packages and is still acti
 One of the features already included in Gaussian is the ONIOM method,\cite{svensson1996oniom} already described in \autoref{chap:02}. This hybrid method splits a system in layers seeking to combine high-level calculations for specific regions that require very accurate modeling, with low-level theories that will deal with the remaining parts of the system. Most common applications usually use a QM method like DFT for the \textit{high} layer and an MM method for the \textit{low} layer. For this case, Gaussian provides a built-in MM engine suitable for calculations with only three force fields: Amber,\cite{cornell1995second} UFF\cite{Rappe1992} and Dreiding.\cite{Mayo1990} Fortunately, for those users that need other force fields, a communication protocol with 3\textsuperscript{rd} party software is provided through the \texttt{external} keyword.
 
 \begin{table}[hbtp]
-	\caption{Garleek: Technical datasheet}
+	\caption[Garleek: Technical datasheet]{Garleek: Technical datasheet.}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
 	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
@@ -421,7 +421,7 @@ Computational chemistry, as all fields related to structural studies of molecule
 
 
 \begin{table}[hbtp]
-	\caption{ESIgen: Technical datasheet}
+	\caption[ESIgen: Technical datasheet]{ESIgen: Technical datasheet.}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
 	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
@@ -474,7 +474,7 @@ Minimum Energy Crossing Points (MECP) are defined as the consensus conformation 
 
 
 \begin{table}[hbtp]
-	\caption{EasyMECP: Technical datasheet}
+	\caption[EasyMECP: Technical datasheet]{EasyMECP: Technical datasheet.}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
 	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%

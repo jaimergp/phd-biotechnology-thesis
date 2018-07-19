@@ -5,8 +5,8 @@
 % \addcontentsline{toc}{*}{The future of molecular modeling}
 \Lettrine{In} an ideal future, there would be no need for multiscale protocols because accuracy compromises will not be needed in exchange for performance. However, to get there a large series of milestones must be conquered first. That path can only be pursued if there is a global interest.
 
-\section*{The impact of molecular modeling}
-\addcontentsline{toc}{section}{The impact of molecular modeling}
+\section{The impact of molecular modeling}
+%\addcontentsline{toc}{section}{The impact of molecular modeling}
 \label{molecular-modeling-impact}
 
 Such a vast array of tools and resources can only be product of thousands of researchers, both in the public and private sector, and such devotion can only come if the field is attractive enough. Computational modeling is widely regarded as one of the fastest growing sectors in science, as perceived by researches and engineers themselves. According to a recent survey from the European FP7 project MULT-EU-SIM22, which measures the impact of general modeling in science and engineering, 75 $\%$  of researchers see a high impact of modeling and simulation in their fields, and 70 $\%$  foresee a strong growth of these methods, with an impact far beyond the one currently achieved.\cite{ENN2012} International institutions also believe in the trend and, in fact, there are several ongoing projects working on standardizing basic concepts such as the terminology to be employed.\cite{cen2017} The very existence of reports covering the topic\cite{Goldbeck2012,Goldbeck2016,goldbeck2017} also serves as support for this general idea.
@@ -20,7 +20,7 @@ The increased popularity in basic research can be measured by the number of publ
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{./figures/01/publication-trends_crop.pdf}
-	\caption[Publication trends in molecular modeling]{Publication trends of manuscripts in molecular modeling in the title or abstract against all publications in chemistry related fields. Values are normalized against records in 2009. While publications in all chemistry failed exhibit a slower growth, articles in the field of molecular modeling (as represented with two popular methods, MD and DFT) have grown faster in the past decade. (Data obtained through \url{https://app.dimensions.ai})}
+	\caption[Publication trends in molecular modeling]{Publication trends of manuscripts in molecular modeling in the title or abstract against all publications in chemistry related fields. Values are normalized against records in 2009. While publications in all chemistry failed exhibit a slower growth, articles in the field of molecular modeling (as represented with two popular methods, MD and DFT) have grown faster in the past decade. (Data obtained through \url{https://app.dimensions.ai}).}
 	\label{fig:pubtrends}
 \end{figure}
 
@@ -35,7 +35,7 @@ In addition to the jobs themselves, which can be regarded as direct benefit for 
 % 	\item \href{http://www.sciencedirect.com/science/article/pii/S1359644608001529}{http://www.sciencedirect.com/science/article/pii/S1359644608001529}
 % \end{itemize}
 
-\section*{What the next generation will bring to the table}
+\section{What the next generation will bring to the table}
 % \addcontentsline{toc}{section}{What the next generation will bring to the table}
 
 Published almost twenty years ago, the chapter \textit{Vision 2020: Computational Needs of the Chemical Industry} in \textit{Impact of Advances in Computing and Communications Technologies on Chemical Science and Technology: Report of a Workshop}\cite{vision2020} cited five main computational challenges for the chemical industry: Predicting (1) biological activity and (2) toxicity of a chemical structure, and designing (3) catalysts, (4) chemical processes and (5) materials. This englobes two intertwined areas: prediction and design. For this to happen, the report points that intense research must be carried out in, amongst others, the potential functions of MM-based methods, long MD simulations for large ensembles (in the millisecond scale), quantum effects, solvent effects, solid state structure, multiscale protocols (atomistic, micro-, meso-, and macroscopic). Most of the challenges are accuracy or scale related, so huge efforts must be invested to reach errors within 0.1-0.2 kcal/mol in thermochemistry or to design universal and polarizable force fields, to cite two examples. This is not only a matter of scientific software development, but also responsibility of computer architecture, operating systems and networks. Since a single processor can only go so fast, tera-, peta- and exascales can only be achieved with parallel scaling, both within the processor itself (multicore architectures) and across symmetric machines (nodes within a cluster). For this to work reliably, operating systems and networks must be designed with fault tolerance in mind: if a core or node fails, the whole ensemble might fail as well.

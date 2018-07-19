@@ -75,8 +75,8 @@
 \usepackage{ragged2e}
 %\RaggedRight
 \raggedbottom
-%\RequirePackage[draft]{graphicx}
-\RequirePackage{graphicx}
+\RequirePackage[draft]{graphicx}
+%\RequirePackage{graphicx}
 \parindent 12pt
 \RequirePackage{lettrine}
 \RequirePackage{setspace}
@@ -437,7 +437,8 @@
 
 \newcommand{\dedicationpage}{
     \newpage \thispagestyle{empty} \vspace*{\fill}
-    \scshape \noindent \input{frontmatter/dedication}
+    %\scshape
+    \noindent \input{frontmatter/dedication}
     \vspace*{\fill} \newpage \thispagestyle{empty}  \rm
 }
 
