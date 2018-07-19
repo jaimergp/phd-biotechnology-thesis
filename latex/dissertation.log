@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/Arch Linux) (preloaded format=xelatex 2018.6.30)  19 JUL 2018 10:07
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/Arch Linux) (preloaded format=xelatex 2018.6.30)  19 JUL 2018 10:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1264,9 +1264,9 @@ LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
 Requested font "Lato Regular" at 12.0pt
- -> 
+ -> ï¿¾ï¿¿¹ï¿¿›dbU
 Requested font "Lato Regular/OT" at 12.0pt
- -> ï¿¾€^^O-\^^ZV
+ -> ï¿¾€ï¿¾“^^BebU
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1274,11 +1274,11 @@ Requested font "Lato Regular/OT" at 12.0pt
 .................................................
 \g__fontspec_family_LatoRegular_int=\count322
 Requested font "Lato Bold/OT" at 12.0pt
- -> ï¿¾^^Q-\^^ZV
+ -> ï¿¾ï¿¾•^^BebU
 Requested font "Lato Bold/I/OT" at 12.0pt
- -> P!-\^^ZV
+ -> Pï¿¾¥^^BebU
 Requested font "Lato Regular/I/OT" at 12.0pt
- ->  *-\^^ZV
+ ->  ï¿¾®^^BebU
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1290,9 +1290,9 @@ Requested font "Lato Regular/I/OT" at 12.0pt
 . Lato Bold scale = 0.7797268490977592.
 .................................................
 Requested font "Lato Regular/I/OT" at 12.0pt
- -> ï¿¾6/\^^ZV
+ -> ï¿¿ï¿¾»^^DebU
 Requested font "Lato Regular/I/OT" at 12.0pt
- ->  :/\^^ZV
+ -> `ï¿¾¿^^DebU
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1330,9 +1330,9 @@ Requested font "Lato Bold/I/OT" at 12.0pt
 .................................................
 LaTeX Info: Redefining \sffamily on input line 121.
 Requested font "Source Code Pro" at 12.0pt
- -> Pï¿¾Ÿ/\^^ZV
+ -> ï¿¿°^^R^^EebU
 Requested font "Source Code Pro/OT" at 12.0pt
- -> 0ï¿¾/\^^ZV
+ -> p ^^EebU
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1340,11 +1340,11 @@ Requested font "Source Code Pro/OT" at 12.0pt
 .................................................
 \g__fontspec_family_SourceCodePro_int=\count323
 Requested font "Source Code Pro/BI/OT" at 12.0pt
- -> @ï¿¾œ/\^^ZV
+ -> ^^Pï¿¿¯^^DebU
 Requested font "Source Code Pro/B/OT" at 12.0pt
- -> 0P/\^^ZV
+ -> Pï¿¾²^^DebU
 Requested font "Source Code Pro/I/OT" at 12.0pt
- -> 0P/\^^ZV
+ -> Pï¿¾²^^DebU
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1356,18 +1356,18 @@ Requested font "Source Code Pro/I/OT" at 12.0pt
 . Source Code Pro scale = 0.833334657882258.
 .................................................
 Requested font "Source Code Pro/B/OT" at 12.0pt
- -> 0P/\^^ZV
+ -> Pï¿¾²^^DebU
 Requested font "Source Code Pro/B/OT" at 12.0pt
- -> 0P/\^^ZV
+ -> Pï¿¾²^^DebU
 .................................................
 . fontspec info: "set-scale"
 . 
 . Source Code Pro/B scale = 0.833334657882258.
 .................................................
 Requested font "Source Code Pro/BI/OT" at 12.0pt
- -> 0P/\^^ZV
+ -> Pï¿¾²^^DebU
 Requested font "Source Code Pro/BI/OT" at 12.0pt
- -> 0P/\^^ZV
+ -> Pï¿¾²^^DebU
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1829,11 +1829,8 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 ) (./dissertation.aux (./chapters/00-preface.aux)
 (./chapters/01-intro.aux) (./chapters/02-methods.aux)
 (./chapters/03-objectives.aux) (./chapters/04-gaudimm.aux)
-(./chapters/05-integrative.aux) (./chapters/06-applicative.aux
-
-LaTeX Warning: Label `table:recipe-single-divalent' multiply defined.
-
-) (./chapters/07-conclusions.aux) (./chapters/08-epilog.aux)
+(./chapters/05-integrative.aux) (./chapters/06-applicative.aux)
+(./chapters/07-conclusions.aux) (./chapters/08-epilog.aux)
 (./chapters/appendix-a.aux) (./chapters/appendix-b.aux)
 (./chapters/appendix-c.aux) (./chapters/appendix-d.aux))
 \openout1 = `dissertation.aux'.
@@ -2015,14 +2012,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 ABD: EveryShipout initializing macros (./frontmatter/personalize.tex)
 (./frontmatter/personalize.tex)
-LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
-(Font)              scaled to size 9.99994pt on input line 10.
-Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 9.99994pt
- -> pï¿¿§2\^^ZV
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `SourceCodePro' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
+File: figures/logoUAB.jpg Graphic file (type bmp)
+<figures/logoUAB.jpg>
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
 (Font)              scaled to size 24.88pt on input line 10.
 Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
@@ -2047,7 +2038,10 @@ File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
 ) [1
 
-] [2]
+]
+File: figures/logoUAB.jpg Graphic file (type bmp)
+<figures/logoUAB.jpg>
+ [2]
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/sc' will be
 (Font)              scaled to size 10.95pt on input line 10.
 Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
@@ -2194,6 +2188,8 @@ Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
 calt;+pnum;+lnum;mapping=tex-text;" at 65.94041pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
+File: ./figures/01/penicillin.jpg Graphic file (type bmp)
+<./figures/01/penicillin.jpg>
 \openout3 = `dissertation-1.cpt'.
 
 \openout3 = `dissertation-2.cpt'.
@@ -2225,31 +2221,22 @@ LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
 (Font)              scaled to size 9.4768pt on input line 15.
 Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
  9.4768pt
- -> @CU\^^ZV
+ -> pR*ebU
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
 (Font)              scaled to size 8.64758pt on input line 15.
 Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
  8.64758pt
- -> ^^PgU\^^ZV
+ -> ï¿¿ q*ebU
 (./dissertation-2.cpt
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
 (Font)              scaled to size 6.31787pt on input line 1.
 Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
  6.31787pt
- -> 0EX\^^ZV
+ -> ï¿¿°J-ebU
 ) [10
 
 
-] [11]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 28.
-LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 28.
-Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
-calt;+pnum;+lnum;mapping=tex-text;" at 10.0pt
- -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
-.otf
-) [12]
+] [11]) [12]
 \openout2 = `chapters/01-intro.aux'.
 
  (./chapters/01-intro.tex
@@ -2266,25 +2253,21 @@ calt;+pnum;+lnum;+smcp;mapping=tex-text;" at 14.4pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
  [14]
+File: ./figures/01/thong.pdf Graphic file (type pdf)
+<use ./figures/01/thong.pdf>
 \openout3 = `dissertation-3.cpt'.
 
 \openout3 = `dissertation-4.cpt'.
 
  (./dissertation-4.cpt) [15] [16]
-Overfull \hbox (2.48003pt too wide) in paragraph at lines 62--62
-[][][][]\TU/EBGaramond12(0)/m/n/10 Citation 
- []
-
-
-Overfull \hbox (2.48003pt too wide) in paragraph at lines 62--62
-[][][][]\TU/EBGaramond12(0)/m/n/10 Citation 
- []
-
-
-Overfull \hbox (2.48003pt too wide) in paragraph at lines 62--62
-[][][][]\TU/EBGaramond12(0)/m/n/10 Citation 
- []
-
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 62.
+LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 62.
+Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
+calt;+pnum;+lnum;mapping=tex-text;" at 10.0pt
+ -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
+.otf
 
 Overfull \hbox (2.48003pt too wide) in paragraph at lines 62--62
 [][][][]\TU/EBGaramond12(0)/m/n/10 Citation 
@@ -2310,6 +2293,23 @@ Overfull \hbox (2.48003pt too wide) in paragraph at lines 62--62
 [][][][]\TU/EBGaramond12(0)/m/n/10 Citation 
  []
 
+
+Overfull \hbox (2.48003pt too wide) in paragraph at lines 62--62
+[][][][]\TU/EBGaramond12(0)/m/n/10 Citation 
+ []
+
+
+Overfull \hbox (2.48003pt too wide) in paragraph at lines 62--62
+[][][][]\TU/EBGaramond12(0)/m/n/10 Citation 
+ []
+
+
+Overfull \hbox (2.48003pt too wide) in paragraph at lines 62--62
+[][][][]\TU/EBGaramond12(0)/m/n/10 Citation 
+ []
+
+File: ./figures/01/multiscaleprotocol.png Graphic file (type bmp)
+<./figures/01/multiscaleprotocol.png>
 \openout3 = `dissertation-5.cpt'.
 
 \openout3 = `dissertation-6.cpt'.
@@ -2319,12 +2319,18 @@ LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/it' will be
 (Font)              scaled to size 8.64758pt on input line 1.
 Requested font "Lato Regular/I/OT:script=latn;language=DFLT;mapping=tex-text;" 
 at 8.64758pt
- -> `ï¿¿´a\^^ZV
+ -> ï¿¾°ï¿¿²6ebU
 ) [17] [18]
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
 (Font)              scaled to size 9.12494pt on input line 80.
 Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 9.12494pt
- -> ï¿¿€^^Yb\^^ZV
+ -> ï¿¿ ^^F7ebU
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `SourceCodePro' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+File: ./figures/01/xkcd927.png Graphic file (type bmp)
+<./figures/01/xkcd927.png>
  [19] [20]
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
 (Font)              scaled to size 9.59998pt on input line 104.
@@ -2402,7 +2408,12 @@ Overfull \hbox (10.83788pt too wide) in paragraph at lines 127--128
 g-like compounds. In most implementations, the database
  []
 
-[36] [37]
+[36]
+File: ./figures/02/chemical_space.png Graphic file (type bmp)
+<./figures/02/chemical_space.png>
+ [37]
+File: ./figures/02/smiles.png Graphic file (type bmp)
+<./figures/02/smiles.png>
 \openout3 = `dissertation-7.cpt'.
 
 \openout3 = `dissertation-8.cpt'.
@@ -2413,7 +2424,10 @@ Overfull \hbox (6.75114pt too wide) in paragraph at lines 165--166
 onal space is untreatable, experimental data is needed
  []
 
-[40] [41] [42] [43] [44] [45]
+[40] [41] [42] [43]
+File: ./figures/04/gradientdescent.png Graphic file (type bmp)
+<./figures/04/gradientdescent.png>
+ [44] [45]
 Overfull \hbox (7.33002pt too wide) in paragraph at lines 232--232
 [][][][]\TU/EBGaramond12(0)/m/n/10 REVIEW 
  []
@@ -2433,7 +2447,10 @@ Overfull \hbox (7.33002pt too wide) in paragraph at lines 232--232
 [][][][]\TU/EBGaramond12(0)/m/n/10 REVIEW 
  []
 
-[46] [47] [48]) [49]
+[46] [47] [48]
+File: ./figures/02/FrentePareto.pdf Graphic file (type pdf)
+<use ./figures/02/FrentePareto.pdf>
+) [49]
 \openout2 = `chapters/03-objectives.aux'.
 
  (./chapters/03-objectives.tex
@@ -2521,11 +2538,16 @@ alt;+pnum;+lnum;+tnum;mapping=tex-text;" at 10.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
 otf
  [53]
+File: ./figures/04/nsga.pdf Graphic file (type pdf)
+<use ./figures/04/nsga.pdf>
 \openout3 = `dissertation-9.cpt'.
 
 \openout3 = `dissertation-10.cpt'.
 
- (./dissertation-10.cpt) [54] [55] [56] [57]
+ (./dissertation-10.cpt) [54] [55]
+File: ./figures/04/ga-crossover-mut-crop.pdf Graphic file (type pdf)
+<use ./figures/04/ga-crossover-mut-crop.pdf>
+ [56] [57]
 Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
 calt;+pnum;+lnum;+tnum;mapping=tex-text;" at 7.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
@@ -2561,8 +2583,10 @@ LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/it' will be
 (Font)              scaled to size 9.12494pt on input line 1.
 )
 Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 8.33328pt
- -> 
+ -> Pï¿¾¾nebU
  [65] [66]
+File: ./figures/04/gaudiview.png Graphic file (type bmp)
+<./figures/04/gaudiview.png>
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
 (Font)              scaled to size 14.4pt on input line 391.
 Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
@@ -2596,30 +2620,57 @@ Chapter 5.
 
 
 
-] [70] [71] [72]
+]
+File: ./figures/05/funnel2.pdf Graphic file (type pdf)
+<use ./figures/05/funnel2.pdf>
+ [70] [71] [72]
+File: ./figures/05/tangram_qm.png Graphic file (type bmp)
+<./figures/05/tangram_qm.png>
+
 Overfull \hbox (11.36227pt too wide) in paragraph at lines 188--189
 \TU/EBGaramond12(0)/bx/n/10.95 MMSetup provides a graphical interface for setti
 ng up Molecular Dynamics simulations (see section [][]2.2.2[][])
  []
 
-[73] [74] [75] [76]
+[73] [74]
+File: ./figures/05/tangram_mm.png Graphic file (type bmp)
+<./figures/05/tangram_mm.png>
+ [75]
+File: ./figures/05/tangram_dummy.png Graphic file (type bmp)
+<./figures/05/tangram_dummy.png>
+ [76]
+File: ./figures/05/library-vs-app-layers-crop.pdf Graphic file (type pdf)
+<use ./figures/05/library-vs-app-layers-crop.pdf>
+
 Overfull \hbox (14.43196pt too wide) in paragraph at lines 238--239
 \TU/EBGaramond12(0)/bx/n/10.95 cussed: (1) PyChimera, (2) OMMProtocol, (3) Garl
 eek, (4) ESIgen, and (5) EasyMECP. Unlike GaudiMM,
  []
 
 [77] [78]
+File: ./figures/05/ghstats.pdf Graphic file (type pdf)
+<use ./figures/05/ghstats.pdf>
 \openout3 = `dissertation-11.cpt'.
 
 \openout3 = `dissertation-12.cpt'.
 
- (./dissertation-12.cpt) [79] [80] [81] [82] [83]
+ (./dissertation-12.cpt) [79] [80]
+File: ./figures/05/ommprotocol-crop.pdf Graphic file (type pdf)
+<use ./figures/05/ommprotocol-crop.pdf>
+ [81]
+File: ./figures/05/ommanalyze.pdf Graphic file (type pdf)
+<use ./figures/05/ommanalyze.pdf>
+ [82] [83]
+File: ./figures/05/garleek-crop.pdf Graphic file (type pdf)
+<use ./figures/05/garleek-crop.pdf>
 \openout3 = `dissertation-13.cpt'.
 
 \openout3 = `dissertation-14.cpt'.
 
 
 (./dissertation-14.cpt) [84] [85]
+File: ./figures/05/esigen.png Graphic file (type bmp)
+<./figures/05/esigen.png>
 \openout3 = `dissertation-15.cpt'.
 
 \openout3 = `dissertation-16.cpt'.
@@ -2660,23 +2711,40 @@ Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-c
 alt;+pnum;+lnum;mapping=tex-text;" at 7.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
 otf
- [93] [94] [95] [96] [97] [98] [99] [100]
+ [93]
+File: ./figures/06/dual_phn.png Graphic file (type bmp)
+<./figures/06/dual_phn.png>
+ [94] [95] [96]
+File: ./figures/06/streptavidin.png Graphic file (type bmp)
+<./figures/06/streptavidin.png>
+ [97]
+File: ./figures/06/dibiotin-scheme.png Graphic file (type bmp)
+<./figures/06/dibiotin-scheme.png>
+File: ./figures/06/dibiotin-solution.png Graphic file (type bmp)
+<./figures/06/dibiotin-solution.png>
+ [98] [99] [100]
 Overfull \hbox (2.92043pt too wide) in paragraph at lines 245--246
 \TU/EBGaramond12(0)/bx/n/10.95 ing this strategy in an attempt to reproduce exp
 erimental Zn-bounded NMR models (PDB ID 1ZE9$[]$). 
  []
 
+File: ./figures/06/peptide-folding.png Graphic file (type bmp)
+<./figures/06/peptide-folding.png>
 [101] [102]
 \openout3 = `dissertation-19.cpt'.
 
 \openout3 = `dissertation-20.cpt'.
 
  (./dissertation-20.cpt)
+File: ./figures/06/coordination-crop.pdf Graphic file (type pdf)
+<use ./figures/06/coordination-crop.pdf>
 \openout3 = `dissertation-21.cpt'.
 
 \openout3 = `dissertation-22.cpt'.
 
  (./dissertation-22.cpt) [103] [104]
+File: ./figures/06/siderophore.png Graphic file (type bmp)
+<./figures/06/siderophore.png>
 \openout3 = `dissertation-23.cpt'.
 
 \openout3 = `dissertation-24.cpt'.
@@ -2702,6 +2770,8 @@ shaped central axel, which exhibits four sp$[]$-iminosugar-
  []
 
 [107]
+File: ./figures/06/glyco-inhibitors-crop.pdf Graphic file (type pdf)
+<use ./figures/06/glyco-inhibitors-crop.pdf>
 \openout3 = `dissertation-25.cpt'.
 
 \openout3 = `dissertation-26.cpt'.
@@ -2730,18 +2800,22 @@ Overfull \hbox (8.48373pt too wide) in paragraph at lines 471--471
 f not, how long should
  []
 
-[111] [112] [113]
+[111]
+File: ./figures/06/one-divalent-stretch-crop.pdf Graphic file (type pdf)
+<use ./figures/06/one-divalent-stretch-crop.pdf>
+ [112]
+File: ./figures/06/divalent-fragments-stretch-crop.pdf Graphic file (type pdf)
+<use ./figures/06/divalent-fragments-stretch-crop.pdf>
+ [113]
 Overfull \hbox (3.7637pt too wide) in paragraph at lines 575--575
 |[]\TU/EBGaramond12(0)/m/sc/12 Can two divalent ligands occupy both sites simul
 taneously? Do they
  []
 
 [114]
-
-LaTeX Warning: Reference `section:fig:ommprotocol' on page 115 undefined on inp
-ut line 629.
-
-[115] [116]
+File: ./figures/06/divalent-interface-meeting.png Graphic file (type bmp)
+<./figures/06/divalent-interface-meeting.png>
+ [115] [116]
 Overfull \hbox (22.67014pt too wide) in paragraph at lines 640--641
 []\TU/EBGaramond12(0)/bx/n/10.95 This interaction strategy does not offer any a
 dvantage over the divalent binding (its iminosugar-
@@ -2815,7 +2889,10 @@ Appendix A.
 
 
 
-] [127] [128]
+]
+File: ./figures/01/publication-trends_crop.pdf Graphic file (type pdf)
+<use ./figures/01/publication-trends_crop.pdf>
+ [127] [128]
 Underfull \hbox (badness 4981) in paragraph at lines 43--43
 [][][][][]$[][][][][] [] [] [] [][][] [] [][][][][][] [] [][][]$[][]\TU/EBGaram
 ond12(0)/m/n/10 , [][]$[][][][][] [] [] [] [][][][][] [] [][][][][][] [] [][][]
@@ -2823,7 +2900,10 @@ $[][], [][]$[][][][][] [] [] [] [][][][][] [] [][][][][][][][][] [] [][][]$[][]
 , re-
  []
 
-[129] [130]) [131]
+[129] [130]
+File: ./figures/01/publication-trends-ml_crop.pdf Graphic file (type pdf)
+<use ./figures/01/publication-trends-ml_crop.pdf>
+) [131]
 \openout2 = `chapters/appendix-b.aux'.
 
  (./chapters/appendix-b.tex
@@ -2851,17 +2931,23 @@ Appendix D.
 
 
 ]
+File: ./figures/05/tangram_nciplot.png Graphic file (type bmp)
+<./figures/05/tangram_nciplot.png>
 \openout3 = `dissertation-29.cpt'.
 
 \openout3 = `dissertation-30.cpt'.
 
  (./dissertation-30.cpt) [139] [140]
+File: ./figures/05/tangram_snfg.png Graphic file (type bmp)
+<./figures/05/tangram_snfg.png>
 \openout3 = `dissertation-31.cpt'.
 
 \openout3 = `dissertation-32.cpt'.
 
  (./dissertation-32.cpt) [141]
 [142]
+File: ./figures/05/tangram_popmusic.png Graphic file (type bmp)
+<./figures/05/tangram_popmusic.png>
 \openout3 = `dissertation-33.cpt'.
 
 \openout3 = `dissertation-34.cpt'.
@@ -2892,24 +2978,18 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 54.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 54.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 54.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 9DBEFCABFCAEAB03A6C58B0C9C445E9A.
+(rerunfilecheck)             Checksum: 0332A2509A456BDCA892611A73154CE4.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 38933 strings out of 492970
- 753458 string characters out of 6139408
- 932704 words of memory out of 5000000
- 42066 multiletter control sequences out of 15000+600000
- 538593 words of font info for 99 fonts, out of 8000000 for 9000
+ 38966 strings out of 492970
+ 754643 string characters out of 6139408
+ 932932 words of memory out of 5000000
+ 42100 multiletter control sequences out of 15000+600000
+ 538585 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  67i,15n,118p,10529b,1582s stack positions out of 5000i,500n,10000p,200000b,80000s
 

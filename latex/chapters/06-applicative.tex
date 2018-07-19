@@ -524,7 +524,7 @@ To assess the first possibility, a GaudiMM calculation was set up following this
 
 The results of this preliminary calculation confirmed that the synthesized divalent ligand was not long enough to reach the both sites. If one site was forced to be occupied by one of the iminosugars, the other end will stay at a distance of 12 \AA, even considering severe steric impediments. Seeing that a single divalent ligand cannot occupy both sites simultaneously, an inhibition mechanism by sliding is proposed: a single divalent molecule must be able to switch from one site to the other, taking advantage of having an iminosugar on both ends.
 
-This observation makes the next question obvious: how long should it be then? The ligand is, simply put, two iminosugars connected by two chains of 10 atoms each. If we consider longer linkers, it might be possible to reach both. To assess that possibility, a library of linkers ranging from 13 to 16-carbon linear alkanes was constructed and the same protocol was applied, but changing the \texttt{Molecule} gene to consider a dynamic construction of molecules as explained in \autoref[section]{section:dibiotin-linker-length-optimization} (see fig. \ref{fig:divalent-length}). The fragments can be chained as \textit{iminosugar + linker + hydrophobic connector + linker + iminosugar}.
+This observation makes the next question obvious: how long should it be then? The ligand is, simply put, two iminosugars connected by two chains of 10 atoms each. If we consider longer linkers, it might be possible to reach both. To assess that possibility, a library of linkers ranging from 13 to 16-carbon linear alkanes was constructed and the same protocol was applied, but changing the \texttt{Molecule} gene to consider a dynamic construction of molecules as explained in \autoref[section]{section:dibiotin-linker-length-optimization} (see fig. \ref{fig:divalent-length} and table \ref{table:recipe-stretch-divalent}). The fragments can be chained as \textit{iminosugar + linker + hydrophobic connector + linker + iminosugar}.
 
 \begin{figure}[H] % FIXME!
 	\begin{Center}
@@ -540,7 +540,7 @@ The evaluation part is the same: the non-frozen iminosugar will be forced to rea
 
 \begin{table}[hbtp]
 	\caption[Stretchable di-ONJ recipe]{Recipe used in the evaluation of a stretchable di-ONJ ligand. The ligand was positioned in such a way that one of the terminal iminosugars matched the crystallographic structure of the ligand in the original protein structure.\cite{pdb:2wbg}}
-	\label{table:recipe-single-divalent}
+	\label{table:recipe-stretch-divalent}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
 	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
@@ -626,7 +626,7 @@ To assess that possibility, two molecules were superposed against the crystallog
 \end{figure}
 
 
-The analysis showed that this interaction is structurally feasible, which was further confirmed by an explicitly solvated, full-atom molecular dynamics trajectory: the interaction remained stable for more than 100 nanoseconds. Simulating this system (100,000+ atoms) for such a long period can take months with ordinary CPUs, but thanks to the GPU acceleration implemented in OpenMM and OMMProtocol (see \autoref[section]{section:fig:ommprotocol}), these trajectories could be obtained within a week.\footnote{An equivalent protocol in the commercial, GPU-accelerated version of Amber installed in our facilities would have taken two weeks.}
+The analysis showed that this interaction is structurally feasible, which was further confirmed by an explicitly solvated, full-atom molecular dynamics trajectory: the interaction remained stable for more than 100 nanoseconds. Simulating this system (100,000+ atoms) for such a long period can take months with ordinary CPUs, but thanks to the GPU acceleration implemented in OpenMM and OMMProtocol (see \autoref[section]{section:ommprotocol}), these trajectories could be obtained within a week.\footnote{An equivalent protocol in the commercial, GPU-accelerated version of Amber installed in our facilities would have taken two weeks.}
 
 While the computational model offers an answer to whether this structure is possible of not, this specific protocol cannot answer whether this interaction is favored. To assess that possibility, broader sampling would be needed (like metadynamics), which demanded more computational time than the available within the submission deadline. Additionally, there is no experimental information to support this hypothetic interaction: the stoichiometry suggested leans towards 1:1, and not 2:1.
 
