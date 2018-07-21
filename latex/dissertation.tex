@@ -8,7 +8,7 @@
 % the front matter
 \input{frontmatter/personalize}
 \frontmatter
-\listoftodos
+%\listoftodos
 
 \makeatletter
     \if@twoside
@@ -17,16 +17,22 @@
         \renewcommand{\headrulewidth}{0pt}%
         \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
         \fancyhf[leh,roh]{\thepage}%
-        \fancyhf[loh]{\textit{\leftmark}}%
-        \fancyhf[reh]{\textit{Chapter \thechapter}}
+
     \fi
 \makeatother
 \setstretch{\dnormalspacing}
 
-
 % % include each chapter...
 %\setcounter{chapter}{4}  % start chapter numbering at 0
 \include{chapters/00-preface}
+
+\makeatletter
+    \if@twoside
+        \fancyhf[loh]{\textit{\leftmark}}%
+        \fancyhf[reh]{\textit{Chapter \thechapter}}
+    \fi
+\makeatother
+
 \include{chapters/01-intro}
 \include{chapters/02-methods}
 \include{chapters/03-objectives}
@@ -49,6 +55,12 @@
 \end{appendices}
 
 % the back matter
+\makeatletter
+    \if@twoside
+        \fancyhf[loh]{}%
+        \fancyhf[reh]{}
+    \fi
+\makeatother
 \backmatter
 
 \end{document}
