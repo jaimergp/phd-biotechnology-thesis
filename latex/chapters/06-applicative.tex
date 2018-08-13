@@ -228,7 +228,7 @@ The results showed that a linker compatible with the length of a linear heptane 
 \end{figure}
 
 
-\subsection{Metal ions: Organization \& binding site prediction}
+\subsection{Metal ions: Organization and binding site prediction}
 \label{section:metal-applications}
 In two of the previous examples, a metal ion was present in a nonstandard residue. GaudiMM was able to deal with them because the recipes applied did not take any special considerations. All atoms were treated as different-radius spheres connected to other spheres. In some cases, this strategy can be successful, but in others special treatment might be necessary.
 
@@ -238,7 +238,7 @@ This section will present the applications of a novel strategy to deal with meta
 
 Conformational analysis can be described as a range of techniques focused on taking an input molecular structure and generating coordinates sets (conformers) compatible with a set of criteria, normally energetic and geometric. This definition is broad enough to be used for other type of studies, such as the aforementioned docking variants, but is also a direct reflection on how GaudiMM impose a clear separation of concerns when it comes to exploration and evaluation. Once again, generating those new coordinate sets is a matter of choosing the right \textit{genes}, and deciding if they are compatible with some criteria or not is up to the \textit{objectives}.
 
-To perform conformational analysis only one operation is needed: modify the coordinates set sensibly. This can be performed in a high-temperature molecular dynamics simulation, but parameters would be needed beforehand. For simple cases, GaudiMM's Torsion gene can be employed: all bonds lengths will be restrained to those in the input structure, but dihedral exploration will be performed on those bonds considered rotatable. Using the Contacts objective can help minimize the steric clashes and additional constraints like distances and angles can be imposed so the proposed solutions are compatible with a given geometry. The resulting calculation could be regarded as a restrained conformational analysis, very useful for finding initial structures of unparametrized small molecules you want to study with higher levels of theory, such as QM.
+To perform conformational analysis only one operation is needed: modify the coordinates set sensibly. This can be performed in a high-temperature molecular dynamics simulation, but parameters would be needed beforehand. For simple cases, GaudiMM's Torsion gene can be employed: all bonds lengths will be restrained to those in the input structure, but dihedral exploration will be performed on those bonds considered rotatable. Using the Contacts objective can help minimize the steric clashes and additional constraints like distances and angles can be imposed so the proposed solutions are compatible with a given geometry. The resulting calculation could be regarded as a restrained conformational analysis, very useful for finding initial structures of unparameterized small molecules you want to study with higher levels of theory, such as QM.
 
 For some peptides, the same \texttt{Torsion} applied in small molecules can be applied to test the torsion angles of the CO--NH peptide bonds. This would result in the exploration of the backbone flexibility. This idea can be coupled with the \texttt{Rotamers} gene to assess the conformational variability of the sidechains. For the evaluation, full MM energy can be calculated with the \texttt{Energy} objective. Additional restraints are supported via the corresponding objectives: \texttt{Angle}, \texttt{Distance}, \texttt{Surface}, \texttt{Volume}\ldots
 
@@ -261,7 +261,7 @@ Starting with the unfolded peptide (PDB ID 1ZE7\cite{pdb:1ze7}), its backbone to
 
 Metal-protein and metal-peptide interactions are not unusual at all: around 30\% of the human genome encodes for metal-containing biomolecules.\cite{rehder2014bioinorganic} As a result, having the ability to describe and predict these interactions becomes an interesting exercise in molecular modeling.
 
-GaudiMM features an objective specifically designed for that purpose: the \texttt{Coordination} objective. The idea was initially described in Mujika et al.,\cite{mujika2017elucidating} where a multi-objective docking procedure was used to locate possible octahedral coordination sites of an aluminum ion within pre-optimized structures of Alzheimer's β-peptides. The octahedral geometry could be described by using several distances, angles and dihedral objectives\footnote{This was done with a very early version of GaudiMM, when the notion of objective was in development. As a result, some of the modules here listed do not have an exact correspondence with the current ones.} set to match those in an ideal octahedron: coordination bonds of around 2 \AA, $90^{\circ}$ for the donor-metal-donor angle, and a dihedral of $109.5^{\circ}$ for compatible sp\textsuperscript{3} geometries (see table \ref{table:alum-recipe}).
+GaudiMM features an objective specifically designed for that purpose: the \texttt{Coordination} objective. The idea was initially described in Mujika et al,\cite{mujika2017elucidating} where a multi-objective docking procedure was used to locate possible octahedral coordination sites of an aluminum ion within pre-optimized structures of Alzheimer's β-peptides. The octahedral geometry could be described by using several distances, angles and dihedral objectives\footnote{This was done with a very early version of GaudiMM, when the notion of objective was in development. As a result, some of the modules here listed do not have an exact correspondence with the current ones.} set to match those in an ideal octahedron: coordination bonds of around 2 \AA, $90^{\circ}$ for the donor-metal-donor angle, and a dihedral of $109.5^{\circ}$ for compatible sp\textsuperscript{3} geometries (see table \ref{table:alum-recipe}).
 
 \begin{table}[hbtp]
 	\cprotect\caption[Recipe applied for the Al(III)-amyloid complexes]{Recipe applied for the Al(III)-amyloid complexes.}
@@ -387,7 +387,7 @@ Recently, the general intuition around the classical lock-and-key inhibition mec
 
 \subsection{Experimental results}
 
-To shed light on these counterintuitive observations, García-Fernández et al.  designed a series of two-component pillar[5]arene rotaxane conjugates that exhibited both glycomimetic and non-glycomimetic (putative) residues. The first component is a H-shaped central axel, which exhibits four sp\textsuperscript{2}-iminosugar-type\textsuperscript{[12]} 6-oxa-5\textit{N},6\textit{O}-oxomethylidenenojirimycin (ONJ) residues, one on each on the stop caps. The second component is the pillar[5]arene, which displays ten moieties of glucose, mannose or galactose, depending on the variant, one on each of its ten rims (see fig. \ref{fig:rotaxane-compounds}).
+To shed light on these counterintuitive observations, García-Fernández et al  designed a series of two-component pillar[5]arene rotaxane conjugates that exhibited both glycomimetic and non-glycomimetic (putative) residues. The first component is a H-shaped central axel, which exhibits four sp\textsuperscript{2}-iminosugar-type\textsuperscript{[12]} 6-oxa-5\textit{N},6\textit{O}-oxomethylidenenojirimycin (ONJ) residues, one on each on the stop caps. The second component is the pillar[5]arene, which displays ten moieties of glucose, mannose or galactose, depending on the variant, one on each of its ten rims (see fig. \ref{fig:rotaxane-compounds}).
 
 To test the contribution of the multivalent saccharides, two reduced models that did not include the pillar[5]ene were also considered: 1) a monovalent ONJ compound only bearing the hexyltriazolyl aglycone segment present in the rotaxane, and 2) a divalent ONJ compound, which emulates one of the stoppers halves of the central axel of the rotaxane.
 
@@ -410,7 +410,7 @@ All these inhibitors and their controls were tested and measured on two glycosid
 
 
 \begin{table}[H]
-	\cprotect\caption[Glycosidases inhibition tests]{ $K_{i}$ (in $ μM $) for the different inhibitors tested against the monomeric ScGH13 and dimeric TmGH1 proteins. Reproduced from Nierengarten et al., 2018.\cite{rotaxane}}
+	\cprotect\caption[Glycosidases inhibition tests]{ $K_{i}$ (in $ μM $) for the different inhibitors tested against the monomeric ScGH13 and dimeric TmGH1 proteins. Reproduced from Nierengarten et al, 2018.\cite{rotaxane}}
 	\label{table:glycosidase-inhibition}
 	\footnotesize
 	\newcolumntype{C}{>{\centering\arraybackslash}X}%
@@ -692,7 +692,7 @@ The unsurprising results observed for binding mode A (same axel) agree with the 
 
 Unfortunately, while the binding mode B (different axels) showed a promising interaction profile, there is no experimental evidence to back it up. If this binding mode was feasible, a higher $K_{i}$ should be observed, but that is not the case.
 
-\subsection{Discussion \& Further work}
+\subsection{Conclusions \& Further work}
 % \addcontentsline{toc}{subsection}{Discussion $\&$  Further work}
 This joint study was an excellent opportunity to show how GaudiMM can be a valuable asset for both experimental and computational communities. The computational feedback has provided illustrative models on what can be happening at the molecular level and even proposed alternative explanations to be confirmed experimentally. This can be argued in three points.
 

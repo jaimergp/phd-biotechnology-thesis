@@ -36,7 +36,7 @@ Following sections will describe: (1) the algorithmic and (2) implementation det
 
 
 \begin{table}[hbtp]
-	\caption[GaudiMM: technical datasheet]{GaudiMM: technical datasheet.}
+	\caption[GaudiMM: Technical datasheet]{GaudiMM: Technical datasheet.}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
 	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
@@ -296,7 +296,7 @@ As a result, GaudiMM ships with a rather diverse set of objectives, combining 3\
 
 \subsection{Of tournaments and trade-offs: the selection stage}
 % \addcontentsline{toc}{subsection}{Of tournaments and trade-offs: the selection stage}
-Once the \texttt{Individuals} have been assigned a fitness score, these values must be compared to assess how good of a solution they make. In multi-objective optimization problems there is no \textit{best} solution in usual terms. Instead, a set of trade-offs between the involved (and usually conflicting) variables is required. NSGA-II solves this by following the Pareto optimality criterion explained in \autoref{chap:02}, which will iteratively enrich the Pareto optimal set with the \textit{best} candidates of the population. However, when more variables (objectives) are added to the optimization, the Pareto front grows in dimensionality and enriching the Pareto optimal set can get difficult. Deb et al. do not recommend more than three objectives for NSGA-II, but several extensions to the algorithm are available (MONSGA-II, NSGA-III) exist to improve this situation. Higher dimensionality will also involve a larger number of possible solutions (even when Pareto-optimality is reached).
+Once the \texttt{Individuals} have been assigned a fitness score, these values must be compared to assess how good of a solution they make. In multi-objective optimization problems there is no \textit{best} solution in usual terms. Instead, a set of trade-offs between the involved (and usually conflicting) variables is required. NSGA-II solves this by following the Pareto optimality criterion explained in \autoref{chap:02}, which will iteratively enrich the Pareto optimal set with the \textit{best} candidates of the population. However, when more variables (objectives) are added to the optimization, the Pareto front grows in dimensionality and enriching the Pareto optimal set can get difficult. Deb et al do not recommend more than three objectives for NSGA-II, but several extensions to the algorithm are available (MONSGA-II, NSGA-III) exist to improve this situation. Higher dimensionality will also involve a larger number of possible solutions (even when Pareto-optimality is reached).
 
 To ensure a rich Pareto front in constructed, NSGA-II includes a crowding parameter, and GaudiMM provides structural similarity comparisons when scores are very close to each other, resulting in a good compromise between diversity and number of solutions proposed.
 

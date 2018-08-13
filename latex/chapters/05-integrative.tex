@@ -239,6 +239,7 @@ In this section, the motivation, features and implementation of five different p
 
 \subsection{PyChimera}
 % \addcontentsline{toc}{subsection}{PyChimera behind the scenes}
+\label{section:pychimera}
 
 Most of the extensions listed in the previous section relies on libraries developed by 3\textsuperscript{rd} parties that are not present in the UCSF Chimera Python distribution. Installing new packages inside UCSF Chimera is possible, but not very straight-forward. Additionally, some packages required by Tangram need long compilation times that would constitute a high entry barrier. To ease the process, the full Tangram suite can be installed with a single executable that is available in the central code repository.\footnote{\url{https://github.com/insilichem/tangram/releases}}
 
@@ -467,7 +468,7 @@ The drag-and-drop web application is meant for quick one-off usages where the us
 
 Both interfaces are based on the same usage principle: the user only needs to write a report template listing the requested fields as placeholders. The supplied template is then filled in with the requested data. Behind the scenes, ESIgen uses cclib\cite{cclib} to parse the computational chemistry logfiles, which means that it is compatible with wide array of suites out of the box, like Gaussian,\cite{gaussian} NWChem\cite{nwchem} or ORCA.\cite{orca} Several examples are included within the package, covering most common cases.
 
-\subsection{Easy MECP calculations}
+\subsection{Intuitive MECP calculations: EasyMECP}
 % \addcontentsline{toc}{subsection}{Easy MECP calculations}
 
 Minimum Energy Crossing Points (MECP) are defined as the consensus conformation of a molecular system that can feature low-energy minima in different spin states. A  strategy to calculate them computationally was proposed by J. N. Harvey in 1998,\cite{harvey1998} using Gaussian, GAMESS and custom Fortran routines orchestrated by shell scripts. The method and its related source code has been used widely across several research groups since then. However, setting up the MECP procedure involves recompiling the Fortran binary for each system, since it is memory allocation requires the manual specification of the number of atoms. Convergence thresholds and other hardcoded values are scattered all over the source code, which does not allow easy access to these parameters. All these technical difficulties should not concern the user.
