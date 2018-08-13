@@ -16,11 +16,12 @@
 \ProvidesClass{Dissertate}[2014/03/25 v2.0 Dissertate Class]
 % Comment/uncomment these two lines for digital A4 PDF or print-ready B5 PDF
 % Remember to change the geometry package as well
-\LoadClass[12pt,oneside,a4paper]{extbook}
+%\LoadClass[12pt,oneside,a4paper]{extbook}
+\LoadClass[12pt,twoside,openright,a4paper]{extbook}
 % \LoadClass[14pt,twoside,openright,b5paper]{extbook}
 %\RequirePackage[width=5.75in,letterpaper]{geometry}
 %\RequirePackage[b5paper]{geometry}
-\RequirePackage{geometry}
+\RequirePackage[a4paper,left=30mm,top=30mm,bottom=25mm,right=25mm]{geometry}
 %
 % Options
 %
@@ -75,9 +76,11 @@
 \usepackage{ragged2e}
 %\RaggedRight
 \raggedbottom
-\RequirePackage[draft]{graphicx}
+\RequirePackage{graphicx}
 % \RequirePackage{graphicx}
-\parindent 12pt
+% \parindent 12pt
+\parindent 0pt
+\setlength{\parskip}{1em}
 \RequirePackage{lettrine}
 \RequirePackage{setspace}
 \RequirePackage{verbatim}
@@ -254,15 +257,16 @@
     \input{frontmatter/personalize}
     \pagenumbering{roman}
     \maketitle
+    \setcounter{page}{1}
     \makesignatures
     \copyrightpage
     \dedicationpage
-    \setcounter{page}{1}
     \setstretch{\dnormalspacing}
       \abstractpage
       \officialacknowledgments
       % \acknowledgments
     \setstretch{\dxcompressedspacing}
+    \setlength{\parskip}{0em}
     \maketoc
     \makelof % optional
     \makelot % optional
@@ -271,6 +275,7 @@
     % \pagenumbering{arabic}
     \renewcommand\thepage{\arabic{page}}
     \setstretch{\dnormalspacing}
+    \setlength{\parskip}{1em}
 }
 
 \newcommand{\maketoc}{
@@ -311,7 +316,8 @@
     \includegraphics[width=0.5\textwidth]{figures/logoUAB.jpg} \\
     %\vspace*{\fill}
     \vspace{40pt}
-    \Huge \textcolor{SchoolColor}{\thetitle} \normalsize \\
+    %\Huge \textcolor{SchoolColor}{\thetitle} \normalsize \\
+    \Huge \thetitle \normalsize \\
     \vspace{40pt}
     \textsc{a dissertation submitted by\\
     \theauthor\\
@@ -325,9 +331,22 @@
     % \vspace{12pt}
     % \rule{10mm}{.1pt}\\
     \vspace*{\fill}
+    ~Tutor: \@tutor \\
+    \@department \\
     \@university\\
     \@degreemonth\ \@degreeyear}
     \end{center}
+    \if@twoside
+        % insert blank page
+        \pagestyle{empty}
+        {
+        \renewcommand{\thispagestyle}[1]{}
+        \cleardoublepage
+        }
+        \newpage
+        \thispagestyle{empty}
+        \pagestyle{fancy}
+    \fi
 }
 
 \newcommand{\makesignatures}{
@@ -339,17 +358,29 @@
     \vspace{40pt}
     \Huge \thetitle \normalsize \\
     \vspace{40pt}
-    \textsc{a dissertation submitted by\\
-    \theauthor\\
-    \vspace{12pt}
-    \textit{\&} recommended for acceptance \\
-      by advisor \\
+    \textsc{a dissertation submitted by \hspace*{\fill} \textit{\&} \hspace*{\fill}recommended for acceptance \\
+    \hspace*{\fill}  by advisor\\
     \vspace{120pt}
-    \@advisor \\}
+    \theauthor \hspace*{\fill} \@advisor\\
+    \vspace{120pt}}
     \vspace*{\fill}
-    \textsc{\@university\\
+    \textsc{
+    Tutor: \@tutor \\
+    \@department \\
+    \@university\\
     \@degreemonth\ \@degreeyear}
     \end{center}
+    \if@twoside
+        % insert blank page
+        \pagestyle{empty}
+        {
+        \renewcommand{\thispagestyle}[1]{}
+        \cleardoublepage
+        }
+        \newpage
+        \thispagestyle{empty}
+        \pagestyle{fancy}
+    \fi
 }
 \newcommand{\copyrightpage}{
     \newpage
@@ -361,18 +392,29 @@
     \vspace*{\fill}
     \newpage
     \rm
+    \if@twoside
+        % insert blank page
+        \pagestyle{empty}
+        {
+        \renewcommand{\thispagestyle}[1]{}
+        \cleardoublepage
+        }
+        \newpage
+        \thispagestyle{empty}
+        \pagestyle{fancy}
+    \fi
 }
 
 \newcommand{\abstractpage}{
     \newpage
     \pagestyle{fancy}
-    \lhead{Advisor: \\\@advisor\\}
-    \rhead{Author: \\\@author\\}
     \renewcommand{\headrulewidth}{0.0pt}
-    \vspace*{35pt}
+    % \vspace*{35pt}
     \begin{center}
-    \Large \@title \normalsize \\
-    \vspace*{20pt}
+      \Large \@title \normalsize \\
+    \vspace*{10pt}
+      by \@author\\
+    \vspace*{10pt}
     \scshape Abstract \\ \rm
     \end{center}
     \input{frontmatter/abstract}
@@ -438,10 +480,30 @@
 \newcommand{\dedicationpage}{
     \newpage \thispagestyle{empty} \vspace*{\fill}
     %\scshape
-    \noindent \input{frontmatter/dedication}
+    \hspace*{\fill} \input{frontmatter/dedication}
     \vspace*{\fill} \newpage \thispagestyle{empty}  \rm
+    \if@twoside
+        % insert blank page
+        \pagestyle{empty}
+        {
+        \renewcommand{\thispagestyle}[1]{}
+        \cleardoublepage
+        }
+        \newpage
+        \thispagestyle{empty}
+        \pagestyle{fancy}
+    \fi
 }
 
+\newcommand{\colophonpage}{
+    \newpage \thispagestyle{empty}
+    \chapter*{}
+    %\vspace*{\fill}
+    \begin{center}
+      \scshape \noindent \input{endmatter/colophon}
+    \end{center}
+    \vspace*{\fill} \newpage \thispagestyle{empty}  \rm
+}
 
 \renewcommand{\backmatter}{
     \input{endmatter/personalize}
@@ -454,7 +516,7 @@
       \addcontentsline{toc}{chapter}{Bibliography}
       \bibliographystyle{ieeetr}
     }
-    %\include{endmatter/colophon}
+    \colophonpage
 }
 
 

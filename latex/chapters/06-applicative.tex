@@ -468,7 +468,7 @@ A project like this, in which computational insights are needed to clarify exper
 	\item The best candidates are checked for stability with long molecular dynamics trajectories (more than 100 ns). The protocol involves using explicit solvent and full-atom treatment using the GPU acceleration provided by OMMProtocol.
 \end{enumerate}
 
-\subsubsection{Can a single divalent ligand reach both sites? If not, how long should it be?}
+\subsubsection[Can a single divalent ligand reach both sites? If not, how long should it be?]{Can a single divalent ligand reach both sites? \\ If not, how long should it be?}
 % \addcontentsline{toc}{subsubsection}{Can a single divalent ligand reach both sites? If not, how long should it be?}
 \label{section:di-ONJ-stretch}
 
@@ -524,7 +524,7 @@ To assess the first possibility, a GaudiMM calculation was set up following this
 
 The results of this preliminary calculation confirmed that the synthesized divalent ligand was not long enough to reach the both sites. If one site was forced to be occupied by one of the iminosugars, the other end will stay at a distance of 12 \AA, even considering severe steric impediments. Seeing that a single divalent ligand cannot occupy both sites simultaneously, an inhibition mechanism by sliding is proposed: a single divalent molecule must be able to switch from one site to the other, taking advantage of having an iminosugar on both ends.
 
-This observation makes the next question obvious: how long should it be then? The ligand is, simply put, two iminosugars connected by two chains of 10 atoms each. If we consider longer linkers, it might be possible to reach both. To assess that possibility, a library of linkers ranging from 13 to 16-carbon linear alkanes was constructed and the same protocol was applied, but changing the \texttt{Molecule} gene to consider a dynamic construction of molecules as explained in \autoref[section]{section:dibiotin-linker-length-optimization} (see fig. \ref{fig:divalent-length} and table \ref{table:recipe-stretch-divalent}). The fragments can be chained as \textit{iminosugar + linker + hydrophobic connector + linker + iminosugar}.
+This observation makes the next question obvious: how long should it be then? The ligand is, simply put, two iminosugars connected by two chains of 10 atoms each. If we consider longer linkers, it might be possible to reach both. To assess that possibility, a library of linkers ranging from 13 to 16-carbon linear alkanes was constructed and the same protocol was applied, but changing the \texttt{Molecule} gene to consider a dynamic construction of molecules as explained in \autoref[section]{section:dibiotin-linker-length-optimization} (see fig. \ref{fig:divalent-length} and table \ref{table:recipe-stretchable-divalent}). The fragments can be chained as \textit{iminosugar + linker + hydrophobic connector + linker + iminosugar}.
 
 \begin{figure}[H] % FIXME!
 	\begin{Center}
@@ -540,7 +540,7 @@ The evaluation part is the same: the non-frozen iminosugar will be forced to rea
 
 \begin{table}[hbtp]
 	\caption[Stretchable di-ONJ recipe]{Recipe used in the evaluation of a stretchable di-ONJ ligand. The ligand was positioned in such a way that one of the terminal iminosugars matched the crystallographic structure of the ligand in the original protein structure.\cite{pdb:2wbg}}
-	\label{table:recipe-stretch-divalent}
+	\label{table:recipe-stretchable-divalent}
 	\footnotesize
 	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
 	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
@@ -572,7 +572,7 @@ The evaluation part is the same: the non-frozen iminosugar will be forced to rea
 	\end{tabularx}
 \end{table}
 
-\subsubsection{Can two divalent ligands occupy both sites simultaneously? Do they interact?}
+\subsubsection[Can two divalent ligands occupy both sites simultaneously? Do they interact?]{Can two divalent ligands occupy both sites simultaneously? \\Do they interact?}
 % \addcontentsline{toc}{subsubsection}{Can two divalent ligands occupy both sites simultaneously? Do they interact?}
 A second hypothesis would consist of considering that two di-ONJ ligands can occupy both sites of the same dimer simultaneously. If that is the case, they could even stabilize each other by interacting at the dimer interface via their free iminosugar moieties (which can form hydrogen bonds through their hydroxyl groups) or the coupling of their hydrophobic tails.
 
@@ -706,5 +706,5 @@ Of course, GaudiMM is not the answer to every question. It only helps guide the 
 
 \section{Final conclusions}
 % \addcontentsline{toc}{section}{Final conclusions}
-Throughout this chapter, it has been shown that, while computational studies can be strictly theoretical, there is no point in denying that molecular modeling is a helpful tool for experimental works. \textit{In silico} can go hand in hand with \textit{in vitro}, and some research groups would argue that they must. It is common to see how experimental groups maintain strong alliances with theoretical groups, and some are even creating their own computational shops within their established wet-lab structure \todo{Citations needed}. Fruitful joint efforts like this bring different points of view and ways of thinking to the discussion table, which can only enhance the brainstorming sessions, especially when counterintuitive phenomena like the aforementioned happen.
+Throughout this chapter, it has been shown that, while computational studies can be strictly theoretical, there is no point in denying that molecular modeling is a helpful tool for experimental works. \textit{In silico} can go hand in hand with \textit{in vitro}, and some research groups would argue that they must. It is common to see how experimental groups maintain strong alliances with theoretical groups. Fruitful joint efforts like this bring different points of view and ways of thinking to the discussion table, which can only enhance the brainstorming sessions, especially when counterintuitive phenomena like the aforementioned happen.
 
