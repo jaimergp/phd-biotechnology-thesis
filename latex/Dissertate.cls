@@ -76,7 +76,7 @@
 \usepackage{ragged2e}
 %\RaggedRight
 \raggedbottom
-\RequirePackage{graphicx}
+\RequirePackage[draft]{graphicx}
 % \RequirePackage{graphicx}
 % \parindent 12pt
 \parindent 0pt

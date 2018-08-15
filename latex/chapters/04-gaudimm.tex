@@ -216,7 +216,7 @@ As a result, GaudiMM ships with a rather diverse set of objectives, combining 3\
 \begin{itemize}
 	\item \textsc{DSX}. DrugScoreX is a knowledge-based docking scoring function developed by Neudert $\&$  Klebe.\cite{neudert2011dsx} It is specially designed to compute interaction energies between protein structures and small compounds. This objective is a Python wrapper around the DSX executables and input files.
 
-	\item \textsc{Energy}. This objective allows to calculate the potential energy of a structure with the Molecular Mechanics force fields implemented in OpenMM. Parameters must be provided for custom residues.
+	\item \textsc{Energy}. This objective allows to calculate the potential energy of a structure with the molecular mechanics force fields implemented in OpenMM. Parameters must be provided for custom residues.
 
 	\item \textsc{LigScore}. Another docking scoring function developed by Sali\cite{krammer2005ligscore} which allows to obtain protein-ligand interaction energies. While the parent project, IMP,\cite{russel2012putting} is a C++ project with Python bindings, the LigScore function is only exposed through an executable. This objective can call that binary and parse the resulting energies from the output.
 
