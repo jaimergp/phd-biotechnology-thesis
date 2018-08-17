@@ -12,25 +12,25 @@
 \label{chap:04}
 
 
-\Lettrine{There} is an implicit restriction in multiscale approaches due to their own design. They are based on a sequential series of steps, which are chained one after another to answer the initial question. Each step must be resolved separately, which can potentially become a bottleneck or even a blocking step if the results are not successfully obtained.
+\Lettrine{Due} to their own design, there is an implicit restriction in multiscale approaches. They are based on a sequential series of steps, which are chained one after another to answer the posed question. Each step must be resolved separately, which can potentially become a bottleneck or even a blocking step if the results are not successfully obtained.
 
 % Indirectly, methods that suffer from insufficient sampling capacity can only operate with subregions of the system under study, deliberately ignoring details outside that region.
 
 Instead of forcing a sequential protocol around a complex molecular problem, an alternative approach could be devised. If the panoply of existing modeling methods could be recruited on demand to work simultaneously on the same study, all of them could contribute to solve the problem, multiplying their strengths and compensating their weaknesses. Building this feature set into a robust and flexible platform would be very desirable for drafting molecular hypotheses and sketching proofs of concept.
 
-GaudiMM is here presented to become such a platform. It takes the expressiveness and flexibility of Python to create a molecular design platform with unprecedented versatility. The rationale behind its concept can be summarized in three points:
+GaudiMM is here presented to become such a project. It takes the expressiveness and flexibility of Python to create a molecular design platform with unprecedented versatility. The rationale behind its concept can be summarized in three points:
 
 \begin{enumerate}
-	\item Its modular implementation allows to encapsulate separate methods in isolated entities that can work together through a well-defined programmatic interface, which also allows fast development of new extensions.
+	\item Its modular implementation allows to encapsulate separate molecular modeling methods in isolated entities that can work together through a well-defined programmatic interface, which also allows fast development of new extensions.
 
-	\item It makes a clear distinction between the three main stages of any optimization process (exploration, evaluation and selection), which suggests a flexible way of rationalizing molecular modeling problems.
+	\item It makes a clear distinction between the three main stages of any optimization process ---exploration, evaluation and selection---, which suggests a flexible and consistent way of rationalizing molecular modeling problems.
 
-	\item It does not require prior knowledge of the importance of the variables that affect the system thanks to its multi-objective optimization capabilities.
+	\item It does not require any prior knowledge of the importance of the variables that may affect the system thanks to its multi-objective optimization capabilities.
 \end{enumerate}
 
-As a result, solving a molecular modeling problem is only a matter of choosing the appropriate modules in terms of which variables should be explored (cartesian coordinates, chemical spaces...) and which properties should be measured (geometries, energies...). In some cases, some rigor can be sacrificed in honor of obtaining good enough results to start working with. In other cases, the combination of methods will work synergistically towards the design of a novel methodology.
+As a result, solving a molecular modeling problem is only a matter of choosing the appropriate modules in terms of which variables should be explored (cartesian coordinates, chemical spaces...) and which properties should be measured (geometries, energies...). In some cases, rigor can be sacrificed in honor of obtaining good enough results to start working with. In other cases, the combination of methods will work synergistically towards the design of a novel methodology.
 
-Following sections will describe: (1) the algorithmic and (2) implementation details of the platform, (3) how different combinations of modules allow diverse molecular modeling tasks, and (4) how to analyze the proposed results.
+Following sections will describe: (1) the algorithmic and (2) implementation details of the platform, (3) how different combinations of modules allow to perform diverse molecular modeling tasks, and (4) how to analyze the proposed results.
 
 %%%%%%%%%%%%%%%%%%%% Table No: 1 starts here %%%%%%%%%%%%%%%%%%%%
 
@@ -71,11 +71,11 @@ Following sections will describe: (1) the algorithmic and (2) implementation det
 
 %%%%%%%%%%%%%%%%%%%% Table No: 1 ends here %%%%%%%%%%%%%%%%%%%%
 
-\section[Algorithmic details]{Algorithmic details: \\ multi-objective optimization \& NSGA-II}
+\section[Algorithmic details]{Algorithmic details: multi-objective optimization \& NSGA-II}
 
 GaudiMM is built on top of a multi-objective genetic algorithm (MOGA), NSGA-II, developed by K. Deb.\cite{nsgaii} It has been thoroughly tested and benchmarked in well-characterized multi-objective problems and is considered a prototypical MOGA.
 
-As other optimization methods, this algorithm can be described in three main stages (exploration, evaluation and selection) that are executed iteratively until an exit condition is met (usually, convergence or maximum steps). Generating new candidate solutions or individuals is considered within the \textit{exploration} stage, and can be achieved by random attribute assignation or combining previously existing individuals. In the \textit{evaluation} stage, the candidates are assessed with different functions or objectives, each returning a scalar that represents a fitness score for that objective. Finally, the selection stage collects all the individuals and compares their vectorial scores to select the best individuals according to the Pareto dominance criterion (see \autoref{chap:02}).
+As other optimization methods, this algorithm can be described in three main stages (exploration, evaluation and selection) that are executed iteratively until an exit condition is met (usually, convergence or maximum steps). Generating new candidate solutions or individuals is considered within the \textit{exploration} stage, and can be achieved by random attribute assignation or combining previously existing individuals. In the \textit{evaluation} stage, the candidates are assessed with different functions or objectives, each returning a scalar that represents a fitness score for that objective. Finally, the selection stage collects all the individuals and compares their vectorial scores to select the best individuals according to the Pareto dominance criterion (see \autoref[section]{section:multiobjective}).
 
 In more detail, NSGA-II starts with the generation of a random set of potential solutions (\textit{individuals}) which comprise the so-called \textit{initial population}. This first set of individuals is then evaluated with one or more \textit{objectives} and each individual is assigned a \textit{fitness} score vector, the elements of which are the result of those cost functions. At this point, a small subset of the population is submitted to a round of random modification of parameters (\textit{mutation}) or exchanging some of their attributes (\textit{recombination}), and are then assessed by the same cost functions. Being random, the results of these variations can be better or worse than their preceding counterparts (parents). Finally, both the offspring and the parental generation ($ \mu $ +$ \lambda $ strategy) compete in the selection tournament, which will rule which ones will replace the initial population. After a number of iterations, the initial population will have evolved and, eventually, will end up providing reasonable solutions to the problem that represent a compromise between the analyzed variables (see fig. \ref{fig:nsga}).
 
@@ -93,13 +93,13 @@ The underlying algorithm is very present in how GaudiMM has been implemented and
 
 \subsection{Of individuals and genes: the exploration stage}
 % \addcontentsline{toc}{subsection}{Of individuals and genes: the exploration stage}
-The initial step of all the iterations in the algorithm is the exploration, which is responsible for the generation of new candidate solutions. A candidate solution is defined by a list of attributes, each representing the state of a molecular property. Generating new solutions simply involves changing the value of one or more attributes in that list.
+The initial step of all the iterations in the algorithm is the exploration, which is responsible for the generation of new candidate solutions. A candidate solution is defined by a list of attributes, each representing the state of a molecular property. Generating new solutions simply involves changing the value of one or more attributes in that list ---with the exception of the first iteration, in which all values are assigned randomly.
 
 Since GaudiMM is based on a genetic algorithm, the implementation follows the same biologicist terminology. In GaudiMM any candidate solution is encoded in a special object called \texttt{Individual}. All \texttt{Individual} objects in the simulation are defined by the same high-level attributes, which are called \textit{genes}. In the same fashion, the state of each gene is defined by its \textit{allele} attribute. Depending on the gene, the allele can be a list of numbers, a path to a file, a matrix\ldots
 
-For example, a typical optimization problem is finding the dihedral torsion that gives the minimum energy in the ethane molecule. The \texttt{Individuals} featured in this example would only need exploring a single variable, the torsion angle of the C-C bond, with values ranging from 0 to 360$^\circ$. In GaudiMM-speak, the gene would be the bond \textit{rotator} and the allele the different angles.
+For example, a typical optimization problem is finding the dihedral torsion that gives the minimum energy in the ethane molecule. The \texttt{Individuals} featured in this example would only need exploring a single variable, the torsion angle of the C-C bond, with values ranging from 0 to 360$^\circ$. In GaudiMM-speak, the gene would be the bond \textit{rotator} and the allele values, the different angles.
 
-The key part of genetic algorithms is the implementation of variation operators as part of the exploration stage. Instead of merely trusting randomness, existing solutions are combined in hopes of obtaining a better child solution. These two operations are called \textit{mutation} and \textit{crossover} or mating, mimicking what happens in the cell nucleus at the chromosomic level.
+The key part of genetic algorithms is the implementation of variation operators as part of the exploration stage. Instead of merely trusting randomness, existing solutions are combined in hopes of obtaining a better child solution. These two operations are called \textit{mutation} and \textit{crossover},\footnote{Also known as \textit{mating}.} mimicking what happens in the cell nucleus at the chromosomic level.
 
 
 \begin{figure}[H] % FIXME!
@@ -110,19 +110,19 @@ The key part of genetic algorithms is the implementation of variation operators 
 
 Taking all these requirements into account, genes in GaudiMM are programmatically defined by four functions (\texttt{express}, \texttt{unexpress}, \texttt{mutate} and \texttt{mate}) and an attribute (\texttt{allele}). Additional methods and attributes can be defined to support these required elements, if needed. Since each gene is a clearly separate entity, the \textit{Individual} object can feature more than one gene, and one gene can be present more than once with different parameters.
 
-This adds an unprecedented versatility when configuring a GaudiMM calculation: the user can decide which molecular features must be explored for every case. For conformational searches it might be enough with the \texttt{Torsion} gene, but for protein-ligand docking the \texttt{Search} gene will be required too. Additionally, if the built-in genes do not fulfill the requirements of the simulation, new ones can be written and added to GaudiMM thanks to is modular architecture and well-defined programmatic interface.
+This adds an unprecedented versatility when configuring a GaudiMM calculation: the user can decide which molecular features must be explored for every case. For conformational searches it might be enough with the \texttt{Torsion} gene, but for protein-ligand docking the \texttt{Search} gene will be required too. Additionally, if the built-in genes do not fulfill the requirements of the simulation, new ones can be written and added to GaudiMM thanks to is modular architecture and well-defined programmatic Python interface.
 
-This is, genes are more than simple \textit{allele} attribute holders: they are high-level abstractions of operators that can make reversible changes in a molecule based on the value of its allele. Like in Biology, changes in the allele are only visible if the corresponding gene is being \textit{expressed}. In those terms, GaudiMM genes encompass both the allele and the expression mechanism. In the previous example, when the allele changes the torsion gene needs to update the coordinates of the atoms affected by the dihedral rotation, and only those. To make changes consistent, it might also need to \textit{unexpress} or undo those changes to the original state. These changes can happen in the topology or coordinates of an associated molecule.
+As a result, genes are more than simple \textit{allele} attribute holders: they are high-level abstractions of operators that can make reversible changes in a molecule based on the value of its allele. Like in Biology, changes in the allele are only visible if the corresponding gene is being \textit{expressed}. In those terms, GaudiMM genes encompass both the allele and the expression mechanism. In the previous example, when the allele changes the torsion gene needs to update the coordinates of the atoms affected by the dihedral rotation, and only those. To make changes consistent, it might also need to \textit{unexpress} or undo those changes to the original state. These changes can happen in the topology or coordinates of an associated molecule.
 
 \subsubsection{Topology modifiers}
 % \addcontentsline{toc}{subsubsection}{Topology modifiers}
-Genes that fall in this category perform modifications on the atoms that conform the molecular structure and/or their connectivity. For example, they could increase the length of a ligand linker, change the metal element of a metallic cofactor or mutate some residues in a peptide sequence.
+Genes that fall in this category perform modifications on the atoms that conform the molecular structure and/or their connectivity. For example, they could increase the length of a ligand linker, change the metal element of a metallic cofactor or mutate some residues in a peptide sequence. Two main genes are included for this purpose.\footnote{More topological variators are currently under development (see \autoref[appendix]{chap:appendix-b}).}
 
 \begin{itemize}
-	\item \textsc{Molecule}. It is the main gene, as it will be used to load molecular structures from files (\texttt{PDB}, \texttt{Mol2}, \texttt{XYZ} or any other input format supported by UCSF Chimera). All other genes depend on the initial topology and coordinates provided by one or more Molecule genes. In addition to loading files, the \texttt{path} parameter supports loading from a directory, whose contents determine the final behavior:
+	\item \textsc{Molecule}. It is the main gene, as it will be used to load molecular structures from files (\texttt{PDB}, \texttt{Mol2}, \texttt{XYZ} or any other input format supported by UCSF Chimera). All other genes depend on the initial topology and coordinates provided by one or more Molecule genes. In addition to loading files, the \texttt{path} parameter supports loading data from a directory, whose contents determine the final behavior:
 	\begin{itemize}
 		\item If the directory contains molecule files, the allele will be set to one of them randomly for each individual. This allows GaudiMM to deal test a library of compounds against certain criteria; i.e. virtual screening.
-		\item If the directory contains subdirectories which, in turn, contain molecules files, the gene will sort those subdirectories by name and then pick one molecule from each, in that order. The chosen molecules will constitute the allele and will be chained linearly as specified in the accompanying meta file, which lists the serial number of the potential donor and acceptor atoms.
+		\item If the directory contains subdirectories which, in turn, contain molecules files, the gene will sort those subdirectories by name and then pick one molecule from each, in that order. The chosen molecules will constitute the allele and will be chained linearly as specified in the accompanying metafile, which lists the serial number of the potential donor and acceptor atoms.
 	\end{itemize}
 	\item \textsc{Mutamers}. Given a residue position in a protein structure, it can replace its sidechain to any other natural amino acid specified in the configuration. Useful to study site mutations.
 \end{itemize}
@@ -140,7 +140,7 @@ Genes that fall in this category only alter the positions of the atoms involved 
 
 	\item \textsc{NormalModes}. Given a \texttt{Molecule} object, it calculates normal modes with elastic network methods and applies the resulting collective motions as possible variants of the initial coordinates set.
 
-	\item \textsc{Trajectory}. Given a molecular dynamics trajectory file, it can retrieve random frames and apply the resulting coordinates to any \texttt{Molecule} object.
+	\item \textsc{Trajectory}. Given a molecular dynamics trajectory file, it can retrieve random frames and apply the resulting coordinates to any compatible \texttt{Molecule} object.
 \end{itemize}
 
 
@@ -187,18 +187,18 @@ Genes that fall in this category only alter the positions of the atoms involved 
 
 \subsection{Of environments and objectives: the evaluation stage}
 % \addcontentsline{toc}{subsection}{Of environments and objectives: the evaluation stage}
-After generating candidate solutions, these must be evaluated with the optimization criteria. In genetic algorithms, this is usually called assessing the fitness of the individuals: fitter individuals are more qualified to survive in the environment.
+After generating candidate solutions, these must be evaluated with the optimization criteria. In genetic algorithms, this is usually called \textit{assessing the fitness of the individuals}: fitter individuals are more qualified to survive in the environment.
 
-Mimicking these concepts, the GaudiMM implementation creates an \texttt{Environment} object that list the optimization criteria, each represented by an \texttt{Objective} entity. Objectives are also independent units that can be instantiated multiple times in the same \texttt{Environment}, but the defined interface is simpler that in genes: a \textit{weight} attribute defines the optimization type (maximization or minimization), and a function named \texttt{evaluate} that takes an \texttt{Individual} object and returns a numerical value as result. What the \texttt{evaluate} function does behind the scenes does not actually matter as long as a number is produced: calculating a distance between two atoms, retrieving a parameter from a database, computing the potential energy with an external MM library\ldots
+Mimicking these concepts, the GaudiMM implementation creates an \texttt{Environment} object that list the optimization criteria, each represented by an \texttt{Objective} entity. Objectives are also independent units that can be instantiated multiple times in the same \texttt{Environment}, but the defined interface is simpler that in genes: a \textit{weight} attribute defines the optimization type (maximization or minimization), and a function named \texttt{evaluate} that takes an \texttt{Individual} object and returns a numerical value as result. What the \texttt{evaluate} function does behind the scenes does not actually matter as long as a number is produced: calculating a distance between two atoms, retrieving a parameter from a database, computing the potential energy with an external library\ldots
 
 As a result, GaudiMM ships with a rather diverse set of objectives, combining 3\textsuperscript{rd} party packages and custom developments in the same distribution. Together they cover all kinds of energetic, geometric and spatial measurements, allowing to use different levels of theory at the same time in a seamless workflow. Any geometric or energetic parameters that could describe a molecular system can be used as objectives to drive the GA exploration. This allows us to turn the tables on routine protocols based on computing energetic optimizations and then analyzing the results in hopes of finding a suitable model that fits the intended restraints; i.e. those same analysis tools can guide the optimization process from the beginning.
 
 \subsubsection{Geometry measurement}
 % \addcontentsline{toc}{subsubsection}{Geometry measurement}
 \begin{itemize}
-	\item \textsc{Angle}. Given three atoms, this objective calculates the angle between those. By minimizing the difference between the measured angle and the target one, the final angle can be optimized. It will calculate the dihedral if four atoms are specified.
+	\item \textsc{Angle}. Given three atoms, this objective calculates the angle between those. By minimizing the difference between the measured angle and the target one, the final angle can be optimized. It will calculate the dihedral angle if four atoms are specified.
 
-	\item \textsc{Distance}. If two atoms are provided, this objective calculates the distance between. By minimizing the difference against a target value, the structure can be optimized to fulfill that requirement. It also supports calculating distances to groups of atoms by taking the centroid of the group.
+	\item \textsc{Distance}. If two atoms are provided, this objective calculates the distance between them. By minimizing the difference against a target value, the structure can be optimized to fulfill that requirement. It also supports calculating distances to groups of atoms by taking the centroid of the group.
 
 	\item \textsc{Inertia}. This objective calculates the inertia tensors of two structures and returns the sine of the smallest angle formed between any of the possible pairings. It can be useful to align ligands along the major axis of a protein.
 
@@ -206,23 +206,23 @@ As a result, GaudiMM ships with a rather diverse set of objectives, combining 3\
 \end{itemize}\subsubsection{Spatial measurement}
 % \addcontentsline{toc}{subsubsection}{Spatial measurement}
 \begin{itemize}
-	\item \textsc{Solvation}. Solvent-Accessible Surface Area (SASA) and Solvent-Excluded Surface Area (SESA) are two common techniques to describe the solvation of a structure. It can be used to optimize structures in terms of exposure of inside pockets or their folding. By maximizing SASA or SESA, the structure will tend to open up; by minimizing those values, the trend will be towards a more compact conformation.
+	\item \textsc{Solvation}. Solvent-Accessible Surface Area (SASA) and Solvent-Excluded Surface Area (SESA) are two common descriptors to study the solvation of a system. It can be used to optimize structures in terms of exposure of inside pockets or their folding. By maximizing SASA or SESA, the structure will tend to open up; by minimizing those values, the trend will be towards a more compact conformation.
 
-	\item \textsc{Volume}. This objective calculates the volume occupied by a structure. It does so by computing the solvent-exposed surface of the structure, which is then considered as a polyhedron of thousands of triangular faces.
+	\item \textsc{Volume}. This objective calculates the volume occupied by a structure. It does so by computing the solvent-exposed surface of the structure, which is then considered as a polyhedron of thousands of triangular faces, the volume of which can be computed numerically.
 
 
-\end{itemize}\subsubsection{Energy calculation}
+\end{itemize}\subsubsection{Energy \& pseudo-energy calculation}
 % \addcontentsline{toc}{subsubsection}{Energy calculation}
 \begin{itemize}
-	\item \textsc{DSX}. DrugScoreX is a knowledge-based docking scoring function developed by Neudert $\&$  Klebe.\cite{neudert2011dsx} It is specially designed to compute interaction energies between protein structures and small compounds. This objective is a Python wrapper around the DSX executables and input files.
+	\item \textsc{DSX}. DrugScoreX is a knowledge-based docking scoring function developed by Neudert $\&$  Klebe.\cite{neudert2011dsx} It is specially designed to compute interaction energies between protein structures and small compounds. This objective is a Python wrapper around the DSX executable and its input/output files.
 
-	\item \textsc{Energy}. This objective allows to calculate the potential energy of a structure with the molecular mechanics force fields implemented in OpenMM. Parameters must be provided for custom residues.
+	\item \textsc{Energy}. This objective allows to calculate the potential energy of a structure with the molecular mechanics force fields implemented in OpenMM. Parameters must be provided separately for custom residues.
 
 	\item \textsc{LigScore}. Another docking scoring function developed by Sali\cite{krammer2005ligscore} which allows to obtain protein-ligand interaction energies. While the parent project, IMP,\cite{russel2012putting} is a C++ project with Python bindings, the LigScore function is only exposed through an executable. This objective can call that binary and parse the resulting energies from the output.
 
 	\item \textsc{Vina}. AutoDock Vina\cite{trott2010autodock} is a popular open-source package to perform protein-ligand docking. This objective calls the Vina executable in score-only mode to calculate the interaction energies between a protein and a ligand.
 
-	\item \textsc{GOLD}. This commercial software suite is one the most used solutions to calculate accurate docking poses. With this objective, all the scoring functions exposed in GOLD\cite{gold} can be used as guiding evaluators in GaudiMM: PLP, GoldScore, ChemScore\ldots\ License is needed for this to work.
+	\item \textsc{GOLD}. This commercial software suite is one the most used solutions to calculate accurate docking poses. With this objective, all the scoring functions exposed in GOLD\cite{gold} can be used as guiding evaluators in GaudiMM: PLP, GoldScore, ChemScore\ldots\ License is needed for this objective to work.
 
 	\item \textsc{NWChem}. This objective provides a way to run quantum mechanics calculations in this popular open-source software suite.\cite{nwchem} Provided a template input-file, this objective will insert the appropriate coordinates, charge and multiplicity. While all methods implemented in NWChem are potentially usable, only semi-empirical ones are recommended in terms of speed; specially for large structures.
 
@@ -230,7 +230,7 @@ As a result, GaudiMM ships with a rather diverse set of objectives, combining 3\
 \end{itemize}\subsubsection{High-level chemical descriptors}
 % \addcontentsline{toc}{subsubsection}{High-level chemical descriptors}
 \begin{itemize}
-	\item \textsc{Contacts}. This objective can calculate two type of distance-based energy descriptors. When the \textit{hydrophobic} mode is chosen, this objective will maximize potentially attracting interactions between close enough atoms by applying a Lennard-Jones-like scoring function. If the \textit{clashes} mode is chosen, it will minimize the steric hindrance of the structure by minimizing the volumetric overlap of the Van der Waals spheres of atoms that are too close.
+	\item \textsc{Contacts}. This objective can calculate two type of distance-based pseudo-energy descriptors. When the \textit{hydrophobic} mode is chosen, this objective will maximize potentially attracting interactions between close enough atoms by applying a Lennard-Jones-like scoring function. If the \textit{clashes} mode is chosen, it will minimize the steric hindrance of the structure by minimizing the volumetric overlap of the Van der Waals spheres of atoms that are too close.
 
 	\item \textsc{HBonds}. This objective uses geometrical criteria to calculate the number of hydrogen bonds between potential donors and acceptors.
 
@@ -267,6 +267,9 @@ As a result, GaudiMM ships with a rather diverse set of objectives, combining 3\
 %row no:8
  Energy & Minimize molecular mechanics potential energy & OpenMM\cite{openmm} \\
 \hhline{~~~}
+%row no:8
+ GOLD & Docking scoring functions & GOLD\cite{gold} \\
+\hhline{~~~}
 %row no:9
  HBonds & Detect hydrogen bonds  & UCSF Chimera \\
 \hhline{~~~}
@@ -282,6 +285,9 @@ As a result, GaudiMM ships with a rather diverse set of objectives, combining 3\
 %row no:13
  Solvation & Measure solvent accessible solvent area & UCSF Chimera \\
 \hhline{~~~}
+%row no:13
+ Vina & Docking scoring function & AutoDock Vina\cite{trott2010autodock} \\
+\hhline{~~~}
 %row no:14
  Volume & Measure volume occupied by molecule & UCSF Chimera \\
 \bottomrule
@@ -296,17 +302,17 @@ As a result, GaudiMM ships with a rather diverse set of objectives, combining 3\
 
 \subsection{Of tournaments and trade-offs: the selection stage}
 % \addcontentsline{toc}{subsection}{Of tournaments and trade-offs: the selection stage}
-Once the \texttt{Individuals} have been assigned a fitness score, these values must be compared to assess how good of a solution they make. In multi-objective optimization problems there is no \textit{best} solution in usual terms. Instead, a set of trade-offs between the involved (and usually conflicting) variables is required. NSGA-II solves this by following the Pareto optimality criterion explained in \autoref{chap:02}, which will iteratively enrich the Pareto optimal set with the \textit{best} candidates of the population. However, when more variables (objectives) are added to the optimization, the Pareto front grows in dimensionality and enriching the Pareto optimal set can get difficult. Deb et al do not recommend more than three objectives for NSGA-II, but several extensions to the algorithm (MONSGA-II, NSGA-III) exist to improve this situation. Higher dimensionality will also involve a larger number of possible solutions (even when Pareto-optimality is reached).
+Once the \texttt{Individuals} have been assigned a fitness score, these values must be compared to assess how good of a solution they make. In multi-objective optimization problems there is no \textit{best} solution in usual terms. Instead, a set of trade-offs between the involved (and usually conflicting) variables is required. NSGA-II solves this by following the Pareto optimality criterion explained in \autoref{chap:02}, which will iteratively enrich the Pareto optimal set with the \textit{best} candidates of the population. However, when more variables (objectives) are added to the optimization, the Pareto front grows in dimensionality and enriching the Pareto optimal set can get difficult. Deb et al do not recommend more than three objectives for NSGA-II, but several extensions to the algorithm (MO-NSGA-II,\cite{deb2012handling} NSGA-III\cite{deb2014evolutionary}) exist to improve this situation. Higher dimensionality will also involve a larger number of possible solutions (even when Pareto-optimality is reached).
 
 To ensure a rich Pareto front in constructed, NSGA-II includes a crowding parameter, and GaudiMM provides structural similarity comparisons when scores are very close to each other, resulting in a good compromise between diversity and number of solutions proposed.
 
 \subsection{The code behind: Python as glue}
 
-GaudiMM started by hooking \texttt{deap}\cite{fortin2012deap} evolutionary algorithms into UCSF Chimera. Using Python as the main language allowed to design a modular architecture that conceptually emphasizes the different stages of optimization, while focusing on the reutilization and addition of existing codebases. It is difficult to think of a different language that could have provided a working proof-of-concept in that little time.
+GaudiMM started by hooking \texttt{deap}\cite{fortin2012deap} evolutionary algorithms into UCSF Chimera. Using Python as the main language allowed to design a modular architecture that conceptually emphasizes the different stages of optimization, while focusing on the reutilization and addition of existing codebases. It is difficult to think of a different language that could have provided a working proof-of-concept in such a short time.
 
 All the code is object-oriented and features a well-documented programmatic interface, alleviating the process of writing new genes and objectives. The educational value of this technical decision was not obvious until degree and master students began to collaborate in the project as part of their final dissertation (see \autoref[appendix]{chap:appendix-b}).
 
-After years of development, UCSF Chimera is still the main library behind the scenes. In fact, to our knowledge, GaudiMM is one of the few projects that relies on it for calculation purposes and not strictly for visualization. This interactive 3D viewer offers lots of analysis tools and robust molecular abstractions that allowed us to implement most of GaudiMM genes and objectives in few lines of code. However, everything has a price and UCSF Chimera was not designed to be used as a library in other projects; instead it expects external projects to be executed within UCSF Chimera interface. To overcome this limitation, a separate package named PyChimera was developed. With PyChimera, other Python libraries can be used together with UCSF Chimera, which allowed to reuse code from other projects in GaudiMM. That way, MM energies can be computed with OpenMM, Normal Modes Analysis calculated with ProDy, and more (see tables \ref{table:gaudi-genes} and \ref{table:gaudi-objectives}). Further examples of integration are given in \autoref{chap:05}, where PyChimera has been instrumental in the development and distribution of new graphical interfaces.
+After years of development, UCSF Chimera is still the main library behind the scenes. In fact, to our knowledge, GaudiMM is one of the few projects that relies on it for calculation purposes and not strictly for visualization. This interactive 3D viewer offers lots of analysis tools and robust molecular abstractions that allowed us to implement most of GaudiMM genes and objectives in few lines of code. However, everything has a price and UCSF Chimera was not designed to be used as a library in other projects; instead it expects external projects to be executed within UCSF Chimera interface. To overcome this limitation, a separate package named PyChimera was developed. With PyChimera, other Python libraries can be used together with UCSF Chimera, which allowed to reuse code from other projects in GaudiMM. Further examples of integration are given in \autoref{chap:05}, where PyChimera has been instrumental in the development and distribution of new graphical interfaces.
 
 \section{Usage: from recipes to molecular modeling tasks}
 
@@ -322,7 +328,7 @@ It must be remembered that the objectives simply assign a score to a candidate s
 
 Building a cyclic alkane seems like a trivial task, but depending on the number of bonds involved, it can soon become a tedious process. With GaudiMM, it can be done in a single calculation: only two genes and two objectives are needed. The hypothesis is that there exists a set of dihedral torsions that can connect the ends of a linear decane without steric clashes.
 
-First, a starting 3D structure is needed. For practical purposes, a linear decane can be built directly with UCSF Chimera by issuing the command \texttt{`open smiles:CCCCCCCCCC`} and saved as a Mol2 file with \texttt{`write decane.mol2`}. This file can be loaded in GaudiMM with a \texttt{Molecule} gene by setting its location as the value of the argument \texttt{path}.
+First, a starting 3D structure is needed. For practical purposes, a linear decane can be built directly with UCSF Chimera by issuing the command \texttt{`open smiles:CCCCCCCCCC`} and saved as a Mol2 file with \texttt{`write decane.mol2`}. This file can be loaded in GaudiMM with a \texttt{Molecule} gene by setting its location as the value of the \texttt{path} argument.
 
 The second gene is \texttt{Torsion}, which will detect rotatable bonds in the decane and apply the rotations instructed. However, the \texttt{Torsion} gene does not know nor care about steric clashes or minimum distances needed for a covalent bond. It will simply generate arbitrary sets of rotations.
 
@@ -372,13 +378,13 @@ However, after the first attempt, the user might realize that some results are i
 	\end{tabularx}
 \end{table}
 
-Albeit useless, this toy example illustrates the flexibility of the paradigm proposed in GaudiMM. For more practical use cases, please refer to models detailed in \autoref{chap:06}.
+Albeit not revolutionary, this toy example illustrates the flexibility of the paradigm proposed in GaudiMM. For more practical use cases, please refer to models detailed in \autoref{chap:06}.
 
 \section{Analyzing the results of multi-objective optimization}
 \label{section:gaudimm-results}
-In multi-objective optimization (see \autoref[section]{section:multiobjective}), ultimately choosing which solution is the \textit{best} is up to the decision maker: the researcher. Some strategies to make that decision involve reducing the fitness vector to a scalar using an adequate function. However, since that function is usually not characterized in tentative molecular modeling tasks, a UCSF Chimera extension has been developed GaudiView along GaudiMM to aid in that decision in a more interactive manner.
+In multi-objective optimization (see \autoref[section]{section:multiobjective}), ultimately choosing which solution is the \textit{best} is up to the decision maker: the researcher. Some strategies to make that decision involve reducing the fitness vector to a scalar using an adequate function. However, since that function is usually not characterized in tentative molecular modeling tasks, a UCSF Chimera extension has been developed along GaudiMM to aid in that decision in a more interactive manner: GaudiView.
 
-GaudiView will list the proposed solutions along with the fitness of each objective in spreadsheet-like dialog. Upon clicking each entry, the UCSF Chimera canvas will load and render a 3D interactive depiction of the structure. The table can be sorted by columns and filtered by threshold criteria, which can reduce the complex surface of the Pareto front to the \textit{interesting parts} (according to the decision maker) dynamically. Since the renderization of molecular structures is delayed until the corresponding rows are selected, the interface can show thousands of results with low memory usage. Integrative analysis can be performed on the flow with other tools included in UCSF Chimera thanks to the built-in command line widget, which is executed on each selection change event. \autoref[Appendix]{appendix:more-tangram} contains more details on this tool.
+This GUI will list the proposed solutions along with the fitness of each objective in spreadsheet-like dialog. Upon clicking each entry, the UCSF Chimera canvas will load and render a 3D interactive depiction of the structure. The table can be sorted by columns and filtered by threshold criteria, which can reduce the complex surface of the Pareto front to the \textit{interesting parts} (according to the decision maker) dynamically. Since the renderization of molecular structures is delayed until the corresponding rows are selected, the interface can show thousands of results with low memory usage. Integrative analysis can be performed on the flow with other tools included in UCSF Chimera thanks to the built-in command line widget, which is executed on each selection change event. \autoref[Appendix]{appendix:more-tangram} contains more details on this tool.
 
 
 \begin{figure}[H]
@@ -395,4 +401,4 @@ The development of GaudiMM was motivated by the need of applying simple descript
 
 These observations have made clear that GaudiMM provides a mental framework suitable for implementing proof-of-concept multiscale protocols and explaining basic concepts of molecular modeling to newcomers in the field.
 
-That said, there is room for improvement in the performance area. Genetic algorithms are easily parallelizable by design, but depending on UCSF Chimera for most functions means that communication across processes could be expensive in terms of memory usage and synchronization overhead. Since the calculations rarely involve more than a few hours, the focus shifted towards the implementation of new modules rather than optimizing the speed of the new ones. However, it is one of the main milestones of the GaudiMM v2.0 roadmap.
+That said, there is room for improvement in the performance area. Genetic algorithms are easily parallelizable by design, but depending on UCSF Chimera for most functions means that communication across processes could be expensive in terms of memory usage and synchronization overhead. Since the calculations rarely involve more than a few hours, the focus shifted towards the implementation of new modules rather than optimizing the speed of the new ones. However, improving the performance is one of the main milestones of the GaudiMM v2.0 roadmap.
