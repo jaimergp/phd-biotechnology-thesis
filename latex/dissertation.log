@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/Arch Linux) (preloaded format=xelatex 2018.6.30)  17 AUG 2018 20:34
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/Arch Linux) (preloaded format=xelatex 2018.6.30)  18 AUG 2018 21:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1264,9 +1264,9 @@ LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
 Requested font "Lato Regular" at 12.0pt
- ->  ^^T{ÔøæíÔøæ¶U
+ -> `RÔøøñÔøæïhU
 Requested font "Lato Regular/OT" at 12.0pt
- -> Ôøø∞^^[{ÔøæíÔøæ¶U
+ -> 0RÔøøñÔøæïhU
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1274,11 +1274,11 @@ Requested font "Lato Regular/OT" at 12.0pt
 .................................................
 \g__fontspec_family_LatoRegular_int=\count322
 Requested font "Lato Bold/OT" at 12.0pt
- -> Ôøø∞ÔøøózÔøæíÔøæ¶U
+ -> ÔøøÄ"Ôøæ±ÔøæïhU
 Requested font "Lato Bold/I/OT" at 12.0pt
- -> P^^L{ÔøæíÔøæ¶U
+ -> 0\ÔøøñÔøæïhU
 Requested font "Lato Regular/I/OT" at 12.0pt
- -> ^^P^^K{ÔøæíÔøæ¶U
+ -> 0[ÔøøñÔøæïhU
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1290,9 +1290,9 @@ Requested font "Lato Regular/I/OT" at 12.0pt
 . Lato Bold scale = 0.7797268490977592.
 .................................................
 Requested font "Lato Regular/I/OT" at 12.0pt
- -> ÔøøÄ)}ÔøæíÔøæ¶U
+ -> Ôøø†mÔøøòÔøæïhU
 Requested font "Lato Regular/I/OT" at 12.0pt
- -> P-}ÔøæíÔøæ¶U
+ -> pqÔøøòÔøæïhU
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1330,9 +1330,9 @@ Requested font "Lato Bold/I/OT" at 12.0pt
 .................................................
 LaTeX Info: Redefining \sffamily on input line 124.
 Requested font "Source Code Pro" at 12.0pt
- -> pz}ÔøæíÔøæ¶U
+ -> ÔøøÄÔøææÔøøòÔøæïhU
 Requested font "Source Code Pro/OT" at 12.0pt
- -> Ôøø∞C}ÔøæíÔøæ¶U
+ -> Ôøæ∞Ôøæ´ÔøøòÔøæïhU
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1340,11 +1340,11 @@ Requested font "Source Code Pro/OT" at 12.0pt
 .................................................
 \g__fontspec_family_SourceCodePro_int=\count323
 Requested font "Source Code Pro/BI/OT" at 12.0pt
- -> 0z}ÔøæíÔøæ¶U
+ -> Ôøæ∞Ôøæ´ÔøøòÔøæïhU
 Requested font "Source Code Pro/B/OT" at 12.0pt
- -> Ôøø∞C}ÔøæíÔøæ¶U
+ -> PÔøæºÔøøòÔøæïhU
 Requested font "Source Code Pro/I/OT" at 12.0pt
- -> Ôøø∞C}ÔøæíÔøæ¶U
+ -> PÔøæºÔøøòÔøæïhU
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1356,18 +1356,18 @@ Requested font "Source Code Pro/I/OT" at 12.0pt
 . Source Code Pro scale = 0.833334657882258.
 .................................................
 Requested font "Source Code Pro/B/OT" at 12.0pt
- -> Ôøø∞C}ÔøæíÔøæ¶U
+ -> PÔøæºÔøøòÔøæïhU
 Requested font "Source Code Pro/B/OT" at 12.0pt
- -> Ôøø∞C}ÔøæíÔøæ¶U
+ -> PÔøæºÔøøòÔøæïhU
 .................................................
 . fontspec info: "set-scale"
 . 
 . Source Code Pro/B scale = 0.833334657882258.
 .................................................
 Requested font "Source Code Pro/BI/OT" at 12.0pt
- -> Ôøø∞C}ÔøæíÔøæ¶U
+ -> PÔøæºÔøøòÔøæïhU
 Requested font "Source Code Pro/BI/OT" at 12.0pt
- -> Ôøø∞C}ÔøæíÔøæ¶U
+ -> PÔøæºÔøøòÔøæïhU
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -2015,7 +2015,7 @@ ABD: EveryShipout initializing macros (./frontmatter/personalize.tex)
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
 (Font)              scaled to size 9.99994pt on input line 10.
 Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 9.99994pt
- -> Ôøø∞ÔøøòÔøæÄÔøæíÔøæ¶U
+ -> 0 ÔøøúÔøæïhU
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `SourceCodePro' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2236,7 +2236,7 @@ LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
 (Font)              scaled to size 9.4768pt on input line 15.
 Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
  9.4768pt
- -> p^^]Ôøæ§ÔøæíÔøæ¶U
+ -> `XÔøøøÔøæïhU
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
 (Font)              scaled to size 8.64758pt on input line 15.
 Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
@@ -2247,7 +2247,7 @@ LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
 (Font)              scaled to size 6.31787pt on input line 1.
 Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
  6.31787pt
- -> ÔøæÄ^^WÔøæ¶ÔøæíÔøæ¶U
+ -> ^^P\^^AÔøæñhU
 ) [19]) [20] [21]
 \openout2 = `chapters/01-intro.aux'.
 
@@ -2285,12 +2285,12 @@ LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/it' will be
 (Font)              scaled to size 8.64758pt on input line 1.
 Requested font "Lato Regular/I/OT:script=latn;language=DFLT;mapping=tex-text;" 
 at 8.64758pt
- -> Ôøø∞ÔøæÜÔøæÆÔøæíÔøæ¶U
+ -> Pd^^IÔøæñhU
 ) [27] [28]
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
 (Font)              scaled to size 9.12494pt on input line 80.
 Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 9.12494pt
- -> ÔøæêÔøæ°ÔøæÆÔøæíÔøæ¶U
+ -> ^^PÔøøö^^IÔøæñhU
 
 [29]
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
@@ -2381,17 +2381,11 @@ hile D-glucose would be \TU/SourceCodePro(0)/m/n/10.95 C(C1C(C(C(C(O1)O)O)O)O)O
 
 \openout3 = `dissertation-8.cpt'.
 
-(./dissertation-8.cpt) [47] [48]
-Overfull \hbox (6.5469pt too wide) in paragraph at lines 165--166
-\TU/EBGaramond12(0)/bx/n/10.95 provide density maps to which, with adequate ref
-inement and post-processing using specialized software,$[]$
- []
-
-[49] [50] [51] [52] [53] [54] [55] [56]) [57]
+(./dissertation-8.cpt) [47] [48] [49] [50] [51] [52] [53] [54] [55] [56])
+[57]
 \openout2 = `chapters/03-objectives.aux'.
 
- (./chapters/03-objectives.tex
-[58
+ (./chapters/03-objectives.tex [58
 
 
 
@@ -2521,7 +2515,7 @@ LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/it' will be
 (Font)              scaled to size 9.12494pt on input line 1.
 ) [72] [73]
 Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 8.33328pt
- -> pKÔøø¨ÔøæíÔøæ¶U
+ -> @ÔøæãGÔøæñhU
  [74]
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
 (Font)              scaled to size 14.4pt on input line 397.
@@ -2616,13 +2610,13 @@ Overfull \hbox (9.15869pt too wide) in paragraph at lines 18--19
 
  (./dissertation-18.cpt) [98]
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/it' will be
-(Font)              scaled to size 7.0pt on input line 92.
+(Font)              scaled to size 7.0pt on input line 90.
 Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-c
 alt;+pnum;+lnum;mapping=tex-text;" at 7.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
 otf
  [99] [100]
-Overfull \hbox (0.36954pt too wide) in paragraph at lines 164--165
+Overfull \hbox (0.36954pt too wide) in paragraph at lines 162--163
 []\TU/EBGaramond12(0)/bx/n/10.95 Streptavidin is composed of four monomers arra
 nged as a dimer of dimers, each able to host a biotin molecule
  []
@@ -2639,7 +2633,7 @@ nged as a dimer of dimers, each able to host a biotin molecule
 
 
 (./dissertation-22.cpt) [108]
-Overfull \hbox (11.4505pt too wide) in paragraph at lines 320--321
+Overfull \hbox (11.4505pt too wide) in paragraph at lines 318--319
 []\TU/EBGaramond12(0)/bx/n/10.95 To assess the guiding capacities of the \TU/So
 urceCodePro(0)/m/it/10.95 Coordination \TU/EBGaramond12(0)/bx/n/10.95 objective
 , an illustrative case was proposed in GaudiMM‚Äôs
@@ -2649,14 +2643,20 @@ urceCodePro(0)/m/it/10.95 Coordination \TU/EBGaramond12(0)/bx/n/10.95 objective
 
 \openout3 = `dissertation-24.cpt'.
 
-(./dissertation-24.cpt) [109] [110]
-Overfull \hbox (11.41438pt too wide) in paragraph at lines 390--391
+(./dissertation-24.cpt) [109]
+Overfull \hbox (29.5358pt too wide) in paragraph at lines 370--370
+|[]\TU/EBGaramond12(0)/m/sc/14.4 Case study: Multiscale modeling of multivalent
+ enzyme inhibitors| 
+ []
+
+[110]
+Overfull \hbox (11.41438pt too wide) in paragraph at lines 387--388
 \TU/EBGaramond12(0)/bx/n/10.95 To shed light on these counterintuitive observat
 ions, Garc√≠a-Fern√°ndez et al designed a series of two-component
  []
 
 
-Overfull \hbox (8.89948pt too wide) in paragraph at lines 390--391
+Overfull \hbox (8.89948pt too wide) in paragraph at lines 387--388
 \TU/EBGaramond12(0)/bx/n/10.95 pillar[5]arene rotaxane conjugates that exhibite
 d both glycomimetic and non-glycomimetic (putative) residues.
  []
@@ -2670,9 +2670,7 @@ d both glycomimetic and non-glycomimetic (putative) residues.
 
 \openout3 = `dissertation-28.cpt'.
 
- (./dissertation-28.cpt
-Missing character: There is no Œº in font EBGaramond12-Italic--oml-ebgaramond!
-)
+ (./dissertation-28.cpt)
 Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-c
 alt;+pnum;+lnum;+tnum;mapping=tex-text;" at 7.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
@@ -2684,7 +2682,7 @@ tn;language=DFLT;+liga;-calt;+pnum;+lnum;+tnum;mapping=tex-text;!
 Missing character: There is no ÔÅ≠ in font [EBGaramond12-Italic.otf]/OT:script=la
 tn;language=DFLT;+liga;-calt;+pnum;+lnum;+tnum;mapping=tex-text;!
  [112] [113] [114]
-Overfull \hbox (3.04858pt too wide) in paragraph at lines 525--526
+Overfull \hbox (3.04858pt too wide) in paragraph at lines 522--523
 []\TU/EBGaramond12(0)/bx/n/10.95 The results of this preliminary calculation co
 nfirmed that the synthesized divalent ligand was not long enough
  []
@@ -2712,30 +2710,30 @@ Overfull \hbox (2.17319pt too wide) in paragraph at lines 31--32
 
 
 
+] [127]) [128] [129
+
+
+] [130
+
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-
- []
-
-[127]) [128]
 \openout2 = `chapters/appendix-a.aux'.
 
- (./chapters/appendix-a.tex
+
+(./chapters/appendix-a.tex
 Appendix A.
-[129
+[131
 
 
-
-] [130] [131]
+] [132] [133]
 Overfull \hbox (23.2124pt too wide) in paragraph at lines 45--46
 \TU/EBGaramond12(0)/bx/n/10.95 (BigDFT,$[]$ TeraChem$[]$). The following years 
 would certainly see a mainstream presence of GPU-implemented
  []
 
-[132]) [133]
+[134]) [135]
 \openout2 = `chapters/appendix-b.aux'.
 
- (./chapters/appendix-b.tex [134
+ (./chapters/appendix-b.tex [136
 
 
 
@@ -2747,27 +2745,27 @@ Overfull \hbox (7.21983pt too wide) in paragraph at lines 8--9
  space via the dynamic building capabilities of the Molecule
  []
 
-[135]) [136]
+[137]) [138]
 \openout2 = `chapters/appendix-c.aux'.
 
  (./chapters/appendix-c.tex
 Appendix C.
-[137
+[139
 
 
 
-] [138] [139]
+] [140] [141]
 Overfull \hbox (4.97577pt too wide) in paragraph at lines 32--33
 []\TU/EBGaramond12(0)/bx/n/10.95 In cheminformatics, explicit consideration of 
 atoms is not as important and strategies like the pharmacophoric
  []
 
-) [140]
+) [142]
 \openout2 = `chapters/appendix-d.aux'.
 
  (./chapters/appendix-d.tex
 Appendix D.
-[141
+[143
 
 
 
@@ -2776,19 +2774,19 @@ Appendix D.
 
 \openout3 = `dissertation-30.cpt'.
 
- (./dissertation-30.cpt) [142] [143]
+ (./dissertation-30.cpt) [144] [145]
 \openout3 = `dissertation-31.cpt'.
 
 \openout3 = `dissertation-32.cpt'.
 
- (./dissertation-32.cpt) [144]
-[145]
+ (./dissertation-32.cpt) [146]
+[147]
 \openout3 = `dissertation-33.cpt'.
 
 \openout3 = `dissertation-34.cpt'.
 
- (./dissertation-34.cpt)) [146] [147] (./endmatter/personalize.tex)
-(./dissertation.bbl [148
+ (./dissertation-34.cpt)) [148] [149] (./endmatter/personalize.tex)
+(./dissertation.bbl [150
 
 
 
@@ -2799,12 +2797,12 @@ Overfull \hbox (7.60974pt too wide) in paragraph at lines 4--8
 [][][][][][][][][][][][][][][]$[][]\TU/EBGaramond12(0)/m/n/10 .  
  []
 
-[149] [150] [151] [152] [153] [154] [155] [156] [157] [158] [159] [160]
-[161] [162]) [163] [164
+[151] [152] [153] [154] [155] [156] [157] [158] [159] [160] [161] [162]
+[163] [164]) [165] [166
 
-] (./endmatter/colophon.tex) [165]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 66.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 66.
+] (./endmatter/colophon.tex) [167]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 77.
  (./dissertation.aux
 (./chapters/00-preface.aux) (./chapters/01-intro.aux)
 (./chapters/02-methods.aux) (./chapters/03-objectives.aux)
@@ -2813,22 +2811,22 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 66.
 (./chapters/08-epilog.aux) (./chapters/appendix-a.aux)
 (./chapters/appendix-b.aux) (./chapters/appendix-c.aux)
 (./chapters/appendix-d.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 66.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 66.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 77.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 77.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: D0393D099E6A8568C31BDE2A3A6B8DF3.
+(rerunfilecheck)             Checksum: 8666493F776816307B73FE598B305FE2.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 38878 strings out of 492970
- 752225 string characters out of 6139408
- 919317 words of memory out of 5000000
- 42010 multiletter control sequences out of 15000+600000
+ 38876 strings out of 492970
+ 752242 string characters out of 6139408
+ 919300 words of memory out of 5000000
+ 42008 multiletter control sequences out of 15000+600000
  538601 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  67i,15n,118p,10529b,1646s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on dissertation.pdf (167 pages).
+Output written on dissertation.pdf (169 pages).

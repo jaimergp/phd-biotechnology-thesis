@@ -43,11 +43,22 @@
 \include{chapters/08-epilog}
 
 \begin{appendices}
+    \chapter*{Appendices}
     \makeatletter
         \if@twoside
             \fancyhf[reh]{\textit{Appendix \thechapter}}
+            % insert blank page
+            \pagestyle{empty}
+            {
+            \renewcommand{\thispagestyle}[1]{}
+            \cleardoublepage
+            }
+            \newpage
+            \thispagestyle{empty}
+            \pagestyle{fancy}
         \fi
     \makeatother
+    
     \include{chapters/appendix-a}
     \include{chapters/appendix-b}
     \include{chapters/appendix-c}
