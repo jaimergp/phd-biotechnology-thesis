@@ -76,8 +76,8 @@
 \usepackage{ragged2e}
 %\RaggedRight
 \raggedbottom
-\RequirePackage[draft]{graphicx}
-% \RequirePackage{graphicx}
+%\RequirePackage[draft]{graphicx}
+\RequirePackage{graphicx}
 % \parindent 12pt
 \parindent 0pt
 \setlength{\parskip}{1em}
@@ -270,6 +270,7 @@
     \maketoc
     \makelof % optional
     \makelot % optional
+    \makeabbrev
     % \setcounter{page}{1}
     \renewcommand{\thepage}{\arabic{page}}
     % \pagenumbering{arabic}
@@ -482,6 +483,24 @@
     %\scshape
     \hspace*{\fill} \input{frontmatter/dedication}
     \vspace*{\fill} \newpage \thispagestyle{empty}  \rm
+    \if@twoside
+        % insert blank page
+        \pagestyle{empty}
+        {
+        \renewcommand{\thispagestyle}[1]{}
+        \cleardoublepage
+        }
+        \newpage
+        \thispagestyle{empty}
+        \pagestyle{fancy}
+    \fi
+}
+\newcommand{\makeabbrev}{
+    \newpage \thispagestyle{empty}
+    %\scshape
+    \input{frontmatter/abbreviations}
+    \vspace*{\fill} 
+    \newpage \thispagestyle{empty}  \rm
     \if@twoside
         % insert blank page
         \pagestyle{empty}
