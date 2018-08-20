@@ -17,11 +17,11 @@
 % Comment/uncomment these two lines for digital A4 PDF or print-ready B5 PDF
 % Remember to change the geometry package as well
 %\LoadClass[12pt,oneside,a4paper]{extbook}
-\LoadClass[12pt,twoside,openright,a4paper]{extbook}
-% \LoadClass[14pt,twoside,openright,b5paper]{extbook}
+%\LoadClass[12pt,twoside,openright,a4paper]{extbook}
+\LoadClass[12pt,twoside,openright,b5paper]{extbook}
 %\RequirePackage[width=5.75in,letterpaper]{geometry}
-%\RequirePackage[b5paper]{geometry}
-\RequirePackage[a4paper,left=30mm,top=30mm,bottom=25mm,right=25mm]{geometry}
+\RequirePackage[b5paper,left=25mm,top=25mm,bottom=20mm,right=20mm]{geometry}
+%\RequirePackage[a4paper,left=30mm,top=30mm,bottom=25mm,right=25mm]{geometry}
 %
 % Options
 %
@@ -76,8 +76,8 @@
 \usepackage{ragged2e}
 %\RaggedRight
 \raggedbottom
-%\RequirePackage[draft]{graphicx}
-\RequirePackage{graphicx}
+\RequirePackage[draft]{graphicx}
+%\RequirePackage{graphicx}
 % \parindent 12pt
 \parindent 0pt
 \setlength{\parskip}{1em}
@@ -255,22 +255,22 @@
 % http://www.gsas.harvard.edu/publications/form_of_the_phd_dissertation.php
 \renewcommand{\frontmatter}{
     \input{frontmatter/personalize}
-    \pagenumbering{roman}
+    \pagenumbering{gobble}
     \maketitle
     \setcounter{page}{1}
     \makesignatures
     \copyrightpage
-    \dedicationpage
     \setstretch{\dnormalspacing}
-      \abstractpage
-      \officialacknowledgments
-      % \acknowledgments
+    \abstractpage
+    \officialacknowledgments
+    % \acknowledgments
     \setstretch{\dxcompressedspacing}
     \setlength{\parskip}{0em}
     \maketoc
     \makelof % optional
     \makelot % optional
     \makeabbrev
+    \dedicationpage
     % \setcounter{page}{1}
     \renewcommand{\thepage}{\arabic{page}}
     % \pagenumbering{arabic}
@@ -459,7 +459,7 @@
 \newcommand{\officialacknowledgments}{
     \newpage \thispagestyle{fancy} \vspace*{10pt}
     {
-      \huge \hspace*{\fill} Official Acknowledgments
+      \huge \hspace*{\fill} Acknowledgments
     }
     \noindent
     \input{frontmatter/official-acknowledgments}

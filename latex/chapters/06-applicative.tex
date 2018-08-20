@@ -31,8 +31,8 @@ All the entries in each dataset were analyzed with full torsion flexibility on t
 	\caption[Recipe applied in the docking benchmark]{Recipe applied in the docking benchmark.}
 	\label{table:docking-recipe}
 	\footnotesize
-	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
-	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
+	\newcolumntype{R}{>{\hsize=.20\hsize\raggedleft\arraybackslash}X}%
+	\newcolumntype{L}{>{\hsize=.80\hsize\raggedright\arraybackslash}X}%
 	\newcommand{\tableheading}[1]{\multicolumn{2}{c}{\textsc{#1}}}
 	\begin{tabularx}{\textwidth}{RL}
 		\toprule
@@ -99,8 +99,8 @@ Both concepts ---covalent bond emulation and competitive docking--- were tested 
 	\caption[Recipe applied for the LmrR competitive docking calculations]{Recipe applied for the LmrR competitive docking calculations.}
 	\label{table:phn-recipe}
 	\footnotesize
-	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
-	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
+	\newcolumntype{R}{>{\hsize=.20\hsize\raggedleft\arraybackslash}X}%
+	\newcolumntype{L}{>{\hsize=.80\hsize\raggedright\arraybackslash}X}%
 	\newcommand{\tableheading}[1]{\multicolumn{2}{c}{\textsc{#1}}}
 	\begin{tabularx}{\textwidth}{RL}
 		\toprule
@@ -181,8 +181,8 @@ In principle, the dibiotin ligand could be constructed out of five fragments: \t
 	\caption[Recipe applied for the streptavidin-dibiotin system]{Recipe applied for the streptavidin-dibiotin system.}
 	\label{table:strep-recipe}
 	\footnotesize
-	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
-	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
+	\newcolumntype{R}{>{\hsize=.20\hsize\raggedleft\arraybackslash}X}%
+	\newcolumntype{L}{>{\hsize=.80\hsize\raggedright\arraybackslash}X}%
 	\newcommand{\tableheading}[1]{\multicolumn{2}{c}{\textsc{#1}}}
 	\begin{tabularx}{\textwidth}{RL}
 		\toprule
@@ -232,7 +232,7 @@ In two of the previous examples, a metal ion was present in a nonstandard residu
 
 This section will present the applications of a novel strategy to deal with metal ions in molecular modeling. Instead of resorting to complex parameterization exercises like those expected in molecular mechanics (see \autoref[appendix]{chap:appendix-c} for further details), some properties of the metal ions can be described with geometry measurements.
 
-\subsubsection{Restrained conformational analysis for Alzheimer's β-amyloid peptides}
+\subsubsection[Restrained conformational analysis for Alzheimer's β-amyloid peptides]{Restrained conformational analysis for \\Alzheimer's β-amyloid peptides}
 
 Conformational analysis can be described as a range of techniques focused on taking an input molecular structure and generating coordinates sets (conformers) compatible with a set of criteria, normally energetic and geometric. This definition is broad enough to be used for other type of studies, such as the aforementioned docking variants, but is also a direct reflection on how GaudiMM impose a clear separation of concerns when it comes to exploration and evaluation. Once again, generating those new coordinate sets is a matter of choosing the right \textit{genes}, and deciding if they are compatible with some criteria or not is up to the \textit{objectives}.
 
@@ -265,8 +265,8 @@ GaudiMM features an objective specifically designed for that purpose: the \textt
 	\cprotect\caption[Recipe applied for the Al(III)-amyloid complexes]{Recipe applied for the Al(III)-amyloid complexes.}
 	\label{table:alum-recipe}
 	\footnotesize
-	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
-	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
+	\newcolumntype{R}{>{\hsize=.20\hsize\raggedleft\arraybackslash}X}%
+	\newcolumntype{L}{>{\hsize=.80\hsize\raggedright\arraybackslash}X}%
 	\newcommand{\tableheading}[1]{\multicolumn{2}{c}{\textsc{#1}}}
 	\begin{tabularx}{\textwidth}{RL}
 		\toprule
@@ -323,8 +323,8 @@ The main driver of the optimization was the Coordination objective, which was se
 	\caption[Recipe applied for the enterobactin exercise]{Recipe applied for the enterobactin exercise.}
 	\label{table:siderophore}
 	\footnotesize
-	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
-	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
+	\newcolumntype{R}{>{\hsize=.20\hsize\raggedleft\arraybackslash}X}%
+	\newcolumntype{L}{>{\hsize=.80\hsize\raggedright\arraybackslash}X}%
 	\newcommand{\tableheading}[1]{\multicolumn{2}{c}{\textsc{#1}}}
 	\begin{tabularx}{\textwidth}{RL}
 		\toprule
@@ -367,7 +367,7 @@ The main driver of the optimization was the Coordination objective, which was se
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SECTION 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section[Multiscale modeling of multivalent enzyme inhibitors]{Case study: Multiscale modeling of multivalent enzyme inhibitors}
+\section[Multiscale modeling of multivalent enzyme inhibitors]{Case study: Multiscale modeling of \\multivalent enzyme inhibitors}
 \label{section:rotaxane}
 % \addcontentsline{toc}{section}{Multiscale modeling of multivalent enzyme inhibitors}
 GaudiMM was conceived to be the entry door to the multiscale funnel, while the tools presented in \autoref{chap:05} fill in other gaps down the funnel. In this section, a real example on how all these developments work together and allow to create integrative workflows is presented. It is a deep computational insight on the work described in \textit{Pillar[5]arene glyco(mimetic)rotaxanes for the functional interrogation of multivalency responsive glycosidases},\cite{rotaxane} a collaboration with the IIQ-CSIC in Seville, Spain.
@@ -478,8 +478,8 @@ To assess the first possibility, a GaudiMM calculation was set up following this
 	\caption[Single di-ONJ recipe]{Recipe used in the evaluation of a single di-ONJ ligand. The ligand was positioned in such a way that one of the terminal iminosugars matched the crystallographic structure of the ligand in the original 2WBG protein structure.}
 	\label{table:recipe-single-divalent}
 	\footnotesize
-	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
-	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
+	\newcolumntype{R}{>{\hsize=.20\hsize\raggedleft\arraybackslash}X}%
+	\newcolumntype{L}{>{\hsize=.80\hsize\raggedright\arraybackslash}X}%
 	\newcommand{\tableheading}[1]{\multicolumn{2}{c}{\textsc{#1}}}
 	\begin{tabularx}{\textwidth}{RL}
 		\toprule
@@ -539,8 +539,8 @@ The evaluation part is the same: the non-frozen iminosugar will be forced to rea
 	\caption[Stretchable di-ONJ recipe]{Recipe used in the evaluation of a stretchable di-ONJ ligand. The ligand was positioned in such a way that one of the terminal iminosugars matched the crystallographic structure of the ligand in the original protein structure.\cite{pdb:2wbg}}
 	\label{table:recipe-stretchable-divalent}
 	\footnotesize
-	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
-	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
+	\newcolumntype{R}{>{\hsize=.20\hsize\raggedleft\arraybackslash}X}%
+	\newcolumntype{L}{>{\hsize=.80\hsize\raggedright\arraybackslash}X}%
 	\newcommand{\tableheading}[1]{\multicolumn{2}{c}{\textsc{#1}}}
 	\begin{tabularx}{\textwidth}{RL}
 		\toprule
@@ -569,7 +569,7 @@ The evaluation part is the same: the non-frozen iminosugar will be forced to rea
 	\end{tabularx}
 \end{table}
 
-\subsubsection[Can two divalent ligands occupy both sites simultaneously? Do they interact?]{Can two divalent ligands occupy both sites simultaneously? \\Do they interact?}
+\subsubsection[Can two divalent ligands occupy both sites simultaneously? Do they interact?]{Can two divalent ligands occupy both sites simultaneously? Do they interact?}
 % \addcontentsline{toc}{subsubsection}{Can two divalent ligands occupy both sites simultaneously? Do they interact?}
 A second hypothesis would consist of considering that two di-ONJ ligands can occupy both sites of the same dimer simultaneously. If that is the case, they could even stabilize each other by interacting at the dimer interface via their free iminosugar moieties (which can form hydrogen bonds through their hydroxyl groups) or the coupling of their hydrophobic tails.
 
@@ -579,8 +579,8 @@ To assess that possibility, two molecules were superposed against the crystallog
 	\caption[Double di-ONJ recipe]{Recipe used in the evaluation of a two di-ONJ ligands. The ligand was positioned in such a way that one of the terminal iminosugars matched the crystallographic structures of the ligand in the original X-ray protein structure.}
 	\label{table:recipe-two-divalent}
 	\footnotesize
-	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
-	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
+	\newcolumntype{R}{>{\hsize=.20\hsize\raggedleft\arraybackslash}X}%
+	\newcolumntype{L}{>{\hsize=.80\hsize\raggedright\arraybackslash}X}%
 	\newcommand{\tableheading}[1]{\multicolumn{2}{c}{\textsc{#1}}}
 	\begin{tabularx}{\textwidth}{RL}
 		\toprule
@@ -653,8 +653,8 @@ In the binding mode A (same axel), the structure did not reach the second bindin
 	\caption[Pillar-5-ene recipe]{Recipe used in the evaluation of the pillar[5]ene ligand. The ligand was positioned in such a way that one of the terminal iminosugars matched the crystallographic structure of the ligand in one of the monomers of the original 2WBG protein structure.}
 	\label{table:recipe-rotaxane}
 	\footnotesize
-	\newcolumntype{R}{>{\hsize=.25\hsize\raggedleft\arraybackslash}X}%
-	\newcolumntype{L}{>{\hsize=.75\hsize\raggedright\arraybackslash}X}%
+	\newcolumntype{R}{>{\hsize=.20\hsize\raggedleft\arraybackslash}X}%
+	\newcolumntype{L}{>{\hsize=.80\hsize\raggedright\arraybackslash}X}%
 	\newcommand{\tableheading}[1]{\multicolumn{2}{c}{\textsc{#1}}}
 	\begin{tabularx}{\textwidth}{RL}
 		\toprule

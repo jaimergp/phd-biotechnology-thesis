@@ -81,7 +81,7 @@ In more detail, NSGA-II starts with the generation of a random set of potential 
 
 \begin{figure} % FIXME!
 	\vspace*{-1cm}
-	\includegraphics[width=0.9\textheight,angle=90]{./figures/04/nsga.pdf}
+	\includegraphics[width=0.85\textheight,angle=90]{./figures/04/nsga.pdf}
 	\cprotect\caption[NSGA-II algorithm]{Flowchart of the modular NSGA-II multi-objective genetic algorithm (MOGA) implemented in GaudiMM. $ N $ is the number of individuals in the initial population $P$. Values $\lambda$ and $\mu$ are related to the number of children produced at each generation and the number of individuals selected for the next generation, respectively. Together they control the offspring population size, $ P_{0} $. Constants $ mut $ and $ cx $ are the probabilities associated to mutation and crossover.}
 	\label{fig:nsga}
 \end{figure}
@@ -286,7 +286,7 @@ As a result, GaudiMM ships with a rather diverse set of objectives, combining 3\
  Solvation & Measure solvent accessible solvent area & UCSF Chimera \\
 \hhline{~~~}
 %row no:13
- Vina & Docking scoring function & AutoDock Vina\cite{trott2010autodock} \\
+ Vina & Docking scoring function & Vina\cite{trott2010autodock} \\
 \hhline{~~~}
 %row no:14
  Volume & Measure volume occupied by molecule & UCSF Chimera \\
@@ -380,7 +380,7 @@ However, after the first attempt, the user might realize that some results are i
 
 Albeit not revolutionary, this toy example illustrates the flexibility of the paradigm proposed in GaudiMM. For more practical use cases, please refer to models detailed in \autoref{chap:06}.
 
-\section{Analyzing the results of multi-objective optimization}
+\section[Analyzing the results of multi-objective optimization]{Analyzing the results of \\multi-objective optimization}
 \label{section:gaudimm-results}
 In multi-objective optimization (see \autoref[section]{section:multiobjective}), ultimately choosing which solution is the \textit{best} is up to the decision maker: the researcher. Some strategies to make that decision involve reducing the fitness vector to a scalar using an adequate function. However, since that function is usually not characterized in tentative molecular modeling tasks, a UCSF Chimera extension has been developed along GaudiMM to aid in that decision in a more interactive manner: GaudiView.
 
