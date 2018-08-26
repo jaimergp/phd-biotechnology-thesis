@@ -535,8 +535,8 @@
       \raggedright
       \publications
     }
-    \colophonpage
     \acknowledgments
+    \colophonpage
     
 }
 
