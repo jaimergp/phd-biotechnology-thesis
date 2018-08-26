@@ -62,7 +62,7 @@ Multiscale modeling is often necessary because many molecular phenomena comprise
 The consequences of having different methods for varying sizes and timescales is that those methods must be combined in well-designed hybrid protocols. There is no clear strategy that dictates the proper sequence of methods and levels of theory. Some common strategies start with less accurate methods like docking, select poses for further assessment using MD simulations, and pick some representative states to be optimized in QM or QM/MM schemes (see fig. \ref{fig:multiscale}).\cite{victor2015} However, depending on the information available, a study can begin with a DFT optimization of a reduced model and then progressively consider more atoms by decreasing the method accuracy: freezing some atoms in a cluster model, using semi-empirical approaches or hybrid methods and finally checking stability with a MD simulation.\cite{Drienovsk2017}
 
 
-\begin{figure}[H]
+\begin{figure}[hbtp]
 		\includegraphics[width=\textwidth]{./figures/01/multiscaleprotocol.png}
 		\cprotect\caption[Example of a multiscale protocol]{Example of a multiscale protocol applied for the identification of the catalytic mechanism of a metallic cofactor inside a metalloenzyme. (Reproduced from \textit{Computational Methods in Enzyme Catalysis}).\cite{EnzymeDesign2015}}
 		\label{fig:multiscale}
@@ -81,8 +81,8 @@ This is both cause and consequence to the absence of a standard file format to d
 
 After many years of battling the file format war, a true standard is yet to be defined. While there are ongoing efforts trying to solve part of the issue (the crystallographic community is slowly replacing the troublesome PDB file format with mmCIF\cite{bourne1997,berman2007}), new developments still have to deal with multiple input and output files to be competitive (see fig. \ref{fig:xkcd}). Some projects exist to cover the compatibility issues, such as the popular OpenBabel suite, \cite{oboyle2011} but that constitutes only a band-aid and not a true solution.
 
-\begin{figure}[H]
-	\includegraphics[width=\textwidth]{./figures/01/xkcd927.png}
+\begin{figure}[hbtp]
+	\includegraphics[width=\textwidth]{./figures/01/xkcd927.pdf}
 	\caption[Proliferation of standards]{How standards proliferate. Reproduced from XKCD 927 (\url{http://www.xkcd.com}).}
 	\label{fig:xkcd}
 \end{figure}
@@ -148,7 +148,7 @@ Instead of programming, the researcher can also devote to using a single modelin
 To support the development of additional plugins, almost all modeling suites feature some kind of programmatic interface (API) to extend their core features. That API exposes the functionality of the platform to other developers, usually with a scripting language. In all the suites mentioned, Python is consistently chosen as that language. One way or another, learning even some programming skills is highly beneficial to any molecular modeler.
 
 
-\section{Modeling with scarce data: abusing modular approaches}
+\section[Modeling with scarce data: abusing modular approaches]{Modeling with scarce data: \\abusing modular approaches}
 
 All modeling approaches seem to follow a notion: accurate structural details are subordinated to fine energy descriptions. While true, this mindset can be limiting when it comes to modeling systems with scarce experimental information available. This is important because, regardless what methods are finally applied in a multiscale protocol, any software will always need input information to work with. Depending on the tasks to perform, the required data can range from simple geometry specifications, to connectivity, atom types, charges, spin state, temperature, optimization steps or algorithmic treatment (see \autoref[section]{section:buildingmodels}).
 

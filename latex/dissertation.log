@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/Arch Linux) (preloaded format=xelatex 2018.6.30)  20 AUG 2018 18:38
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/Arch Linux) (preloaded format=xelatex 2018.6.30)  26 AUG 2018 20:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -70,6 +70,23 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count92
 )
+(/usr/share/texmf-dist/tex/latex/etaremune/etaremune.sty
+Package: etaremune 2005/06/01 v1.2 Reversed enumerate (HA)
+
+(/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks16
+\XKV@tempa@toks=\toks17
+)
+\XKV@depth=\count93
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\c@EM@itemctr=\count94
+\c@EM@etaremunectr=\count95
+)
 (/usr/share/texmf-dist/tex/latex/ms/ragged2e.sty
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
 
@@ -113,16 +130,16 @@ File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
 )
 (/usr/share/texmf-dist/tex/latex/lettrine/lettrine.sty
 File: lettrine.sty 2015/08/31 v1.9 (Daniel Flipo)
-\c@DefaultLines=\count93
-\c@DefaultDepth=\count94
+\c@DefaultLines=\count96
+\c@DefaultDepth=\count97
 \DefaultFindent=\dimen114
 \DefaultNindent=\dimen115
 \DefaultSlope=\dimen116
 \DiscardVskip=\dimen117
 \L@lbox=\box26
 \L@tbox=\box27
-\c@L@lines=\count95
-\c@L@depth=\count96
+\c@L@lines=\count98
+\c@L@depth=\count99
 \L@Pindent=\dimen118
 \L@Findent=\dimen119
 \L@Nindent=\dimen120
@@ -143,32 +160,20 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (/usr/share/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks16
-\verbatim@line=\toks17
+\every@verbatim=\toks18
+\verbatim@line=\toks19
 \verbatim@in@stream=\read1
 )
 (/usr/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count97
-\float@exts=\toks18
+\c@float@type=\count100
+\float@exts=\toks20
 \float@box=\box28
-\@float@everytoks=\toks19
+\@float@everytoks=\toks21
 \@floatcapt=\box29
 )
 (/usr/share/texmf-dist/tex/latex/tools/hhline.sty
 Package: hhline 2014/10/28 v2.03 Table rule package (DPC)
-)
-(/usr/share/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box30
-\UL@hyphenbox=\box31
-\UL@skip=\skip57
-\UL@hook=\toks20
-\UL@height=\dimen130
-\UL@pe=\count98
-\UL@pixel=\dimen131
-\ULC@box=\box32
-Package: ulem 2012/05/18
-\ULdepth=\dimen132
 )
 (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2018/02/14 3.18 The Babel package
@@ -181,12 +186,12 @@ Language: english 2017/06/06 v3.3r English support from the babel system
 
 (/usr/share/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2018/02/14 3.18 Babel common definitions
-\babel@savecnt=\count99
-\U@D=\dimen133
+\babel@savecnt=\count101
+\U@D=\dimen130
 
 (/usr/share/texmf-dist/tex/generic/babel/xebabel.def
 (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def))
-\bbl@dirlevel=\count100
+\bbl@dirlevel=\count102
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
@@ -198,24 +203,24 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 (/usr/share/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count101
-\c@Blindtext=\count102
-\c@blind@countparstart=\count103
-\blind@countxx=\count104
-\blindtext@numBlindtext=\count105
-\blind@countyy=\count106
-\c@blindlist=\count107
-\c@blindlistlevel=\count108
-\c@blindlist@level=\count109
-\blind@listitem=\count110
-\c@blind@listcount=\count111
-\c@blind@levelcount=\count112
-\blind@mathformula=\count113
-\blind@Mathformula=\count114
-\c@blind@randomcount=\count115
-\c@blind@randommax=\count116
-\c@blind@pangramcount=\count117
-\c@blind@pangrammax=\count118
+\c@blindtext=\count103
+\c@Blindtext=\count104
+\c@blind@countparstart=\count105
+\blind@countxx=\count106
+\blindtext@numBlindtext=\count107
+\blind@countyy=\count108
+\c@blindlist=\count109
+\c@blindlistlevel=\count110
+\c@blindlist@level=\count111
+\blind@listitem=\count112
+\c@blind@listcount=\count113
+\c@blind@levelcount=\count114
+\blind@mathformula=\count115
+\blind@Mathformula=\count116
+\c@blind@randomcount=\count117
+\c@blind@randommax=\count118
+\c@blind@pangramcount=\count119
+\c@blind@pangrammax=\count120
 )
 (/usr/share/texmf-dist/tex/latex/cprotect/cprotect.sty
 Package: cprotect 2011/01/27 v1.0e (Bruno Le Floch)
@@ -227,90 +232,106 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 Package: suffix 2006/07/15 1.5a Variant command support
 )
 \CPT@WriteOut=\write3
-\c@CPT@WriteCount=\count119
-\c@CPT@numB=\count120
-\CPT@commandatend@toks=\toks21
+\c@CPT@WriteCount=\count121
+\c@CPT@numB=\count122
+\CPT@commandatend@toks=\toks22
 )
 (/usr/share/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
-\c@r@tfl@t=\count121
-\rotFPtop=\skip58
-\rotFPbot=\skip59
-\rot@float@box=\box33
-\rot@mess@toks=\toks22
+\c@r@tfl@t=\count123
+\rotFPtop=\skip57
+\rotFPbot=\skip58
+\rot@float@box=\box30
+\rot@mess@toks=\toks23
 )
 (/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
-\multirow@colwidth=\skip60
-\multirow@cntb=\count122
-\multirow@dima=\skip61
-\bigstrutjot=\dimen134
+\multirow@colwidth=\skip59
+\multirow@cntb=\count124
+\multirow@dima=\skip60
+\bigstrutjot=\dimen131
 )
 (/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen135
-\lightrulewidth=\dimen136
-\cmidrulewidth=\dimen137
-\belowrulesep=\dimen138
-\belowbottomsep=\dimen139
-\aboverulesep=\dimen140
-\abovetopsep=\dimen141
-\cmidrulesep=\dimen142
-\cmidrulekern=\dimen143
-\defaultaddspace=\dimen144
-\@cmidla=\count123
-\@cmidlb=\count124
-\@aboverulesep=\dimen145
-\@belowrulesep=\dimen146
-\@thisruleclass=\count125
-\@lastruleclass=\count126
-\@thisrulewidth=\dimen147
+\heavyrulewidth=\dimen132
+\lightrulewidth=\dimen133
+\cmidrulewidth=\dimen134
+\belowrulesep=\dimen135
+\belowbottomsep=\dimen136
+\aboverulesep=\dimen137
+\abovetopsep=\dimen138
+\cmidrulesep=\dimen139
+\cmidrulekern=\dimen140
+\defaultaddspace=\dimen141
+\@cmidla=\count125
+\@cmidlb=\count126
+\@aboverulesep=\dimen142
+\@belowrulesep=\dimen143
+\@thisruleclass=\count127
+\@lastruleclass=\count128
+\@thisrulewidth=\dimen144
 )
 (/usr/share/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
 
 (/usr/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2018/04/07 v2.4g Tabular extension package (FMi)
-\col@sep=\dimen148
-\ar@mcellbox=\box34
-\extrarowheight=\dimen149
-\NC@list=\toks23
-\extratabsurround=\skip62
-\backup@length=\skip63
-\ar@cellbox=\box35
+\col@sep=\dimen145
+\ar@mcellbox=\box31
+\extrarowheight=\dimen146
+\NC@list=\toks24
+\extratabsurround=\skip61
+\backup@length=\skip62
+\ar@cellbox=\box32
 )
-\TX@col@width=\dimen150
-\TX@old@table=\dimen151
-\TX@old@col=\dimen152
-\TX@target=\dimen153
-\TX@delta=\dimen154
-\TX@cols=\count127
-\TX@ftn=\toks24
+\TX@col@width=\dimen147
+\TX@old@table=\dimen148
+\TX@old@col=\dimen149
+\TX@target=\dimen150
+\TX@delta=\dimen151
+\TX@cols=\count129
+\TX@ftn=\toks25
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count128
-\lst@gtempboxa=\box36
-\lst@token=\toks25
-\lst@length=\count129
-\lst@currlwidth=\dimen155
-\lst@column=\count130
-\lst@pos=\count131
-\lst@lostspace=\dimen156
-\lst@width=\dimen157
-\lst@newlines=\count132
-\lst@lineno=\count133
-\lst@maxwidth=\dimen158
+\lst@mode=\count130
+\lst@gtempboxa=\box33
+\lst@token=\toks26
+\lst@length=\count131
+\lst@currlwidth=\dimen152
+\lst@column=\count132
+\lst@pos=\count133
+\lst@lostspace=\dimen153
+\lst@width=\dimen154
+\lst@newlines=\count134
+\lst@lineno=\count135
+\lst@maxwidth=\dimen155
 
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count134
-\lst@skipnumbers=\count135
-\lst@framebox=\box37
+\c@lstnumber=\count136
+\lst@skipnumbers=\count137
+\lst@framebox=\box34
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/share/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box35
+\UL@hyphenbox=\box36
+\UL@skip=\skip63
+\UL@hook=\toks27
+\UL@height=\dimen156
+\UL@pe=\count138
+\UL@pixel=\dimen157
+\ULC@box=\box37
+Package: ulem 2012/05/18
+\ULdepth=\dimen158
+)
+(/usr/share/texmf-dist/tex/latex/contour/contour.sty
+Invalid UTF-8 byte or sequence at line 11 replaced by U+FFFD.
+Package: contour 2004/11/18 v2.14 Print contoured text (HH, MH)
 
 (/usr/share/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
@@ -320,6 +341,16 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: xetex.def on input line 147.
 )
+\con@length=\skip64
+
+Loading configuration file `contour.cfg'.
+(/usr/share/texmf-dist/tex/latex/contour/contour.cfg
+File: contour.cfg 2004/11/18 v2.14 Print contoured text (HH, MH)
+)
+contour: Using driver file `dvips.cnt'.
+(/usr/share/texmf-dist/tex/latex/contour/dvips.cnt
+File: dvips.cnt 2004/11/18 v2.14 Print contoured text (HH, MH)
+))
 (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
@@ -390,13 +421,13 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen159
-\Hy@linkcounter=\count136
-\Hy@pagecounter=\count137
+\Hy@linkcounter=\count139
+\Hy@pagecounter=\count140
 
 (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count138
+\Hy@SavedSpaceFactor=\count141
 
 (/usr/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -408,7 +439,7 @@ Package hyperref Info: Plain pages OFF on input line 4524.
 Package hyperref Info: Backreferencing OFF on input line 4529.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4762.
-\c@Hy@tempcnt=\count139
+\c@Hy@tempcnt=\count142
 
 (/usr/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
@@ -416,7 +447,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5115.
 \XeTeXLinkMargin=\dimen160
-\Fld@menulength=\count140
+\Fld@menulength=\count143
 \Field@Width=\dimen161
 \Fld@charsize=\dimen162
 Package hyperref Info: Hyper figures OFF on input line 6369.
@@ -428,9 +459,9 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6394.
 Package hyperref Info: PDF/A mode OFF on input line 6399.
 LaTeX Info: Redefining \ref on input line 6439.
 LaTeX Info: Redefining \pageref on input line 6443.
-\Hy@abspage=\count141
-\c@Item=\count142
-\c@Hfootnote=\count143
+\Hy@abspage=\count144
+\c@Item=\count145
+\c@Hfootnote=\count146
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 
@@ -445,17 +476,17 @@ Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
 )
 )
 \pdfm@box=\box38
-\c@Hy@AnnotLevel=\count144
-\HyField@AnnotCount=\count145
-\Fld@listcount=\count146
-\c@bookmark@seq@number=\count147
+\c@Hy@AnnotLevel=\count147
+\HyField@AnnotCount=\count148
+\Fld@listcount=\count149
+\c@bookmark@seq@number=\count150
 
 (/usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip64
+\Hy@SectionHShift=\skip65
 )
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -463,7 +494,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count148
+\c@section@level=\count151
 )
 (/usr/share/texmf-dist/tex/latex/fontspec/fontspec.sty
 (/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
@@ -472,102 +503,102 @@ Package: expl3 2018/03/05 L3 programming layer (loader)
 
 (/usr/share/texmf-dist/tex/latex/l3kernel/expl3-code.tex
 Package: expl3 2018/03/05 L3 programming layer (code)
-\c_max_int=\count149
-\l_tmpa_int=\count150
-\l_tmpb_int=\count151
-\g_tmpa_int=\count152
-\g_tmpb_int=\count153
-\g__intarray_font_int=\count154
-\g__prg_map_int=\count155
-\c_log_iow=\count156
-\l_iow_line_count_int=\count157
-\l__iow_line_target_int=\count158
-\l__iow_one_indent_int=\count159
-\l__iow_indent_int=\count160
+\c_max_int=\count152
+\l_tmpa_int=\count153
+\l_tmpb_int=\count154
+\g_tmpa_int=\count155
+\g_tmpb_int=\count156
+\g__intarray_font_int=\count157
+\g__prg_map_int=\count158
+\c_log_iow=\count159
+\l_iow_line_count_int=\count160
+\l__iow_line_target_int=\count161
+\l__iow_one_indent_int=\count162
+\l__iow_indent_int=\count163
 \c_zero_dim=\dimen163
 \c_max_dim=\dimen164
 \l_tmpa_dim=\dimen165
 \l_tmpb_dim=\dimen166
 \g_tmpa_dim=\dimen167
 \g_tmpb_dim=\dimen168
-\c_zero_skip=\skip65
-\c_max_skip=\skip66
-\l_tmpa_skip=\skip67
-\l_tmpb_skip=\skip68
-\g_tmpa_skip=\skip69
-\g_tmpb_skip=\skip70
+\c_zero_skip=\skip66
+\c_max_skip=\skip67
+\l_tmpa_skip=\skip68
+\l_tmpb_skip=\skip69
+\g_tmpa_skip=\skip70
+\g_tmpb_skip=\skip71
 \c_zero_muskip=\muskip11
 \c_max_muskip=\muskip12
 \l_tmpa_muskip=\muskip13
 \l_tmpb_muskip=\muskip14
 \g_tmpa_muskip=\muskip15
 \g_tmpb_muskip=\muskip16
-\l_keys_choice_int=\count161
-\c__fp_leading_shift_int=\count162
-\c__fp_middle_shift_int=\count163
-\c__fp_trailing_shift_int=\count164
-\c__fp_big_leading_shift_int=\count165
-\c__fp_big_middle_shift_int=\count166
-\c__fp_big_trailing_shift_int=\count167
-\c__fp_Bigg_leading_shift_int=\count168
-\c__fp_Bigg_middle_shift_int=\count169
-\c__fp_Bigg_trailing_shift_int=\count170
-\l__sort_length_int=\count171
-\l__sort_min_int=\count172
-\l__sort_top_int=\count173
-\l__sort_max_int=\count174
-\l__sort_true_max_int=\count175
-\l__sort_block_int=\count176
-\l__sort_begin_int=\count177
-\l__sort_end_int=\count178
-\l__sort_A_int=\count179
-\l__sort_B_int=\count180
-\l__sort_C_int=\count181
-\l__tl_build_start_index_int=\count182
-\l__tl_build_index_int=\count183
-\l__tl_analysis_normal_int=\count184
-\l__tl_analysis_index_int=\count185
-\l__tl_analysis_nesting_int=\count186
-\l__tl_analysis_type_int=\count187
-\l__regex_internal_a_int=\count188
-\l__regex_internal_b_int=\count189
-\l__regex_internal_c_int=\count190
-\l__regex_balance_int=\count191
-\l__regex_group_level_int=\count192
-\l__regex_mode_int=\count193
-\c__regex_cs_in_class_mode_int=\count194
-\c__regex_cs_mode_int=\count195
-\l__regex_catcodes_int=\count196
-\l__regex_default_catcodes_int=\count197
-\c__regex_catcode_L_int=\count198
-\c__regex_catcode_O_int=\count199
-\c__regex_catcode_A_int=\count266
-\c__regex_all_catcodes_int=\count267
-\l__regex_show_lines_int=\count268
-\l__regex_min_state_int=\count269
-\l__regex_max_state_int=\count270
-\l__regex_left_state_int=\count271
-\l__regex_right_state_int=\count272
-\l__regex_capturing_group_int=\count273
-\l__regex_min_pos_int=\count274
-\l__regex_max_pos_int=\count275
-\l__regex_curr_pos_int=\count276
-\l__regex_start_pos_int=\count277
-\l__regex_success_pos_int=\count278
-\l__regex_curr_char_int=\count279
-\l__regex_curr_catcode_int=\count280
-\l__regex_last_char_int=\count281
-\l__regex_case_changed_char_int=\count282
-\l__regex_curr_state_int=\count283
-\l__regex_step_int=\count284
-\l__regex_min_active_int=\count285
-\l__regex_max_active_int=\count286
-\l__regex_replacement_csnames_int=\count287
-\l__regex_match_count_int=\count288
-\l__regex_min_submatch_int=\count289
-\l__regex_submatch_int=\count290
-\l__regex_zeroth_submatch_int=\count291
-\g__regex_trace_regex_int=\count292
+\l_keys_choice_int=\count164
+\c__fp_leading_shift_int=\count165
+\c__fp_middle_shift_int=\count166
+\c__fp_trailing_shift_int=\count167
+\c__fp_big_leading_shift_int=\count168
+\c__fp_big_middle_shift_int=\count169
+\c__fp_big_trailing_shift_int=\count170
+\c__fp_Bigg_leading_shift_int=\count171
+\c__fp_Bigg_middle_shift_int=\count172
+\c__fp_Bigg_trailing_shift_int=\count173
+\l__sort_length_int=\count174
+\l__sort_min_int=\count175
+\l__sort_top_int=\count176
+\l__sort_max_int=\count177
+\l__sort_true_max_int=\count178
+\l__sort_block_int=\count179
+\l__sort_begin_int=\count180
+\l__sort_end_int=\count181
+\l__sort_A_int=\count182
+\l__sort_B_int=\count183
+\l__sort_C_int=\count184
+\l__tl_build_start_index_int=\count185
+\l__tl_build_index_int=\count186
+\l__tl_analysis_normal_int=\count187
+\l__tl_analysis_index_int=\count188
+\l__tl_analysis_nesting_int=\count189
+\l__tl_analysis_type_int=\count190
+\l__regex_internal_a_int=\count191
+\l__regex_internal_b_int=\count192
+\l__regex_internal_c_int=\count193
+\l__regex_balance_int=\count194
+\l__regex_group_level_int=\count195
+\l__regex_mode_int=\count196
+\c__regex_cs_in_class_mode_int=\count197
+\c__regex_cs_mode_int=\count198
+\l__regex_catcodes_int=\count199
+\l__regex_default_catcodes_int=\count266
+\c__regex_catcode_L_int=\count267
+\c__regex_catcode_O_int=\count268
+\c__regex_catcode_A_int=\count269
+\c__regex_all_catcodes_int=\count270
+\l__regex_show_lines_int=\count271
+\l__regex_min_state_int=\count272
+\l__regex_max_state_int=\count273
+\l__regex_left_state_int=\count274
+\l__regex_right_state_int=\count275
+\l__regex_capturing_group_int=\count276
+\l__regex_min_pos_int=\count277
+\l__regex_max_pos_int=\count278
+\l__regex_curr_pos_int=\count279
+\l__regex_start_pos_int=\count280
+\l__regex_success_pos_int=\count281
+\l__regex_curr_char_int=\count282
+\l__regex_curr_catcode_int=\count283
+\l__regex_last_char_int=\count284
+\l__regex_case_changed_char_int=\count285
+\l__regex_curr_state_int=\count286
+\l__regex_step_int=\count287
+\l__regex_min_active_int=\count288
+\l__regex_max_active_int=\count289
+\l__regex_replacement_csnames_int=\count290
+\l__regex_match_count_int=\count291
+\l__regex_min_submatch_int=\count292
+\l__regex_submatch_int=\count293
+\l__regex_zeroth_submatch_int=\count294
+\g__regex_trace_regex_int=\count295
 \c_empty_box=\box39
 \l_tmpa_box=\box40
 \l_tmpb_box=\box41
@@ -611,28 +642,28 @@ Package: expl3 2018/03/05 L3 programming layer (code)
 )
 (/usr/share/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
 File: l3xdvidpfmx.def 2017/03/18 v L3 Experimental driver: xdvipdfmx
-\g__driver_image_int=\count293
+\g__driver_image_int=\count296
 ))
 Package: xparse 2018/02/21 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count294
-\g__xparse_grabber_int=\count295
-\l__xparse_m_args_int=\count296
-\l__xparse_mandatory_args_int=\count297
-\l__xparse_v_nesting_int=\count298
+\l__xparse_current_arg_int=\count297
+\g__xparse_grabber_int=\count298
+\l__xparse_m_args_int=\count299
+\l__xparse_mandatory_args_int=\count300
+\l__xparse_v_nesting_int=\count301
 )
 Package: fontspec 2017/11/09 v2.6g Font selection for XeLaTeX and LuaLaTeX
 
 (/usr/share/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2017/11/09 v2.6g Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count299
-\l__fontspec_language_int=\count300
-\l__fontspec_strnum_int=\count301
-\l__fontspec_tmp_int=\count302
-\l__fontspec_em_int=\count303
-\l__fontspec_emdef_int=\count304
-\l__fontspec_strong_int=\count305
-\l__fontspec_strongdef_int=\count306
+\l__fontspec_script_int=\count302
+\l__fontspec_language_int=\count303
+\l__fontspec_strnum_int=\count304
+\l__fontspec_tmp_int=\count305
+\l__fontspec_em_int=\count306
+\l__fontspec_emdef_int=\count307
+\l__fontspec_strong_int=\count308
+\l__fontspec_strongdef_int=\count309
 \l__fontspec_tmpa_dim=\dimen194
 \l__fontspec_tmpb_dim=\dimen195
 \l__fontspec_tmpc_dim=\dimen196
@@ -839,17 +870,6 @@ LaTeX Info: Redefining \- on input line 4015.
 Package: ebgaramond 2014/11/25 (Bob Tennent and autoinst) Style file for EB Gar
 amond fonts.
 
-(/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-(/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks26
-\XKV@tempa@toks=\toks27
-)
-\XKV@depth=\count307
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
 (/usr/share/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
@@ -935,7 +955,7 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 Requested font "[EBGaramond12-Regular.otf]/OT" at 12.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
-\g__fontspec_family_EBGaramond12_int=\count308
+\g__fontspec_family_EBGaramond12_int=\count310
 Requested font "[EBGaramond12-Italic.otf]/OT" at 12.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
 otf
@@ -1105,7 +1125,7 @@ Missing character: There is no   in font [EBGaramondInitials.otf]/OT!
 * OpenType feature 'Ligatures=Common, TeX' (liga) not available for font
 * 'EBGaramondInitials' with script '' and language ''.
 *************************************************
-\g__fontspec_family_EBGaramondInitials_int=\count309
+\g__fontspec_family_EBGaramondInitials_int=\count311
 *************************************************
 * fontspec warning: "icu-feature-not-exist-in-font"
 * 
@@ -1203,7 +1223,7 @@ LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 38.
 )
 (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2017/09/02 v2.17a AMS math features
-\@mathmargin=\skip71
+\@mathmargin=\skip72
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -1221,13 +1241,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count310
+\inf@bad=\count312
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count311
-\leftroot@=\count312
+\uproot@=\count313
+\leftroot@=\count314
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count313
-\DOTSCASE@=\count314
+\classnum@=\count315
+\DOTSCASE@=\count316
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
@@ -1240,15 +1260,15 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 
 Package amsmath Warning: Unable to redefine math accent \vec.
 
-\macc@depth=\count315
-\c@MaxMatrixCols=\count316
+\macc@depth=\count317
+\c@MaxMatrixCols=\count318
 \dotsspace@=\muskip17
-\c@parentequation=\count317
-\dspbrk@lvl=\count318
+\c@parentequation=\count319
+\dspbrk@lvl=\count320
 \tag@help=\toks29
-\row@=\count319
-\column@=\count320
-\maxfields@=\count321
+\row@=\count321
+\column@=\count322
+\maxfields@=\count323
 \andhelp@=\toks30
 \eqnshift@=\dimen256
 \alignsep@=\dimen257
@@ -1257,28 +1277,28 @@ Package amsmath Warning: Unable to redefine math accent \vec.
 \totwidth@=\dimen260
 \lineht@=\dimen261
 \@envbody=\toks31
-\multlinegap=\skip72
-\multlinetaggap=\skip73
+\multlinegap=\skip73
+\multlinetaggap=\skip74
 \mathdisplay@stack=\toks32
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
 Requested font "Lato Regular" at 12.0pt
- -> 0ÔøøÑÔøøºT^^?U
+ -> PÔøæóÔøøªÔøø™^^BV
 Requested font "Lato Regular/OT" at 12.0pt
- -> 
+ ->  ÔøæóÔøøªÔøø™^^BV
 .................................................
 . fontspec info: "set-scale"
 . 
 . Lato Regular scale = 0.7897335863911148.
 .................................................
-\g__fontspec_family_LatoRegular_int=\count322
+\g__fontspec_family_LatoRegular_int=\count324
 Requested font "Lato Bold/OT" at 12.0pt
- -> @ÔøæïÔøøóT^^?U
+ -> p~ÔøøñÔøø™^^BV
 Requested font "Lato Bold/I/OT" at 12.0pt
- -> 
+ ->  Ôøæ°ÔøøªÔøø™^^BV
 Requested font "Lato Regular/I/OT" at 12.0pt
- -> 
+ ->  Ôøæ†ÔøøªÔøø™^^BV
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1290,9 +1310,9 @@ Requested font "Lato Regular/I/OT" at 12.0pt
 . Lato Bold scale = 0.7797268490977592.
 .................................................
 Requested font "Lato Regular/I/OT" at 12.0pt
- -> 0ÔøøùÔøøæT^^?U
+ -> Ôøø∞Ôøæ≥ÔøøΩÔøø™^^BV
 Requested font "Lato Regular/I/OT" at 12.0pt
- -> ÔøøÄÔøø†ÔøøæT^^?U
+ -> ÔøæÄÔøæ∑ÔøøΩÔøø™^^BV
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1328,23 +1348,23 @@ Requested font "Lato Bold/I/OT" at 12.0pt
 . Bold/I/OT:script=latn;language=DFLT;mapping=tex-text;"
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
 .................................................
-LaTeX Info: Redefining \sffamily on input line 124.
+LaTeX Info: Redefining \sffamily on input line 134.
 Requested font "Source Code Pro" at 12.0pt
- -> ÔøøÄ^^QÔøøøT^^?U
+ -> Ôøøê^^DÔøøæÔøø™^^BV
 Requested font "Source Code Pro/OT" at 12.0pt
- -> Ôøæê2ÔøøøT^^?U
+ -> ÔøøÄÔøø±ÔøøΩÔøø™^^BV
 .................................................
 . fontspec info: "set-scale"
 . 
 . Source Code Pro scale = 0.833334657882258.
 .................................................
-\g__fontspec_family_SourceCodePro_int=\count323
+\g__fontspec_family_SourceCodePro_int=\count325
 Requested font "Source Code Pro/BI/OT" at 12.0pt
- -> Ôøæ∞ÔøøìÔøøæT^^?U
+ -> ÔøøÄÔøø±ÔøøΩÔøø™^^BV
 Requested font "Source Code Pro/B/OT" at 12.0pt
- -> Ôøæê2ÔøøøT^^?U
+ -> `^^BÔøøæÔøø™^^BV
 Requested font "Source Code Pro/I/OT" at 12.0pt
- -> Ôøæê2ÔøøøT^^?U
+ -> `^^BÔøøæÔøø™^^BV
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1356,18 +1376,18 @@ Requested font "Source Code Pro/I/OT" at 12.0pt
 . Source Code Pro scale = 0.833334657882258.
 .................................................
 Requested font "Source Code Pro/B/OT" at 12.0pt
- -> Ôøæê2ÔøøøT^^?U
+ -> `^^BÔøøæÔøø™^^BV
 Requested font "Source Code Pro/B/OT" at 12.0pt
- -> Ôøæê2ÔøøøT^^?U
+ -> `^^BÔøøæÔøø™^^BV
 .................................................
 . fontspec info: "set-scale"
 . 
 . Source Code Pro/B scale = 0.833334657882258.
 .................................................
 Requested font "Source Code Pro/BI/OT" at 12.0pt
- -> Ôøæê2ÔøøøT^^?U
+ -> `^^BÔøøæÔøø™^^BV
 Requested font "Source Code Pro/BI/OT" at 12.0pt
- -> Ôøæê2ÔøøøT^^?U
+ -> `^^BÔøøæÔøø™^^BV
 .................................................
 . fontspec info: "set-scale"
 . 
@@ -1405,7 +1425,7 @@ rcase].
 . \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font
 . \tex_hyphenchar:D \font =-1\scan_stop: 
 .................................................
-LaTeX Info: Redefining \ttfamily on input line 125.
+LaTeX Info: Redefining \ttfamily on input line 135.
  (/usr/share/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
@@ -1425,7 +1445,7 @@ Package caption Info: We need package `newfloat' on input line 292.
 (/usr/share/texmf-dist/tex/latex/caption/newfloat.sty
 Package: newfloat 2015/09/17 v1.1-109 Defining new floating environments (AR)
 )
-\c@ContinuedFloat=\count324
+\c@ContinuedFloat=\count326
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -1434,11 +1454,11 @@ Package caption Info: rotating package is loaded.
 (/usr/share/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2018/01/14 v2.7a Micro-typographical refinements (RS)
 \MT@toks=\toks33
-\MT@count=\count325
+\MT@count=\count327
 LaTeX Info: Redefining \textls on input line 793.
 \MT@outer@kern=\dimen269
 LaTeX Info: Redefining \textmicrotypecontext on input line 1339.
-\MT@listname@count=\count326
+\MT@listname@count=\count328
 
 (/usr/share/texmf-dist/tex/latex/microtype/microtype-xetex.def
 File: microtype-xetex.def 2018/01/14 v2.7a Definitions specific to xetex (RS)
@@ -1452,21 +1472,21 @@ File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
 (/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip74
-\f@nch@O@elh=\skip75
-\f@nch@O@erh=\skip76
-\f@nch@O@olh=\skip77
-\f@nch@O@orh=\skip78
-\f@nch@O@elf=\skip79
-\f@nch@O@erf=\skip80
-\f@nch@O@olf=\skip81
-\f@nch@O@orf=\skip82
+\f@nch@headwidth=\skip75
+\f@nch@O@elh=\skip76
+\f@nch@O@erh=\skip77
+\f@nch@O@olh=\skip78
+\f@nch@O@orh=\skip79
+\f@nch@O@elf=\skip80
+\f@nch@O@erf=\skip81
+\f@nch@O@olf=\skip82
+\f@nch@O@orf=\skip83
 )
 (/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \ttl@box=\box56
-\beforetitleunit=\skip83
-\aftertitleunit=\skip84
+\beforetitleunit=\skip84
+\aftertitleunit=\skip85
 \ttl@plus=\dimen270
 \ttl@minus=\dimen271
 \ttl@toksa=\toks34
@@ -1476,9 +1496,9 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 )
 (/usr/share/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
-\thanksmarkwidth=\skip85
-\thanksmargin=\skip86
-\droptitle=\skip87
+\thanksmarkwidth=\skip86
+\thanksmargin=\skip87
+\droptitle=\skip88
 )
 (/usr/share/texmf-dist/tex/latex/emptypage/emptypage.sty
 Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty 
@@ -1487,78 +1507,78 @@ pages
 (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 51.
-\cftparskip=\skip88
-\cftbeforetoctitleskip=\skip89
-\cftaftertoctitleskip=\skip90
-\cftbeforepartskip=\skip91
-\cftpartnumwidth=\skip92
-\cftpartindent=\skip93
-\cftbeforechapskip=\skip94
-\cftchapindent=\skip95
-\cftchapnumwidth=\skip96
-\cftbeforesecskip=\skip97
-\cftsecindent=\skip98
-\cftsecnumwidth=\skip99
-\cftbeforesubsecskip=\skip100
-\cftsubsecindent=\skip101
-\cftsubsecnumwidth=\skip102
-\cftbeforesubsubsecskip=\skip103
-\cftsubsubsecindent=\skip104
-\cftsubsubsecnumwidth=\skip105
-\cftbeforeparaskip=\skip106
-\cftparaindent=\skip107
-\cftparanumwidth=\skip108
-\cftbeforesubparaskip=\skip109
-\cftsubparaindent=\skip110
-\cftsubparanumwidth=\skip111
-\cftbeforeloftitleskip=\skip112
-\cftafterloftitleskip=\skip113
-\cftbeforefigskip=\skip114
-\cftfigindent=\skip115
-\cftfignumwidth=\skip116
-\c@lofdepth=\count327
-\c@lotdepth=\count328
-\cftbeforelottitleskip=\skip117
-\cftafterlottitleskip=\skip118
-\cftbeforetabskip=\skip119
-\cfttabindent=\skip120
-\cfttabnumwidth=\skip121
+\cftparskip=\skip89
+\cftbeforetoctitleskip=\skip90
+\cftaftertoctitleskip=\skip91
+\cftbeforepartskip=\skip92
+\cftpartnumwidth=\skip93
+\cftpartindent=\skip94
+\cftbeforechapskip=\skip95
+\cftchapindent=\skip96
+\cftchapnumwidth=\skip97
+\cftbeforesecskip=\skip98
+\cftsecindent=\skip99
+\cftsecnumwidth=\skip100
+\cftbeforesubsecskip=\skip101
+\cftsubsecindent=\skip102
+\cftsubsecnumwidth=\skip103
+\cftbeforesubsubsecskip=\skip104
+\cftsubsubsecindent=\skip105
+\cftsubsubsecnumwidth=\skip106
+\cftbeforeparaskip=\skip107
+\cftparaindent=\skip108
+\cftparanumwidth=\skip109
+\cftbeforesubparaskip=\skip110
+\cftsubparaindent=\skip111
+\cftsubparanumwidth=\skip112
+\cftbeforeloftitleskip=\skip113
+\cftafterloftitleskip=\skip114
+\cftbeforefigskip=\skip115
+\cftfigindent=\skip116
+\cftfignumwidth=\skip117
+\c@lofdepth=\count329
+\c@lotdepth=\count330
+\cftbeforelottitleskip=\skip118
+\cftafterlottitleskip=\skip119
+\cftbeforetabskip=\skip120
+\cfttabindent=\skip121
+\cfttabnumwidth=\skip122
 )
 (/usr/share/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count329
-\c@@ppsavesec=\count330
-\c@@ppsaveapp=\count331
+\c@@pps=\count331
+\c@@ppsavesec=\count332
+\c@@ppsaveapp=\count333
 )
 (/usr/share/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip122
-\bibsep=\skip123
+\bibhang=\skip123
+\bibsep=\skip124
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count332
+\c@NAT@ctr=\count334
 )
 (/usr/share/texmf-dist/tex/latex/quotchap/quotchap.sty
 Package: quotchap 2012/10/20 v1.1 Decorative Chapter Headings with Quotes
 \@quotebox=\box57
 )
-\mybibindent=\skip124
-Package hyperref Info: Option `colorlinks' set `true' on input line 253.
+\mybibindent=\skip125
+Package hyperref Info: Option `colorlinks' set `true' on input line 263.
 
 (/usr/share/texmf-dist/tex/latex/xifthen/xifthen.sty
 Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
 
 (/usr/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count333
-\calc@Bcount=\count334
+\calc@Acount=\count335
+\calc@Bcount=\count336
 \calc@Adimen=\dimen275
 \calc@Bdimen=\dimen276
-\calc@Askip=\skip125
-\calc@Bskip=\skip126
+\calc@Askip=\skip126
+\calc@Bskip=\skip127
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count335
-\calc@Cskip=\skip127
+\calc@Ccount=\count337
+\calc@Cskip=\skip128
 )
 (/usr/share/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
 Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
@@ -1566,16 +1586,16 @@ Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
 .................................................
 . LaTeX info: "xparse/redefine-command"
 . 
-. Redefining command \autoref with sig. 'o m' on line 592.
+. Redefining command \autoref with sig. 'o m' on line 594.
 .................................................
 
 (/usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
-\labelindent=\skip128
+\labelindent=\skip129
 \enit@outerparindent=\dimen277
 \enit@toks=\toks35
 \enit@inbox=\box58
-\enitdp@description=\count336
+\enitdp@description=\count338
 ))
 (/usr/share/texmf-dist/tex/latex/todonotes/todonotes.sty
 Package: todonotes 2015/07/09 .dtx Todonotes source and documentation.
@@ -1623,10 +1643,10 @@ Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 \pgf@yc=\dimen287
 \w@pgf@writea=\write4
 \r@pgf@reada=\read3
-\c@pgf@counta=\count337
-\c@pgf@countb=\count338
-\c@pgf@countc=\count339
-\c@pgf@countd=\count340
+\c@pgf@counta=\count339
+\c@pgf@countb=\count340
+\c@pgf@countc=\count341
+\c@pgf@countd=\count342
 \t@pgf@toka=\toks40
 \t@pgf@tokb=\toks41
 \t@pgf@tokc=\toks42
@@ -1645,12 +1665,12 @@ File: pgfsys-dvipdfmx.def 2014/07/09  (rcs-revision 1.14)
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )
-\pgfsys@objnum=\count341
+\pgfsys@objnum=\count343
 )))
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count342
-\pgfsyssoftpath@bigbuffer@items=\count343
+\pgfsyssoftpath@smallbuffer@items=\count344
+\pgfsyssoftpath@bigbuffer@items=\count345
 )
 (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
@@ -1663,7 +1683,7 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen288
-\pgfmath@count=\count344
+\pgfmath@count=\count346
 \pgfmath@box=\box60
 \pgfmath@toks=\toks43
 \pgfmath@stack@operand=\toks44
@@ -1680,7 +1700,7 @@ x) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)
 (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics
 .code.tex))) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count345
+\c@pgfmathroundto@lastzeros=\count347
 )) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@picminx=\dimen289
@@ -1712,7 +1732,7 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box61
 \pgf@hbox=\box62
 \pgf@layerbox@main=\box63
-\pgf@picture@serial@count=\count346
+\pgf@picture@serial@count=\count348
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
@@ -1740,7 +1760,7 @@ File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen312
-\pgf@sys@shading@range@num=\count347
+\pgf@sys@shading@range@num=\count349
 )
 (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
@@ -1792,7 +1812,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.te
 x
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count348
+\pgf@plot@mark@count=\count350
 \pgfplotmarksize=\dimen317
 )
 \tikz@lastx=\dimen318
@@ -1805,17 +1825,17 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@figbox@bg=\box67
 \tikz@tempbox=\box68
 \tikz@tempbox@bg=\box69
-\tikztreelevel=\count349
-\tikznumberofchildren=\count350
-\tikznumberofcurrentchild=\count351
-\tikz@fig@count=\count352
+\tikztreelevel=\count351
+\tikznumberofchildren=\count352
+\tikznumberofcurrentchild=\count353
+\tikz@fig@count=\count354
  (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count353
-\pgfmatrixcurrentcolumn=\count354
-\pgf@matrix@numberofcolumns=\count355
+\pgfmatrixcurrentrow=\count355
+\pgfmatrixcurrentcolumn=\count356
+\pgf@matrix@numberofcolumns=\count357
 )
-\tikz@expandcount=\count356
+\tikz@expandcount=\count358
 
 (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
 topaths.code.tex
@@ -1825,7 +1845,7 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 positioning.code.tex
 File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 )
-\c@@todonotes@numberoftodonotes=\count357
+\c@@todonotes@numberoftodonotes=\count359
 ) (./dissertation.aux (./chapters/00-preface.aux)
 (./chapters/01-intro.aux) (./chapters/02-methods.aux)
 (./chapters/03-objectives.aux) (./chapters/04-gaudimm.aux)
@@ -1886,14 +1906,14 @@ LaTeX Font Info:    ... okay on input line 6.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
 * h-part:(L,W,R)=(71.13188pt, 372.73111pt, 56.9055pt)
-* v-part:(T,H,B)=(71.13188pt, 583.28151pt, 56.9055pt)
+* v-part:(T,H,B)=(73.97716pt, 580.43623pt, 56.9055pt)
 * \paperwidth=500.7685pt
 * \paperheight=711.3189pt
 * \textwidth=372.73111pt
-* \textheight=583.28151pt
+* \textheight=580.43623pt
 * \oddsidemargin=-1.1381pt
 * \evensidemargin=-15.36449pt
-* \topmargin=-33.0119pt
+* \topmargin=-30.16663pt
 * \headheight=15.0pt
 * \headsep=19.8738pt
 * \topskip=12.0pt
@@ -1913,7 +1933,7 @@ LaTeX Font Info:    ... okay on input line 6.
 
 ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 6.
-\c@lstlisting=\count358
+\c@lstlisting=\count360
 \AtBeginShipoutBox=\box70
 Package hyperref Info: Link coloring ON on input line 6.
 LaTeX Info: Redefining \ref on input line 6.
@@ -2015,7 +2035,7 @@ ABD: EveryShipout initializing macros (./frontmatter/personalize.tex)
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
 (Font)              scaled to size 9.99994pt on input line 10.
 Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 9.99994pt
- -> Ôøæ†Ôøæá^^BU^^?U
+ -> 0f^^AÔøø´^^BV
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `SourceCodePro' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2083,25 +2103,14 @@ alt;+pnum;+lnum;mapping=tex-text;" at 12.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
 otf
  [6]
-(./frontmatter/official-acknowledgments.tex
-Overfull \hbox (15.95958pt too wide) in paragraph at lines 4--5
-\TU/EBGaramond12(0)/m/n/10.95 the support received from the projects CTQ-2014‚Äê5
-4071‚ÄêP and CTQ-2017-87889-P (MINECO,
- []
-
-
-Overfull \hbox (0.3427pt too wide) in paragraph at lines 4--5
-\TU/EBGaramond12(0)/m/n/10.95 Government of Spain), 2014-SGR-989 and 2017-SGR-1
-323 (Generalitat de Catalunya), and
- []
-
-) [7
+(./frontmatter/official-acknowledgments.tex) [7
 
 ] [8
 
 ]
 LaTeX Font Info:    Try loading font information for T1+ppl on input line 10.
- (/usr/share/texmf-dist/tex/latex/psnfss/t1ppl.fd
+
+(/usr/share/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
 Requested font "pplb8t" at 24.88pt
@@ -2198,14 +2207,20 @@ the easy way: OMMPro-
 ]
 (./frontmatter/abbreviations.tex [16
 
-] [17]) [18] (./frontmatter/dedication.tex
+]
+Overfull \hbox (1.57564pt too wide) in paragraph at lines 47--48
+[]\TU/EBGaramond12(0)/m/sc/10.95 GaudiMM \TU/EBGaramond12(0)/bx/n/10.95 ‚Äî genet
+ic algorithms with unrestricted descriptors for intuitive molecular mod-
+ []
+
+[17]
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/it' will be
-(Font)              scaled to size 10.95pt on input line 7.
+(Font)              scaled to size 10.95pt on input line 101.
 Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-c
 alt;+pnum;+lnum;mapping=tex-text;" at 10.95pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
 otf
-)
+) [18] (./frontmatter/dedication.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 7--10
 
  []
@@ -2261,7 +2276,7 @@ LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
 (Font)              scaled to size 9.4768pt on input line 15.
 Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
  9.4768pt
- -> ÔøøÄw(U^^?U
+ ->  h'Ôøø´^^BV
 LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
 (Font)              scaled to size 8.64758pt on input line 15.
 Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
@@ -2272,7 +2287,7 @@ LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/n' will be
 (Font)              scaled to size 6.31787pt on input line 1.
 Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
  6.31787pt
- -> 0v*U^^?U
+ -> `j)Ôøø´^^BV
 ) [21
 
 
@@ -2286,9 +2301,9 @@ Requested font "Lato Regular/OT:script=latn;language=DFLT;mapping=tex-text;" at
 ]
 Chapter 1.
 
-Overfull \hbox (31.4443pt too wide) in paragraph at lines 17--18
+Underfull \hbox (badness 2165) in paragraph at lines 17--18
 []\TU/EBGaramond12(0)/bx/n/10.95 Building software that satisfies both requirem
-ents ‚Äîuser-friendliness and multiscale applicability‚Äî
+ents ‚Äîuser-friendliness and multiscale
  []
 
 [25]
@@ -2313,18 +2328,13 @@ LaTeX Font Info:    Font shape `TU/LatoRegular(0)/m/it' will be
 (Font)              scaled to size 8.64758pt on input line 1.
 Requested font "Lato Regular/I/OT:script=latn;language=DFLT;mapping=tex-text;" 
 at 8.64758pt
- -> ÔøøÄÔøøπ0U^^?U
+ -> Ôøøê(0Ôøø´^^BV
 ) [30]
-Overfull \hbox (4.89427pt too wide) in paragraph at lines 78--79
-\TU/EBGaramond12(0)/bx/n/10.95 tool might use different unit systems and a conv
-ersion is required (nanometers and angstroms
- []
-
 [31]
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
 (Font)              scaled to size 9.12494pt on input line 80.
 Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 9.12494pt
- -> Ôøæ∞A1U^^?U
+ -> Ôøøê^0Ôøø´^^BV
  [32] [33]
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
 (Font)              scaled to size 9.59998pt on input line 104.
@@ -2369,25 +2379,7 @@ Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
 calt;+pnum;+lnum;mapping=tex-text;" at 8.39998pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
-
-Overfull \hbox (12.49773pt too wide) in paragraph at lines 104--105
-\TU/EBGaramond12(0)/bx/n/10.95 sault as Biovia),$[]$ Chemical Computing Group‚Äôs
- Molecular Operating Environment (MOE)$[]$
- []
-
-[34] [35] [36] [37]
-Overfull \hbox (1.18217pt too wide) in paragraph at lines 142--143
-\TU/EBGaramond12(0)/bx/n/10.95 the machine learning/deep learning/neural networ
-ks/blockchain projects recently launched
- []
-
-[38]
-Overfull \hbox (33.7088pt too wide) in paragraph at lines 151--151
-|[]\TU/EBGaramond12(0)/m/sc/14.4 Modeling with scarce data: abusing modular app
-roaches| 
- []
-
-[39]) [40]
+ [34] [35] [36] [37] [38] [39]) [40]
 \openout2 = `chapters/02-methods.aux'.
 
  (./chapters/02-methods.tex
@@ -2399,9 +2391,15 @@ alt;+pnum;+lnum;mapping=tex-text;" at 24.88pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
 otf
 
-Overfull \hbox (3.69339pt too wide) in paragraph at lines 18--19
-\TU/EBGaramond12(0)/bx/n/10.95 The birth of theoretical chemistry, from a quant
-um chemistry perspective, can be pinpointed
+Underfull \hbox (badness 1097) in paragraph at lines 18--19
+\TU/EBGaramond12(0)/bx/n/10.95 to grow rapidly (Teller,$[]$ Mulliken,$[]$ Born,
+$[]$ Oppenheimer,$[]$ Pauling,$[]$ H√ºckel,$[]$
+ []
+
+
+Underfull \hbox (badness 2012) in paragraph at lines 18--19
+\TU/EBGaramond12(0)/bx/n/10.95 documented computational chemistry calculations.
+$[]$ Also, non-quantum, classical
  []
 
 [41
@@ -2415,77 +2413,78 @@ Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-c
 alt;+pnum;+lnum;mapping=tex-text;" at 10.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
 otf
-
-Overfull \hbox (47.41875pt too wide) in paragraph at lines 20--21
-\TU/EBGaramond12(0)/bx/n/10.95 Lifson‚Äôs CFF,$[]$ Allinger‚Äôs MM series,$[]$ Sche
-raga‚Äôs ECEPP potentials,$[]$ Karplus‚Äô CHARMM,$[]$
- []
-
-[42] [43] [44] [45]
-Overfull \hbox (23.3121pt too wide) in paragraph at lines 58--59
-\TU/EBGaramond12(0)/bx/n/10.95 (AIMD), electrons are treated quantum-mechanical
-ly, and nuclei, classically (Born-Oppenheimer
+ [42] [43] [44] [45]
+Underfull \hbox (badness 2799) in paragraph at lines 58--59
+\TU/EBGaramond12(0)/bx/n/10.95 namics (AIMD), electrons are treated quantum-mec
+hanically, and nuclei, classically
  []
 
 
-Overfull \hbox (2.5729pt too wide) in paragraph at lines 60--60
+Underfull \hbox (badness 1082) in paragraph at lines 60--60
 |[]\TU/EBGaramond12(0)/m/sc/12 Force fields: Molecular Mechanics, Molecular Dyn
-amics and
+amics
  []
 
-[46] [47] [48]
-Overfull \hbox (0.81355pt too wide) in paragraph at lines 104--105
-\TU/EBGaramond12(0)/bx/n/10.95 Instead of individually describing each atom in 
-the system, these models group related atoms
+[46] [47] [48] [49]
+Underfull \hbox (badness 1968) in paragraph at lines 104--105
+\TU/EBGaramond12(0)/bx/n/10.95 resentations of molecular models, including prot
+eins,$[]$ nucleic acids,$[]$ or lipid
  []
 
-[49] [50]
-Overfull \hbox (0.72227pt too wide) in paragraph at lines 121--122
-[]\TU/EBGaramond12(0)/bx/n/10.95 Docking techniques can also involve other type
- of molecules, like protein-protein or protein-
+[50] [51] [52] [53] [54]
+Underfull \hbox (badness 1205) in paragraph at lines 147--148
+[]\TU/EBGaramond12(0)/bx/n/10.95 QSAR techniques do not need input 3D-structura
+l data (with the exception of the
  []
 
-[51] [52] [53]
-Overfull \hbox (2.47554pt too wide) in paragraph at lines 147--148
-\TU/EBGaramond12(0)/bx/n/10.95 their element symbol, except hydrogen, which is 
-usually implicitly considered. Simple bonds
+
+Underfull \hbox (badness 1546) in paragraph at lines 147--148
+\TU/EBGaramond12(0)/bx/n/10.95 3D-QSAR variants), but 2D-topological informatio
+n. These are normally supplied
+ []
+
+
+Underfull \hbox (badness 1127) in paragraph at lines 147--148
+\TU/EBGaramond12(0)/bx/n/10.95 with special character strings called SMILES (Si
+mplified Molecular Input Line Entry
+ []
+
+
+Underfull \hbox (badness 4378) in paragraph at lines 147--148
+\TU/EBGaramond12(0)/bx/n/10.95 Specification),$[]$ which can describe compounds
+ unambiguously without resorting
  []
 
 \openout3 = `dissertation-7.cpt'.
 
 \openout3 = `dissertation-8.cpt'.
 
-(./dissertation-8.cpt) [54] [55] [56] [57] [58] [59] [60] [61] [62]
-Overfull \hbox (3.03212pt too wide) in paragraph at lines 242--243
-\TU/EBGaramond12(0)/bx/n/10.95 with Kirkpatrick‚Äôs Simulated Annealing (SA),$[]$
- it began to grow in the 90s with Ant Colony
- []
-
-[63] [64] [65]) [66]
+(./dissertation-8.cpt) [55] [56] [57] [58] [59] [60] [61] [62] [63] [64]
+[65]) [66] [67]
 \openout2 = `chapters/03-objectives.aux'.
 
- (./chapters/03-objectives.tex
-Chapter 3.
-[67
-
-
-
-] [68]) [69]
-\openout2 = `chapters/04-gaudimm.aux'.
-
- (./chapters/04-gaudimm.tex [70
+ (./chapters/03-objectives.tex [68
 
 
 
 ]
+Chapter 3.
+[69]) [70]
+\openout2 = `chapters/04-gaudimm.aux'.
+
+ (./chapters/04-gaudimm.tex
 Chapter 4.
 
-Overfull \hbox (5.36938pt too wide) in paragraph at lines 24--25
+Underfull \hbox (badness 2418) in paragraph at lines 24--25
 []\TU/EBGaramond12(0)/bx/n/10.95 Its modular implementation allows to encapsula
-te separate molecular modeling meth-
+te separate molecular model-
  []
 
-[71]
+[71
+
+
+
+]
 Requested font "[EBGaramond12-Regular.otf]/OT" at 10.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
 .otf
@@ -2547,30 +2546,7 @@ otf
 
 \openout3 = `dissertation-10.cpt'.
 
- (./dissertation-10.cpt) [73] [74]
-Overfull \hbox (2.54813pt too wide) in paragraph at lines 100--101
-\TU/EBGaramond12(0)/bx/n/10.95 minimum energy in the ethane molecule. The \TU/S
-ourceCodePro(0)/m/n/10.95 Individuals \TU/EBGaramond12(0)/bx/n/10.95 featured i
-n this example would
- []
-
-[75]
-Overfull \hbox (7.69998pt too wide) in paragraph at lines 111--112
-\TU/EBGaramond12(0)/bx/n/10.95 fined by four functions (\TU/SourceCodePro(0)/m/
-n/10.95 express\TU/EBGaramond12(0)/bx/n/10.95 , \TU/SourceCodePro(0)/m/n/10.95 
-unexpress\TU/EBGaramond12(0)/bx/n/10.95 , \TU/SourceCodePro(0)/m/n/10.95 mutate
- \TU/EBGaramond12(0)/bx/n/10.95 and \TU/SourceCodePro(0)/m/n/10.95 mate\TU/EBGa
-ramond12(0)/bx/n/10.95 ) and an attribute (\TU/SourceCodePro(0)/m/n/10.95 allel
-e\TU/EBGaramond12(0)/bx/n/10.95 ).
- []
-
-[76]
-Overfull \hbox (7.338pt too wide) in paragraph at lines 127--128
-[]\TU/EBGaramond12(0)/m/sc/10.95 Mutamers\TU/EBGaramond12(0)/bx/n/10.95 . Given
- a residue position in a protein structure, it can replace its sidechain
- []
-
-[77]
+ (./dissertation-10.cpt) [73] [74] [75] [76] [77]
 Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
 calt;+pnum;+lnum;+tnum;mapping=tex-text;" at 7.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Regular
@@ -2580,21 +2556,15 @@ Underfull \hbox (badness 10000) in alignment at lines 180--180
 [][][] 
  []
 
-[78] [79] [80]
-Overfull \hbox (2.18271pt too wide) in paragraph at lines 223--224
-[]\TU/EBGaramond12(0)/m/sc/10.95 Vina\TU/EBGaramond12(0)/bx/n/10.95 . AutoDock 
-Vina$[]$ is a popular open-source package to perform protein-ligand
- []
-
-[81]
+[78] [79] [80] [81]
 Overfull \hbox (1.7316pt too wide) in paragraph at lines 295--295
 []|\TU/EBGaramond12(5)/m/n/10 Coordination|  
  []
 
 [82] [83]
-Overfull \hbox (0.85298pt too wide) in paragraph at lines 319--320
+Underfull \hbox (badness 2197) in paragraph at lines 319--320
 \TU/EBGaramond12(0)/bx/n/10.95 GaudiMM does not make any assumptions on the mol
-ecular modeling task to be performed.
+ecular modeling task to be
  []
 
 [84] [85] (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -2609,14 +2579,8 @@ LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/it' will be
 (Font)              scaled to size 9.12494pt on input line 1.
 )
 Requested font "Source Code Pro/OT:script=latn;language=DFLT;" at 8.33328pt
- -> Ôøæ†Ôøø´pU^^?U
+ -> ^^PApÔøø´^^BV
  [86] [87]
-Overfull \hbox (10.43062pt too wide) in paragraph at lines 387--388
-[]\TU/EBGaramond12(0)/bx/n/10.95 This GUI will list the proposed solutions alon
-g with the fitness of each objective in spreadsheet-
- []
-
-[88]
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/n' will be
 (Font)              scaled to size 14.4pt on input line 397.
 Requested font "[EBGaramond12-Regular.otf]/OT:script=latn;language=DFLT;+liga;-
@@ -2641,7 +2605,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 397.
 
-[89]) [90]
+[88]) [89] [90]
 \openout2 = `chapters/05-integrative.aux'.
 
  (./chapters/05-integrative.tex
@@ -2650,62 +2614,43 @@ Chapter 5.
 
 
 
-] [92] [93] [94] [95] [96] [97] [98]
-Overfull \hbox (9.77428pt too wide) in paragraph at lines 217--218
-\TU/EBGaramond12(0)/bx/n/10.95 Normal Modes Analysis methods are routinely used
- to study structural dynamics of molecules.
- []
-
-[99] [100]
-Overfull \hbox (2.49623pt too wide) in paragraph at lines 238--239
-\TU/EBGaramond12(0)/bx/n/10.95 be discussed: (1) PyChimera, (2) OMMProtocol, (3
-) Garleek, (4) ESIgen, and (5) EasyMECP.
- []
-
-[101] [102]
-Overfull \hbox (5.40233pt too wide) in paragraph at lines 248--249
-[]\TU/EBGaramond12(0)/bx/n/10.95 This new package was called PyChimera.$[]$ It 
-does not try to alter the original UCSF Chimera
- []
-
+] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101] [102]
 \openout3 = `dissertation-11.cpt'.
 
 \openout3 = `dissertation-12.cpt'.
 
+
 (./dissertation-12.cpt) [103] [104] [105]
-Overfull \hbox (0.10236pt too wide) in paragraph at lines 338--339
-\TU/EBGaramond12(0)/bx/n/10.95 grating other libraries together, like MDTraj,$[
-]$ ParmEd$[]$ or openmoltools.$[]$ This means
+Underfull \hbox (badness 2556) in paragraph at lines 338--339
+\TU/EBGaramond12(0)/bx/n/10.95 integrating other libraries together, like MDTra
+j,$[]$ ParmEd$[]$ or openmoltools.$[]$
+ []
+
+
+Underfull \hbox (badness 3364) in paragraph at lines 338--339
+\TU/EBGaramond12(0)/bx/n/10.95 OMMProtocol will load Amber‚Äôs \TU/SourceCodePro(
+0)/m/it/10.95 PRMTOP\TU/EBGaramond12(0)/bx/n/10.95 , Charmm‚Äôs \TU/SourceCodePro
+(0)/m/it/10.95 PSF \TU/EBGaramond12(0)/bx/n/10.95 and Gromacs‚Äô \TU/SourceCodePr
+o(0)/m/it/10.95 TOP \TU/EBGaramond12(0)/bx/n/10.95 files
  []
 
 [106] [107]
-Overfull \hbox (22.99844pt too wide) in paragraph at lines 404--405
-\TU/EBGaramond12(0)/bx/n/10.95 provided force fields, like Amber99SB,$[]$[][][]
-[][] CHARMM,$[]$ AMOEBA,$[]$ MMFF$[]$ or MM3.$[]$
- []
-
 \openout3 = `dissertation-13.cpt'.
 
 \openout3 = `dissertation-14.cpt'.
 
-(./dissertation-14.cpt) [108]
-Overfull \hbox (6.44092pt too wide) in paragraph at lines 415--415
-|[]\TU/EBGaramond12(0)/m/sc/12 Automated Electronic Supporting Information Gene
-rator: ES-
- []
-
-[109] [110]
+ (./dissertation-14.cpt) [108] [109] [110]
 \openout3 = `dissertation-15.cpt'.
 
 \openout3 = `dissertation-16.cpt'.
 
  (./dissertation-16.cpt)
-Overfull \hbox (13.42429pt too wide) in paragraph at lines 510--511
-[]\TU/EBGaramond12(0)/bx/n/10.95 Developed during the collaboration with Dr. Fu
-nes-Ardoiz and Prof. Dr. Maseras, EasyMECP
+[111] [112]
+Underfull \hbox (badness 1005) in paragraph at lines 510--511
+\TU/EBGaramond12(0)/bx/n/10.95 to support this claim. Additional conveniences h
+ave been implemented such as the
  []
 
-[111] [112]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 512.
@@ -2714,78 +2659,64 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 512.
 
-[113]) [114]
+[113]) [114] [115]
 \openout2 = `chapters/06-applicative.aux'.
 
- (./chapters/06-applicative.tex
-Chapter 6.
-[115
+ (./chapters/06-applicative.tex [116
 
 
 
 ]
+Chapter 6.
+[117]
 \openout3 = `dissertation-17.cpt'.
 
 \openout3 = `dissertation-18.cpt'.
 
- (./dissertation-18.cpt) [116]
+ (./dissertation-18.cpt) [118]
 LaTeX Font Info:    Font shape `TU/EBGaramond12(0)/m/it' will be
 (Font)              scaled to size 7.0pt on input line 90.
 Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-c
 alt;+pnum;+lnum;mapping=tex-text;" at 7.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
 otf
- [117] [118] [119] [120] [121] [122]
-[123]
-Overfull \hbox (6.29709pt too wide) in paragraph at lines 231--232
+ [119] [120] [121] [122] [123] [124]
+[125]
+Underfull \hbox (badness 1043) in paragraph at lines 231--232
 \TU/EBGaramond12(0)/bx/n/10.95 In two of the previous examples, a metal ion was
- present in a nonstandard residue. GaudiMM
+ present in a nonstandard residue.
  []
 
-[124] [125] [126]
+[126] [127] [128]
 \openout3 = `dissertation-19.cpt'.
 
 \openout3 = `dissertation-20.cpt'.
 
- (./dissertation-20.cpt) [127] [128]
+ (./dissertation-20.cpt) [129] [130]
 \openout3 = `dissertation-21.cpt'.
 
 \openout3 = `dissertation-22.cpt'.
 
  (./dissertation-22.cpt)
-[129]
+[131] [132]
 \openout3 = `dissertation-23.cpt'.
 
 \openout3 = `dissertation-24.cpt'.
 
- (./dissertation-24.cpt) [130] [131] [132]
-Overfull \hbox (19.27806pt too wide) in paragraph at lines 383--384
-\TU/EBGaramond12(0)/bx/n/10.95 bean $\OML/EBGaramond-Maths/m/it/10.95 ^^L$\TU/E
-BGaramond12(0)/bx/n/10.95 -mannosidase (JbM) when twelve copies of DNJ were dis
-played around a $\OML/EBGaramond-Maths/m/it/10.95 C[]$ \TU/EBGaramond12(0)/bx/n
-/10.95 fullerene.$[]$
- []
-
-
-Overfull \hbox (7.92549pt too wide) in paragraph at lines 387--388
+ (./dissertation-24.cpt) [133] [134]
+Underfull \hbox (badness 5741) in paragraph at lines 387--388
 \TU/EBGaramond12(0)/bx/n/10.95 which exhibits four sp$[]$-iminosugar-type$[]$ 6
 -oxa-5\TU/EBGaramond12(0)/m/it/10.95 N\TU/EBGaramond12(0)/bx/n/10.95 ,6\TU/EBGa
 ramond12(0)/m/it/10.95 O\TU/EBGaramond12(0)/bx/n/10.95 -oxomethylidenenojirimyc
-in (ONJ)
+in
  []
 
-[133]
+[135]
 \openout3 = `dissertation-25.cpt'.
 
 \openout3 = `dissertation-26.cpt'.
 
  (./dissertation-26.cpt)
-Overfull \hbox (1.77713pt too wide) in paragraph at lines 403--404
-\TU/EBGaramond12(0)/bx/n/10.95 which crystallographic data evidenced the existe
-nce of deep binding pockets: the monomeric
- []
-
-[134]
 \openout3 = `dissertation-27.cpt'.
 
 \openout3 = `dissertation-28.cpt'.
@@ -2795,90 +2726,67 @@ Requested font "[EBGaramond12-Italic.otf]/OT:script=latn;language=DFLT;+liga;-c
 alt;+pnum;+lnum;+tnum;mapping=tex-text;" at 7.0pt
  -> /usr/share/texmf-dist/fonts/opentype/public/ebgaramond/EBGaramond12-Italic.
 otf
-Missing character: There is no ÔÅ≠ in font [EBGaramond12-Italic.otf]/OT:script=la
-tn;language=DFLT;+liga;-calt;+pnum;+lnum;+tnum;mapping=tex-text;!
-Missing character: There is no ÔÅ≠ in font [EBGaramond12-Italic.otf]/OT:script=la
-tn;language=DFLT;+liga;-calt;+pnum;+lnum;+tnum;mapping=tex-text;!
 
 Overfull \hbox (5.58269pt too wide) in paragraph at lines 438--438
  []|\TU/EBGaramond12(5)/m/n/10 Monovalent| 
  []
 
-Missing character: There is no ÔÅ≠ in font [EBGaramond12-Italic.otf]/OT:script=la
-tn;language=DFLT;+liga;-calt;+pnum;+lnum;+tnum;mapping=tex-text;!
-[135]
-Overfull \hbox (7.23822pt too wide) in paragraph at lines 463--464
-[]\TU/EBGaramond12(0)/bx/n/10.95 All the candidate structures are analyzed inte
-ractively with GaudiView and any needed
- []
-
 [136] [137] [138] [139]
-Overfull \hbox (1.68494pt too wide) in paragraph at lines 572--572
+Underfull \hbox (badness 3058) in paragraph at lines 572--572
 |[]\TU/EBGaramond12(0)/m/sc/12 Can two divalent ligands occupy both sites simul
-taneously?
+tane-
  []
 
-[140] [141] [142] [143] [144] [145]
-Overfull \hbox (0.12737pt too wide) in paragraph at lines 706--707
-\TU/EBGaramond12(0)/bx/n/10.95 Throughout this chapter, it has been shown that,
- while computational studies can be strictly
- []
-
-) [146]
+[140] [141] [142] [143] [144] [145] [146] [147]) [148]
 \openout2 = `chapters/07-conclusions.aux'.
 
- (./chapters/07-conclusions.tex
+
+(./chapters/07-conclusions.tex
 Chapter 7.
 
-Overfull \hbox (3.71228pt too wide) in paragraph at lines 15--16
-[]\TU/EBGaramond12(0)/m/sc/10.95 OMMProtocol \TU/EBGaramond12(0)/bx/n/10.95 pro
-vides a user-friendly, single-file interface to the powerful, GPU-
+Underfull \hbox (badness 3396) in paragraph at lines 15--16
+\TU/EBGaramond12(0)/bx/n/10.95 GPU-accelerated OpenMM molecular dynamics librar
+ies. These tools have
  []
 
 
-Overfull \hbox (0.45213pt too wide) in paragraph at lines 17--18
+Underfull \hbox (badness 1642) in paragraph at lines 17--18
 []\TU/EBGaramond12(0)/m/sc/10.95 Garleek \TU/EBGaramond12(0)/bx/n/10.95 has bee
-n designed to help in those QM/MM studies that require extended
+n designed to help in those QM/MM studies that require
  []
 
-[147
+[149
 
 
 
-] [148] [149]) [150]
+] [150] [151]) [152]
 \openout2 = `chapters/08-epilog.aux'.
 
- (./chapters/08-epilog.tex [151
+ (./chapters/08-epilog.tex [153
 
 
 
 ]
-Overfull \hbox (3.12404pt too wide) in paragraph at lines 18--19
+Underfull \hbox (badness 1360) in paragraph at lines 18--19
 []\TU/EBGaramond12(0)/bx/n/10.95 Initially, the \TU/EBGaramond12(0)/m/it/10.95 
 novel software platform \TU/EBGaramond12(0)/bx/n/10.95 in the title of this dis
-sertation only referred to GaudiMM,
+sertation only referred to
  []
 
-
-Overfull \hbox (0.40471pt too wide) in paragraph at lines 18--19
-\TU/EBGaramond12(0)/bx/n/10.95 but during its development some aspects of the w
-orkflow of lab-mates and colleagues caught
- []
-
-) [152] [153
+) [154] [155
 
 
-] [154
+] [156
 
 ]
 \openout2 = `chapters/appendix-a.aux'.
 
  (./chapters/appendix-a.tex
 Appendix A.
-[155
+[157
 
 
-] [156]
+]
 Underfull \hbox (badness 10000) in paragraph at lines 28--28
 [][][]\TU/EBGaramond12(0)/m/n/10 Custom searches can be performed in websites s
 uch as [][]$[][][][] [] [] [] [][][][][][][][][][] []
@@ -2891,78 +2799,73 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--28
 ][][][][][] [] [][][]$[][] or [][]$[][][][] []
  []
 
-
-Overfull \hbox (8.1099pt too wide) in paragraph at lines 30--31
-\TU/EBGaramond12(0)/bx/n/10.95 computing by the modeling sectors, featuring bio
--sciences, chemical engineering or computer-
+[158] [159] [160] [161]
+Underfull \hbox (badness 3471) in paragraph at lines 61--62
+\TU/EBGaramond12(0)/bx/n/10.95 some algorithms with unprecedented efficiency. C
+omputational chemistry will be
  []
 
-[157] [158] [159] [160]) [161]
+[162] [163]) [164]
 \openout2 = `chapters/appendix-b.aux'.
 
- (./chapters/appendix-b.tex [162
-
-
-
-]
+ (./chapters/appendix-b.tex
 Appendix B.
-[163]) [164]
+[165
+
+
+
+]) [166]
 \openout2 = `chapters/appendix-c.aux'.
 
  (./chapters/appendix-c.tex
 Appendix C.
 
-Overfull \hbox (19.0891pt too wide) in paragraph at lines 4--5
+Underfull \hbox (badness 1975) in paragraph at lines 4--5
 \TU/EBGaramond12(0)/bx/n/10.95 One of the most exciting areas of molecular mode
-ling sits at the frontier between organometallics
+ling sits at the frontier between
  []
 
-[165
+[167
 
 
 
-] [166] [167] [168]) [169]
+] [168] [169] [170]) [171]
 \openout2 = `chapters/appendix-d.aux'.
 
- (./chapters/appendix-d.tex [170
+ (./chapters/appendix-d.tex [172
 
 
 
 ]
 Appendix D.
-[171]
+[173] [174]
 \openout3 = `dissertation-29.cpt'.
 
 \openout3 = `dissertation-30.cpt'.
 
- (./dissertation-30.cpt) [172] [173]
-Overfull \hbox (11.42166pt too wide) in paragraph at lines 51--52
-\TU/EBGaramond12(0)/bx/n/10.95 for its involvement in recognition processes, me
-tabolism and allergies. However, since oligosac-
+ (./dissertation-30.cpt) [175]
+Underfull \hbox (badness 1558) in paragraph at lines 51--52
+\TU/EBGaramond12(0)/bx/n/10.95 Glycoproteins are proteins that feature oligosac
+charidic cofactors and are actively re-
  []
 
 \openout3 = `dissertation-31.cpt'.
 
 \openout3 = `dissertation-32.cpt'.
 
-(./dissertation-32.cpt) [174] [175]
+(./dissertation-32.cpt) [176] [177]
 \openout3 = `dissertation-33.cpt'.
 
 \openout3 = `dissertation-34.cpt'.
 
- (./dissertation-34.cpt) [176] [177])
-Overfull \hbox (0.76128pt too wide) in paragraph at lines 95--65
-\TU/EBGaramond12(0)/bx/n/10.95 atoms correspondences automatically,$[]$ but non
-e of them are implemented in Chimera.
- []
-
-[178] (./endmatter/personalize.tex) (./dissertation.bbl [179
+ (./dissertation-34.cpt) [178] [179])
+[180] (./endmatter/personalize.tex) (./dissertation.bbl [181
 
 
 
-] [180] [181]
-[182] [183] [184] [185] [186] [187] [188] [189] [190] [191] [192] [193]
-[194]
+] [182] [183]
+[184] [185] [186] [187] [188] [189] [190] [191] [192] [193] [194] [195]
+[196]
 Overfull \hbox (28.70663pt too wide) in paragraph at lines 1279--1283
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -2976,35 +2879,122 @@ Overfull \hbox (32.14664pt too wide) in paragraph at lines 1285--1289
 [][][][][][][][][]$[][]\TU/EBGaramond12(0)/m/n/10 .  
  []
 
-[195] [196] [197]) [198] (./endmatter/colophon.tex) [199
+[197] [198] [199]) (./endmatter/publications.tex [200] [201
+
+] [202
+
+] [203
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 77.
- (./dissertation.aux
-(./chapters/00-preface.aux) (./chapters/01-intro.aux)
-(./chapters/02-methods.aux) (./chapters/03-objectives.aux)
+[204
+
+] [205
+
+] [206
+
+] [207
+
+] [208
+
+] [209
+
+] [210
+
+] [211] [212
+
+] [213
+
+] [214
+
+] [215
+
+]
+[216
+
+] [217
+
+] [218
+
+] [219
+
+] [220
+
+] [221] [222
+
+] [223
+
+] [224
+
+] [225
+
+] [226
+
+] [227]
+[228
+
+] [229
+
+] [230
+
+] [231
+
+] [232
+
+] [233
+
+] [234
+
+] [235
+
+] [236
+
+]
+contour: Using 16 copies for `J. Rodr√≠guez-Guerra Pedregal' on input line 51.
+contour: Using 16 copies for `J. Rodr√≠guez-Guerra Pedregal' on input line 53.
+contour: Using 16 copies for `J. Rodr√≠guez-Guerra Pedregal' on input line 55.
+contour: Using 16 copies for `J. Rodr√≠guez-Guerra Pedregal' on input line 58.
+contour: Using 16 copies for `J. Rodr√≠guez-Guerra Pedregal' on input line 61.
+contour: Using 16 copies for `J. Rodr√≠guez-Guerra Pedregal' on input line 63.
+contour: Using 16 copies for `J. Rodr√≠guez-Guerra Pedregal' on input line 65.
+contour: Using 16 copies for `J. Rodr√≠guez-Guerra Pedregal' on input line 67.
+[237]
+contour: Using 16 copies for `J. Rodr√≠guez-Guerra Pedregal' on input line 69.
+contour: Using 16 copies for `J. Rodr√≠guez-Guerra Pedregal' on input line 71.
+contour: Using 16 copies for `J. Rodr√≠guez-Guerra Pedregal' on input line 73.
+contour: Using 16 copies for `J. Rodr√≠guez-Guerra Pedregal' on input line 75.
+contour: Using 16 copies for `J. Rodr√≠guez-Guerra Pedregal' on input line 77.
+contour: Using 16 copies for `J. Rodr√≠guez-Guerra Pedregal' on input line 79.
+) [238] (./endmatter/colophon.tex) [239
+
+] (./endmatter/thanks.tex [240
+
+] [241])
+[242]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 78.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 78.
+ (./dissertation.aux (./chapters/00-preface.aux) (./chapters/01-intro.aux) (./c
+hapters/02-methods.aux) (./chapters/03-objectives.aux)
 (./chapters/04-gaudimm.aux) (./chapters/05-integrative.aux)
 (./chapters/06-applicative.aux) (./chapters/07-conclusions.aux)
 (./chapters/08-epilog.aux) (./chapters/appendix-a.aux)
 (./chapters/appendix-b.aux) (./chapters/appendix-c.aux)
 (./chapters/appendix-d.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 77.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 77.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 78.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 78.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: C02C6FFB491ABAA33CC4603D935F823C.
+(rerunfilecheck)             Checksum: 7CA17879441F5C39805B0619F456316F.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 38892 strings out of 492970
- 752508 string characters out of 6139408
- 920105 words of memory out of 5000000
- 42021 multiletter control sequences out of 15000+600000
+ 39064 strings out of 492970
+ 756319 string characters out of 6139408
+ 922486 words of memory out of 5000000
+ 42160 multiletter control sequences out of 15000+600000
  538601 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 67i,15n,118p,10529b,1656s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,15n,118p,10529b,1658s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on dissertation.pdf (201 pages).
+Output written on dissertation.pdf (244 pages).

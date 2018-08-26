@@ -130,8 +130,8 @@ Some software projects do attempt to explore the chemical space algorithmically.
 
 Since protein-ligand docking studies involve at least two molecules (protein and ligand), it makes sense to investigate chemical variability in the host. While the theoretical chemical space available in proteins is huge due to the number of atoms alone, fortunately is more constrained: all proteins are chains of the same twenty residues or amino acids. Hence, assessing possible variations \textit{only} involve changing one particular residue for another of the remaining nineteen. It seems simple at first, but the possible variations explode exponentially with chain length, which means that even for small peptides of around 30 residues it results in an unfathomable number: $ 30^{20} $ or around $ 3.5·10^{29} $ (see fig. \ref{fig:chemicalspace}). Subsequently, only a few positions are studied and the variations applied are somehow rational and studied beforehand. Some tools exist to evaluate the potential consequences of a mutation in a protein,\cite{kumar2009predicting,quan2016strum,fariselli2015inps,dehouck2011popmusic} which can help discard destabilizing changes before doing more intense computations. After all, a single change in a key residue can alter the final structure dramatically.\cite{kumar2006protherm}
 
-\begin{figure}[H]
-	\includegraphics[width=\textwidth]{./figures/02/chemical_space.png}
+\begin{figure}[hbtp]
+	\includegraphics[width=\textwidth]{./figures/02/chemical_space.pdf}
 	\caption[Chemobiological spaces]{
 		In any study on protein-ligand interactions, considering sequence mutation of protein scaffolds, each with its possible sidechain orientations, already produces a combinatorial explosion. Taking different possible ligands into account adds one more dimension to the search space. (Reproduced from \textit{Artificial Metalloenzymes and MetalloDNAzymes in Catalysis}\cite{wileybook}).
 	}
@@ -147,9 +147,9 @@ Quantitative Structure-Activity Relationship (QSAR) studies apply statistical cl
 QSAR techniques do not need input 3D-structural data (with the exception of the 3D-QSAR variants), but 2D-topological information. These are normally supplied with special character strings called SMILES (Simplified Molecular Input Line Entry Specification),\cite{smiles} which can describe compounds unambiguously without resorting to explicit coordinates specification. SMILES strings work by enumerating the atoms involved in a molecule with their element symbol, except hydrogen, which is usually implicitly considered. Simple bonds are assumed between linearly adjacent elements. If a ramification occurs, it must be specified with parenthesis. Numeric tags are used to signal the starting and ending atoms of cyclic substructures (see fig. \ref{fig:smiles}). For example, butane would be represented as \texttt{CCCC}, while D-glucose would be \texttt{C(C1C(C(C(C(O1)O)O)O)O)O}.
 
 
-\begin{figure}[H]
+\begin{figure}[hbtp]
 	\begin{center}
-	\includegraphics[height=0.9\textheight]{./figures/02/smiles.png}
+	\includegraphics[height=0.9\textheight]{./figures/02/smiles.pdf}
 	\end{center}
 	\cprotect\caption[SMILES notation]{SMILES notation can depict a substituted aromatic ring as linear chains with branches.}
 	\label{fig:smiles}
@@ -214,7 +214,7 @@ Newton numerical algorithms are similar to SD and CJ methods, but compute an add
 
 Second derivatives can be generalized as Hessian matrices for problems of higher dimensions, but this can get very expensive to compute. As a result, several derived methods, called quasi-Newton methods, include alternative methods to compute it or supply equivalent information, like directly computing the inverse with numerical methods, updating it with successive gradient vectors\ldots\ Due to its performance, one of the most popular quasi-Newton algorithms is the BFGS algorithm (for Broyden,\cite{broyden1970convergence} Fletcher,\cite{fletcher1970new} Goldfarb\cite{goldfarb1970family} and Shanno\cite{shanno1970conditioning}) and its limited memory version L-BFGS,\cite{liu1989limited} widely used in energy minimization of molecules.
 
-\begin{figure}[H]
+\begin{figure}[hbtp]
 	\includegraphics[width=\textwidth]{./figures/04/gradientdescent.png}
 	\caption[Gradient descent vs Newton's optimization]{A comparison of gradient descent (green) and Newton's method (red) for minimizing a function (with small step sizes) starting with $ x_{0} $. Global minimum is $ x $. Newton's method uses curvature information to take a more direct route.}
 	\label{fig:gradientdescent}
@@ -259,7 +259,7 @@ One alternative which does not involve a dimensionality reduction (${\rm I\!R}^{
 Under this scheme, finding the solutions to a multi-objective problem is only a matter of increasingly enriching the Pareto front with non-dominated solutions. Without defining the importance of each objective, all of them will be equally good solutions. In other words, multi-objective optimization algorithms do not propose a single optimum solution, but a set of good trade-offs between the variables under consideration.\cite{coello2007evolutionary}
 
 
-\begin{figure}[H]
+\begin{figure}[hbtp]
 	\includegraphics[width=\textwidth]{./figures/02/FrentePareto.pdf}
 	\caption[A Pareto front for two dimensions]{For a two-dimensional problem where $f_{1}$ and $f_{2}$ must be minimized, the Pareto front can be identified with a convex curve. In this example, $p_{1}$ and $p_{2}$ are non-dominated solutions that are part of the Pareto front (wide line). $p_{3}$ is dominated by $p_{1}$ and $p_{2}$ because $p_{1}$ has a lower value in the $f_{2}$ axis without worsening the value in the $f_{1}$ axis, and $p_{2}$ has lower values in both axes.}
 	\label{fig:pareto}

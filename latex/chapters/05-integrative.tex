@@ -292,11 +292,11 @@ PyChimera also includes some features particularly useful for developers, like e
 \end{figure}
 
 
-\subsection{GPU-accelerated Molecular Dynamics, the easy way: OMMProtocol}
+\subsection[GPU-accelerated Molecular Dynamics, the easy way: OMMProtocol]{GPU-accelerated Molecular Dynamics, the easy way: \\OMMProtocol}
 % \addcontentsline{toc}{subsection}{GPU-accelerated Molecular Dynamics, the easy way: OMMProtocol}
 \label{section:ommprotocol}
 
-Molecular mechanics (MM) and molecular dynamics (MD) (see \autoref[section]{section:mm-md}) are widely used in structural biology since they allow observing evolution of large biomolecules along time with affordable timescales and computational resources. This is particularly true after the popularization of general purpose computing on GPUs (GPGPU) ---i.e., their usage for calculations beyond graphics renderization. While long-established MM suites like Amber,\cite{amber} Gromacs\cite{gromacs} or CHARMM\cite{brooks1983} have been progressively implementing GPU acceleration in their code for some years now, a relatively recent project caught the community attention with its performance, flexibility, open-design and availability: the free OpenMM library.\cite{openmm}
+Molecular mechanics (MM) and molecular dynamics (MD) (see \autoref[section]{section:mm-md}) are widely used in structural biology since they allow observing evolution of large biomolecules along time with affordable timescales and computational resources. This is particularly true after the popularization of general purpose computing on GPUs (GPGPU) ---i.e. their usage for calculations beyond graphics renderization. While long-established MM suites like Amber,\cite{amber} Gromacs\cite{gromacs} or CHARMM\cite{brooks1983} have been progressively implementing GPU acceleration in their code for some years now, a relatively recent project caught the community attention with its performance, flexibility, open-design and availability: the free OpenMM library.\cite{openmm}
 
 OpenMM presents a layered API designed for easy reutilization in other projects. In fact, to use OpenMM, one is expected to write Python scripts to configure the simulation. These scripts are not harder to write that input files for other suites; they just happen to use that scripting language. That said, it could be easier. Users should not need to care about missing parenthesis, import statements or ending quotes. OMMProtocol was conceived to overcome this barrier by providing an easy to read and easy to write input file that abstracts away all the key underlying configuration steps with the concept of \textit{protocol}: each input file contains all the stages involved in the simulation (like minimization, equilibration or production), avoiding the hassle of chained restarts.
 
@@ -338,7 +338,7 @@ With OMMProtocol, setting up GPU-accelerated MD simulations can be as easy as lo
 OpenMM default input format compatibility is extended with even more file types by integrating other libraries together, like MDTraj,\cite{mdtraj} ParmEd\cite{parmed} or openmoltools.\cite{openmoltools} This means that existing structure preparation workflows do not need to be disrupted: OMMProtocol will load Amber's \texttt{PRMTOP}, Charmm's \texttt{PSF} and Gromacs’ \texttt{TOP} files seamlessly.
 
 
-\begin{figure}[H] % FIXME!
+\begin{figure}[hbtp] % FIXME!
 	\begin{Center}
 		\includegraphics[width=\textwidth]{./figures/05/ommprotocol-crop.pdf}
 		\caption[OMMProtocol input file structure]{OMMProtocol files are formatted in YAML. Configuration keys can be specified in any order, but they have been grouped in this figure for convenience. Section A contains the structural data of the system to be simulated: the topology key is always required. Section B groups options related to file output. Section C controls the hardware to be used. Section D and E specify the conditions of the simulation. Finally, section E lists all the stages to be simulated in this protocol. Each entry, marked with a starting dash, can override any of the global options specified in sections B-E. Usually, only constraints, minimization, temperature and simulated steps will be modified here, since every other parameter is normally constant during the full protocol.}
@@ -351,7 +351,7 @@ Finally, OMMProtocol is complemented by a second utility called \texttt{ommanaly
 
 
 
-\begin{figure}[H] % FIXME!
+\begin{figure}[hbtp] % FIXME!
 	\begin{Center}
 		\includegraphics[width=\textwidth]{./figures/05/ommanalyze.pdf}
 	\end{Center}
@@ -405,7 +405,7 @@ Garleek is a Python package born after a collaboration with Dr. Funes-Ardoiz and
 
 
 
-\begin{figure}[H] % FIXME!
+\begin{figure}[hbtp] % FIXME!
 	\includegraphics[width=\textwidth]{./figures/05/garleek-crop.pdf}
 	\cprotect\caption[ONIOM workflow with Garleek]{ONIOM workflow with Garleek. Black-border boxes describe programs, yellow-border boxes describe files. Dashed borders and lines describe temporary files created and removed on demand. The standard workflow involves creating a standard ONIOM input file (\texttt{name.gjf}), which is then patched to be Garleek-compatible with the \texttt{garleek-prepare} command, generating a copy (\texttt{name.garleek.gjf}). Gaussian runs this file and calls \texttt{garleek-backend} when necessary, which handles the communication with Tinker binaries for the MM calculations. The results are written to \texttt{name.garleek.log}.}
 	\label{fig:garleek}

@@ -20,7 +20,7 @@
 %\LoadClass[12pt,twoside,openright,a4paper]{extbook}
 \LoadClass[12pt,twoside,openright,b5paper]{extbook}
 %\RequirePackage[width=5.75in,letterpaper]{geometry}
-\RequirePackage[b5paper,left=25mm,top=25mm,bottom=20mm,right=20mm]{geometry}
+\RequirePackage[b5paper,left=25mm,top=26mm,bottom=20mm,right=20mm]{geometry}
 %\RequirePackage[a4paper,left=30mm,top=30mm,bottom=25mm,right=25mm]{geometry}
 %
 % Options
@@ -71,13 +71,14 @@
 \renewenvironment{enumerate}
     {\begin{spacing}{\dcompressedspacing}\oldenumerate}
     {\endoldenumerate\end{spacing}}
+\usepackage{etaremune}
 
 % Text layout.
 \usepackage{ragged2e}
 %\RaggedRight
 \raggedbottom
-\RequirePackage[draft]{graphicx}
-%\RequirePackage{graphicx}
+%\RequirePackage[draft]{graphicx}
+\RequirePackage{graphicx}
 % \parindent 12pt
 \parindent 0pt
 \setlength{\parskip}{1em}
@@ -90,7 +91,6 @@
 % My packages
 \RequirePackage{float}
 \usepackage{hhline}
-\usepackage[normalem]{ulem}
 \usepackage[english]{babel}
 \usepackage{blindtext}
 \usepackage{cprotect}
@@ -100,6 +100,16 @@
 \usepackage{tabularx}
 \usepackage{listings}
 
+% Custom underlines (from https://alexwlchan.net/2017/10/latex-underlines/)
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{2pt}
+\usepackage{contour}
+\contourlength{0.8pt}
+
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
 % Fonts.
 \RequirePackage{color}
 \RequirePackage{xcolor}
@@ -116,7 +126,7 @@
 % \setmathsfont(Digits,Latin,Greek)[Numbers={Proportional}]{EB Garamond}
 % \setmathrm{EB Garamond}
 \AtBeginEnvironment{tabularx}{\addfontfeature{RawFeature=+tnum}}
-\widowpenalty=300
+\widowpenalty=9000
 \clubpenalty=300
 % \setromanfont[Numbers=Lining, Ligatures={NoCommon, Common, TeX}, Scale=1.0]{EB Garamond}
 % \newfontfamily{\smallcaps}[RawFeature={+c2sc,+scmp}]{EB Garamond}
@@ -263,7 +273,6 @@
     \setstretch{\dnormalspacing}
     \abstractpage
     \officialacknowledgments
-    % \acknowledgments
     \setstretch{\dxcompressedspacing}
     \setlength{\parskip}{0em}
     \maketoc
@@ -363,7 +372,7 @@
     \hspace*{\fill}  by advisor\\
     \vspace{120pt}
     \theauthor \hspace*{\fill} \@advisor\\
-    \vspace{120pt}}
+    }
     \vspace*{\fill}
     \textsc{
     Tutor: \@tutor \\
@@ -436,25 +445,7 @@
 }
 
 \newcommand{\acknowledgments}{
-    \newpage \thispagestyle{fancy} \vspace*{10pt}
-    {
-      \huge \hspace*{\fill}  Acknowledgments
-    }
-    \noindent
-    \input{frontmatter/thanks}
-    \vspace*{\fill}
-    \if@twoside
-        \newpage \thispagestyle{empty}  \rm
-        % insert blank page
-        \pagestyle{empty}
-        {
-        \renewcommand{\thispagestyle}[1]{}
-        \cleardoublepage
-        }
-        \newpage
-        \thispagestyle{empty}
-        \pagestyle{fancy}
-    \fi
+    \input{endmatter/thanks}
 }
 \newcommand{\officialacknowledgments}{
     \newpage \thispagestyle{fancy} \vspace*{10pt}
@@ -523,6 +514,10 @@
     \end{center}
     \vspace*{\fill} \newpage \thispagestyle{empty}  \rm
 }
+\newcommand{\publications}{
+    \input{endmatter/publications.tex}
+    \vspace*{\fill} \newpage \thispagestyle{empty}  \rm
+}
 
 \renewcommand{\backmatter}{
     \input{endmatter/personalize}
@@ -531,11 +526,18 @@
       \footnotesize
       \setstretch{1.0}
       \raggedright
-      \bibliography{dissertation}
       \addcontentsline{toc}{chapter}{Bibliography}
+      \bibliography{dissertation}
       \bibliographystyle{ieeetr}
+      }
+    {
+      \setstretch{1.0}
+      \raggedright
+      \publications
     }
     \colophonpage
+    \acknowledgments
+    
 }
 
 

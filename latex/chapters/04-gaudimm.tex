@@ -102,7 +102,7 @@ For example, a typical optimization problem is finding the dihedral torsion that
 The key part of genetic algorithms is the implementation of variation operators as part of the exploration stage. Instead of merely trusting randomness, existing solutions are combined in hopes of obtaining a better child solution. These two operations are called \textit{mutation} and \textit{crossover},\footnote{Also known as \textit{mating}.} mimicking what happens in the cell nucleus at the chromosomic level.
 
 
-\begin{figure}[H] % FIXME!
+\begin{figure}[hbtp] % FIXME!
 	\includegraphics[width=\textwidth]{./figures/04/ga-crossover-mut-crop.pdf}
 	\caption[Mutation and crossover]{Mutation and crossover operations introduce variability in the parental population.}
 	\label{fig:cxmut}
@@ -322,7 +322,7 @@ All calculations normally start by configuring one or more \texttt{Molecule} gen
 
 The set of genes will simply generate different variants of the starting model, which can potentially include non-feasible structures. As a result, after choosing which genes to apply, the user must decide which variables will guide the optimization of the structure by choosing one or more objectives. For example, it is common to request a \texttt{Contacts} gene to minimize the steric clashes that can arise from moving a small molecule around a bigger one.  If more requirements are needed, like maximizing the number of hydrogen bonds, the corresponding objectives can be added too.
 
-It must be remembered that the objectives simply assign a score to a candidate solution. It is up to the selection step to favor the promotion of candidates that satisfy the optimization criteria (i.e., low number of clashes with good hydrogen bonds) and discard those that do not. As an example, a trivial molecular modeling task will be explained.
+It must be remembered that the objectives simply assign a score to a candidate solution. It is up to the selection step to favor the promotion of candidates that satisfy the optimization criteria (i.e. low number of clashes with good hydrogen bonds) and discard those that do not. As an example, a trivial molecular modeling task will be explained.
 
 \subsection{Tutorial: Obtaining a cyclic alkane}
 
@@ -387,7 +387,7 @@ In multi-objective optimization (see \autoref[section]{section:multiobjective}),
 This GUI will list the proposed solutions along with the fitness of each objective in spreadsheet-like dialog. Upon clicking each entry, the UCSF Chimera canvas will load and render a 3D interactive depiction of the structure. The table can be sorted by columns and filtered by threshold criteria, which can reduce the complex surface of the Pareto front to the \textit{interesting parts} (according to the decision maker) dynamically. Since the renderization of molecular structures is delayed until the corresponding rows are selected, the interface can show thousands of results with low memory usage. Integrative analysis can be performed on the flow with other tools included in UCSF Chimera thanks to the built-in command line widget, which is executed on each selection change event. \autoref[Appendix]{appendix:more-tangram} contains more details on this tool.
 
 
-\begin{figure}[H]
+\begin{figure}[hbtp]
 	\includegraphics[width=\textwidth]{./figures/04/gaudiview.png}
 	\caption[GaudiView]{Analysis of a GaudiMM dual docking calculation with GaudiView. Each row of the table represents one candidate solution that will be depicted in the 3D canvas upon selection.}
 	\label{fig:gaudiview}
